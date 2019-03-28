@@ -1,0 +1,73 @@
+\hypertarget{IPQ_8cpp}{
+\section{\-I\-P\-Q.cpp \-File \-Reference}
+\label{IPQ_8cpp}\index{\-I\-P\-Q.\-cpp@{\-I\-P\-Q.\-cpp}}
+}
+{\ttfamily \#include $<$string$>$}\*
+{\ttfamily \#include $<$iostream$>$}\*
+{\ttfamily \#include $<$iomanip$>$}\*
+{\ttfamily \#include $<$cstddef$>$}\*
+{\ttfamily \#include $<$cerrno$>$}\*
+{\ttfamily \#include $<$cstring$>$}\*
+{\ttfamily \#include $<$boost/lexical\-\_\-cast.\-hpp$>$}\*
+{\ttfamily \#include $<$boost/cstdint.\-hpp$>$}\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\*
+{\ttfamily \#include $<$sys/socket.\-h$>$}\*
+{\ttfamily \#include $<$sys/time.\-h$>$}\*
+{\ttfamily \#include $<$sys/select.\-h$>$}\*
+{\ttfamily \#include $<$netinet/ip.\-h$>$}\*
+{\ttfamily \#include $<$netinet/tcp.\-h$>$}\*
+{\ttfamily \#include $<$netinet/udp.\-h$>$}\*
+{\ttfamily \#include $<$arpa/inet.\-h$>$}\*
+{\ttfamily \#include $<$linux/netfilter.\-h$>$}\*
+{\ttfamily \#include \char`\"{}\-I\-P\-Q.\-hpp\char`\"{}}\*
+{\ttfamily \#include \char`\"{}auto\-\_\-array.\-hpp\char`\"{}}\*
+{\ttfamily \#include \char`\"{}util.\-hpp\char`\"{}}\*
+{\ttfamily \#include $<$libipq.\-h$>$}\*
+\subsection*{\-Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespaceIPQ}{\-I\-P\-Q}
+\begin{DoxyCompactList}\small\item\em \-A \-C++ interface to libipq, the old iptables userspace-\/queueing system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{IPQ_8cpp_adb285061efadfe9074d021b64211e5bc}{\-N\-F\-\_\-\-S\-T\-O\-P}~5
+\begin{DoxyCompactList}\small\item\em old versions of linux/netfilter.\-h don't define \-N\-F\-\_\-\-S\-T\-O\-P \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+boost\-::uint16\-\_\-t \hyperlink{namespaceIPQ_a12139e4f65e5d66469b83c70ba461880}{\-I\-P\-Q\-::ip\-\_\-checksum} (boost\-::uint32\-\_\-t init, boost\-::uint8\-\_\-t $\ast$buf, std\-::size\-\_\-t len)
+\begin{DoxyCompactList}\small\item\em \-Compute an \-I\-P checksum (as described in \-R\-F\-C 791). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\begin{DoxyAuthor}{\-Author}
+\-Rennie de\-Graaf 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+2007/06/06
+\end{DoxyDate}
+\-Implementation of a \-C++ interface to libipq. 
+
+\-Definition in file \hyperlink{IPQ_8cpp_source}{\-I\-P\-Q.\-cpp}.
+
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{IPQ_8cpp_adb285061efadfe9074d021b64211e5bc}{
+\index{\-I\-P\-Q.\-cpp@{\-I\-P\-Q.\-cpp}!\-N\-F\-\_\-\-S\-T\-O\-P@{\-N\-F\-\_\-\-S\-T\-O\-P}}
+\index{\-N\-F\-\_\-\-S\-T\-O\-P@{\-N\-F\-\_\-\-S\-T\-O\-P}!IPQ.cpp@{\-I\-P\-Q.\-cpp}}
+\subsubsection[{\-N\-F\-\_\-\-S\-T\-O\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-N\-F\-\_\-\-S\-T\-O\-P~5}}
+\label{IPQ_8cpp_adb285061efadfe9074d021b64211e5bc}
+
+
+old versions of linux/netfilter.\-h don't define \-N\-F\-\_\-\-S\-T\-O\-P 
+
+
+
+\-Definition at line 44 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-Referenced by \-I\-P\-Q\-::\-Ipq\-Socket\-::send\-Response().
+

@@ -1,0 +1,54 @@
+		     README for the Network Rerouter Daemon
+		     ======================================
+
+COMPILING
+=========
+
+1. Make configuration changes.
+   For most systems, no changes need to be made.  However, the following 
+   configuration options exist:
+   - the fexecve() library call doesn't work properly on all Linux kernels prior
+     to 2.6.22-rc1, and possibly later ones as well.  To enable a work-around, 
+     add the string "-DBROKEN_FEXECVE" to the CXXFLAGS variable in the makefile.
+   - the NF_STOP packet verdict doesn't exist in Linux kernels prior to 2.6.12.
+     To enable a work-around, add the string "-DNO_NF_STOP" to the CXXFLAGS
+     variable in the makefile.
+   - the variables NERD_SERVER_ROOT, NERD_PIPE_FD, NERD_SERVER_TIMEOUT and
+     NERD_CONNECTION_TIMEOUT in nerd.h can be modified if desired.  See nerd.h
+     for details.
+
+2. Build the program.
+   $ make
+
+   To build with debugging options enabled, use 
+   $ make debug
+
+3. (Optional) Build the program documentation.
+   $ make doc
+
+4. Install the program.
+   $ make install
+
+   To install start-up files appropriate for Red Hat-derived systems, use
+   $ make install-rh
+
+
+RUNNING
+=======
+
+Before the Network Rerouter Daemon will run, there need to be rules in the
+OUTPUT chain of iptables' "mangle" table to redirect all packets destined to
+simulated subnets and all responses from them to the iptables QUEUE target. 
+Also, the "ip_queue" module must be loaded.  This can be accomplished using 
+commands similar to the following (where 123.123.123.0/24 is a network to
+simulate):
+   $ iptables -t mangle -A OUTPUT -p tcp -d 123.123.123.0/24 -j QUEUE
+   $ iptables -t mangle -A OUTPUT -p tcp -d 127.0.0.1 --dport 1 -j QUEUE
+   $ modprobe ip_queue
+As many networks as desired can be simulated; simply add more iptables rules 
+similar to the first.
+
+On Red Hat-derived systems, the start-up files installed by "make install-rh" 
+will automatically create rules for all networks listed in the "NETWORKS" 
+variable in /etc/sysconfig/nerd.conf.
+

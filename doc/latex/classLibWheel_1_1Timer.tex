@@ -1,0 +1,217 @@
+\hypertarget{classLibWheel_1_1Timer}{
+\section{\-Lib\-Wheel\-:\-:\-Timer \-Class \-Reference}
+\label{classLibWheel_1_1Timer}\index{\-Lib\-Wheel\-::\-Timer@{\-Lib\-Wheel\-::\-Timer}}
+}
+
+
+\-Singleton class to manage real time timer interrupts.  
+
+
+
+
+{\ttfamily \#include $<$\-Signals.\-hpp$>$}
+
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classLibWheel_1_1Timer_1_1Handler}{\-Handler}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classLibWheel_1_1SignalQueue}{\-Signal\-Queue} interrupt handler for \-S\-I\-G\-A\-L\-R\-M that schedules the next timer interrupt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classLibWheel_1_1Timer_a65bd67b98a78429de6d3902d1c76e226}{schedule} (unsigned short seconds)
+\begin{DoxyCompactList}\small\item\em \-Schedule a timer interrupt for {\itshape seconds\/} seconds from the current time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classLibWheel_1_1Timer}{\-Timer} \& \hyperlink{classLibWheel_1_1Timer_a746fd7400e3882443c54a2d7360f6de5}{get\-Timer} ()
+\begin{DoxyCompactList}\small\item\em \-Retrieve the global \hyperlink{classLibWheel_1_1Timer}{\-Timer} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::priority\-\_\-queue\*
+$<$ time\-\_\-t, std\-::vector$<$ time\-\_\-t $>$\*
+, std\-::greater$<$ time\-\_\-t $>$ $>$ \hyperlink{classLibWheel_1_1Timer_abea53b00b28de4989a20f6719d3c7b82}{\-Queue\-Type}
+\begin{DoxyCompactList}\small\item\em \-The type of the queue of signal delivery times. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLibWheel_1_1Timer_a677a18f1a2e24af2017b54a35aa63bb0}{\-Timer} ()
+\begin{DoxyCompactList}\small\item\em \-Initialize a \hyperlink{classLibWheel_1_1Timer}{\-Timer} object. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1Timer_a2fb65c07b581d71a46cd0449a97462d2}{$\sim$\-Timer} ()
+\begin{DoxyCompactList}\small\item\em \-Destructor for \hyperlink{classLibWheel_1_1Timer}{\-Timer}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLibWheel_1_1Timer_abea53b00b28de4989a20f6719d3c7b82}{\-Queue\-Type} \hyperlink{classLibWheel_1_1Timer_a5c5886cc2443434a20b1bd4a41ede304}{times}
+\begin{DoxyCompactList}\small\item\em \-Queue of signal delivery times. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1Timer_1_1Handler}{\-Handler} \hyperlink{classLibWheel_1_1Timer_a0091ca33fd5f8dae22594e39525ef5bc}{handler}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classLibWheel_1_1SignalQueue}{\-Signal\-Queue} \-S\-I\-G\-A\-L\-R\-M interrupt handler functor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Singleton class to manage real time timer interrupts. 
+
+\-Causes \-S\-I\-G\-A\-L\-R\-Ms to be sent to the calling processes at requested times. \-These signals must then be handled using \hyperlink{classLibWheel_1_1SignalQueue}{\-Signal\-Queue}. 
+
+\subsection{\-Member \-Typedef \-Documentation}
+\hypertarget{classLibWheel_1_1Timer_abea53b00b28de4989a20f6719d3c7b82}{
+\index{\-Lib\-Wheel\-::\-Timer@{\-Lib\-Wheel\-::\-Timer}!\-Queue\-Type@{\-Queue\-Type}}
+\index{\-Queue\-Type@{\-Queue\-Type}!LibWheel::Timer@{\-Lib\-Wheel\-::\-Timer}}
+\subsubsection[{\-Queue\-Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::priority\-\_\-queue$<$time\-\_\-t, std\-::vector$<$time\-\_\-t$>$, std\-::greater$<$time\-\_\-t$>$ $>$ {\bf \-Lib\-Wheel\-::\-Timer\-::\-Queue\-Type}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classLibWheel_1_1Timer_abea53b00b28de4989a20f6719d3c7b82}
+
+
+\-The type of the queue of signal delivery times. 
+
+
+
+\-Definition at line 185 of file \-Signals.\-hpp.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classLibWheel_1_1Timer_a677a18f1a2e24af2017b54a35aa63bb0}{
+\index{\-Lib\-Wheel\-::\-Timer@{\-Lib\-Wheel\-::\-Timer}!\-Timer@{\-Timer}}
+\index{\-Timer@{\-Timer}!LibWheel::Timer@{\-Lib\-Wheel\-::\-Timer}}
+\subsubsection[{\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::\-Timer\-::\-Timer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classLibWheel_1_1Timer_a677a18f1a2e24af2017b54a35aa63bb0}
+
+
+\-Initialize a \hyperlink{classLibWheel_1_1Timer}{\-Timer} object. 
+
+\begin{DoxyParagraph}{\-Side \-Effects\-:}
+\-Registers a signal handler for \-S\-I\-G\-A\-L\-R\-M through \hyperlink{classLibWheel_1_1SignalQueue}{\-Signal\-Queue}. 
+\end{DoxyParagraph}
+
+
+\-Definition at line 474 of file \-Signals.\-cpp.
+
+
+
+\-References \-Lib\-Wheel\-::\-Signal\-Queue\-::set\-Handler(), \-Lib\-Wheel\-::\-Signal\-Queue\-::\-H\-A\-N\-D\-L\-E, \-Lib\-Wheel\-::\-Signal\-Queue\-::add\-Handler(), and handler.
+
+\hypertarget{classLibWheel_1_1Timer_a2fb65c07b581d71a46cd0449a97462d2}{
+\index{\-Lib\-Wheel\-::\-Timer@{\-Lib\-Wheel\-::\-Timer}!$\sim$\-Timer@{$\sim$\-Timer}}
+\index{$\sim$\-Timer@{$\sim$\-Timer}!LibWheel::Timer@{\-Lib\-Wheel\-::\-Timer}}
+\subsubsection[{$\sim$\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::\-Timer\-::$\sim$\-Timer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classLibWheel_1_1Timer_a2fb65c07b581d71a46cd0449a97462d2}
+
+
+\-Destructor for \hyperlink{classLibWheel_1_1Timer}{\-Timer}. 
+
+\begin{DoxyParagraph}{\-Side \-Effects\-:}
+\-Unregisters the timer signal handler from \hyperlink{classLibWheel_1_1SignalQueue}{\-Signal\-Queue}; no further timer interrupts will be scheduled. 
+\end{DoxyParagraph}
+
+
+\-Definition at line 487 of file \-Signals.\-cpp.
+
+
+
+\-References \-Lib\-Wheel\-::\-Signal\-Queue\-::delete\-Handler(), and handler.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classLibWheel_1_1Timer_a746fd7400e3882443c54a2d7360f6de5}{
+\index{\-Lib\-Wheel\-::\-Timer@{\-Lib\-Wheel\-::\-Timer}!get\-Timer@{get\-Timer}}
+\index{get\-Timer@{get\-Timer}!LibWheel::Timer@{\-Lib\-Wheel\-::\-Timer}}
+\subsubsection[{get\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Timer} \& \-Lib\-Wheel\-::\-Timer\-::get\-Timer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classLibWheel_1_1Timer_a746fd7400e3882443c54a2d7360f6de5}
+
+
+\-Retrieve the global \hyperlink{classLibWheel_1_1Timer}{\-Timer} object. 
+
+\begin{DoxyReturn}{\-Returns}
+\-A reference to the global \hyperlink{classLibWheel_1_1Timer}{\-Timer} object. 
+\end{DoxyReturn}
+
+
+\-Definition at line 395 of file \-Signals.\-cpp.
+
+
+
+\-Referenced by \-Lib\-Wheel\-::\-Wait\-List\-::add().
+
+\hypertarget{classLibWheel_1_1Timer_a65bd67b98a78429de6d3902d1c76e226}{
+\index{\-Lib\-Wheel\-::\-Timer@{\-Lib\-Wheel\-::\-Timer}!schedule@{schedule}}
+\index{schedule@{schedule}!LibWheel::Timer@{\-Lib\-Wheel\-::\-Timer}}
+\subsubsection[{schedule}]{\setlength{\rightskip}{0pt plus 5cm}void \-Lib\-Wheel\-::\-Timer\-::schedule (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{seconds}
+\end{DoxyParamCaption}
+)}}
+\label{classLibWheel_1_1Timer_a65bd67b98a78429de6d3902d1c76e226}
+
+
+\-Schedule a timer interrupt for {\itshape seconds\/} seconds from the current time. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em seconds} & \-The interval until the requested timer interrupt, in seconds. \-If {\itshape seconds\/} is 0, no interrupt is scheduled. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 408 of file \-Signals.\-cpp.
+
+
+
+\-Referenced by \-Lib\-Wheel\-::\-Wait\-List\-::add().
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classLibWheel_1_1Timer_a0091ca33fd5f8dae22594e39525ef5bc}{
+\index{\-Lib\-Wheel\-::\-Timer@{\-Lib\-Wheel\-::\-Timer}!handler@{handler}}
+\index{handler@{handler}!LibWheel::Timer@{\-Lib\-Wheel\-::\-Timer}}
+\subsubsection[{handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Handler} {\bf \-Lib\-Wheel\-::\-Timer\-::handler}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classLibWheel_1_1Timer_a0091ca33fd5f8dae22594e39525ef5bc}
+
+
+\hyperlink{classLibWheel_1_1SignalQueue}{\-Signal\-Queue} \-S\-I\-G\-A\-L\-R\-M interrupt handler functor. 
+
+
+
+\-Definition at line 202 of file \-Signals.\-hpp.
+
+
+
+\-Referenced by \-Timer(), and $\sim$\-Timer().
+
+\hypertarget{classLibWheel_1_1Timer_a5c5886cc2443434a20b1bd4a41ede304}{
+\index{\-Lib\-Wheel\-::\-Timer@{\-Lib\-Wheel\-::\-Timer}!times@{times}}
+\index{times@{times}!LibWheel::Timer@{\-Lib\-Wheel\-::\-Timer}}
+\subsubsection[{times}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Queue\-Type} {\bf \-Lib\-Wheel\-::\-Timer\-::times}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classLibWheel_1_1Timer_a5c5886cc2443434a20b1bd4a41ede304}
+
+
+\-Queue of signal delivery times. 
+
+
+
+\-Definition at line 201 of file \-Signals.\-hpp.
+
+
+
+\-Referenced by \-Lib\-Wheel\-::\-Timer\-::\-Handler\-::operator()().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Signals_8hpp}{\-Signals.\-hpp}\item 
+\hyperlink{Signals_8cpp}{\-Signals.\-cpp}\end{DoxyCompactItemize}

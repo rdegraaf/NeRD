@@ -1,0 +1,743 @@
+\hypertarget{classNERD_1_1ConnectionServer}{
+\section{\-N\-E\-R\-D\-:\-:\-Connection\-Server \-Class \-Reference}
+\label{classNERD_1_1ConnectionServer}\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+}
+
+
+\-The main class for the \-Network \-Rerouter \-Daemon (nerd).  
+
+
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}
+\begin{DoxyCompactList}\small\item\em \-The source and destination addresses of \-I\-P packets travelling in one direction in a connection. \end{DoxyCompactList}\item 
+class \hyperlink{classNERD_1_1ConnectionServer_1_1AddressPairHash}{\-Address\-Pair\-Hash}
+\begin{DoxyCompactList}\small\item\em \-A functor that computes a hash of an \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}, suitable for use with \-\_\-\-\_\-gnu\-\_\-cxx\-::hash\-\_\-map. \end{DoxyCompactList}\item 
+class \hyperlink{classNERD_1_1ConnectionServer_1_1Connection}{\-Connection}
+\begin{DoxyCompactList}\small\item\em \-A description of a connection managed by a server program. \end{DoxyCompactList}\item 
+struct \hyperlink{structNERD_1_1ConnectionServer_1_1PendingConnection}{\-Pending\-Connection}
+\begin{DoxyCompactList}\small\item\em \-Information pertaining to a server that is starting up to handle a connection. \end{DoxyCompactList}\item 
+class \hyperlink{classNERD_1_1ConnectionServer_1_1ServerExitHandler}{\-Server\-Exit\-Handler}
+\begin{DoxyCompactList}\small\item\em \-Functor to handle \-S\-I\-G\-C\-H\-L\-D signals received through \hyperlink{classLibWheel_1_1SignalQueue}{\-Lib\-Wheel\-::\-Signal\-Queue}. \end{DoxyCompactList}\item 
+struct \hyperlink{structNERD_1_1ConnectionServer_1_1ServerRecord}{\-Server\-Record}
+\begin{DoxyCompactList}\small\item\em \-Information about a server program to be started. \end{DoxyCompactList}\item 
+class \hyperlink{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler}{\-Server\-Writeback\-Handler}
+\begin{DoxyCompactList}\small\item\em \-Functor to handle \-S\-I\-G\-I\-O signals received through \hyperlink{classLibWheel_1_1SignalQueue}{\-Lib\-Wheel\-::\-Signal\-Queue}. \end{DoxyCompactList}\item 
+class \hyperlink{classNERD_1_1ConnectionServer_1_1UnknownConnectionException}{\-Unknown\-Connection\-Exception}
+\begin{DoxyCompactList}\small\item\em \-Exception thrown by \hyperlink{classNERD_1_1ConnectionServer_afd85b7ad69696355650a0177d01f0a06}{get\-Redirect\-Rule()} when a packet does not match any existing connection record. \end{DoxyCompactList}\item 
+class \hyperlink{classNERD_1_1ConnectionServer_1_1UnknownServerException}{\-Unknown\-Server\-Exception}
+\begin{DoxyCompactList}\small\item\em \-Exception thrown by \hyperlink{classNERD_1_1ConnectionServer_a9d75b0d048d374095c4d7c96e4add7f8}{find\-Server()} when no server program can be found to handle a new connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classLibWheel_1_1WaitList}{\-Lib\-Wheel\-::\-Wait\-List}\*
+$<$ \hyperlink{structNERD_1_1ConnectionServer_1_1PendingConnection}{\-Pending\-Connection} $>$ \hyperlink{classNERD_1_1ConnectionServer_ac838d247f33cef856ae722343a8cb7ff}{\-Pending\-Connection\-List}
+\begin{DoxyCompactList}\small\item\em \-A list of pending connections. \end{DoxyCompactList}\item 
+typedef \hyperlink{classLibWheel_1_1WaitList}{\-Lib\-Wheel\-::\-Wait\-List}\*
+$<$ std\-::pair$<$ \hyperlink{classNERD_1_1ConnectionServer_a1f7b6abdda0f0a7a027a5f2e24727cee}{\-Redirection\-Table} \*
+$\ast$, \-Redirection\-Table\-::iterator $>$ $>$ \hyperlink{classNERD_1_1ConnectionServer_a63d211040487b4566f2f696026723932}{\-Timeout\-List}
+\begin{DoxyCompactList}\small\item\em \-A list of redirection rules that are scheduled to be deleted at their expiry of timers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNERD_1_1ConnectionServer_acc6df09182bd47a744638d2784a7f3df}{\-Connection\-Server} (const std\-::string \&root, bool verb, bool restrict)  throw (\-I\-P\-Q\-::\-Ipq\-Exception, Lib\-Wheel\-::\-I\-O\-Exception, Lib\-Wheel\-::\-Socket\-Exception)
+\begin{DoxyCompactList}\small\item\em \-Constructor for \hyperlink{classNERD_1_1ConnectionServer}{\-Connection\-Server}. \end{DoxyCompactList}\item 
+\hyperlink{classNERD_1_1ConnectionServer_abd4458dd96ff0b366de34ecf24855ec4}{$\sim$\-Connection\-Server} ()
+\begin{DoxyCompactList}\small\item\em \-Destructor for \hyperlink{classNERD_1_1ConnectionServer}{\-Connection\-Server}. \end{DoxyCompactList}\item 
+void \hyperlink{classNERD_1_1ConnectionServer_af506b23a0c81f40f8f449bb388005424}{operator()} ()
+\begin{DoxyCompactList}\small\item\em \-Main loop for \hyperlink{classNERD_1_1ConnectionServer}{\-Connection\-Server}. \end{DoxyCompactList}\item 
+void \hyperlink{classNERD_1_1ConnectionServer_a52574c2792a324c56435234da19cc183}{print\-Stats} () const 
+\begin{DoxyCompactList}\small\item\em \-Print current server status to \hyperlink{namespaceLibWheel_af4ca70f4f65b2948701218436516a679}{\-Lib\-Wheel\-::logmsg}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \-\_\-\-\_\-gnu\-\_\-cxx\-::hash\-\_\-map\*
+$<$ \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}, \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}, \*
+\hyperlink{classNERD_1_1ConnectionServer_1_1AddressPairHash}{\-Address\-Pair\-Hash} $>$ \hyperlink{classNERD_1_1ConnectionServer_a1f7b6abdda0f0a7a027a5f2e24727cee}{\-Redirection\-Table}
+\begin{DoxyCompactList}\small\item\em \-A look-\/up table mapping the addresses of packets to redirection rules. \end{DoxyCompactList}\item 
+typedef \-\_\-\-\_\-gnu\-\_\-cxx\-::hash\-\_\-map\*
+$<$ pid\-\_\-t, \hyperlink{classNERD_1_1ConnectionServer_1_1Connection}{\-Connection} $>$ \hyperlink{classNERD_1_1ConnectionServer_a0cd661f2a6755c501ac198229675ad4d}{\-Server\-Table}
+\begin{DoxyCompactList}\small\item\em \-A look-\/up table mapping server process \-I\-Ds to the connections that they manage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classNERD_1_1ConnectionServer_a5b183a39539b07fe4a92ef3ad88d7c92}{handle\-Packet} (\hyperlink{classIPQ_1_1IpqPacket}{\-I\-P\-Q\-::\-Ipq\-Packet} $\ast$pkt)
+\begin{DoxyCompactList}\small\item\em \-Handle a packet. \end{DoxyCompactList}\item 
+const \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair} \& \hyperlink{classNERD_1_1ConnectionServer_afd85b7ad69696355650a0177d01f0a06}{get\-Redirect\-Rule} (const \hyperlink{classIPQ_1_1IpqTcpPacket}{\-I\-P\-Q\-::\-Ipq\-Tcp\-Packet} $\ast$pkt) const   throw (\-Unknown\-Connection\-Exception)
+\begin{DoxyCompactList}\small\item\em \-Looks up a redirection rule for a \-T\-C\-P packet. \end{DoxyCompactList}\item 
+const \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair} \& \hyperlink{classNERD_1_1ConnectionServer_aca2ea51c7622b3ecb11cbaa976b9a137}{get\-Redirect\-Rule} (const \hyperlink{classIPQ_1_1IpqUdpPacket}{\-I\-P\-Q\-::\-Ipq\-Udp\-Packet} $\ast$pkt) const   throw (\-Unknown\-Connection\-Exception)
+\begin{DoxyCompactList}\small\item\em \-Looks up a redirection rule for a \-U\-D\-P packet. \end{DoxyCompactList}\item 
+void \hyperlink{classNERD_1_1ConnectionServer_af4ba681fed213914c83661a1dfd8df6d}{create\-Connection} (\hyperlink{classIPQ_1_1IpqTcpPacket}{\-I\-P\-Q\-::\-Ipq\-Tcp\-Packet} $\ast$pkt)
+\begin{DoxyCompactList}\small\item\em \-Creates a \-T\-C\-P connection. \end{DoxyCompactList}\item 
+void \hyperlink{classNERD_1_1ConnectionServer_ae713c47afe1f248809de764dfda4f1b2}{create\-Connection} (\hyperlink{classIPQ_1_1IpqUdpPacket}{\-I\-P\-Q\-::\-Ipq\-Udp\-Packet} $\ast$pkt)
+\begin{DoxyCompactList}\small\item\em \-Creates a \-U\-D\-P connection. \end{DoxyCompactList}\item 
+void \hyperlink{classNERD_1_1ConnectionServer_a9d75b0d048d374095c4d7c96e4add7f8}{find\-Server} (\hyperlink{structNERD_1_1ConnectionServer_1_1ServerRecord}{\-Server\-Record} \&rec, in\-\_\-addr\-\_\-t addr) const   throw (\-Unknown\-Server\-Exception)
+\begin{DoxyCompactList}\small\item\em \-Attempts to find a server program to run in response to a connection request. \end{DoxyCompactList}\item 
+bool \hyperlink{classNERD_1_1ConnectionServer_a31818d0fbe0366a7b902095445405406}{is\-Executable} (const std\-::string \&file) const 
+\begin{DoxyCompactList}\small\item\em \-Determines if a file is executable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classIPQ_1_1IpqSocket}{\-I\-P\-Q\-::\-Ipq\-Socket} \& \hyperlink{classNERD_1_1ConnectionServer_ad9575a11fd2db34b92ab1627c2d1d5b0}{sock}
+\begin{DoxyCompactList}\small\item\em \-A handle to libipq. \end{DoxyCompactList}\item 
+const std\-::string \hyperlink{classNERD_1_1ConnectionServer_a5e476e6dd3a15d073b4a3f75569dc240}{server\-Root}
+\begin{DoxyCompactList}\small\item\em \-The directory in which to search for server programs. \end{DoxyCompactList}\item 
+bool \hyperlink{classNERD_1_1ConnectionServer_a36f12900d6c2461984a1e093bfc42403}{verbose}
+\begin{DoxyCompactList}\small\item\em {\bfseries true} to log extra messages; {\bfseries false} otherwise \end{DoxyCompactList}\item 
+\hyperlink{classNERD_1_1ConnectionServer_ac838d247f33cef856ae722343a8cb7ff}{\-Pending\-Connection\-List} \hyperlink{classNERD_1_1ConnectionServer_ad051d0ac714b53904e86c368cd90275c}{pending\-Connections}
+\begin{DoxyCompactList}\small\item\em \-The list of servers (and associated initial packets) which have been started but have not yet responded with packet numbers. \end{DoxyCompactList}\item 
+\hyperlink{classNERD_1_1ConnectionServer_a1f7b6abdda0f0a7a027a5f2e24727cee}{\-Redirection\-Table} \hyperlink{classNERD_1_1ConnectionServer_a4186be4b373165c72ab81a73165cb075}{redirections}
+\begin{DoxyCompactList}\small\item\em \-A hash table of rules governing packet redirections for open conncetions. \end{DoxyCompactList}\item 
+\hyperlink{classNERD_1_1ConnectionServer_a63d211040487b4566f2f696026723932}{\-Timeout\-List} \hyperlink{classNERD_1_1ConnectionServer_adc22ef94ff5d014433eef07e054e1d69}{timeout\-List}
+\begin{DoxyCompactList}\small\item\em \-A list of redirection rules to be deleted when timeouts expire. \end{DoxyCompactList}\item 
+\hyperlink{classNERD_1_1ConnectionServer_a0cd661f2a6755c501ac198229675ad4d}{\-Server\-Table} \hyperlink{classNERD_1_1ConnectionServer_a990a4882c5123f35208d36cabb5fef67}{servers}
+\begin{DoxyCompactList}\small\item\em \-A hash table of server process \-I\-Ds and the connections that they handle. \end{DoxyCompactList}\item 
+\hyperlink{classNERD_1_1ConnectionServer_1_1ServerExitHandler}{\-Server\-Exit\-Handler} \hyperlink{classNERD_1_1ConnectionServer_a87fc9625f6d518ffe294e4f759d3cae0}{exit\-Handler}
+\begin{DoxyCompactList}\small\item\em \-The functor that handles \-S\-I\-G\-C\-H\-L\-D signals when servers exit. \end{DoxyCompactList}\item 
+\hyperlink{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler}{\-Server\-Writeback\-Handler} \hyperlink{classNERD_1_1ConnectionServer_a8aa938754f8f34144d205d4dd208d91a}{writeback\-Handler}
+\begin{DoxyCompactList}\small\item\em \-The functor that handles \-S\-I\-G\-I\-O signals when servers write back their port numbers. \end{DoxyCompactList}\item 
+bool \hyperlink{classNERD_1_1ConnectionServer_ae54611cb80881c2a73d69e145df4bbd7}{restrict\-\_\-servers}
+\begin{DoxyCompactList}\small\item\em {\bfseries true} to limit the privileges of server programs; {\bfseries false} otherwise. \end{DoxyCompactList}\item 
+int \hyperlink{classNERD_1_1ConnectionServer_a3168fab5ca817d2cd2cb7ca15228440d}{magic\-\_\-sock}
+\begin{DoxyCompactList}\small\item\em \-A socket bound to 127.\-0.\-0.\-1\-:\-M\-A\-G\-I\-C\-\_\-\-P\-O\-R\-T/\-T\-C\-P. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-The main class for the \-Network \-Rerouter \-Daemon (nerd). 
+
+\-Responsible for receiving packets from kernelspace via libipq, launching servers to handle them, creating and tracking connections, and forwarding packets.
+
+\-Packets are received from kernelspace in operator(), from which they are passed to \hyperlink{classNERD_1_1ConnectionServer_a5b183a39539b07fe4a92ef3ad88d7c92}{handle\-Packet()} for handling. \-If a packet is part of an existing connection, it are redirected to its destination server from there. \-Otherwise, \hyperlink{classNERD_1_1ConnectionServer_af4ba681fed213914c83661a1dfd8df6d}{create\-Connection()} is called to create a connection. \-If an appropriate server can be found (see \hyperlink{classNERD_1_1ConnectionServer_a9d75b0d048d374095c4d7c96e4add7f8}{find\-Server()}), then the server is launched and the packet queued pending a message from the server indicating the port that it is using. \-Otherwise, the packet is accepted without modification.
+
+\-Servers are responsible for writing their listen port numbers to stdout (file descriptor 1) as two-\/byte messages in network byte order. \-If this does not occur within 10 seconds of a server starting, then it is assumed to be malfunctioning, is sent a \-S\-I\-G\-I\-N\-T, and is dropped. \-The initial packet associated with such a server is accepted unmodified.
+
+\-Notification that a server has written its port number back comes through \-S\-I\-G\-I\-O signals, which are handled synchronously by a functor of type \hyperlink{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler}{\-Connection\-Server\-::\-Server\-Writeback\-Handler} in operator() via \hyperlink{classLibWheel_1_1SignalQueue}{\-Lib\-Wheel\-::\-Signal\-Queue}. \-This functor creates redirection rules for packets travelling both too and from the server.
+
+\-Connections are closed when \-S\-I\-G\-C\-H\-L\-D is received from their server processes, indicating that they have exited. \-A function of type \hyperlink{classNERD_1_1ConnectionServer_1_1ServerExitHandler}{\-Server\-Exit\-Handler} is responsible for handling \-S\-I\-G\-C\-H\-I\-D, again through \hyperlink{classLibWheel_1_1SignalQueue}{\-Lib\-Wheel\-::\-Signal\-Queue}. \hyperlink{classNERD_1_1ConnectionServer_1_1Connection}{\-Connection} redirection rules persist for {\ttfamily \-N\-E\-R\-D\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-O\-N\-\_\-\-T\-I\-M\-E\-O\-U\-T} seconds after their servers exit.
+
+\-S\-I\-G\-A\-L\-R\-M is used internally to implement timeouts. \-As with all other signals used in this program, it is handled synchronously through \hyperlink{classLibWheel_1_1SignalQueue}{\-Lib\-Wheel\-::\-Signal\-Queue}.
+
+\begin{DoxyRefDesc}{\-Bug}
+\item[\hyperlink{bug__bug000002}{\-Bug}]\-As described above, servers that have not responded within 10 seconds are assumed to be malfunctioning and are dropped. \-However, if the server is in fact still running, it will exit when it receives the \-S\-I\-G\-I\-N\-T or at some later time. \-This will result in a warning message indicating that \-S\-I\-G\-C\-H\-L\-D was received from a process for which no record exists. \-This could probably be fixed, but an extra log message is not currently considered to be a problem worthy of the effort required to fix it. \end{DoxyRefDesc}
+
+
+\subsection{\-Member \-Typedef \-Documentation}
+\hypertarget{classNERD_1_1ConnectionServer_ac838d247f33cef856ae722343a8cb7ff}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!\-Pending\-Connection\-List@{\-Pending\-Connection\-List}}
+\index{\-Pending\-Connection\-List@{\-Pending\-Connection\-List}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{\-Pending\-Connection\-List}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf \-Lib\-Wheel\-::\-Wait\-List}$<${\bf \-Pending\-Connection}$>$ {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection\-List}}}
+\label{classNERD_1_1ConnectionServer_ac838d247f33cef856ae722343a8cb7ff}
+
+
+\-A list of pending connections. 
+
+\begin{DoxyNote}{\-Note}
+\-This type is public because specializations of \hyperlink{classLibWheel_1_1WaitList}{\-Lib\-Wheel\-::\-Wait\-List} are outsideof this class. 
+\end{DoxyNote}
+
+
+\-Definition at line 207 of file nerd.\-cpp.
+
+\hypertarget{classNERD_1_1ConnectionServer_a1f7b6abdda0f0a7a027a5f2e24727cee}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!\-Redirection\-Table@{\-Redirection\-Table}}
+\index{\-Redirection\-Table@{\-Redirection\-Table}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{\-Redirection\-Table}]{\setlength{\rightskip}{0pt plus 5cm}typedef \-\_\-\-\_\-gnu\-\_\-cxx\-::hash\-\_\-map$<${\bf \-Address\-Pair}, {\bf \-Address\-Pair}, {\bf \-Address\-Pair\-Hash}$>$ {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Redirection\-Table}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_a1f7b6abdda0f0a7a027a5f2e24727cee}
+
+
+\-A look-\/up table mapping the addresses of packets to redirection rules. 
+
+
+
+\-Definition at line 163 of file nerd.\-cpp.
+
+\hypertarget{classNERD_1_1ConnectionServer_a0cd661f2a6755c501ac198229675ad4d}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!\-Server\-Table@{\-Server\-Table}}
+\index{\-Server\-Table@{\-Server\-Table}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{\-Server\-Table}]{\setlength{\rightskip}{0pt plus 5cm}typedef \-\_\-\-\_\-gnu\-\_\-cxx\-::hash\-\_\-map$<$pid\-\_\-t, {\bf \-Connection}$>$ {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Table}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_a0cd661f2a6755c501ac198229675ad4d}
+
+
+\-A look-\/up table mapping server process \-I\-Ds to the connections that they manage. 
+
+
+
+\-Definition at line 186 of file nerd.\-cpp.
+
+\hypertarget{classNERD_1_1ConnectionServer_a63d211040487b4566f2f696026723932}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!\-Timeout\-List@{\-Timeout\-List}}
+\index{\-Timeout\-List@{\-Timeout\-List}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{\-Timeout\-List}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf \-Lib\-Wheel\-::\-Wait\-List}$<$std\-::pair$<${\bf \-Redirection\-Table}$\ast$, \-Redirection\-Table\-::iterator$>$ $>$ {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Timeout\-List}}}
+\label{classNERD_1_1ConnectionServer_a63d211040487b4566f2f696026723932}
+
+
+\-A list of redirection rules that are scheduled to be deleted at their expiry of timers. 
+
+\begin{DoxyNote}{\-Note}
+\-This type is public because specializations of \hyperlink{classLibWheel_1_1WaitList}{\-Lib\-Wheel\-::\-Wait\-List} are outsideof this class. 
+\end{DoxyNote}
+
+
+\-Definition at line 215 of file nerd.\-cpp.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classNERD_1_1ConnectionServer_acc6df09182bd47a744638d2784a7f3df}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!\-Connection\-Server@{\-Connection\-Server}}
+\index{\-Connection\-Server@{\-Connection\-Server}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{\-Connection\-Server}]{\setlength{\rightskip}{0pt plus 5cm}\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection\-Server (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{root, }
+\item[{bool}]{verb, }
+\item[{bool}]{restrict}
+\end{DoxyParamCaption}
+)  throw ({\bf \-I\-P\-Q\-::\-Ipq\-Exception}, {\bf \-Lib\-Wheel\-::\-I\-O\-Exception}, {\bf \-Lib\-Wheel\-::\-Socket\-Exception})}}
+\label{classNERD_1_1ConnectionServer_acc6df09182bd47a744638d2784a7f3df}
+
+
+\-Constructor for \hyperlink{classNERD_1_1ConnectionServer}{\-Connection\-Server}. 
+
+\-Connect to libipq, register handlers for \-S\-I\-G\-C\-H\-L\-D and \-S\-I\-G\-I\-O with \hyperlink{classLibWheel_1_1SignalQueue}{\-Lib\-Wheel\-::\-Signal\-Queue}, and perform other initialization tasks. 
+\begin{DoxyParams}{\-Parameters}
+{\em root} & \-The directory in which to search for server programs. \\
+\hline
+{\em verb} & {\bfseries true} to enable verbose logging; {\bfseries false} otherwise. \\
+\hline
+{\em restrict} & {\bfseries true} to restrict server privileges; false otherwise. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{\-Exceptions}
+{\em \hyperlink{classIPQ_1_1IpqException}{\-I\-P\-Q\-::\-Ipq\-Exception}} & \-If there is an error initializing libipq. \\
+\hline
+{\em \hyperlink{classLibWheel_1_1IOException}{\-Lib\-Wheel\-::\-I\-O\-Exception}} & \-If {\itshape root\/} is not a readable directory. \\
+\hline
+{\em \hyperlink{classLibWheel_1_1SocketException}{\-Lib\-Wheel\-::\-Socket\-Exception}} & \-If \-M\-A\-G\-I\-C\-\_\-\-P\-O\-R\-T cannot be bound to. \\
+\hline
+\end{DoxyExceptions}
+
+
+\-Definition at line 413 of file nerd.\-cpp.
+
+
+
+\-References \-I\-P\-Q\-::\-Ipq\-Socket\-::\-P\-A\-C\-K\-E\-T, \-Q\-U\-O\-T\-E, \-M\-A\-G\-I\-C\-\_\-\-P\-O\-R\-T, \-L\-O\-C\-A\-L\-H\-O\-S\-T\-\_\-\-I\-P, \-Lib\-Wheel\-::\-Signal\-Queue\-::set\-Handler(), \-Lib\-Wheel\-::\-Signal\-Queue\-::\-H\-A\-N\-D\-L\-E, and \-Lib\-Wheel\-::\-Signal\-Queue\-::add\-Handler().
+
+\hypertarget{classNERD_1_1ConnectionServer_abd4458dd96ff0b366de34ecf24855ec4}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!$\sim$\-Connection\-Server@{$\sim$\-Connection\-Server}}
+\index{$\sim$\-Connection\-Server@{$\sim$\-Connection\-Server}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{$\sim$\-Connection\-Server}]{\setlength{\rightskip}{0pt plus 5cm}\-N\-E\-R\-D\-::\-Connection\-Server\-::$\sim$\-Connection\-Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classNERD_1_1ConnectionServer_abd4458dd96ff0b366de34ecf24855ec4}
+
+
+\-Destructor for \hyperlink{classNERD_1_1ConnectionServer}{\-Connection\-Server}. 
+
+\-Unregisters signal handlers for \-S\-I\-G\-I\-O and \-S\-I\-G\-C\-H\-L\-D from \hyperlink{classLibWheel_1_1SignalQueue}{\-Lib\-Wheel\-::\-Signal\-Queue} and shuts down libipq. 
+
+\-Definition at line 463 of file nerd.\-cpp.
+
+
+
+\-References \-Lib\-Wheel\-::\-Signal\-Queue\-::delete\-Handler(), writeback\-Handler, exit\-Handler, magic\-\_\-sock, sock, \-I\-P\-Q\-::\-Ipq\-Socket\-::close(), \-Lib\-Wheel\-::logmsg, and logmsg\-\_\-err.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classNERD_1_1ConnectionServer_af4ba681fed213914c83661a1dfd8df6d}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!create\-Connection@{create\-Connection}}
+\index{create\-Connection@{create\-Connection}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{create\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}void \-N\-E\-R\-D\-::\-Connection\-Server\-::create\-Connection (
+\begin{DoxyParamCaption}
+\item[{{\bf \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet} $\ast$}]{pkt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_af4ba681fed213914c83661a1dfd8df6d}
+
+
+\-Creates a \-T\-C\-P connection. 
+
+\-If a program can be found to handle the connection (see \hyperlink{classNERD_1_1ConnectionServer_a9d75b0d048d374095c4d7c96e4add7f8}{\-Connection\-Server\-::find\-Server()}), then this program fork()s and attempts to execute it in the child process. \-If no server can be found, if it cannot be launched, or some other error occurs, the packet is immediately accepted and a message may be logged to \hyperlink{namespaceLibWheel_af4ca70f4f65b2948701218436516a679}{\-Lib\-Wheel\-::logmsg}.
+
+\-The child process is executed with stdout set to the write end of a pipe whose read end is held by the parent. \-The read end is set in non-\/blocking, signal-\/driven mode; its file descriptor, along with the packet, the server program name, and the child process' \-P\-I\-D, is added to a list accessible to the \-S\-I\-G\-I\-O handler (which works through \hyperlink{classLibWheel_1_1SignalQueue}{\-Lib\-Wheel\-::\-Signal\-Queue}). \-This handler is responsible for creating the connection and accepting the packet.
+
+\-If {\ttfamily restrict\-\_\-servers} is set, the child program is executed under the \-U\-I\-D and \-G\-I\-D of the owner of the program. \-If the program is accessed through a symbolic link, the \-U\-I\-D and \-G\-I\-D of the link must match those of the target.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pkt} & \-A packet that initializes a \-T\-C\-P connection. \-If the \-T\-C\-P \-S\-Y\-N flag is not set on {\itshape pkt\/}, a message is logged and it is accepted immediately. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{\-Bug}
+\item[\hyperlink{bug__bug000005}{\-Bug}]\-Checking program ownership and using {\ttfamily execve()} to launch it results in a \-T\-O\-C\-T\-O\-U race condition. \-The solution is to use {\ttfamily fexecve()}. \-However, \-Linux does not currently implement the {\ttfamily fexecve()} system call, and its emulation in glibc does not work on \-Linux kernels prior to 2.\-6.\-22-\/rc1 if the calling program has called {\ttfamily setuid()} or {\ttfamily seteuid()}. \-This {\itshape may\/} have been fixed in \-Linux 2.\-6.\-22-\/rc1. \-When a version of {\ttfamily fexecve()} that {\itshape does\/} work becomes available, undefine the macro {\ttfamily \-B\-R\-O\-K\-E\-N\-\_\-\-F\-E\-X\-E\-C\-V\-E} in the makefile to use {\ttfamily fexecve()} instead of {\ttfamily execve()}. \end{DoxyRefDesc}
+\begin{DoxyParagraph}{\-Side \-Effects\-:}
+\-Writes messages to \hyperlink{namespaceLibWheel_af4ca70f4f65b2948701218436516a679}{\-Lib\-Wheel\-::logmsg}. 
+\end{DoxyParagraph}
+
+
+\-Definition at line 1062 of file nerd.\-cpp.
+
+
+
+\-References \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet\-::get\-Tcp\-Header(), verbose, \-Lib\-Wheel\-::logmsg, logmsg\-\_\-err, sock, \-I\-P\-Q\-::\-Ipq\-Socket\-::send\-Response(), \-I\-P\-Q\-::\-Ipq\-Socket\-::\-A\-C\-C\-E\-P\-T, \-Lib\-Wheel\-::ipv4\-\_\-to\-\_\-string(), \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::get\-Ip\-Dest(), \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet\-::get\-Tcp\-Dest(), find\-Server(), \-Lib\-Wheel\-::uninterruptible\-\_\-close(), pending\-Connections, \-Lib\-Wheel\-::\-Wait\-List\-::add(), \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Record\-::server\-Program, logmsg\-\_\-info, \-N\-E\-R\-D\-\_\-\-P\-I\-P\-E\-\_\-\-F\-D, restrict\-\_\-servers, \-Lib\-Wheel\-::close\-\_\-files\-\_\-on\-\_\-exec(), drop\-\_\-priv(), \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Record\-::server\-Addr, \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Record\-::server\-Port, \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Record\-::server\-Dns\-Record, and logmsg\-\_\-warning.
+
+
+
+\-Referenced by handle\-Packet().
+
+\hypertarget{classNERD_1_1ConnectionServer_ae713c47afe1f248809de764dfda4f1b2}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!create\-Connection@{create\-Connection}}
+\index{create\-Connection@{create\-Connection}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{create\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}void \-N\-E\-R\-D\-::\-Connection\-Server\-::create\-Connection (
+\begin{DoxyParamCaption}
+\item[{{\bf \-I\-P\-Q\-::\-Ipq\-Udp\-Packet} $\ast$}]{pkt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_ae713c47afe1f248809de764dfda4f1b2}
+
+
+\-Creates a \-U\-D\-P connection. 
+
+\-This is not currently implemented, so a warning is logged and the packet is accepted. 
+\begin{DoxyParams}{\-Parameters}
+{\em pkt} & \-A packet that initializes a \-U\-D\-P connection. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 1238 of file nerd.\-cpp.
+
+
+
+\-References verbose, \-Lib\-Wheel\-::logmsg, logmsg\-\_\-warning, sock, \-I\-P\-Q\-::\-Ipq\-Socket\-::send\-Response(), and \-I\-P\-Q\-::\-Ipq\-Socket\-::\-A\-C\-C\-E\-P\-T.
+
+\hypertarget{classNERD_1_1ConnectionServer_a9d75b0d048d374095c4d7c96e4add7f8}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!find\-Server@{find\-Server}}
+\index{find\-Server@{find\-Server}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{find\-Server}]{\setlength{\rightskip}{0pt plus 5cm}void \-N\-E\-R\-D\-::\-Connection\-Server\-::find\-Server (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Server\-Record} \&}]{rec, }
+\item[{in\-\_\-addr\-\_\-t}]{addr}
+\end{DoxyParamCaption}
+) const  throw ({\bf \-Unknown\-Server\-Exception})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_a9d75b0d048d374095c4d7c96e4add7f8}
+
+
+\-Attempts to find a server program to run in response to a connection request. 
+
+\-The following attempts are made\-:
+\begin{DoxyEnumerate}
+\item search for a program named {\itshape rec.\-server\-Addr\-:rec.\-server\-Port\/} in {\ttfamily server\-Root} (example\-: 10.\-1.\-1.\-1\-:23)
+\item search for a program named {\itshape rec.\-server\-Addr\/} in {\ttfamily server\-Root} (example\-: 10.\-1.\-1.\-1)
+\item perform a \-D\-N\-S query for a \-T\-X\-T record for {\itshape server\-Addr\/} to get a semicolon-\/separated list of key=value pairs, and search for a program whose name is given by the value associated with the key \-P$<$rec.\-server\-Port$>$ in {\ttfamily server\-Root} (example\-: \-D=foobar.\-com;\-P25=smtpserver;\-P80=webserver). \-If more than one \-D\-N\-S \-T\-X\-T record is found, only the first one is used and a warning is logged.
+\end{DoxyEnumerate}\-If no server program is found using any of these methods, an \hyperlink{classNERD_1_1ConnectionServer_1_1UnknownServerException}{\-Unknown\-Server\-Exception} is thrown. 
+\begin{DoxyParams}{\-Parameters}
+{\em rec} & \-A description of the connection requested. \-The following fields must be set when this function is called\-:
+\begin{DoxyItemize}
+\item \hyperlink{structNERD_1_1ConnectionServer_1_1ServerRecord_a741796c62f55fc2d3b7ac5807d4bfdf8}{\-Server\-Record\-::server\-Addr}
+\item \hyperlink{structNERD_1_1ConnectionServer_1_1ServerRecord_a8eeda51ef462eeabb3d66b130fe70e56}{\-Server\-Record\-::server\-Port}
+\item \hyperlink{structNERD_1_1ConnectionServer_1_1ServerRecord_a8e253a76e9dbd9eaf239f09ff9d1e69f}{\-Server\-Record\-::server\-Proto}
+\end{DoxyItemize}\-When this function returns, the \hyperlink{structNERD_1_1ConnectionServer_1_1ServerRecord_a9bacaaa47cedda53feb069fbc1be8b8c}{\-Server\-Record\-::server\-Program} filled will be filled with the name of the program to run, and the \hyperlink{structNERD_1_1ConnectionServer_1_1ServerRecord_a1272b0f4ca611ecc8c2b2b76c75c5f91}{\-Server\-Record\-::server\-Dns\-Record} field may be filled with the \-D\-N\-S \-T\-X\-T record for the server's \-I\-P address. \\
+\hline
+{\em addr} & \-The \-I\-P address of the requested server, in host byte order. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{\-Exceptions}
+{\em \hyperlink{classNERD_1_1ConnectionServer_1_1UnknownServerException}{\-Unknown\-Server\-Exception}} & \-If no server program can be found for the requested server. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyParagraph}{\-Side \-Effects\-:}
+\-May write messages to \hyperlink{namespaceLibWheel_af4ca70f4f65b2948701218436516a679}{\-Lib\-Wheel\-::logmsg}. 
+\end{DoxyParagraph}
+
+
+\-Definition at line 1278 of file nerd.\-cpp.
+
+
+
+\-References server\-Root, is\-Executable(), \-Lib\-Wheel\-::get\-Dns\-Txt(), \-Lib\-Wheel\-::logmsg, logmsg\-\_\-warning, \-Lib\-Wheel\-::ipv4\-\_\-to\-\_\-string(), verbose, logmsg\-\_\-info, \-N\-E\-R\-D\-::\-Dns\-Server\-Record\-::get\-Value(), \-N\-E\-R\-D\-::\-Dns\-Server\-Record\-::end(), and logmsg\-\_\-err.
+
+
+
+\-Referenced by create\-Connection().
+
+\hypertarget{classNERD_1_1ConnectionServer_afd85b7ad69696355650a0177d01f0a06}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!get\-Redirect\-Rule@{get\-Redirect\-Rule}}
+\index{get\-Redirect\-Rule@{get\-Redirect\-Rule}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{get\-Redirect\-Rule}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Connection\-Server\-::\-Address\-Pair} \& \-N\-E\-R\-D\-::\-Connection\-Server\-::get\-Redirect\-Rule (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet} $\ast$}]{pkt}
+\end{DoxyParamCaption}
+) const  throw ({\bf \-Unknown\-Connection\-Exception})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_afd85b7ad69696355650a0177d01f0a06}
+
+
+\-Looks up a redirection rule for a \-T\-C\-P packet. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pkt} & \-The packet to look up. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The redirection rule for {\itshape pkt\/}, if it exists. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{\-Exceptions}
+{\em \hyperlink{classNERD_1_1ConnectionServer_1_1UnknownConnectionException}{\-Unknown\-Connection\-Exception}} & \-If no redirection rule for {\itshape pkt\/} exists. \\
+\hline
+\end{DoxyExceptions}
+
+
+\-Definition at line 1002 of file nerd.\-cpp.
+
+
+
+\-References redirections.
+
+
+
+\-Referenced by handle\-Packet().
+
+\hypertarget{classNERD_1_1ConnectionServer_aca2ea51c7622b3ecb11cbaa976b9a137}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!get\-Redirect\-Rule@{get\-Redirect\-Rule}}
+\index{get\-Redirect\-Rule@{get\-Redirect\-Rule}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{get\-Redirect\-Rule}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Connection\-Server\-::\-Address\-Pair} \& \-N\-E\-R\-D\-::\-Connection\-Server\-::get\-Redirect\-Rule (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-I\-P\-Q\-::\-Ipq\-Udp\-Packet} $\ast$}]{pkt}
+\end{DoxyParamCaption}
+) const  throw ({\bf \-Unknown\-Connection\-Exception})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_aca2ea51c7622b3ecb11cbaa976b9a137}
+
+
+\-Looks up a redirection rule for a \-U\-D\-P packet. 
+
+\-U\-D\-P connection are not currently implemented, so this method simply throws an \hyperlink{classNERD_1_1ConnectionServer_1_1UnknownConnectionException}{\-Unknown\-Connection\-Exception}. \begin{DoxyReturn}{\-Returns}
+\-Theoretically, the redirection rule for the packet, but this is not currently implemented. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{\-Exceptions}
+{\em \hyperlink{classNERD_1_1ConnectionServer_1_1UnknownConnectionException}{\-Unknown\-Connection\-Exception}} & \-If no redirection rule for the packet exists. \\
+\hline
+\end{DoxyExceptions}
+
+
+\-Definition at line 1023 of file nerd.\-cpp.
+
+\hypertarget{classNERD_1_1ConnectionServer_a5b183a39539b07fe4a92ef3ad88d7c92}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!handle\-Packet@{handle\-Packet}}
+\index{handle\-Packet@{handle\-Packet}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{handle\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}void \-N\-E\-R\-D\-::\-Connection\-Server\-::handle\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf \-I\-P\-Q\-::\-Ipq\-Packet} $\ast$}]{packet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_a5b183a39539b07fe4a92ef3ad88d7c92}
+
+
+\-Handle a packet. 
+
+\-If the packet is part of a pre-\/existing connection, redirect the packet accordingly. \-Otherwise, attempt to create a connection for the packet.
+
+\-Currently, \-I\-P fragments and non-\/\-T\-C\-P/\-I\-P packets are not supported. \-Packets of these types will be accepted unmodified, and messages will be logged to \hyperlink{namespaceLibWheel_af4ca70f4f65b2948701218436516a679}{\-Lib\-Wheel\-::logmsg}. 
+\begin{DoxyParams}{\-Parameters}
+{\em packet} & \-The packet to redirect. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{\-Bug}
+\item[\hyperlink{bug__bug000004}{\-Bug}]\-There is a bug in netfilter that causes locally-\/generated outbound packets with non-\/local source \-I\-P addresses to be dropped. \-Since packets returning to a client program from a server match this description after being redirected, they must be accepted with \-N\-F\-\_\-\-S\-T\-O\-P rather than \-N\-F\-\_\-\-A\-C\-C\-E\-P\-T. \-This means that they do not continue iptables traversal, and cannot be filtered elsewhere in iptables. \end{DoxyRefDesc}
+
+
+\-Definition at line 894 of file nerd.\-cpp.
+
+
+
+\-References \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::get\-More\-Frags(), \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::get\-Frag\-Offset(), \-Lib\-Wheel\-::logmsg, logmsg\-\_\-warning, sock, \-I\-P\-Q\-::\-Ipq\-Socket\-::send\-Response(), \-I\-P\-Q\-::\-Ipq\-Socket\-::\-A\-C\-C\-E\-P\-T, get\-Redirect\-Rule(), logmsg\-\_\-info, \-Lib\-Wheel\-::ipv4\-\_\-to\-\_\-string(), \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::get\-Ip\-Source(), \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet\-::get\-Tcp\-Source(), \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::get\-Ip\-Dest(), \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet\-::get\-Tcp\-Dest(), \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::get\-Ip\-Header(), \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet\-::get\-Tcp\-Header(), \-L\-O\-C\-A\-L\-H\-O\-S\-T\-\_\-\-I\-P, \-I\-P\-Q\-::\-Ipq\-Socket\-::\-S\-T\-O\-P, create\-Connection(), \-I\-P\-Q\-::\-Ipq\-Udp\-Packet\-::get\-Udp\-Source(), \-I\-P\-Q\-::\-Ipq\-Udp\-Packet\-::get\-Udp\-Dest(), \-I\-P\-Q\-::\-Ipq\-Udp\-Packet\-::get\-Udp\-Header(), and \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::get\-Protocol().
+
+
+
+\-Referenced by operator()().
+
+\hypertarget{classNERD_1_1ConnectionServer_a31818d0fbe0366a7b902095445405406}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!is\-Executable@{is\-Executable}}
+\index{is\-Executable@{is\-Executable}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{is\-Executable}]{\setlength{\rightskip}{0pt plus 5cm}bool \-N\-E\-R\-D\-::\-Connection\-Server\-::is\-Executable (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{file}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_a31818d0fbe0366a7b902095445405406}
+
+
+\-Determines if a file is executable. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em file} & \-The file to check for executability. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if {\itshape file\/} exists and is executable by the current user; {\bfseries false} otherwise. 
+\end{DoxyReturn}
+\begin{DoxyNote}{\-Note}
+\-If {\itshape file\/} cannot be accessed or exists but is not executable, a message is logged to \hyperlink{namespaceLibWheel_af4ca70f4f65b2948701218436516a679}{\-Lib\-Wheel\-::logmsg}. 
+\end{DoxyNote}
+
+
+\-Definition at line 1347 of file nerd.\-cpp.
+
+
+
+\-References \-Lib\-Wheel\-::logmsg, and logmsg\-\_\-err.
+
+
+
+\-Referenced by find\-Server().
+
+\hypertarget{classNERD_1_1ConnectionServer_af506b23a0c81f40f8f449bb388005424}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!operator()@{operator()}}
+\index{operator()@{operator()}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}void \-N\-E\-R\-D\-::\-Connection\-Server\-::operator() (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classNERD_1_1ConnectionServer_af506b23a0c81f40f8f449bb388005424}
+
+
+\-Main loop for \hyperlink{classNERD_1_1ConnectionServer}{\-Connection\-Server}. 
+
+\-Receive packets from libipq and pass them off to \hyperlink{classNERD_1_1ConnectionServer_a5b183a39539b07fe4a92ef3ad88d7c92}{\-Connection\-Server\-::handle\-Packet} for processing; stop when \-S\-I\-G\-I\-N\-T is received. \-All signals that arrive through \-Signal\-Queue are also processed from this method. 
+
+\-Definition at line 490 of file nerd.\-cpp.
+
+
+
+\-References sock, \-I\-P\-Q\-::\-Ipq\-Socket\-::wait\-For\-Packet(), \-Lib\-Wheel\-::\-Signal\-Queue\-::get\-Read\-F\-D(), \-Lib\-Wheel\-::\-Signal\-Queue\-::handle\-Next(), \-I\-P\-Q\-::\-Ipq\-Socket\-::recv\-Packet(), handle\-Packet(), \-Lib\-Wheel\-::logmsg, logmsg\-\_\-err, and logmsg\-\_\-notice.
+
+\hypertarget{classNERD_1_1ConnectionServer_a52574c2792a324c56435234da19cc183}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!print\-Stats@{print\-Stats}}
+\index{print\-Stats@{print\-Stats}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{print\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}void \-N\-E\-R\-D\-::\-Connection\-Server\-::print\-Stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classNERD_1_1ConnectionServer_a52574c2792a324c56435234da19cc183}
+
+
+\-Print current server status to \hyperlink{namespaceLibWheel_af4ca70f4f65b2948701218436516a679}{\-Lib\-Wheel\-::logmsg}. 
+
+
+
+\-Definition at line 528 of file nerd.\-cpp.
+
+
+
+\-References \-Lib\-Wheel\-::logmsg, logmsg\-\_\-info, redirections, timeout\-List, \-Lib\-Wheel\-::\-Wait\-List\-::size(), pending\-Connections, servers, \-Lib\-Wheel\-::open\-\_\-files(), sock, \-I\-P\-Q\-::\-Ipq\-Socket\-::get\-Packets\-Received(), \-I\-P\-Q\-::\-Ipq\-Socket\-::get\-Packets\-Accepted(), and \-I\-P\-Q\-::\-Ipq\-Socket\-::get\-Packets\-Dropped().
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Stat\-Printer\-::operator()().
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classNERD_1_1ConnectionServer_a87fc9625f6d518ffe294e4f759d3cae0}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!exit\-Handler@{exit\-Handler}}
+\index{exit\-Handler@{exit\-Handler}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{exit\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Server\-Exit\-Handler} {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::exit\-Handler}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_a87fc9625f6d518ffe294e4f759d3cae0}
+
+
+\-The functor that handles \-S\-I\-G\-C\-H\-L\-D signals when servers exit. 
+
+
+
+\-Definition at line 286 of file nerd.\-cpp.
+
+
+
+\-Referenced by $\sim$\-Connection\-Server().
+
+\hypertarget{classNERD_1_1ConnectionServer_a3168fab5ca817d2cd2cb7ca15228440d}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!magic\-\_\-sock@{magic\-\_\-sock}}
+\index{magic\-\_\-sock@{magic\-\_\-sock}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{magic\-\_\-sock}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::magic\-\_\-sock}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_a3168fab5ca817d2cd2cb7ca15228440d}
+
+
+\-A socket bound to 127.\-0.\-0.\-1\-:\-M\-A\-G\-I\-C\-\_\-\-P\-O\-R\-T/\-T\-C\-P. 
+
+
+
+\-Definition at line 289 of file nerd.\-cpp.
+
+
+
+\-Referenced by $\sim$\-Connection\-Server().
+
+\hypertarget{classNERD_1_1ConnectionServer_ad051d0ac714b53904e86c368cd90275c}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!pending\-Connections@{pending\-Connections}}
+\index{pending\-Connections@{pending\-Connections}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{pending\-Connections}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Pending\-Connection\-List} {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::pending\-Connections}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_ad051d0ac714b53904e86c368cd90275c}
+
+
+\-The list of servers (and associated initial packets) which have been started but have not yet responded with packet numbers. 
+
+
+
+\-Definition at line 282 of file nerd.\-cpp.
+
+
+
+\-Referenced by print\-Stats(), \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler\-::operator()(), \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler\-::find\-Pending\-Connection(), \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler\-::operator()(), and create\-Connection().
+
+\hypertarget{classNERD_1_1ConnectionServer_a4186be4b373165c72ab81a73165cb075}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!redirections@{redirections}}
+\index{redirections@{redirections}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{redirections}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Redirection\-Table} {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::redirections}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_a4186be4b373165c72ab81a73165cb075}
+
+
+\-A hash table of rules governing packet redirections for open conncetions. 
+
+
+
+\-Definition at line 283 of file nerd.\-cpp.
+
+
+
+\-Referenced by print\-Stats(), \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler\-::operator()(), \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler\-::operator()(), and get\-Redirect\-Rule().
+
+\hypertarget{classNERD_1_1ConnectionServer_ae54611cb80881c2a73d69e145df4bbd7}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!restrict\-\_\-servers@{restrict\-\_\-servers}}
+\index{restrict\-\_\-servers@{restrict\-\_\-servers}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{restrict\-\_\-servers}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::restrict\-\_\-servers}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_ae54611cb80881c2a73d69e145df4bbd7}
+
+
+{\bfseries true} to limit the privileges of server programs; {\bfseries false} otherwise. 
+
+
+
+\-Definition at line 288 of file nerd.\-cpp.
+
+
+
+\-Referenced by create\-Connection().
+
+\hypertarget{classNERD_1_1ConnectionServer_a5e476e6dd3a15d073b4a3f75569dc240}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!server\-Root@{server\-Root}}
+\index{server\-Root@{server\-Root}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{server\-Root}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::server\-Root}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_a5e476e6dd3a15d073b4a3f75569dc240}
+
+
+\-The directory in which to search for server programs. 
+
+
+
+\-Definition at line 280 of file nerd.\-cpp.
+
+
+
+\-Referenced by find\-Server().
+
+\hypertarget{classNERD_1_1ConnectionServer_a990a4882c5123f35208d36cabb5fef67}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!servers@{servers}}
+\index{servers@{servers}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{servers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Server\-Table} {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::servers}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_a990a4882c5123f35208d36cabb5fef67}
+
+
+\-A hash table of server process \-I\-Ds and the connections that they handle. 
+
+
+
+\-Definition at line 285 of file nerd.\-cpp.
+
+
+
+\-Referenced by print\-Stats(), \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler\-::operator()(), and \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler\-::operator()().
+
+\hypertarget{classNERD_1_1ConnectionServer_ad9575a11fd2db34b92ab1627c2d1d5b0}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!sock@{sock}}
+\index{sock@{sock}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{sock}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-I\-P\-Q\-::\-Ipq\-Socket}\& {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::sock}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_ad9575a11fd2db34b92ab1627c2d1d5b0}
+
+
+\-A handle to libipq. 
+
+
+
+\-Definition at line 279 of file nerd.\-cpp.
+
+
+
+\-Referenced by $\sim$\-Connection\-Server(), operator()(), print\-Stats(), \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler\-::operator()(), handle\-Packet(), and create\-Connection().
+
+\hypertarget{classNERD_1_1ConnectionServer_adc22ef94ff5d014433eef07e054e1d69}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!timeout\-List@{timeout\-List}}
+\index{timeout\-List@{timeout\-List}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{timeout\-List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Timeout\-List} {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::timeout\-List}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_adc22ef94ff5d014433eef07e054e1d69}
+
+
+\-A list of redirection rules to be deleted when timeouts expire. 
+
+
+
+\-Definition at line 284 of file nerd.\-cpp.
+
+
+
+\-Referenced by print\-Stats(), and \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler\-::operator()().
+
+\hypertarget{classNERD_1_1ConnectionServer_a36f12900d6c2461984a1e093bfc42403}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!verbose@{verbose}}
+\index{verbose@{verbose}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{verbose}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::verbose}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_a36f12900d6c2461984a1e093bfc42403}
+
+
+{\bfseries true} to log extra messages; {\bfseries false} otherwise 
+
+
+
+\-Definition at line 281 of file nerd.\-cpp.
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler\-::operator()(), create\-Connection(), and find\-Server().
+
+\hypertarget{classNERD_1_1ConnectionServer_a8aa938754f8f34144d205d4dd208d91a}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server@{\-N\-E\-R\-D\-::\-Connection\-Server}!writeback\-Handler@{writeback\-Handler}}
+\index{writeback\-Handler@{writeback\-Handler}!NERD::ConnectionServer@{\-N\-E\-R\-D\-::\-Connection\-Server}}
+\subsubsection[{writeback\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Server\-Writeback\-Handler} {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::writeback\-Handler}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_a8aa938754f8f34144d205d4dd208d91a}
+
+
+\-The functor that handles \-S\-I\-G\-I\-O signals when servers write back their port numbers. 
+
+
+
+\-Definition at line 287 of file nerd.\-cpp.
+
+
+
+\-Referenced by $\sim$\-Connection\-Server().
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{nerd_8cpp}{nerd.\-cpp}\end{DoxyCompactItemize}

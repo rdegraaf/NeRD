@@ -1,0 +1,110 @@
+\hypertarget{nerd_8h}{
+\section{nerd.h \-File \-Reference}
+\label{nerd_8h}\index{nerd.\-h@{nerd.\-h}}
+}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{nerd_8h_aca443d46068e6798392b31ed401d0772}{\-N\-E\-R\-D\-\_\-\-V\-E\-R\-S\-I\-O\-N}~\char`\"{}0.\-3.\-1\char`\"{}
+\begin{DoxyCompactList}\small\item\em \-Version of \hyperlink{namespaceNERD}{\-N\-E\-R\-D} described by this file. \end{DoxyCompactList}\item 
+\#define \hyperlink{nerd_8h_a7c7332d88dae4ce42af07cb9b114f13b}{\-N\-E\-R\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-R\-O\-O\-T}~\char`\"{}/var/nerd/servers\char`\"{}
+\begin{DoxyCompactList}\small\item\em \-Servers (or symbolic links to them) must be stored in this directory. \end{DoxyCompactList}\item 
+\#define \hyperlink{nerd_8h_acba6ef2e5aa80202ccb9560d240e0f62}{\-N\-E\-R\-D\-\_\-\-P\-I\-P\-E\-\_\-\-F\-D}~1
+\begin{DoxyCompactList}\small\item\em \-Servers must write the local port number that they are using to this file descriptor in network byte order within \-N\-E\-R\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-T\-I\-M\-E\-O\-U\-T seconds of starting. \end{DoxyCompactList}\item 
+\#define \hyperlink{nerd_8h_ae2efab2aa91eb500d5596c85b992655c}{\-N\-E\-R\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-T\-I\-M\-E\-O\-U\-T}~10
+\begin{DoxyCompactList}\small\item\em \-If \hyperlink{namespaceNERD}{\-N\-E\-R\-D} has not received a port number from a server within this many seconds of it starting, it will assume that the server crashed and stop waiting. \end{DoxyCompactList}\item 
+\#define \hyperlink{nerd_8h_a830234a09246e7f1e8932be42df60eed}{\-N\-E\-R\-D\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-O\-N\-\_\-\-T\-I\-M\-E\-O\-U\-T}~60
+\begin{DoxyCompactList}\small\item\em \-After a server exits, packets will still be forwarded to it for this many seconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\begin{DoxyAuthor}{\-Author}
+\-Rennie de\-Graaf 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+2007/12/13
+\end{DoxyDate}
+\-The public interface to the \-Network \-Rerouter \-Daemon (nerd). 
+
+\-Definition in file \hyperlink{nerd_8h_source}{nerd.\-h}.
+
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{nerd_8h_a830234a09246e7f1e8932be42df60eed}{
+\index{nerd.\-h@{nerd.\-h}!\-N\-E\-R\-D\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-O\-N\-\_\-\-T\-I\-M\-E\-O\-U\-T@{\-N\-E\-R\-D\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-O\-N\-\_\-\-T\-I\-M\-E\-O\-U\-T}}
+\index{\-N\-E\-R\-D\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-O\-N\-\_\-\-T\-I\-M\-E\-O\-U\-T@{\-N\-E\-R\-D\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-O\-N\-\_\-\-T\-I\-M\-E\-O\-U\-T}!nerd.h@{nerd.\-h}}
+\subsubsection[{\-N\-E\-R\-D\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-O\-N\-\_\-\-T\-I\-M\-E\-O\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-N\-E\-R\-D\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-O\-N\-\_\-\-T\-I\-M\-E\-O\-U\-T~60}}
+\label{nerd_8h_a830234a09246e7f1e8932be42df60eed}
+
+
+\-After a server exits, packets will still be forwarded to it for this many seconds. 
+
+\-This should correspond to the duration of the \-T\-I\-M\-E\-\_\-\-W\-A\-I\-T \-T\-C\-P state. 
+
+\-Definition at line 37 of file nerd.\-h.
+
+\hypertarget{nerd_8h_acba6ef2e5aa80202ccb9560d240e0f62}{
+\index{nerd.\-h@{nerd.\-h}!\-N\-E\-R\-D\-\_\-\-P\-I\-P\-E\-\_\-\-F\-D@{\-N\-E\-R\-D\-\_\-\-P\-I\-P\-E\-\_\-\-F\-D}}
+\index{\-N\-E\-R\-D\-\_\-\-P\-I\-P\-E\-\_\-\-F\-D@{\-N\-E\-R\-D\-\_\-\-P\-I\-P\-E\-\_\-\-F\-D}!nerd.h@{nerd.\-h}}
+\subsubsection[{\-N\-E\-R\-D\-\_\-\-P\-I\-P\-E\-\_\-\-F\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-N\-E\-R\-D\-\_\-\-P\-I\-P\-E\-\_\-\-F\-D~1}}
+\label{nerd_8h_acba6ef2e5aa80202ccb9560d240e0f62}
+
+
+\-Servers must write the local port number that they are using to this file descriptor in network byte order within \-N\-E\-R\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-T\-I\-M\-E\-O\-U\-T seconds of starting. 
+
+
+
+\-Definition at line 27 of file nerd.\-h.
+
+
+
+\-Referenced by main(), and \-N\-E\-R\-D\-::\-Connection\-Server\-::create\-Connection().
+
+\hypertarget{nerd_8h_a7c7332d88dae4ce42af07cb9b114f13b}{
+\index{nerd.\-h@{nerd.\-h}!\-N\-E\-R\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-R\-O\-O\-T@{\-N\-E\-R\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-R\-O\-O\-T}}
+\index{\-N\-E\-R\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-R\-O\-O\-T@{\-N\-E\-R\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-R\-O\-O\-T}!nerd.h@{nerd.\-h}}
+\subsubsection[{\-N\-E\-R\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-R\-O\-O\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-N\-E\-R\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-R\-O\-O\-T~\char`\"{}/var/nerd/servers\char`\"{}}}
+\label{nerd_8h_a7c7332d88dae4ce42af07cb9b114f13b}
+
+
+\-Servers (or symbolic links to them) must be stored in this directory. 
+
+
+
+\-Definition at line 22 of file nerd.\-h.
+
+
+
+\-Referenced by main().
+
+\hypertarget{nerd_8h_ae2efab2aa91eb500d5596c85b992655c}{
+\index{nerd.\-h@{nerd.\-h}!\-N\-E\-R\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-T\-I\-M\-E\-O\-U\-T@{\-N\-E\-R\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-T\-I\-M\-E\-O\-U\-T}}
+\index{\-N\-E\-R\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-T\-I\-M\-E\-O\-U\-T@{\-N\-E\-R\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-T\-I\-M\-E\-O\-U\-T}!nerd.h@{nerd.\-h}}
+\subsubsection[{\-N\-E\-R\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-T\-I\-M\-E\-O\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-N\-E\-R\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-T\-I\-M\-E\-O\-U\-T~10}}
+\label{nerd_8h_ae2efab2aa91eb500d5596c85b992655c}
+
+
+\-If \hyperlink{namespaceNERD}{\-N\-E\-R\-D} has not received a port number from a server within this many seconds of it starting, it will assume that the server crashed and stop waiting. 
+
+
+
+\-Definition at line 32 of file nerd.\-h.
+
+\hypertarget{nerd_8h_aca443d46068e6798392b31ed401d0772}{
+\index{nerd.\-h@{nerd.\-h}!\-N\-E\-R\-D\-\_\-\-V\-E\-R\-S\-I\-O\-N@{\-N\-E\-R\-D\-\_\-\-V\-E\-R\-S\-I\-O\-N}}
+\index{\-N\-E\-R\-D\-\_\-\-V\-E\-R\-S\-I\-O\-N@{\-N\-E\-R\-D\-\_\-\-V\-E\-R\-S\-I\-O\-N}!nerd.h@{nerd.\-h}}
+\subsubsection[{\-N\-E\-R\-D\-\_\-\-V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-N\-E\-R\-D\-\_\-\-V\-E\-R\-S\-I\-O\-N~\char`\"{}0.\-3.\-1\char`\"{}}}
+\label{nerd_8h_aca443d46068e6798392b31ed401d0772}
+
+
+\-Version of \hyperlink{namespaceNERD}{\-N\-E\-R\-D} described by this file. 
+
+
+
+\-Definition at line 19 of file nerd.\-h.
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::print\-\_\-version().
+

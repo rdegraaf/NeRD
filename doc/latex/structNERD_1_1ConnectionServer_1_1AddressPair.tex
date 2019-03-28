@@ -1,0 +1,194 @@
+\hypertarget{structNERD_1_1ConnectionServer_1_1AddressPair}{
+\section{\-N\-E\-R\-D\-:\-:\-Connection\-Server\-:\-:\-Address\-Pair \-Struct \-Reference}
+\label{structNERD_1_1ConnectionServer_1_1AddressPair}\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair}}
+}
+
+
+\-The source and destination addresses of \-I\-P packets travelling in one direction in a connection.  
+
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair_a754684b80d70b7ec666a23cfcfce1362}{\-Address\-Pair} (const \hyperlink{classIPQ_1_1IpqTcpPacket}{\-I\-P\-Q\-::\-Ipq\-Tcp\-Packet} $\ast$pkt)
+\begin{DoxyCompactList}\small\item\em \-Constructor for \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}. \end{DoxyCompactList}\item 
+\hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair_ab6660cb88d8c3e0599010b533055f1ae}{\-Address\-Pair} (boost\-::uint32\-\_\-t sa, boost\-::uint32\-\_\-t da, boost\-::uint16\-\_\-t sp, boost\-::uint16\-\_\-t dp, boost\-::uint8\-\_\-t prot)
+\begin{DoxyCompactList}\small\item\em \-Constructor for \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}. \end{DoxyCompactList}\item 
+bool \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair_a39646b4ae1a85e00388f8282b50945b7}{operator==} (const \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair} \&a) const 
+\begin{DoxyCompactList}\small\item\em \-Comparison operator for \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const boost\-::uint32\-\_\-t \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair_a96cf9e68f77b3c0894cc70be7440c230}{src\-Addr}
+\begin{DoxyCompactList}\small\item\em \-Packet source \-I\-P address. \end{DoxyCompactList}\item 
+const boost\-::uint32\-\_\-t \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair_a820ebb84f573dc37a49261ab707d435f}{dst\-Addr}
+\begin{DoxyCompactList}\small\item\em \-Packet destination \-I\-P address. \end{DoxyCompactList}\item 
+const boost\-::uint16\-\_\-t \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair_ae4d253c1b72fe3424484d5d02a38c073}{src\-Port}
+\begin{DoxyCompactList}\small\item\em \-Packet source port. \end{DoxyCompactList}\item 
+const boost\-::uint16\-\_\-t \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair_ad2962570ad683405d91087e11f78aeea}{dst\-Port}
+\begin{DoxyCompactList}\small\item\em \-Packet destination port. \end{DoxyCompactList}\item 
+const boost\-::uint8\-\_\-t \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair_a298c525bf23bb1ccec0d7d1b2b4ee2db}{protocol}
+\begin{DoxyCompactList}\small\item\em \-Packet transport protocol number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-The source and destination addresses of \-I\-P packets travelling in one direction in a connection. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{structNERD_1_1ConnectionServer_1_1AddressPair_a754684b80d70b7ec666a23cfcfce1362}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair}!\-Address\-Pair@{\-Address\-Pair}}
+\index{\-Address\-Pair@{\-Address\-Pair}!NERD::ConnectionServer::AddressPair@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair}}
+\subsubsection[{\-Address\-Pair}]{\setlength{\rightskip}{0pt plus 5cm}\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-::\-Address\-Pair (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet} $\ast$}]{pkt}
+\end{DoxyParamCaption}
+)}}
+\label{structNERD_1_1ConnectionServer_1_1AddressPair_a754684b80d70b7ec666a23cfcfce1362}
+
+
+\-Constructor for \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}. 
+
+\-Initialize an \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair} from a \-T\-C\-P packet. 
+\begin{DoxyParams}{\-Parameters}
+{\em pkt} & \-A \-T\-C\-P packet. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 569 of file nerd.\-cpp.
+
+\hypertarget{structNERD_1_1ConnectionServer_1_1AddressPair_ab6660cb88d8c3e0599010b533055f1ae}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair}!\-Address\-Pair@{\-Address\-Pair}}
+\index{\-Address\-Pair@{\-Address\-Pair}!NERD::ConnectionServer::AddressPair@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair}}
+\subsubsection[{\-Address\-Pair}]{\setlength{\rightskip}{0pt plus 5cm}\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-::\-Address\-Pair (
+\begin{DoxyParamCaption}
+\item[{boost\-::uint32\-\_\-t}]{sa, }
+\item[{boost\-::uint32\-\_\-t}]{da, }
+\item[{boost\-::uint16\-\_\-t}]{sp, }
+\item[{boost\-::uint16\-\_\-t}]{dp, }
+\item[{boost\-::uint8\-\_\-t}]{prot}
+\end{DoxyParamCaption}
+)}}
+\label{structNERD_1_1ConnectionServer_1_1AddressPair_ab6660cb88d8c3e0599010b533055f1ae}
+
+
+\-Constructor for \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}. 
+
+\-Initialize an \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair} from components. 
+\begin{DoxyParams}{\-Parameters}
+{\em sa} & \-The source \-I\-P address for the \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}. \\
+\hline
+{\em da} & \-The destination \-I\-P address for the \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}. \\
+\hline
+{\em sp} & \-The source port number for the \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}. \\
+\hline
+{\em dp} & \-The destination port number for the \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}. \\
+\hline
+{\em prot} & \-The transport protocol number for the \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 582 of file nerd.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{structNERD_1_1ConnectionServer_1_1AddressPair_a39646b4ae1a85e00388f8282b50945b7}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair}!operator==@{operator==}}
+\index{operator==@{operator==}!NERD::ConnectionServer::AddressPair@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Address\-Pair} \&}]{b}
+\end{DoxyParamCaption}
+) const}}
+\label{structNERD_1_1ConnectionServer_1_1AddressPair_a39646b4ae1a85e00388f8282b50945b7}
+
+
+\-Comparison operator for \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}. 
+
+\-Compare two \-Address\-Pairs. 
+\begin{DoxyParams}{\-Parameters}
+{\em b} & \-Another \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if all fields of this \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair} are equal to those of {\itshape b\/}; {\bfseries false} otherwise. 
+\end{DoxyReturn}
+
+
+\-Definition at line 594 of file nerd.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{structNERD_1_1ConnectionServer_1_1AddressPair_a820ebb84f573dc37a49261ab707d435f}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair}!dst\-Addr@{dst\-Addr}}
+\index{dst\-Addr@{dst\-Addr}!NERD::ConnectionServer::AddressPair@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair}}
+\subsubsection[{dst\-Addr}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::uint32\-\_\-t {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-::dst\-Addr}}}
+\label{structNERD_1_1ConnectionServer_1_1AddressPair_a820ebb84f573dc37a49261ab707d435f}
+
+
+\-Packet destination \-I\-P address. 
+
+
+
+\-Definition at line 137 of file nerd.\-cpp.
+
+\hypertarget{structNERD_1_1ConnectionServer_1_1AddressPair_ad2962570ad683405d91087e11f78aeea}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair}!dst\-Port@{dst\-Port}}
+\index{dst\-Port@{dst\-Port}!NERD::ConnectionServer::AddressPair@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair}}
+\subsubsection[{dst\-Port}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::uint16\-\_\-t {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-::dst\-Port}}}
+\label{structNERD_1_1ConnectionServer_1_1AddressPair_ad2962570ad683405d91087e11f78aeea}
+
+
+\-Packet destination port. 
+
+
+
+\-Definition at line 139 of file nerd.\-cpp.
+
+\hypertarget{structNERD_1_1ConnectionServer_1_1AddressPair_a298c525bf23bb1ccec0d7d1b2b4ee2db}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair}!protocol@{protocol}}
+\index{protocol@{protocol}!NERD::ConnectionServer::AddressPair@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair}}
+\subsubsection[{protocol}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::uint8\-\_\-t {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-::protocol}}}
+\label{structNERD_1_1ConnectionServer_1_1AddressPair_a298c525bf23bb1ccec0d7d1b2b4ee2db}
+
+
+\-Packet transport protocol number. 
+
+
+
+\-Definition at line 140 of file nerd.\-cpp.
+
+\hypertarget{structNERD_1_1ConnectionServer_1_1AddressPair_a96cf9e68f77b3c0894cc70be7440c230}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair}!src\-Addr@{src\-Addr}}
+\index{src\-Addr@{src\-Addr}!NERD::ConnectionServer::AddressPair@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair}}
+\subsubsection[{src\-Addr}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::uint32\-\_\-t {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-::src\-Addr}}}
+\label{structNERD_1_1ConnectionServer_1_1AddressPair_a96cf9e68f77b3c0894cc70be7440c230}
+
+
+\-Packet source \-I\-P address. 
+
+
+
+\-Definition at line 136 of file nerd.\-cpp.
+
+\hypertarget{structNERD_1_1ConnectionServer_1_1AddressPair_ae4d253c1b72fe3424484d5d02a38c073}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair}!src\-Port@{src\-Port}}
+\index{src\-Port@{src\-Port}!NERD::ConnectionServer::AddressPair@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair}}
+\subsubsection[{src\-Port}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::uint16\-\_\-t {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-::src\-Port}}}
+\label{structNERD_1_1ConnectionServer_1_1AddressPair_ae4d253c1b72fe3424484d5d02a38c073}
+
+
+\-Packet source port. 
+
+
+
+\-Definition at line 138 of file nerd.\-cpp.
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{nerd_8cpp}{nerd.\-cpp}\end{DoxyCompactItemize}

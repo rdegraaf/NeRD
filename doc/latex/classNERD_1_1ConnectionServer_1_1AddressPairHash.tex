@@ -1,0 +1,103 @@
+\hypertarget{classNERD_1_1ConnectionServer_1_1AddressPairHash}{
+\section{\-N\-E\-R\-D\-:\-:\-Connection\-Server\-:\-:\-Address\-Pair\-Hash \-Class \-Reference}
+\label{classNERD_1_1ConnectionServer_1_1AddressPairHash}\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-Hash@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-Hash}}
+}
+
+
+\-A functor that computes a hash of an \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}, suitable for use with \-\_\-\-\_\-gnu\-\_\-cxx\-::hash\-\_\-map.  
+
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\-\_\-t \hyperlink{classNERD_1_1ConnectionServer_1_1AddressPairHash_a36bbb841fe3f2cbacb4cab2687675c4d}{operator()} (const \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair} \&addr) const 
+\begin{DoxyCompactList}\small\item\em \-Compute a hash of an \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\-\_\-\-\_\-gnu\-\_\-cxx\-::hash$<$ boost\-::uint32\-\_\-t $>$ \hyperlink{classNERD_1_1ConnectionServer_1_1AddressPairHash_aa97511d9c6987cd101fb7f201f8e660a}{hash32}
+\begin{DoxyCompactList}\small\item\em \-A hasher for unsigned 32-\/bit integers. \end{DoxyCompactList}\item 
+\-\_\-\-\_\-gnu\-\_\-cxx\-::hash$<$ boost\-::uint16\-\_\-t $>$ \hyperlink{classNERD_1_1ConnectionServer_1_1AddressPairHash_aada49946f39b27b07f36934b5e1d5ac6}{hash16}
+\begin{DoxyCompactList}\small\item\em \-A hasher for unsigned 16-\/bit integers. \end{DoxyCompactList}\item 
+\-\_\-\-\_\-gnu\-\_\-cxx\-::hash$<$ boost\-::uint8\-\_\-t $>$ \hyperlink{classNERD_1_1ConnectionServer_1_1AddressPairHash_aa5cd9f0aee285e5abf215216e031391a}{hash8}
+\begin{DoxyCompactList}\small\item\em \-A hasher for unsigned 8-\/bit integers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A functor that computes a hash of an \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}, suitable for use with \-\_\-\-\_\-gnu\-\_\-cxx\-::hash\-\_\-map. 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classNERD_1_1ConnectionServer_1_1AddressPairHash_a36bbb841fe3f2cbacb4cab2687675c4d}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-Hash@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-Hash}!operator()@{operator()}}
+\index{operator()@{operator()}!NERD::ConnectionServer::AddressPairHash@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-Hash}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-Hash\-::operator() (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Address\-Pair} \&}]{a}
+\end{DoxyParamCaption}
+) const}}
+\label{classNERD_1_1ConnectionServer_1_1AddressPairHash_a36bbb841fe3f2cbacb4cab2687675c4d}
+
+
+\-Compute a hash of an \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em a} & \-An \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair} whose hash is to be computed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-A hash of {\itshape a\/}. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{\-Bug}
+\item[\hyperlink{bug__bug000003}{\-Bug}]\-I haven't done any analysis of it, but this hash function probably isn't very good. \end{DoxyRefDesc}
+
+
+\-Definition at line 612 of file nerd.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classNERD_1_1ConnectionServer_1_1AddressPairHash_aada49946f39b27b07f36934b5e1d5ac6}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-Hash@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-Hash}!hash16@{hash16}}
+\index{hash16@{hash16}!NERD::ConnectionServer::AddressPairHash@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-Hash}}
+\subsubsection[{hash16}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-gnu\-\_\-cxx\-::hash$<$boost\-::uint16\-\_\-t$>$ {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-Hash\-::hash16}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_1_1AddressPairHash_aada49946f39b27b07f36934b5e1d5ac6}
+
+
+\-A hasher for unsigned 16-\/bit integers. 
+
+
+
+\-Definition at line 156 of file nerd.\-cpp.
+
+\hypertarget{classNERD_1_1ConnectionServer_1_1AddressPairHash_aa97511d9c6987cd101fb7f201f8e660a}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-Hash@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-Hash}!hash32@{hash32}}
+\index{hash32@{hash32}!NERD::ConnectionServer::AddressPairHash@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-Hash}}
+\subsubsection[{hash32}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-gnu\-\_\-cxx\-::hash$<$boost\-::uint32\-\_\-t$>$ {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-Hash\-::hash32}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_1_1AddressPairHash_aa97511d9c6987cd101fb7f201f8e660a}
+
+
+\-A hasher for unsigned 32-\/bit integers. 
+
+
+
+\-Definition at line 155 of file nerd.\-cpp.
+
+\hypertarget{classNERD_1_1ConnectionServer_1_1AddressPairHash_aa5cd9f0aee285e5abf215216e031391a}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-Hash@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-Hash}!hash8@{hash8}}
+\index{hash8@{hash8}!NERD::ConnectionServer::AddressPairHash@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-Hash}}
+\subsubsection[{hash8}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-gnu\-\_\-cxx\-::hash$<$boost\-::uint8\-\_\-t$>$ {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-Hash\-::hash8}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_1_1AddressPairHash_aa5cd9f0aee285e5abf215216e031391a}
+
+
+\-A hasher for unsigned 8-\/bit integers. 
+
+
+
+\-Definition at line 157 of file nerd.\-cpp.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{nerd_8cpp}{nerd.\-cpp}\end{DoxyCompactItemize}

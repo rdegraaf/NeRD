@@ -1,0 +1,352 @@
+\hypertarget{namespaceLibWheel}{
+\section{\-Lib\-Wheel \-Namespace \-Reference}
+\label{namespaceLibWheel}\index{\-Lib\-Wheel@{\-Lib\-Wheel}}
+}
+
+
+\-A set of reusuable software components written in various languages.  
+
+
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array}
+\begin{DoxyCompactList}\small\item\em \-A simple smart pointer for arrays that provides strict ownership semantics in the manner of std\-::auto\-\_\-ptr. \end{DoxyCompactList}\item 
+class \hyperlink{classLibWheel_1_1DNSFailure}{\-D\-N\-S\-Failure}
+\begin{DoxyCompactList}\small\item\em \-Exception thrown when a \-D\-N\-S lookup fails. \end{DoxyCompactList}\item 
+class \hyperlink{classLibWheel_1_1DNSError}{\-D\-N\-S\-Error}
+\begin{DoxyCompactList}\small\item\em \-Exception thrown when an error is encountered parsing a \-D\-N\-S record. \end{DoxyCompactList}\item 
+class \hyperlink{classLibWheel_1_1Logmsg}{\-Logmsg}
+\begin{DoxyCompactList}\small\item\em \-A \-C++ front-\/end to logmsg\-: a generic framework for logging error or status messages to various targets. \end{DoxyCompactList}\item 
+class \hyperlink{classLibWheel_1_1SignalException}{\-Signal\-Exception}
+\begin{DoxyCompactList}\small\item\em \-Base class for exceptions thrown by signal handlers. \end{DoxyCompactList}\item 
+class \hyperlink{classLibWheel_1_1Interrupt}{\-Interrupt}
+\begin{DoxyCompactList}\small\item\em \-Exception to be thrown in response to a \-S\-I\-G\-I\-N\-T. \end{DoxyCompactList}\item 
+class \hyperlink{classLibWheel_1_1Thrower}{\-Thrower}
+\begin{DoxyCompactList}\small\item\em \-Template for functors to throw exceptions in response to signals. \end{DoxyCompactList}\item 
+class \hyperlink{classLibWheel_1_1SignalQueue}{\-Signal\-Queue}
+\begin{DoxyCompactList}\small\item\em \-A system for synchronously handling asynchronous signals in a uni-\/threaded process. \end{DoxyCompactList}\item 
+class \hyperlink{classLibWheel_1_1Timer}{\-Timer}
+\begin{DoxyCompactList}\small\item\em \-Singleton class to manage real time timer interrupts. \end{DoxyCompactList}\item 
+class \hyperlink{classLibWheel_1_1IOException}{\-I\-O\-Exception}
+\begin{DoxyCompactList}\small\item\em \-Exception thrown when an \-I/\-O error occurs. \end{DoxyCompactList}\item 
+class \hyperlink{classLibWheel_1_1SocketException}{\-Socket\-Exception}
+\begin{DoxyCompactList}\small\item\em \-Exception thrown when a socket error occurs. \end{DoxyCompactList}\item 
+class \hyperlink{classLibWheel_1_1ParseError}{\-Parse\-Error}
+\begin{DoxyCompactList}\small\item\em \-Exception throws when a parsing error occurs. \end{DoxyCompactList}\item 
+class \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}
+\begin{DoxyCompactList}\small\item\em \-A list from which items will be removed after a timeout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\-::vector$<$ std\-::string $>$ \hyperlink{namespaceLibWheel_ab30bbb7dd8080f582e9b497903565bab}{get\-Dns\-Txt} (in\-\_\-addr\-\_\-t addr)  throw (\-D\-N\-S\-Failure, D\-N\-S\-Error)
+\begin{DoxyCompactList}\small\item\em \-Retrieve a \-D\-N\-S \-T\-X\-T record for an \-I\-P address. \end{DoxyCompactList}\item 
+int \hyperlink{namespaceLibWheel_a6941e854dd6b671e040bcffd561c22e5}{uninterruptible\-\_\-close} (int fd)
+\begin{DoxyCompactList}\small\item\em \-Close a file descriptor. \end{DoxyCompactList}\item 
+ssize\-\_\-t \hyperlink{namespaceLibWheel_a5103fe133e672ffe84edc3977969c244}{uninterruptible\-\_\-read} (int fd, unsigned char $\ast$buf, size\-\_\-t count)
+\begin{DoxyCompactList}\small\item\em \-Read data from a file descriptor. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{namespaceLibWheel_a922fd717077d5a27328412f69c8d9d8c}{ipv4\-\_\-to\-\_\-string} (in\-\_\-addr\-\_\-t a)
+\begin{DoxyCompactList}\small\item\em \-Converts an \-I\-Pv4 address to a string in dotted-\/decimal format. \end{DoxyCompactList}\item 
+int \hyperlink{namespaceLibWheel_a5f91ec312857b9f968bc17d795bc96e1}{open\-\_\-files} ()
+\begin{DoxyCompactList}\small\item\em \-Counts the number of currently-\/open file descriptors. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceLibWheel_a941108ec3b987f98a677f78dc36eace0}{close\-\_\-files\-\_\-on\-\_\-exec} (int maxfd)
+\begin{DoxyCompactList}\small\item\em \-Set the \char`\"{}close-\/on-\/exec\char`\"{} attribute on open file descriptors greater than {\itshape maxfd\/}. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceLibWheel_a47a8ef54f60bc8780ca2a1339e05429c}{write\-\_\-pid} (const char $\ast$file)
+\begin{DoxyCompactList}\small\item\em \-Write the current \-P\-I\-D to a file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , std\-::size\-\_\-t \-N$>$ }\\static std\-::size\-\_\-t \hyperlink{namespaceLibWheel_ae09ae253a62d761240dc4fd0dbb961a5}{array\-Size} (\-T(\&)\mbox{[}\-N\mbox{]})
+\begin{DoxyCompactList}\small\item\em \-Determines the size of an array, in elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classLibWheel_1_1Logmsg}{\-Logmsg} \& \hyperlink{namespaceLibWheel_af4ca70f4f65b2948701218436516a679}{logmsg} = \-Logmsg\-::get\-Logmsg()
+\begin{DoxyCompactList}\small\item\em \-Global logmsg object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A set of reusuable software components written in various languages. 
+
+\subsection{\-Function \-Documentation}
+\hypertarget{namespaceLibWheel_ae09ae253a62d761240dc4fd0dbb961a5}{
+\index{\-Lib\-Wheel@{\-Lib\-Wheel}!array\-Size@{array\-Size}}
+\index{array\-Size@{array\-Size}!LibWheel@{\-Lib\-Wheel}}
+\subsubsection[{array\-Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , std\-::size\-\_\-t \-N$>$ static std\-::size\-\_\-t \-Lib\-Wheel\-::array\-Size (
+\begin{DoxyParamCaption}
+\item[{\-T(\&)}]{\mbox{[}\-N\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{namespaceLibWheel_ae09ae253a62d761240dc4fd0dbb961a5}
+
+
+\-Determines the size of an array, in elements. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-\_\-} & \-A reference to an array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The number of elements in the array 
+\end{DoxyReturn}
+\begin{DoxyNote}{\-Note}
+\-This only words for arrays, not pointers. 
+\end{DoxyNote}
+
+
+\-Definition at line 41 of file util.\-hpp.
+
+
+
+\-Referenced by \-I\-P\-Q\-::\-Ipq\-Socket\-::set\-Copy\-Mode(), and \-I\-P\-Q\-::\-Ipq\-Socket\-::send\-Response().
+
+\hypertarget{namespaceLibWheel_a941108ec3b987f98a677f78dc36eace0}{
+\index{\-Lib\-Wheel@{\-Lib\-Wheel}!close\-\_\-files\-\_\-on\-\_\-exec@{close\-\_\-files\-\_\-on\-\_\-exec}}
+\index{close\-\_\-files\-\_\-on\-\_\-exec@{close\-\_\-files\-\_\-on\-\_\-exec}!LibWheel@{\-Lib\-Wheel}}
+\subsubsection[{close\-\_\-files\-\_\-on\-\_\-exec}]{\setlength{\rightskip}{0pt plus 5cm}void \-Lib\-Wheel\-::close\-\_\-files\-\_\-on\-\_\-exec (
+\begin{DoxyParamCaption}
+\item[{int}]{maxfd}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceLibWheel_a941108ec3b987f98a677f78dc36eace0}
+
+
+\-Set the \char`\"{}close-\/on-\/exec\char`\"{} attribute on open file descriptors greater than {\itshape maxfd\/}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em maxfd} & \-The highest-\/numbered file descriptor to preserve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{\-Side \-Effects\-:}
+\-Logs a message to logmsg on error. 
+\end{DoxyParagraph}
+
+
+\-Definition at line 93 of file util.\-cpp.
+
+
+
+\-References logmsg, and logmsg\-\_\-err.
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::create\-Connection().
+
+\hypertarget{namespaceLibWheel_ab30bbb7dd8080f582e9b497903565bab}{
+\index{\-Lib\-Wheel@{\-Lib\-Wheel}!get\-Dns\-Txt@{get\-Dns\-Txt}}
+\index{get\-Dns\-Txt@{get\-Dns\-Txt}!LibWheel@{\-Lib\-Wheel}}
+\subsubsection[{get\-Dns\-Txt}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::vector$<$ std\-::string $>$ \-Lib\-Wheel\-::get\-Dns\-Txt (
+\begin{DoxyParamCaption}
+\item[{in\-\_\-addr\-\_\-t}]{addr}
+\end{DoxyParamCaption}
+)  throw ({\bf \-D\-N\-S\-Failure}, {\bf \-D\-N\-S\-Error})}}
+\label{namespaceLibWheel_ab30bbb7dd8080f582e9b497903565bab}
+
+
+\-Retrieve a \-D\-N\-S \-T\-X\-T record for an \-I\-P address. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em addr} & \-The address to search, in host byte order. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The \-T\-X\-T records for {\itshape addr\/} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{\-Exceptions}
+{\em \hyperlink{classLibWheel_1_1DNSFailure}{\-D\-N\-S\-Failure}} & \-If no \-T\-X\-T record for {\itshape addr\/} could be found. \\
+\hline
+{\em \hyperlink{classLibWheel_1_1DNSError}{\-D\-N\-S\-Error}} & \-If the \-D\-N\-S \-T\-X\-T record for {\itshape addr\/} could not be parsed. \\
+\hline
+\end{DoxyExceptions}
+
+
+\-Definition at line 59 of file dns.\-cpp.
+
+
+
+\-References ipv4\-\_\-to\-\_\-string().
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::find\-Server().
+
+\hypertarget{namespaceLibWheel_a922fd717077d5a27328412f69c8d9d8c}{
+\index{\-Lib\-Wheel@{\-Lib\-Wheel}!ipv4\-\_\-to\-\_\-string@{ipv4\-\_\-to\-\_\-string}}
+\index{ipv4\-\_\-to\-\_\-string@{ipv4\-\_\-to\-\_\-string}!LibWheel@{\-Lib\-Wheel}}
+\subsubsection[{ipv4\-\_\-to\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string \-Lib\-Wheel\-::ipv4\-\_\-to\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{in\-\_\-addr\-\_\-t}]{a}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceLibWheel_a922fd717077d5a27328412f69c8d9d8c}
+
+
+\-Converts an \-I\-Pv4 address to a string in dotted-\/decimal format. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em a} & \-The address to convert, in host byte order \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The address in dotted-\/decimal format. 
+\end{DoxyReturn}
+\begin{DoxyNote}{\-Note}
+\-This is essentially a thread-\/safe version of {\ttfamily inet\-\_\-ntoa()}, except that it takes the address to convert in host byte order. 
+\end{DoxyNote}
+
+
+\-Definition at line 37 of file util.\-cpp.
+
+
+
+\-Referenced by get\-Dns\-Txt(), \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::print(), \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler\-::operator()(), \-N\-E\-R\-D\-::\-Connection\-Server\-::handle\-Packet(), \-N\-E\-R\-D\-::\-Connection\-Server\-::create\-Connection(), and \-N\-E\-R\-D\-::\-Connection\-Server\-::find\-Server().
+
+\hypertarget{namespaceLibWheel_a5f91ec312857b9f968bc17d795bc96e1}{
+\index{\-Lib\-Wheel@{\-Lib\-Wheel}!open\-\_\-files@{open\-\_\-files}}
+\index{open\-\_\-files@{open\-\_\-files}!LibWheel@{\-Lib\-Wheel}}
+\subsubsection[{open\-\_\-files}]{\setlength{\rightskip}{0pt plus 5cm}int \-Lib\-Wheel\-::open\-\_\-files (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceLibWheel_a5f91ec312857b9f968bc17d795bc96e1}
+
+
+\-Counts the number of currently-\/open file descriptors. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The number of open file descriptors, or -\/1 on error (with {\ttfamily errno} set appropriately). 
+\end{DoxyReturn}
+\begin{DoxyNote}{\-Note}
+\-This function assumes that {\ttfamily getdtablesize()} always works. \-This may not be true on all systems. 
+\end{DoxyNote}
+
+
+\-Definition at line 64 of file util.\-cpp.
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::print\-Stats().
+
+\hypertarget{namespaceLibWheel_a6941e854dd6b671e040bcffd561c22e5}{
+\index{\-Lib\-Wheel@{\-Lib\-Wheel}!uninterruptible\-\_\-close@{uninterruptible\-\_\-close}}
+\index{uninterruptible\-\_\-close@{uninterruptible\-\_\-close}!LibWheel@{\-Lib\-Wheel}}
+\subsubsection[{uninterruptible\-\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}int \-Lib\-Wheel\-::uninterruptible\-\_\-close (
+\begin{DoxyParamCaption}
+\item[{int}]{fd}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceLibWheel_a6941e854dd6b671e040bcffd561c22e5}
+
+
+\-Close a file descriptor. 
+
+\-This function is identical to close(), except that it will resume if interrupted by a signal and will never set \-E\-I\-N\-T\-R on error. 
+\begin{DoxyParams}{\-Parameters}
+{\em fd} & \-The file descriptor to close. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0 on success, or -\/1 on error (with {\ttfamily errno} set appropriately). 
+\end{DoxyReturn}
+
+
+\-Definition at line 501 of file \-Signals.\-cpp.
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::create\-Connection().
+
+\hypertarget{namespaceLibWheel_a5103fe133e672ffe84edc3977969c244}{
+\index{\-Lib\-Wheel@{\-Lib\-Wheel}!uninterruptible\-\_\-read@{uninterruptible\-\_\-read}}
+\index{uninterruptible\-\_\-read@{uninterruptible\-\_\-read}!LibWheel@{\-Lib\-Wheel}}
+\subsubsection[{uninterruptible\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}ssize\-\_\-t \-Lib\-Wheel\-::uninterruptible\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{int}]{fd, }
+\item[{unsigned char $\ast$}]{buf, }
+\item[{size\-\_\-t}]{count}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceLibWheel_a5103fe133e672ffe84edc3977969c244}
+
+
+\-Read data from a file descriptor. 
+
+\-This function is identical to {\ttfamily read()}, except that it will resume if interrupted by a signal and will never set \-E\-I\-N\-T\-R on error. \-Also, it assumes that {\itshape fd\/} is in non-\/blocking mode, and will return -\/1 and set {\ttfamily errno} to \-E\-A\-G\-A\-I\-N if no data is available. \-See the man page for {\ttfamily read()} for further details. 
+\begin{DoxyParams}{\-Parameters}
+{\em fd} & \-The file descriptor from which to read. \\
+\hline
+{\em buf} & \-The buffer to which to write. \\
+\hline
+{\em count} & \-The maximum number of bytes to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The number of bytes read, or -\/1 on error (with {\ttfamily errno} set appropriately). 
+\end{DoxyReturn}
+
+
+\-Definition at line 525 of file \-Signals.\-cpp.
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler\-::operator()().
+
+\hypertarget{namespaceLibWheel_a47a8ef54f60bc8780ca2a1339e05429c}{
+\index{\-Lib\-Wheel@{\-Lib\-Wheel}!write\-\_\-pid@{write\-\_\-pid}}
+\index{write\-\_\-pid@{write\-\_\-pid}!LibWheel@{\-Lib\-Wheel}}
+\subsubsection[{write\-\_\-pid}]{\setlength{\rightskip}{0pt plus 5cm}void \-Lib\-Wheel\-::write\-\_\-pid (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceLibWheel_a47a8ef54f60bc8780ca2a1339e05429c}
+
+
+\-Write the current \-P\-I\-D to a file. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em file} & \-The file to which the \-P\-I\-D is to be written. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+\-Logs messages to \hyperlink{namespaceLibWheel_af4ca70f4f65b2948701218436516a679}{\-Lib\-Wheel\-::logmsg} on failure. 
+\end{DoxyNote}
+\begin{DoxyWarning}{\-Warning}
+\-If {\itshape file\/} exists, its contents will be truncated. 
+\end{DoxyWarning}
+
+
+\-Definition at line 116 of file util.\-cpp.
+
+
+
+\-References logmsg, and logmsg\-\_\-err.
+
+
+
+\-Referenced by main().
+
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{namespaceLibWheel_af4ca70f4f65b2948701218436516a679}{
+\index{\-Lib\-Wheel@{\-Lib\-Wheel}!logmsg@{logmsg}}
+\index{logmsg@{logmsg}!LibWheel@{\-Lib\-Wheel}}
+\subsubsection[{logmsg}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Logmsg}\& {\bf \-Lib\-Wheel\-::logmsg} = \-Logmsg\-::get\-Logmsg()\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{namespaceLibWheel_af4ca70f4f65b2948701218436516a679}
+
+
+\-Global logmsg object. 
+
+\-Used to emulate the \-C \-A\-P\-I in \-C++. 
+
+\-Definition at line 47 of file \-Logmsg.\-hpp.
+
+
+
+\-Referenced by drop\-\_\-priv(), \-N\-E\-R\-D\-::\-Connection\-Server\-::$\sim$\-Connection\-Server(), \-N\-E\-R\-D\-::\-Connection\-Server\-::operator()(), \-N\-E\-R\-D\-::\-Connection\-Server\-::print\-Stats(), \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler\-::operator()(), \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler\-::operator()(), \-N\-E\-R\-D\-::\-Connection\-Server\-::handle\-Packet(), \-N\-E\-R\-D\-::\-Connection\-Server\-::create\-Connection(), \-N\-E\-R\-D\-::\-Connection\-Server\-::find\-Server(), \-N\-E\-R\-D\-::\-Connection\-Server\-::is\-Executable(), main(), spc\-\_\-sanitize\-\_\-environment(), spc\-\_\-sanitize\-\_\-files(), close\-\_\-files\-\_\-on\-\_\-exec(), and write\-\_\-pid().
+

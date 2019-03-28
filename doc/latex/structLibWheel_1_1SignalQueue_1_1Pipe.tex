@@ -1,0 +1,96 @@
+\hypertarget{structLibWheel_1_1SignalQueue_1_1Pipe}{
+\section{\-Lib\-Wheel\-:\-:\-Signal\-Queue\-:\-:\-Pipe \-Struct \-Reference}
+\label{structLibWheel_1_1SignalQueue_1_1Pipe}\index{\-Lib\-Wheel\-::\-Signal\-Queue\-::\-Pipe@{\-Lib\-Wheel\-::\-Signal\-Queue\-::\-Pipe}}
+}
+
+
+\-Convienience wrapper for a non-\/blocking \-Unix pipe.  
+
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structLibWheel_1_1SignalQueue_1_1Pipe_a27f56c47db1ef822e6a1370b2b65cc59}{\-Pipe} ()  throw (std\-::runtime\-\_\-error)
+\begin{DoxyCompactList}\small\item\em \-Create a pipe in non-\/blocking \-I/\-O mode. \end{DoxyCompactList}\item 
+\hyperlink{structLibWheel_1_1SignalQueue_1_1Pipe_a505db34d058f095fa5b0adaf12a31bc9}{$\sim$\-Pipe} ()
+\begin{DoxyCompactList}\small\item\em \-Destructor for \hyperlink{structLibWheel_1_1SignalQueue_1_1Pipe}{\-Pipe}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structLibWheel_1_1SignalQueue_1_1Pipe_ad2acca11d1308cf147253e6def4935dc}{fds} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em \-The pipe's read and write file descriptors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Convienience wrapper for a non-\/blocking \-Unix pipe. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{structLibWheel_1_1SignalQueue_1_1Pipe_a27f56c47db1ef822e6a1370b2b65cc59}{
+\index{\-Lib\-Wheel\-::\-Signal\-Queue\-::\-Pipe@{\-Lib\-Wheel\-::\-Signal\-Queue\-::\-Pipe}!\-Pipe@{\-Pipe}}
+\index{\-Pipe@{\-Pipe}!LibWheel::SignalQueue::Pipe@{\-Lib\-Wheel\-::\-Signal\-Queue\-::\-Pipe}}
+\subsubsection[{\-Pipe}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::\-Signal\-Queue\-::\-Pipe\-::\-Pipe (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throw (std\-::runtime\-\_\-error)}}
+\label{structLibWheel_1_1SignalQueue_1_1Pipe_a27f56c47db1ef822e6a1370b2b65cc59}
+
+
+\-Create a pipe in non-\/blocking \-I/\-O mode. 
+
+
+\begin{DoxyExceptions}{\-Exceptions}
+{\em std\-::runtime\-\_\-error} & \-If pipe creation or initialization fails. \\
+\hline
+\end{DoxyExceptions}
+
+
+\-Definition at line 136 of file \-Signals.\-cpp.
+
+
+
+\-References fds.
+
+\hypertarget{structLibWheel_1_1SignalQueue_1_1Pipe_a505db34d058f095fa5b0adaf12a31bc9}{
+\index{\-Lib\-Wheel\-::\-Signal\-Queue\-::\-Pipe@{\-Lib\-Wheel\-::\-Signal\-Queue\-::\-Pipe}!$\sim$\-Pipe@{$\sim$\-Pipe}}
+\index{$\sim$\-Pipe@{$\sim$\-Pipe}!LibWheel::SignalQueue::Pipe@{\-Lib\-Wheel\-::\-Signal\-Queue\-::\-Pipe}}
+\subsubsection[{$\sim$\-Pipe}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::\-Signal\-Queue\-::\-Pipe\-::$\sim$\-Pipe (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{structLibWheel_1_1SignalQueue_1_1Pipe_a505db34d058f095fa5b0adaf12a31bc9}
+
+
+\-Destructor for \hyperlink{structLibWheel_1_1SignalQueue_1_1Pipe}{\-Pipe}. 
+
+\-Close both endpoints. 
+
+\-Definition at line 153 of file \-Signals.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{structLibWheel_1_1SignalQueue_1_1Pipe_ad2acca11d1308cf147253e6def4935dc}{
+\index{\-Lib\-Wheel\-::\-Signal\-Queue\-::\-Pipe@{\-Lib\-Wheel\-::\-Signal\-Queue\-::\-Pipe}!fds@{fds}}
+\index{fds@{fds}!LibWheel::SignalQueue::Pipe@{\-Lib\-Wheel\-::\-Signal\-Queue\-::\-Pipe}}
+\subsubsection[{fds}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Lib\-Wheel\-::\-Signal\-Queue\-::\-Pipe\-::fds}\mbox{[}2\mbox{]}}}
+\label{structLibWheel_1_1SignalQueue_1_1Pipe_ad2acca11d1308cf147253e6def4935dc}
+
+
+\-The pipe's read and write file descriptors. 
+
+
+
+\-Definition at line 114 of file \-Signals.\-hpp.
+
+
+
+\-Referenced by \-Pipe(), and \-Lib\-Wheel\-::\-Signal\-Queue\-::get\-Read\-F\-D().
+
+
+
+\-The documentation for this struct was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Signals_8hpp}{\-Signals.\-hpp}\item 
+\hyperlink{Signals_8cpp}{\-Signals.\-cpp}\end{DoxyCompactItemize}

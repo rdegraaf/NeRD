@@ -1,0 +1,398 @@
+\hypertarget{classLibWheel_1_1auto__array}{
+\section{\-Lib\-Wheel\-:\-:auto\-\_\-array \-Class \-Reference}
+\label{classLibWheel_1_1auto__array}\index{\-Lib\-Wheel\-::auto\-\_\-array@{\-Lib\-Wheel\-::auto\-\_\-array}}
+}
+
+
+\-A simple smart pointer for arrays that provides strict ownership semantics in the manner of std\-::auto\-\_\-ptr.  
+
+
+
+
+{\ttfamily \#include $<$auto\-\_\-array.\-hpp$>$}
+
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structLibWheel_1_1auto__array_1_1auto__array__ref}{auto\-\_\-array\-\_\-ref}
+\begin{DoxyCompactList}\small\item\em \-A wrapper class to provide \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} with reference semantics. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \-T \hyperlink{classLibWheel_1_1auto__array_a8c06b91597d32a42388eaad80ae5f656}{element\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \-The type of the contained array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLibWheel_1_1auto__array_a1698c30facc58f8273d7c7f9a3621e03}{auto\-\_\-array} (\hyperlink{classLibWheel_1_1auto__array_a8c06b91597d32a42388eaad80ae5f656}{element\-\_\-type} $\ast$p=0)  throw ()
+\begin{DoxyCompactList}\small\item\em \-Constructs an \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} from a pointer to a dynamically allocated array. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1auto__array_a3cabe016ed7e616da4eedb051aa5c4bf}{auto\-\_\-array} (\hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array}$<$ \-T $>$ \&a)  throw ()
+\begin{DoxyCompactList}\small\item\em \-Constructs an \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} from another \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array}. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array}$<$ \hyperlink{classLibWheel_1_1auto__array_a8c06b91597d32a42388eaad80ae5f656}{element\-\_\-type} $>$ \& \hyperlink{classLibWheel_1_1auto__array_aad8d46e0a529612fa2b7eaa6124f3621}{operator=} (\hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array}$<$ \-T $>$ \&a)  throw ()
+\begin{DoxyCompactList}\small\item\em \-Assign one \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} to another. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array}$<$ \hyperlink{classLibWheel_1_1auto__array_a8c06b91597d32a42388eaad80ae5f656}{element\-\_\-type} $>$ \& \hyperlink{classLibWheel_1_1auto__array_af219ff28ca72556578c591db347815ef}{operator=} (\hyperlink{structLibWheel_1_1auto__array_1_1auto__array__ref}{auto\-\_\-array\-\_\-ref} ref)  throw ()
+\begin{DoxyCompactList}\small\item\em \-Assign an \hyperlink{structLibWheel_1_1auto__array_1_1auto__array__ref}{auto\-\_\-array\-\_\-ref} to an \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array}. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1auto__array_a2a791a2e73270d0e9353d4359a20d25c}{$\sim$auto\-\_\-array} ()  throw ()
+\begin{DoxyCompactList}\small\item\em \-Destructor for \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array}. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1auto__array_a8c06b91597d32a42388eaad80ae5f656}{element\-\_\-type} \& \hyperlink{classLibWheel_1_1auto__array_a155b35cec40da18a6c706329c5f27257}{operator\mbox{[}$\,$\mbox{]}} (std\-::size\-\_\-t i) const   throw ()
+\begin{DoxyCompactList}\small\item\em \-Index operator for \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array}. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1auto__array_a8c06b91597d32a42388eaad80ae5f656}{element\-\_\-type} $\ast$ \hyperlink{classLibWheel_1_1auto__array_a1c2de06b5c798d33a4fa38c73521d3e9}{get} () const   throw ()
+\begin{DoxyCompactList}\small\item\em \-Retrieves a pointer to the currently-\/owned array. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1auto__array_a8c06b91597d32a42388eaad80ae5f656}{element\-\_\-type} $\ast$ \hyperlink{classLibWheel_1_1auto__array_a421fcbd078e6ae0a8fcfbe0bd7afe69d}{release} ()  throw ()
+\begin{DoxyCompactList}\small\item\em \-Releases ownership of the currently-\/owned array. \end{DoxyCompactList}\item 
+void \hyperlink{classLibWheel_1_1auto__array_a3304b57bc7ab1cc91c3c638f9150ec05}{reset} (\hyperlink{classLibWheel_1_1auto__array_a8c06b91597d32a42388eaad80ae5f656}{element\-\_\-type} $\ast$p=0)  throw ()
+\begin{DoxyCompactList}\small\item\em \-Frees and drops ownership of the currently-\/owned array, and takes ownership of a new array. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1auto__array_ab1da017eb72f79f607a0a3a2efd3d3c0}{auto\-\_\-array} (\hyperlink{structLibWheel_1_1auto__array_1_1auto__array__ref}{auto\-\_\-array\-\_\-ref} ref)  throw ()
+\begin{DoxyCompactList}\small\item\em \-Constructs an \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} from an \hyperlink{structLibWheel_1_1auto__array_1_1auto__array__ref}{auto\-\_\-array\-\_\-ref}. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1auto__array_abe2c9cfaad5f1f4355b14dc3327f97fd}{operator auto\-\_\-array\-\_\-ref} ()  throw ()
+\begin{DoxyCompactList}\small\item\em \-Converts an \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} into an \hyperlink{structLibWheel_1_1auto__array_1_1auto__array__ref}{auto\-\_\-array\-\_\-ref}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\-T $\ast$ \hyperlink{classLibWheel_1_1auto__array_a8b80daaf7ff9507e9723877a4ab933e8}{ptr}
+\begin{DoxyCompactList}\small\item\em \-The array owned by this \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A simple smart pointer for arrays that provides strict ownership semantics in the manner of std\-::auto\-\_\-ptr. 
+
+\-Despite what the \-C++ standard guys will tell you, it {\bfseries isn't} always possible to use std\-::vector in place of an array. \-For intance, you may need to call a \-C or external library \-A\-P\-I that requires an array. \-This class provides automatic destruction in the manner of std\-::auto\-\_\-ptr for true arrays. 
+
+\subsection{\-Member \-Typedef \-Documentation}
+\hypertarget{classLibWheel_1_1auto__array_a8c06b91597d32a42388eaad80ae5f656}{
+\index{\-Lib\-Wheel\-::auto\-\_\-array@{\-Lib\-Wheel\-::auto\-\_\-array}!element\-\_\-type@{element\-\_\-type}}
+\index{element\-\_\-type@{element\-\_\-type}!LibWheel::auto_array@{\-Lib\-Wheel\-::auto\-\_\-array}}
+\subsubsection[{element\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef \-T {\bf \-Lib\-Wheel\-::auto\-\_\-array\-::element\-\_\-type}}}
+\label{classLibWheel_1_1auto__array_a8c06b91597d32a42388eaad80ae5f656}
+
+
+\-The type of the contained array. 
+
+
+
+\-Definition at line 60 of file auto\-\_\-array.\-hpp.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classLibWheel_1_1auto__array_a1698c30facc58f8273d7c7f9a3621e03}{
+\index{\-Lib\-Wheel\-::auto\-\_\-array@{\-Lib\-Wheel\-::auto\-\_\-array}!auto\-\_\-array@{auto\-\_\-array}}
+\index{auto\-\_\-array@{auto\-\_\-array}!LibWheel::auto_array@{\-Lib\-Wheel\-::auto\-\_\-array}}
+\subsubsection[{auto\-\_\-array}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::auto\-\_\-array\-::auto\-\_\-array (
+\begin{DoxyParamCaption}
+\item[{{\bf element\-\_\-type} $\ast$}]{p = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}explicit\mbox{]}}}}
+\label{classLibWheel_1_1auto__array_a1698c30facc58f8273d7c7f9a3621e03}
+
+
+\-Constructs an \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} from a pointer to a dynamically allocated array. 
+
+\-The constructed \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} will own the array pointed to by {\itshape p\/}. 
+\begin{DoxyParams}{\-Parameters}
+{\em p} & \-A pointer to a dynamically-\/allocated array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{\-Warning}
+\-Constructing an \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} from a pointer to a single object, statically-\/allocated array, or anything else not allocated with new\mbox{[}\mbox{]} results in undefined behaviour. 
+\end{DoxyWarning}
+
+
+\-Definition at line 90 of file auto\-\_\-array.\-hpp.
+
+\hypertarget{classLibWheel_1_1auto__array_a3cabe016ed7e616da4eedb051aa5c4bf}{
+\index{\-Lib\-Wheel\-::auto\-\_\-array@{\-Lib\-Wheel\-::auto\-\_\-array}!auto\-\_\-array@{auto\-\_\-array}}
+\index{auto\-\_\-array@{auto\-\_\-array}!LibWheel::auto_array@{\-Lib\-Wheel\-::auto\-\_\-array}}
+\subsubsection[{auto\-\_\-array}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::auto\-\_\-array\-::auto\-\_\-array (
+\begin{DoxyParamCaption}
+\item[{{\bf auto\-\_\-array}$<$ \-T $>$ \&}]{a}
+\end{DoxyParamCaption}
+)  throw ()}}
+\label{classLibWheel_1_1auto__array_a3cabe016ed7e616da4eedb051aa5c4bf}
+
+
+\-Constructs an \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} from another \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array}. 
+
+\-The constructed \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} will own the array originally owned by {\itshape a\/}. 
+\begin{DoxyParams}{\-Parameters}
+{\em a} & \-Another \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} of the same type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{\-Side \-Effects\-:}
+{\itshape a\/} will loose ownership of its array. 
+\end{DoxyParagraph}
+
+
+\-Definition at line 102 of file auto\-\_\-array.\-hpp.
+
+\hypertarget{classLibWheel_1_1auto__array_a2a791a2e73270d0e9353d4359a20d25c}{
+\index{\-Lib\-Wheel\-::auto\-\_\-array@{\-Lib\-Wheel\-::auto\-\_\-array}!$\sim$auto\-\_\-array@{$\sim$auto\-\_\-array}}
+\index{$\sim$auto\-\_\-array@{$\sim$auto\-\_\-array}!LibWheel::auto_array@{\-Lib\-Wheel\-::auto\-\_\-array}}
+\subsubsection[{$\sim$auto\-\_\-array}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::auto\-\_\-array\-::$\sim$auto\-\_\-array (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throw ()}}
+\label{classLibWheel_1_1auto__array_a2a791a2e73270d0e9353d4359a20d25c}
+
+
+\-Destructor for \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array}. 
+
+\-Frees the memory held by this \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array}. 
+
+\-Definition at line 127 of file auto\-\_\-array.\-hpp.
+
+
+
+\-References ptr.
+
+\hypertarget{classLibWheel_1_1auto__array_ab1da017eb72f79f607a0a3a2efd3d3c0}{
+\index{\-Lib\-Wheel\-::auto\-\_\-array@{\-Lib\-Wheel\-::auto\-\_\-array}!auto\-\_\-array@{auto\-\_\-array}}
+\index{auto\-\_\-array@{auto\-\_\-array}!LibWheel::auto_array@{\-Lib\-Wheel\-::auto\-\_\-array}}
+\subsubsection[{auto\-\_\-array}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::auto\-\_\-array\-::auto\-\_\-array (
+\begin{DoxyParamCaption}
+\item[{{\bf auto\-\_\-array\-\_\-ref}}]{ref}
+\end{DoxyParamCaption}
+)  throw ()}}
+\label{classLibWheel_1_1auto__array_ab1da017eb72f79f607a0a3a2efd3d3c0}
+
+
+\-Constructs an \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} from an \hyperlink{structLibWheel_1_1auto__array_1_1auto__array__ref}{auto\-\_\-array\-\_\-ref}. 
+
+\-The constructed \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} owns the array pointed to by {\itshape ref\/}. 
+\begin{DoxyParams}{\-Parameters}
+{\em ref} & \-An \hyperlink{structLibWheel_1_1auto__array_1_1auto__array__ref}{auto\-\_\-array\-\_\-ref} of the same type. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 204 of file auto\-\_\-array.\-hpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classLibWheel_1_1auto__array_a1c2de06b5c798d33a4fa38c73521d3e9}{
+\index{\-Lib\-Wheel\-::auto\-\_\-array@{\-Lib\-Wheel\-::auto\-\_\-array}!get@{get}}
+\index{get@{get}!LibWheel::auto_array@{\-Lib\-Wheel\-::auto\-\_\-array}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}\-T $\ast$ \-Lib\-Wheel\-::auto\-\_\-array\-::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const  throw ()}}
+\label{classLibWheel_1_1auto__array_a1c2de06b5c798d33a4fa38c73521d3e9}
+
+
+\-Retrieves a pointer to the currently-\/owned array. 
+
+\-Ownership is not changed. \begin{DoxyReturn}{\-Returns}
+\-A pointer to the currently-\/owned array. 
+\end{DoxyReturn}
+
+
+\-Definition at line 157 of file auto\-\_\-array.\-hpp.
+
+
+
+\-References ptr.
+
+
+
+\-Referenced by \-I\-P\-Q\-::\-Ipq\-Socket\-::recv\-Packet(), \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Nf\-Id(), \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Nf\-Mark(), \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Timestamp(), \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Nf\-Hook(), \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Hw\-Protocol(), \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Hw\-Type(), \-I\-P\-Q\-::\-Ipq\-Packet\-::print(), \-I\-P\-Q\-::\-Ipq\-Packet\-::do\-Get\-Packet(), \-I\-P\-Q\-::\-Ipq\-Packet\-::create\-Packet(), \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::do\-Get\-Ip\-Header(), \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::do\-Get\-Ip\-Payload(), \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet\-::do\-Get\-Tcp\-Header(), \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet\-::do\-Get\-Tcp\-Payload(), \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet\-::update\-Checksums(), \-I\-P\-Q\-::\-Ipq\-Udp\-Packet\-::do\-Get\-Udp\-Header(), \-I\-P\-Q\-::\-Ipq\-Udp\-Packet\-::do\-Get\-Udp\-Payload(), and \-I\-P\-Q\-::\-Ipq\-Udp\-Packet\-::update\-Checksums().
+
+\hypertarget{classLibWheel_1_1auto__array_abe2c9cfaad5f1f4355b14dc3327f97fd}{
+\index{\-Lib\-Wheel\-::auto\-\_\-array@{\-Lib\-Wheel\-::auto\-\_\-array}!operator auto\-\_\-array\-\_\-ref@{operator auto\-\_\-array\-\_\-ref}}
+\index{operator auto\-\_\-array\-\_\-ref@{operator auto\-\_\-array\-\_\-ref}!LibWheel::auto_array@{\-Lib\-Wheel\-::auto\-\_\-array}}
+\subsubsection[{operator auto\-\_\-array\-\_\-ref}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::auto\-\_\-array\-::operator {\bf auto\-\_\-array\-\_\-ref} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throw ()}}
+\label{classLibWheel_1_1auto__array_abe2c9cfaad5f1f4355b14dc3327f97fd}
+
+
+\-Converts an \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} into an \hyperlink{structLibWheel_1_1auto__array_1_1auto__array__ref}{auto\-\_\-array\-\_\-ref}. 
+
+\-Ownership of the currently-\/owned array is dropped. \begin{DoxyReturn}{\-Returns}
+\-An \hyperlink{structLibWheel_1_1auto__array_1_1auto__array__ref}{auto\-\_\-array\-\_\-ref} containing a pointer to the array formerly owned by this \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array}. 
+\end{DoxyReturn}
+
+
+\-Definition at line 231 of file auto\-\_\-array.\-hpp.
+
+
+
+\-References release().
+
+\hypertarget{classLibWheel_1_1auto__array_aad8d46e0a529612fa2b7eaa6124f3621}{
+\index{\-Lib\-Wheel\-::auto\-\_\-array@{\-Lib\-Wheel\-::auto\-\_\-array}!operator=@{operator=}}
+\index{operator=@{operator=}!LibWheel::auto_array@{\-Lib\-Wheel\-::auto\-\_\-array}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf auto\-\_\-array}$<$ \-T $>$ \& \-Lib\-Wheel\-::auto\-\_\-array\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf auto\-\_\-array}$<$ \-T $>$ \&}]{a}
+\end{DoxyParamCaption}
+)  throw ()}}
+\label{classLibWheel_1_1auto__array_aad8d46e0a529612fa2b7eaa6124f3621}
+
+
+\-Assign one \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} to another. 
+
+\-The array owned by this \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} will be deleted, and this \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} will take ownership of the array originally owned by {\itshape a\/}. 
+\begin{DoxyParams}{\-Parameters}
+{\em a} & \-Another \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} of the same type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{\-Side \-Effects\-:}
+{\itshape a\/} will loose ownership of its array. 
+\end{DoxyParagraph}
+
+
+\-Definition at line 116 of file auto\-\_\-array.\-hpp.
+
+
+
+\-References reset().
+
+\hypertarget{classLibWheel_1_1auto__array_af219ff28ca72556578c591db347815ef}{
+\index{\-Lib\-Wheel\-::auto\-\_\-array@{\-Lib\-Wheel\-::auto\-\_\-array}!operator=@{operator=}}
+\index{operator=@{operator=}!LibWheel::auto_array@{\-Lib\-Wheel\-::auto\-\_\-array}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf auto\-\_\-array}$<$ \-T $>$ \& \-Lib\-Wheel\-::auto\-\_\-array\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf auto\-\_\-array\-\_\-ref}}]{ref}
+\end{DoxyParamCaption}
+)  throw ()}}
+\label{classLibWheel_1_1auto__array_af219ff28ca72556578c591db347815ef}
+
+
+\-Assign an \hyperlink{structLibWheel_1_1auto__array_1_1auto__array__ref}{auto\-\_\-array\-\_\-ref} to an \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array}. 
+
+\-The array owned by this \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} will be deleted, and this \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} will take ownersnip of the array pointed to by {\itshape ref\/}. 
+\begin{DoxyParams}{\-Parameters}
+{\em ref} & \-An \hyperlink{structLibWheel_1_1auto__array_1_1auto__array__ref}{auto\-\_\-array\-\_\-ref} of the same type. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 217 of file auto\-\_\-array.\-hpp.
+
+
+
+\-References reset().
+
+\hypertarget{classLibWheel_1_1auto__array_a155b35cec40da18a6c706329c5f27257}{
+\index{\-Lib\-Wheel\-::auto\-\_\-array@{\-Lib\-Wheel\-::auto\-\_\-array}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!LibWheel::auto_array@{\-Lib\-Wheel\-::auto\-\_\-array}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}\-T \& \-Lib\-Wheel\-::auto\-\_\-array\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{std\-::size\-\_\-t}]{i}
+\end{DoxyParamCaption}
+) const  throw ()}}
+\label{classLibWheel_1_1auto__array_a155b35cec40da18a6c706329c5f27257}
+
+
+\-Index operator for \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array}. 
+
+\-Retrieves an element from this \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array}. 
+\begin{DoxyParams}{\-Parameters}
+{\em i} & \-The index of the element to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The element of the currently-\/owned array at index {\itshape i\/}. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{\-Warning}
+\-No bounds checks are made. \-Supplying a value of {\itshape i\/} outside of the bounds of the currently-\/owned array results in undefined behaviour. 
+\end{DoxyWarning}
+
+
+\-Definition at line 144 of file auto\-\_\-array.\-hpp.
+
+
+
+\-References ptr.
+
+\hypertarget{classLibWheel_1_1auto__array_a421fcbd078e6ae0a8fcfbe0bd7afe69d}{
+\index{\-Lib\-Wheel\-::auto\-\_\-array@{\-Lib\-Wheel\-::auto\-\_\-array}!release@{release}}
+\index{release@{release}!LibWheel::auto_array@{\-Lib\-Wheel\-::auto\-\_\-array}}
+\subsubsection[{release}]{\setlength{\rightskip}{0pt plus 5cm}\-T $\ast$ \-Lib\-Wheel\-::auto\-\_\-array\-::release (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throw ()}}
+\label{classLibWheel_1_1auto__array_a421fcbd078e6ae0a8fcfbe0bd7afe69d}
+
+
+\-Releases ownership of the currently-\/owned array. 
+
+\-The caller is then responsible for managing it. \begin{DoxyReturn}{\-Returns}
+\-A pointer to the currently-\/owned array. 
+\end{DoxyReturn}
+
+
+\-Definition at line 170 of file auto\-\_\-array.\-hpp.
+
+
+
+\-References ptr.
+
+
+
+\-Referenced by operator auto\-\_\-array\-\_\-ref().
+
+\hypertarget{classLibWheel_1_1auto__array_a3304b57bc7ab1cc91c3c638f9150ec05}{
+\index{\-Lib\-Wheel\-::auto\-\_\-array@{\-Lib\-Wheel\-::auto\-\_\-array}!reset@{reset}}
+\index{reset@{reset}!LibWheel::auto_array@{\-Lib\-Wheel\-::auto\-\_\-array}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void \-Lib\-Wheel\-::auto\-\_\-array\-::reset (
+\begin{DoxyParamCaption}
+\item[{{\bf element\-\_\-type} $\ast$}]{p = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)  throw ()}}
+\label{classLibWheel_1_1auto__array_a3304b57bc7ab1cc91c3c638f9150ec05}
+
+
+\-Frees and drops ownership of the currently-\/owned array, and takes ownership of a new array. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em p} & \-A pointer to a dynamically-\/allocated array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{\-Warning}
+\-Assigning ownership of a single object, statically-\/allocated array, or anything else not allocated with new\mbox{[}\mbox{]} to an auto\-\_\-arrayresults in undefined behaviour. 
+\end{DoxyWarning}
+
+
+\-Definition at line 188 of file auto\-\_\-array.\-hpp.
+
+
+
+\-References ptr.
+
+
+
+\-Referenced by operator=().
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classLibWheel_1_1auto__array_a8b80daaf7ff9507e9723877a4ab933e8}{
+\index{\-Lib\-Wheel\-::auto\-\_\-array@{\-Lib\-Wheel\-::auto\-\_\-array}!ptr@{ptr}}
+\index{ptr@{ptr}!LibWheel::auto_array@{\-Lib\-Wheel\-::auto\-\_\-array}}
+\subsubsection[{ptr}]{\setlength{\rightskip}{0pt plus 5cm}\-T$\ast$ {\bf \-Lib\-Wheel\-::auto\-\_\-array\-::ptr}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classLibWheel_1_1auto__array_a8b80daaf7ff9507e9723877a4ab933e8}
+
+
+\-The array owned by this \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array}. 
+
+
+
+\-Definition at line 57 of file auto\-\_\-array.\-hpp.
+
+
+
+\-Referenced by $\sim$auto\-\_\-array(), operator\mbox{[}$\,$\mbox{]}(), get(), release(), and reset().
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{auto__array_8hpp}{auto\-\_\-array.\-hpp}\end{DoxyCompactItemize}

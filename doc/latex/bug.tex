@@ -1,0 +1,23 @@
+
+\begin{DoxyRefList}
+\item[\label{bug__bug000001}%
+\hypertarget{bug__bug000001}{}%
+\-Class \hyperlink{classIPQ_1_1IpqSocket}{\-I\-P\-Q\-:\-:\-Ipq\-Socket} ]\-Connect() does not detect if other another program is using libipq. \-Instead, if another program is connected, recv\-Packet() will throw an exception. \-This is due to a limitation in libipq. 
+
+\-Due to a bug in \-Netfilter, changing the source \-I\-P address of a packet to a non-\/local address and then setting a verdict of \-N\-F\-\_\-\-A\-C\-C\-E\-P\-T will cause it to be dropped. \-This has been observed when the packet was queued from the \-O\-U\-T\-P\-U\-T chain of the mangle table. \-A work-\/around is to set a verdict of \-N\-F\-\_\-\-S\-T\-O\-P instead of \-N\-F\-\_\-\-A\-C\-C\-E\-P\-T, but be aware that this results in the packet being treated differently by iptables. \-Kernels prior to 2.\-6.\-12 do not have \-N\-F\-\_\-\-S\-T\-O\-P; defining \-N\-O\-\_\-\-N\-F\-\_\-\-S\-T\-O\-P enables another work-\/around\-: all packets are immediately dropped, and packets that are to be accepted are re-\/injected through raw sockets. \-In this case, care must be taken to ensure that infinite queueing loops do not occur. \-Also, this work-\/around only works for \-I\-P packets.  
+\item[\label{bug__bug000006}%
+\hypertarget{bug__bug000006}{}%
+\-Class \hyperlink{classLibWheel_1_1WaitList}{\-Lib\-Wheel\-:\-:\-Wait\-List} ]\-The timer interrupt handler (\-Wait\-List\-::\-Wait\-G\-C) assumes that the list is sorted in chronological order. \-However, since list iterators are provided, this is not necessarily true. \-Consequently, objects that are out of chronological order will not be removed until after all objects before them in list order have timed out and been removed. 
+\item[\label{bug__bug000002}%
+\hypertarget{bug__bug000002}{}%
+\-Class \hyperlink{classNERD_1_1ConnectionServer}{\-N\-E\-R\-D\-:\-:\-Connection\-Server} ]\-As described above, servers that have not responded within 10 seconds are assumed to be malfunctioning and are dropped. \-However, if the server is in fact still running, it will exit when it receives the \-S\-I\-G\-I\-N\-T or at some later time. \-This will result in a warning message indicating that \-S\-I\-G\-C\-H\-L\-D was received from a process for which no record exists. \-This could probably be fixed, but an extra log message is not currently considered to be a problem worthy of the effort required to fix it.  
+\item[\label{bug__bug000003}%
+\hypertarget{bug__bug000003}{}%
+\-Member \hyperlink{classNERD_1_1ConnectionServer_1_1AddressPairHash_a36bbb841fe3f2cbacb4cab2687675c4d}{\-N\-E\-R\-D\-:\-:\-Connection\-Server\-:\-:\-Address\-Pair\-Hash\-:\-:operator()} (const \-Address\-Pair \&addr) const ]\-I haven't done any analysis of it, but this hash function probably isn't very good.  
+\item[\label{bug__bug000005}%
+\hypertarget{bug__bug000005}{}%
+\-Member \hyperlink{classNERD_1_1ConnectionServer_af4ba681fed213914c83661a1dfd8df6d}{\-N\-E\-R\-D\-:\-:\-Connection\-Server\-:\-:create\-Connection} (\hyperlink{classIPQ_1_1IpqTcpPacket}{\-I\-P\-Q\-::\-Ipq\-Tcp\-Packet} $\ast$pkt)]\-Checking program ownership and using {\ttfamily execve()} to launch it results in a \-T\-O\-C\-T\-O\-U race condition. \-The solution is to use {\ttfamily fexecve()}. \-However, \-Linux does not currently implement the {\ttfamily fexecve()} system call, and its emulation in glibc does not work on \-Linux kernels prior to 2.\-6.\-22-\/rc1 if the calling program has called {\ttfamily setuid()} or {\ttfamily seteuid()}. \-This {\itshape may\/} have been fixed in \-Linux 2.\-6.\-22-\/rc1. \-When a version of {\ttfamily fexecve()} that {\itshape does\/} work becomes available, undefine the macro {\ttfamily \-B\-R\-O\-K\-E\-N\-\_\-\-F\-E\-X\-E\-C\-V\-E} in the makefile to use {\ttfamily fexecve()} instead of {\ttfamily execve()}.  
+\item[\label{bug__bug000004}%
+\hypertarget{bug__bug000004}{}%
+\-Member \hyperlink{classNERD_1_1ConnectionServer_a5b183a39539b07fe4a92ef3ad88d7c92}{\-N\-E\-R\-D\-:\-:\-Connection\-Server\-:\-:handle\-Packet} (\hyperlink{classIPQ_1_1IpqPacket}{\-I\-P\-Q\-::\-Ipq\-Packet} $\ast$pkt)]\-There is a bug in netfilter that causes locally-\/generated outbound packets with non-\/local source \-I\-P addresses to be dropped. \-Since packets returning to a client program from a server match this description after being redirected, they must be accepted with \-N\-F\-\_\-\-S\-T\-O\-P rather than \-N\-F\-\_\-\-A\-C\-C\-E\-P\-T. \-This means that they do not continue iptables traversal, and cannot be filtered elsewhere in iptables. 
+\end{DoxyRefList}

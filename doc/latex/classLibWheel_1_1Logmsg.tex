@@ -1,0 +1,278 @@
+\hypertarget{classLibWheel_1_1Logmsg}{
+\section{\-Lib\-Wheel\-:\-:\-Logmsg \-Class \-Reference}
+\label{classLibWheel_1_1Logmsg}\index{\-Lib\-Wheel\-::\-Logmsg@{\-Lib\-Wheel\-::\-Logmsg}}
+}
+
+
+\-A \-C++ front-\/end to logmsg\-: a generic framework for logging error or status messages to various targets.  
+
+
+
+
+{\ttfamily \#include $<$\-Logmsg.\-hpp$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classLibWheel_1_1Logmsg_ab778652185e2ed865ac2e351e1a01e64}{is\-Open} () const 
+\begin{DoxyCompactList}\small\item\em \-Check if a \hyperlink{classLibWheel_1_1Logmsg}{\-Logmsg} object is open. \end{DoxyCompactList}\item 
+int \hyperlink{classLibWheel_1_1Logmsg_a02f8204ca716a58419ad10cd0f53fcb9}{open} (\hyperlink{logmsg_8h_a79de13cee8c9b70b7851d97b86d4bbe5}{logmsg\-\_\-target\-\_\-t} target, unsigned options, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em \-Open and initialize a target. \end{DoxyCompactList}\item 
+int \hyperlink{classLibWheel_1_1Logmsg_a52ab6f44c7b2d4b033341005289cdaca}{operator()} (\hyperlink{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6}{logmsg\-\_\-priority\-\_\-t} priority, const char $\ast$format,...)
+\begin{DoxyCompactList}\small\item\em \-Prints a message to the current target. \end{DoxyCompactList}\item 
+int \hyperlink{classLibWheel_1_1Logmsg_a051fe5f24cf626a08e72f47eeca16c0a}{close} ()
+\begin{DoxyCompactList}\small\item\em \-Shuts down the logmsg facility. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classLibWheel_1_1Logmsg}{\-Logmsg} \& \hyperlink{classLibWheel_1_1Logmsg_a787c1e247b67b38557347b55a4171b07}{get\-Logmsg} ()
+\begin{DoxyCompactList}\small\item\em \-Retrieve the global \hyperlink{classLibWheel_1_1Logmsg}{\-Logmsg} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLibWheel_1_1Logmsg_a1de22388d00911e6c37c231430355464}{\-Logmsg} ()
+\begin{DoxyCompactList}\small\item\em \-Initialize a \hyperlink{classLibWheel_1_1Logmsg}{\-Logmsg} object in a closed state. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1Logmsg_a97eafac148d76317ccf081729d7c058b}{$\sim$\-Logmsg} ()
+\begin{DoxyCompactList}\small\item\em \-Destructor for \hyperlink{classLibWheel_1_1Logmsg}{\-Logmsg}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classLibWheel_1_1Logmsg_ab5647829f4a986be079f9a10e87d5dfb}{isopen}
+\begin{DoxyCompactList}\small\item\em {\bfseries true} if this logger is currently open; {\bfseries false} otherwise \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A \-C++ front-\/end to logmsg\-: a generic framework for logging error or status messages to various targets. 
+
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{logmsg_8c}{logmsg.\-c} 
+
+\hyperlink{logmsg_8h}{logmsg.\-h} 
+\end{DoxySeeAlso}
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classLibWheel_1_1Logmsg_a1de22388d00911e6c37c231430355464}{
+\index{\-Lib\-Wheel\-::\-Logmsg@{\-Lib\-Wheel\-::\-Logmsg}!\-Logmsg@{\-Logmsg}}
+\index{\-Logmsg@{\-Logmsg}!LibWheel::Logmsg@{\-Lib\-Wheel\-::\-Logmsg}}
+\subsubsection[{\-Logmsg}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::\-Logmsg\-::\-Logmsg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classLibWheel_1_1Logmsg_a1de22388d00911e6c37c231430355464}
+
+
+\-Initialize a \hyperlink{classLibWheel_1_1Logmsg}{\-Logmsg} object in a closed state. 
+
+
+
+\-Definition at line 45 of file \-Logmsg.\-cpp.
+
+\hypertarget{classLibWheel_1_1Logmsg_a97eafac148d76317ccf081729d7c058b}{
+\index{\-Lib\-Wheel\-::\-Logmsg@{\-Lib\-Wheel\-::\-Logmsg}!$\sim$\-Logmsg@{$\sim$\-Logmsg}}
+\index{$\sim$\-Logmsg@{$\sim$\-Logmsg}!LibWheel::Logmsg@{\-Lib\-Wheel\-::\-Logmsg}}
+\subsubsection[{$\sim$\-Logmsg}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::\-Logmsg\-::$\sim$\-Logmsg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classLibWheel_1_1Logmsg_a97eafac148d76317ccf081729d7c058b}
+
+
+\-Destructor for \hyperlink{classLibWheel_1_1Logmsg}{\-Logmsg}. 
+
+\-Closes the target if it's open. 
+
+\-Definition at line 53 of file \-Logmsg.\-cpp.
+
+
+
+\-References isopen, and close().
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classLibWheel_1_1Logmsg_a051fe5f24cf626a08e72f47eeca16c0a}{
+\index{\-Lib\-Wheel\-::\-Logmsg@{\-Lib\-Wheel\-::\-Logmsg}!close@{close}}
+\index{close@{close}!LibWheel::Logmsg@{\-Lib\-Wheel\-::\-Logmsg}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}int \-Lib\-Wheel\-::\-Logmsg\-::close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classLibWheel_1_1Logmsg_a051fe5f24cf626a08e72f47eeca16c0a}
+
+
+\-Shuts down the logmsg facility. 
+
+\-Closes the target appropriately. \begin{DoxyReturn}{\-Returns}
+0 on success, or \-E\-O\-F on failure, with errno set appropriately. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{logmsg_8c_af255aaa9d72e9a217892ed4ed6a7efbc}{logmsg\-\_\-close()} 
+\end{DoxySeeAlso}
+
+
+\-Definition at line 109 of file \-Logmsg.\-cpp.
+
+
+
+\-References isopen, and logmsg\-\_\-close().
+
+
+
+\-Referenced by $\sim$\-Logmsg().
+
+\hypertarget{classLibWheel_1_1Logmsg_a787c1e247b67b38557347b55a4171b07}{
+\index{\-Lib\-Wheel\-::\-Logmsg@{\-Lib\-Wheel\-::\-Logmsg}!get\-Logmsg@{get\-Logmsg}}
+\index{get\-Logmsg@{get\-Logmsg}!LibWheel::Logmsg@{\-Lib\-Wheel\-::\-Logmsg}}
+\subsubsection[{get\-Logmsg}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Logmsg} \& \-Lib\-Wheel\-::\-Logmsg\-::get\-Logmsg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classLibWheel_1_1Logmsg_a787c1e247b67b38557347b55a4171b07}
+
+
+\-Retrieve the global \hyperlink{classLibWheel_1_1Logmsg}{\-Logmsg} object. 
+
+\begin{DoxyReturn}{\-Returns}
+a reference to the global \hyperlink{classLibWheel_1_1Logmsg}{\-Logmsg} object. 
+\end{DoxyReturn}
+
+
+\-Definition at line 35 of file \-Logmsg.\-cpp.
+
+\hypertarget{classLibWheel_1_1Logmsg_ab778652185e2ed865ac2e351e1a01e64}{
+\index{\-Lib\-Wheel\-::\-Logmsg@{\-Lib\-Wheel\-::\-Logmsg}!is\-Open@{is\-Open}}
+\index{is\-Open@{is\-Open}!LibWheel::Logmsg@{\-Lib\-Wheel\-::\-Logmsg}}
+\subsubsection[{is\-Open}]{\setlength{\rightskip}{0pt plus 5cm}bool \-Lib\-Wheel\-::\-Logmsg\-::is\-Open (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classLibWheel_1_1Logmsg_ab778652185e2ed865ac2e351e1a01e64}
+
+
+\-Check if a \hyperlink{classLibWheel_1_1Logmsg}{\-Logmsg} object is open. 
+
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if it's open; {\bfseries false} otherwise. 
+\end{DoxyReturn}
+
+
+\-Definition at line 65 of file \-Logmsg.\-cpp.
+
+
+
+\-References isopen.
+
+\hypertarget{classLibWheel_1_1Logmsg_a02f8204ca716a58419ad10cd0f53fcb9}{
+\index{\-Lib\-Wheel\-::\-Logmsg@{\-Lib\-Wheel\-::\-Logmsg}!open@{open}}
+\index{open@{open}!LibWheel::Logmsg@{\-Lib\-Wheel\-::\-Logmsg}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}int \-Lib\-Wheel\-::\-Logmsg\-::open (
+\begin{DoxyParamCaption}
+\item[{{\bf logmsg\-\_\-target\-\_\-t}}]{target, }
+\item[{unsigned}]{options, }
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}
+\label{classLibWheel_1_1Logmsg_a02f8204ca716a58419ad10cd0f53fcb9}
+
+
+\-Open and initialize a target. 
+
+\-If a target is already open, close it first. 
+\begin{DoxyParams}{\-Parameters}
+{\em target} & \-The type of target to use. \\
+\hline
+{\em options} & \-A bitfield of option flags. \\
+\hline
+{\em name} & \-A string whose purpose is determined by the value of {\itshape target\-:\/} 
+\begin{DoxyItemize}
+\item {\ttfamily logmsg\-\_\-file\-:} \-The name of the file to use.
+\item {\ttfamily logmsg\-\_\-syslog}, {\ttfamily logmsg\-\_\-stdout}, {\ttfamily logmsg\-\_\-stderr\-:} \-A string to prepend to each log message. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0 on success or -\/1 on failure, with errno set appropriately. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{logmsg_8c_a660f642146b247588b15451bdfe18e15}{logmsg\-\_\-open()} 
+\end{DoxySeeAlso}
+
+
+\-Definition at line 85 of file \-Logmsg.\-cpp.
+
+
+
+\-References isopen, logmsg\-\_\-close(), and logmsg\-\_\-open().
+
+\hypertarget{classLibWheel_1_1Logmsg_a52ab6f44c7b2d4b033341005289cdaca}{
+\index{\-Lib\-Wheel\-::\-Logmsg@{\-Lib\-Wheel\-::\-Logmsg}!operator()@{operator()}}
+\index{operator()@{operator()}!LibWheel::Logmsg@{\-Lib\-Wheel\-::\-Logmsg}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}int \-Lib\-Wheel\-::\-Logmsg\-::operator() (
+\begin{DoxyParamCaption}
+\item[{{\bf logmsg\-\_\-priority\-\_\-t}}]{priority, }
+\item[{const char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}
+\label{classLibWheel_1_1Logmsg_a52ab6f44c7b2d4b033341005289cdaca}
+
+
+\-Prints a message to the current target. 
+
+\-The message is formatted $\backslash$ according to syslog() conventions. 
+\begin{DoxyParams}{\-Parameters}
+{\em priority} & \-The message priority. \-How this is interpreted depends on the target\-:
+\begin{DoxyItemize}
+\item {\ttfamily logmsg\-\_\-syslog\-:} \-Use the equivalent syslog priority.
+\item {\ttfamily logmsg\-\_\-file}, {\ttfamily logmsg\-\_\-stdout}, {\ttfamily logmsg\-\_\-stderr\-:} \-Prepend a string to the message indicating the priority 
+\end{DoxyItemize}\\
+\hline
+{\em format} & \-A printf()-\/style format string, followed by arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0 on success, or -\/1 on failure 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{namespaceLibWheel_af4ca70f4f65b2948701218436516a679}{logmsg()} 
+\end{DoxySeeAlso}
+
+
+\-Definition at line 133 of file \-Logmsg.\-cpp.
+
+
+
+\-References isopen, and vlogmsg().
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classLibWheel_1_1Logmsg_ab5647829f4a986be079f9a10e87d5dfb}{
+\index{\-Lib\-Wheel\-::\-Logmsg@{\-Lib\-Wheel\-::\-Logmsg}!isopen@{isopen}}
+\index{isopen@{isopen}!LibWheel::Logmsg@{\-Lib\-Wheel\-::\-Logmsg}}
+\subsubsection[{isopen}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Lib\-Wheel\-::\-Logmsg\-::isopen}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classLibWheel_1_1Logmsg_ab5647829f4a986be079f9a10e87d5dfb}
+
+
+{\bfseries true} if this logger is currently open; {\bfseries false} otherwise 
+
+
+
+\-Definition at line 43 of file \-Logmsg.\-hpp.
+
+
+
+\-Referenced by $\sim$\-Logmsg(), is\-Open(), open(), close(), and operator()().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Logmsg_8hpp}{\-Logmsg.\-hpp}\item 
+\hyperlink{Logmsg_8cpp}{\-Logmsg.\-cpp}\end{DoxyCompactItemize}

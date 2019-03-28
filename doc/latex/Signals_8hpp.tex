@@ -1,0 +1,88 @@
+\hypertarget{Signals_8hpp}{
+\section{\-Signals.hpp \-File \-Reference}
+\label{Signals_8hpp}\index{\-Signals.\-hpp@{\-Signals.\-hpp}}
+}
+{\ttfamily \#include $<$list$>$}\*
+{\ttfamily \#include $<$string$>$}\*
+{\ttfamily \#include $<$queue$>$}\*
+{\ttfamily \#include $<$stdexcept$>$}\*
+{\ttfamily \#include $<$csignal$>$}\*
+{\ttfamily \#include $<$ctime$>$}\*
+{\ttfamily \#include $<$boost/function.\-hpp$>$}\*
+{\ttfamily \#include $<$boost/utility.\-hpp$>$}\*
+{\ttfamily \#include $<$sys/select.\-h$>$}\*
+{\ttfamily \#include \char`\"{}libwheel.\-h\char`\"{}}\*
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classLibWheel_1_1SignalException}{\-Lib\-Wheel\-::\-Signal\-Exception}
+\begin{DoxyCompactList}\small\item\em \-Base class for exceptions thrown by signal handlers. \end{DoxyCompactList}\item 
+class \hyperlink{classLibWheel_1_1Interrupt}{\-Lib\-Wheel\-::\-Interrupt}
+\begin{DoxyCompactList}\small\item\em \-Exception to be thrown in response to a \-S\-I\-G\-I\-N\-T. \end{DoxyCompactList}\item 
+class \hyperlink{classLibWheel_1_1Thrower}{\-Lib\-Wheel\-::\-Thrower}
+\begin{DoxyCompactList}\small\item\em \-Template for functors to throw exceptions in response to signals. \end{DoxyCompactList}\item 
+class \hyperlink{classLibWheel_1_1SignalQueue}{\-Lib\-Wheel\-::\-Signal\-Queue}
+\begin{DoxyCompactList}\small\item\em \-A system for synchronously handling asynchronous signals in a uni-\/threaded process. \end{DoxyCompactList}\item 
+struct \hyperlink{structLibWheel_1_1SignalQueue_1_1Pipe}{\-Lib\-Wheel\-::\-Signal\-Queue\-::\-Pipe}
+\begin{DoxyCompactList}\small\item\em \-Convienience wrapper for a non-\/blocking \-Unix pipe. \end{DoxyCompactList}\item 
+class \hyperlink{classLibWheel_1_1Timer}{\-Lib\-Wheel\-::\-Timer}
+\begin{DoxyCompactList}\small\item\em \-Singleton class to manage real time timer interrupts. \end{DoxyCompactList}\item 
+class \hyperlink{classLibWheel_1_1Timer_1_1Handler}{\-Lib\-Wheel\-::\-Timer\-::\-Handler}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classLibWheel_1_1SignalQueue}{\-Signal\-Queue} interrupt handler for \-S\-I\-G\-A\-L\-R\-M that schedules the next timer interrupt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespaceLibWheel}{\-Lib\-Wheel}
+\begin{DoxyCompactList}\small\item\em \-A set of reusuable software components written in various languages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Signals_8hpp_a18f1798cd03059687605ac517f1cc1de}{\-Signal\-Queue\-\_\-signal\-Handler} (int signum, siginfo\-\_\-t $\ast$, void $\ast$)
+\begin{DoxyCompactList}\small\item\em \-Low-\/level signal handler. \end{DoxyCompactList}\item 
+int \hyperlink{namespaceLibWheel_a6941e854dd6b671e040bcffd561c22e5}{\-Lib\-Wheel\-::uninterruptible\-\_\-close} (int fd)
+\begin{DoxyCompactList}\small\item\em \-Close a file descriptor. \end{DoxyCompactList}\item 
+ssize\-\_\-t \hyperlink{namespaceLibWheel_a5103fe133e672ffe84edc3977969c244}{\-Lib\-Wheel\-::uninterruptible\-\_\-read} (int fd, unsigned char $\ast$buf, size\-\_\-t count)
+\begin{DoxyCompactList}\small\item\em \-Read data from a file descriptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\begin{DoxyAuthor}{\-Author}
+\-Rennie de\-Graaf 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+2007/11/20
+\end{DoxyDate}
+\-Functions and classes for working with \-Unix signals in \-C++. 
+
+\-Definition in file \hyperlink{Signals_8hpp_source}{\-Signals.\-hpp}.
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{Signals_8hpp_a18f1798cd03059687605ac517f1cc1de}{
+\index{\-Signals.\-hpp@{\-Signals.\-hpp}!\-Signal\-Queue\-\_\-signal\-Handler@{\-Signal\-Queue\-\_\-signal\-Handler}}
+\index{\-Signal\-Queue\-\_\-signal\-Handler@{\-Signal\-Queue\-\_\-signal\-Handler}!Signals.hpp@{\-Signals.\-hpp}}
+\subsubsection[{\-Signal\-Queue\-\_\-signal\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}void \-Signal\-Queue\-\_\-signal\-Handler (
+\begin{DoxyParamCaption}
+\item[{int}]{signum, }
+\item[{siginfo\-\_\-t $\ast$}]{, }
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}}
+\label{Signals_8hpp_a18f1798cd03059687605ac517f1cc1de}
+
+
+\-Low-\/level signal handler. 
+
+\-Writes the signal number to the signal pipe as a single byte and returns. \-C++ signal handler conventions require that this be a function with \-C linkage in the global namespace. \-Don't call it directly. 
+
+\-Definition at line 564 of file \-Signals.\-cpp.
+
+
+
+\-References \-Lib\-Wheel\-::\-Signal\-Queue\-::get\-Signal\-Pipe().
+
+
+
+\-Referenced by \-Lib\-Wheel\-::\-Signal\-Queue\-::set\-Handler().
+

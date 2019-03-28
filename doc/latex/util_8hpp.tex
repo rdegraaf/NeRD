@@ -1,0 +1,47 @@
+\hypertarget{util_8hpp}{
+\section{util.hpp \-File \-Reference}
+\label{util_8hpp}\index{util.\-hpp@{util.\-hpp}}
+}
+{\ttfamily \#include $<$stdexcept$>$}\*
+{\ttfamily \#include $<$string$>$}\*
+{\ttfamily \#include $<$netinet/in.\-h$>$}\*
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classLibWheel_1_1IOException}{\-Lib\-Wheel\-::\-I\-O\-Exception}
+\begin{DoxyCompactList}\small\item\em \-Exception thrown when an \-I/\-O error occurs. \end{DoxyCompactList}\item 
+class \hyperlink{classLibWheel_1_1SocketException}{\-Lib\-Wheel\-::\-Socket\-Exception}
+\begin{DoxyCompactList}\small\item\em \-Exception thrown when a socket error occurs. \end{DoxyCompactList}\item 
+class \hyperlink{classLibWheel_1_1ParseError}{\-Lib\-Wheel\-::\-Parse\-Error}
+\begin{DoxyCompactList}\small\item\em \-Exception throws when a parsing error occurs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespaceLibWheel}{\-Lib\-Wheel}
+\begin{DoxyCompactList}\small\item\em \-A set of reusuable software components written in various languages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{namespaceLibWheel_a922fd717077d5a27328412f69c8d9d8c}{\-Lib\-Wheel\-::ipv4\-\_\-to\-\_\-string} (in\-\_\-addr\-\_\-t a)
+\begin{DoxyCompactList}\small\item\em \-Converts an \-I\-Pv4 address to a string in dotted-\/decimal format. \end{DoxyCompactList}\item 
+int \hyperlink{namespaceLibWheel_a5f91ec312857b9f968bc17d795bc96e1}{\-Lib\-Wheel\-::open\-\_\-files} ()
+\begin{DoxyCompactList}\small\item\em \-Counts the number of currently-\/open file descriptors. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceLibWheel_a941108ec3b987f98a677f78dc36eace0}{\-Lib\-Wheel\-::close\-\_\-files\-\_\-on\-\_\-exec} (int maxfd)
+\begin{DoxyCompactList}\small\item\em \-Set the \char`\"{}close-\/on-\/exec\char`\"{} attribute on open file descriptors greater than {\itshape maxfd\/}. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceLibWheel_a47a8ef54f60bc8780ca2a1339e05429c}{\-Lib\-Wheel\-::write\-\_\-pid} (const char $\ast$file)
+\begin{DoxyCompactList}\small\item\em \-Write the current \-P\-I\-D to a file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , std\-::size\-\_\-t \-N$>$ }\\static std\-::size\-\_\-t \hyperlink{namespaceLibWheel_ae09ae253a62d761240dc4fd0dbb961a5}{\-Lib\-Wheel\-::array\-Size} (\-T(\&)\mbox{[}\-N\mbox{]})
+\begin{DoxyCompactList}\small\item\em \-Determines the size of an array, in elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\begin{DoxyAuthor}{\-Author}
+\-Rennie de\-Graaf 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+2007/06/13
+\end{DoxyDate}
+\-Declarations for miscellaneous \hyperlink{namespaceLibWheel}{\-Lib\-Wheel} functions and classes that don't fit anywhere else. 
+
+\-Definition in file \hyperlink{util_8hpp_source}{util.\-hpp}.
+

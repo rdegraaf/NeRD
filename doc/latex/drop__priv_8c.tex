@@ -1,0 +1,150 @@
+\hypertarget{drop__priv_8c}{
+\section{drop\-\_\-priv.c \-File \-Reference}
+\label{drop__priv_8c}\index{drop\-\_\-priv.\-c@{drop\-\_\-priv.\-c}}
+}
+{\ttfamily \#include $<$pwd.\-h$>$}\*
+{\ttfamily \#include $<$grp.\-h$>$}\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\*
+{\ttfamily \#include $<$unistd.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$errno.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include \char`\"{}logmsg.\-h\char`\"{}}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{drop__priv_8c_ad3d8a3bd0c0b677acef144f2c2ef6d73}{\-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E}
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+uid\-\_\-t \hyperlink{drop__priv_8c_a8f8da27ca36386d8d7900f48ac897977}{get\-\_\-user\-\_\-uid} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em \-Looks up the \-U\-I\-D for a given user name. \end{DoxyCompactList}\item 
+gid\-\_\-t \hyperlink{drop__priv_8c_a24581dbae1c718198b4d4ea9349c4623}{get\-\_\-group\-\_\-gid} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em \-Looks up the \-G\-I\-D for a given group name. \end{DoxyCompactList}\item 
+void \hyperlink{drop__priv_8c_a8774b10985df500e9dcbf5378e5abf6e}{drop\-\_\-priv} (const uid\-\_\-t newuid, const gid\-\_\-t newgid)
+\begin{DoxyCompactList}\small\item\em \-Drops privileges by setting the effective and real \-U\-I\-D and \-G\-I\-D to specified values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\begin{DoxyAuthor}{\-Author}
+\-Rennie de\-Graaf 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+2007/05/28
+\end{DoxyDate}
+\-Functions to facilitate dropping privileges from root-\/owned processes. 
+
+\-Definition in file \hyperlink{drop__priv_8c_source}{drop\-\_\-priv.\-c}.
+
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{drop__priv_8c_ad3d8a3bd0c0b677acef144f2c2ef6d73}{
+\index{drop\-\_\-priv.\-c@{drop\-\_\-priv.\-c}!\-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E@{\-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E}}
+\index{\-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E@{\-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E}!drop_priv.c@{drop\-\_\-priv.\-c}}
+\subsubsection[{\-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E}}
+\label{drop__priv_8c_ad3d8a3bd0c0b677acef144f2c2ef6d73}
+
+
+\-Definition at line 36 of file drop\-\_\-priv.\-c.
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{drop__priv_8c_a8774b10985df500e9dcbf5378e5abf6e}{
+\index{drop\-\_\-priv.\-c@{drop\-\_\-priv.\-c}!drop\-\_\-priv@{drop\-\_\-priv}}
+\index{drop\-\_\-priv@{drop\-\_\-priv}!drop_priv.c@{drop\-\_\-priv.\-c}}
+\subsubsection[{drop\-\_\-priv}]{\setlength{\rightskip}{0pt plus 5cm}void drop\-\_\-priv (
+\begin{DoxyParamCaption}
+\item[{const uid\-\_\-t}]{newuid, }
+\item[{const gid\-\_\-t}]{newgid}
+\end{DoxyParamCaption}
+)}}
+\label{drop__priv_8c_a8774b10985df500e9dcbf5378e5abf6e}
+
+
+\-Drops privileges by setting the effective and real \-U\-I\-D and \-G\-I\-D to specified values. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em newuid} & \-The new \-U\-I\-D to set, or -\/1 to leave the \-U\-I\-D unchanged. \\
+\hline
+{\em newgid} & \-The new \-G\-U\-D to set, ot -\/1 to leave the \-G\-I\-D unchanged. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+\-On failure, logs a message through the logmsg facility and calls {\ttfamily abort()}. 
+
+\-This function was designed to permanently drop privileges from root-\/owned processes. \-It may also work for permanently dropping privileges from \-S\-E\-T\-U\-I\-D-\/root processes. 
+
+\-This function may not work properly on \-B\-S\-D. 
+\end{DoxyNote}
+
+
+\-Definition at line 91 of file drop\-\_\-priv.\-c.
+
+
+
+\-References \-L\-O\-G\-M\-S\-G\-\_\-\-L\-I\-B, \-L\-O\-G\-M\-S\-G\-\_\-\-F\-A\-T\-A\-L\-\_\-\-E\-X\-I\-T, \-Lib\-Wheel\-::logmsg, and logmsg\-\_\-crit.
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::create\-Connection().
+
+\hypertarget{drop__priv_8c_a24581dbae1c718198b4d4ea9349c4623}{
+\index{drop\-\_\-priv.\-c@{drop\-\_\-priv.\-c}!get\-\_\-group\-\_\-gid@{get\-\_\-group\-\_\-gid}}
+\index{get\-\_\-group\-\_\-gid@{get\-\_\-group\-\_\-gid}!drop_priv.c@{drop\-\_\-priv.\-c}}
+\subsubsection[{get\-\_\-group\-\_\-gid}]{\setlength{\rightskip}{0pt plus 5cm}gid\-\_\-t get\-\_\-group\-\_\-gid (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}
+\label{drop__priv_8c_a24581dbae1c718198b4d4ea9349c4623}
+
+
+\-Looks up the \-G\-I\-D for a given group name. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em name} & \-The group name to look up. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The \-G\-I\-D corresponding to {\itshape name\/} on success, or -\/1 on failure. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{\-Warning}
+\-Not thread-\/safe. 
+\end{DoxyWarning}
+
+
+\-Definition at line 69 of file drop\-\_\-priv.\-c.
+
+\hypertarget{drop__priv_8c_a8f8da27ca36386d8d7900f48ac897977}{
+\index{drop\-\_\-priv.\-c@{drop\-\_\-priv.\-c}!get\-\_\-user\-\_\-uid@{get\-\_\-user\-\_\-uid}}
+\index{get\-\_\-user\-\_\-uid@{get\-\_\-user\-\_\-uid}!drop_priv.c@{drop\-\_\-priv.\-c}}
+\subsubsection[{get\-\_\-user\-\_\-uid}]{\setlength{\rightskip}{0pt plus 5cm}uid\-\_\-t get\-\_\-user\-\_\-uid (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}
+\label{drop__priv_8c_a8f8da27ca36386d8d7900f48ac897977}
+
+
+\-Looks up the \-U\-I\-D for a given user name. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em name} & \-The user name to look up. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The \-U\-I\-D corresponding to {\itshape name\/} on success, or -\/1 on failure. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{\-Warning}
+\-Not thread-\/safe. 
+\end{DoxyWarning}
+
+
+\-Definition at line 53 of file drop\-\_\-priv.\-c.
+

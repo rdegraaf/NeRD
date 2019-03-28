@@ -1,0 +1,996 @@
+\hypertarget{classIPQ_1_1IpqIpPacket}{
+\section{\-I\-P\-Q\-:\-:\-Ipq\-Ip\-Packet \-Class \-Reference}
+\label{classIPQ_1_1IpqIpPacket}\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+}
+
+
+\-A complete \-I\-Pv4 packet received via \hyperlink{classIPQ_1_1IpqSocket}{\-Ipq\-Socket}.  
+
+
+
+
+{\ttfamily \#include $<$\-I\-P\-Q.\-hpp$>$}
+
+\-Inheritance diagram for \-I\-P\-Q\-:\-:\-Ipq\-Ip\-Packet\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classIPQ_1_1IpqIpPacket}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+in\-\_\-addr\-\_\-t \hyperlink{classIPQ_1_1IpqIpPacket_a4708c5a987eb9796566e2b3bdd072589}{get\-Ip\-Source} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the source \-I\-P address of a packet. \end{DoxyCompactList}\item 
+in\-\_\-addr\-\_\-t \hyperlink{classIPQ_1_1IpqIpPacket_a056bedcbf7998452d147f2d2ef68b611}{get\-Ip\-Dest} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the destination \-I\-P address of a packet. \end{DoxyCompactList}\item 
+boost\-::uint8\-\_\-t \hyperlink{classIPQ_1_1IpqIpPacket_aefa78bb7a89a337bb0c1d88c02d6d5cd}{get\-Protocol} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the encapsulated protocol number of a packet. \end{DoxyCompactList}\item 
+boost\-::uint16\-\_\-t \hyperlink{classIPQ_1_1IpqIpPacket_a937be4034dafdce171b7e90ae14f09d4}{get\-Id} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the \-I\-P \-I\-D of a packet. \end{DoxyCompactList}\item 
+boost\-::uint16\-\_\-t \hyperlink{classIPQ_1_1IpqIpPacket_a97e6e13ede2c6c6f028ee0eb1130600b}{get\-Frag\-Offset} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the fragment offset of a packet, in bytes. \end{DoxyCompactList}\item 
+bool \hyperlink{classIPQ_1_1IpqIpPacket_a76e0d09916fc816df3dab46cb29d479f}{get\-More\-Frags} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the \char`\"{}more fragments to follow\char`\"{} flag of a packet. \end{DoxyCompactList}\item 
+struct iphdr \& \hyperlink{classIPQ_1_1IpqIpPacket_abf46954191d96b4e2fe136f79ba6c8ac}{get\-Ip\-Header} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the complete \-I\-P header of a packet. \end{DoxyCompactList}\item 
+struct iphdr \& \hyperlink{classIPQ_1_1IpqIpPacket_aa6e89b7927e748d00b9562e85192b492}{get\-Ip\-Header} ()
+\begin{DoxyCompactList}\small\item\em \-Retrieve the complete \-I\-P header of a packet. \end{DoxyCompactList}\item 
+const boost\-::uint8\-\_\-t $\ast$ \hyperlink{classIPQ_1_1IpqIpPacket_adc020ff0aceeba0577e4bb90dcc6f86f}{get\-Ip\-Payload} (std\-::size\-\_\-t \&size) const 
+\begin{DoxyCompactList}\small\item\em \-Retrive the \-I\-P payload of a packet. \end{DoxyCompactList}\item 
+boost\-::uint8\-\_\-t $\ast$ \hyperlink{classIPQ_1_1IpqIpPacket_a47343dd1a4fc52c8fda6de4aa313a688}{get\-Ip\-Payload} (std\-::size\-\_\-t \&size)
+\begin{DoxyCompactList}\small\item\em \-Retrive the \-I\-P payload of a packet. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classIPQ_1_1IpqIpPacket_a5ddc175ec8c4bc8c7bab3baee12909f0}{print} (std\-::ostream \&out) const 
+\begin{DoxyCompactList}\small\item\em \-Print an \-I\-P packet to stdout in an easy-\/to-\/read format. \end{DoxyCompactList}\item 
+virtual \hyperlink{classIPQ_1_1IpqIpPacket_a13e93bcb4fa2dc3fdc4ec122c1666574}{$\sim$\-Ipq\-Ip\-Packet} ()
+\begin{DoxyCompactList}\small\item\em \-Destructor for \hyperlink{classIPQ_1_1IpqIpPacket}{\-Ipq\-Ip\-Packet}. \end{DoxyCompactList}\item 
+unsigned long \hyperlink{classIPQ_1_1IpqPacket_ac3cbbe2b61e12730ffe231fa19c96e5a}{get\-Nf\-Id} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the \-Netfilter \-I\-D of a packet. \end{DoxyCompactList}\item 
+unsigned long \hyperlink{classIPQ_1_1IpqPacket_ab97f0a4348e53cb69ed1da74e422dc78}{get\-Nf\-Mark} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the \-Netfilter mark value of a packet. \end{DoxyCompactList}\item 
+void \hyperlink{classIPQ_1_1IpqPacket_a430ce4f89e651724efdf56c9c1b1647e}{get\-Timestamp} (struct timeval \&time) const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the arrival time of a packet. \end{DoxyCompactList}\item 
+unsigned \hyperlink{classIPQ_1_1IpqPacket_ae13884fedce165702f4b71e0e4d93c0b}{get\-Nf\-Hook} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the number of the \-Netfilter hook on which the packet arrived. \end{DoxyCompactList}\item 
+const char(\& \hyperlink{classIPQ_1_1IpqPacket_a4cf04ca5da28410f27d87edefd679532}{get\-Indev\-Name} () const)\mbox{[}\-I\-F\-N\-A\-M\-S\-I\-Z\mbox{]}
+\begin{DoxyCompactList}\small\item\em \-Retrieve the name of the interface on which the packet arrived, if available. \end{DoxyCompactList}\item 
+const char(\& \hyperlink{classIPQ_1_1IpqPacket_a46dced8057de3bba7abfaaa63d7afcd4}{get\-Outdev\-Name} () const)\mbox{[}\-I\-F\-N\-A\-M\-S\-I\-Z\mbox{]}
+\begin{DoxyCompactList}\small\item\em \-Retrieve the name of the interface on which the packet will leave, if available. \end{DoxyCompactList}\item 
+unsigned short \hyperlink{classIPQ_1_1IpqPacket_ae150e294f043f4c699231a85d3b1ae0f}{get\-Hw\-Protocol} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the hardware protocol number of the packet. \end{DoxyCompactList}\item 
+unsigned short \hyperlink{classIPQ_1_1IpqPacket_ab6b76b146111c7ad11b96e87efe6634c}{get\-Hw\-Type} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the hardware type on which the packet arrived. \end{DoxyCompactList}\item 
+const unsigned char(\& \hyperlink{classIPQ_1_1IpqPacket_a8582ae732d6b66ca1f5201994159a84a}{get\-Hw\-Source} (unsigned short \&addrlen) const)\mbox{[}8\mbox{]}
+\begin{DoxyCompactList}\small\item\em \-Retrieve the source hardware address of the packet. \end{DoxyCompactList}\item 
+const boost\-::uint8\-\_\-t $\ast$ \hyperlink{classIPQ_1_1IpqPacket_a6dd7baeec66082658d882bff8862eb6c}{get\-Packet} (std\-::size\-\_\-t \&size) const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the packet. \end{DoxyCompactList}\item 
+boost\-::uint8\-\_\-t $\ast$ \hyperlink{classIPQ_1_1IpqPacket_a0bf3344a9eed5e2f6bc20890ffffe26e}{get\-Packet} (std\-::size\-\_\-t \&size)
+\begin{DoxyCompactList}\small\item\em \-Retrieve the packet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classIPQ_1_1IpqIpPacket_a1517b15b34742a3c2469ba7c5ed5ed01}{\-Ipq\-Ip\-Packet} (\hyperlink{classLibWheel_1_1auto__array}{\-Lib\-Wheel\-::auto\-\_\-array}$<$ boost\-::uint8\-\_\-t $>$ buf, std\-::size\-\_\-t buflen)
+\begin{DoxyCompactList}\small\item\em \-Constructor for \hyperlink{classIPQ_1_1IpqIpPacket}{\-Ipq\-Ip\-Packet}. \end{DoxyCompactList}\item 
+struct iphdr \& \hyperlink{classIPQ_1_1IpqIpPacket_a6be0afa1f616cbe7722ef817a65e24dc}{do\-Get\-Ip\-Header} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the complete \-I\-P header of a packet. \end{DoxyCompactList}\item 
+boost\-::uint8\-\_\-t $\ast$ \hyperlink{classIPQ_1_1IpqIpPacket_ab78709e0712a1912d19114f815407303}{do\-Get\-Ip\-Payload} (std\-::size\-\_\-t \&size) const 
+\begin{DoxyCompactList}\small\item\em \-Retrive the \-I\-P payload of a packet. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classIPQ_1_1IpqIpPacket_a4c2c0ccd36ef921f6632b26ebd524b90}{update\-Checksums} ()
+\begin{DoxyCompactList}\small\item\em \-Update the checksums on an \-I\-P packet. \end{DoxyCompactList}\item 
+boost\-::uint8\-\_\-t $\ast$ \hyperlink{classIPQ_1_1IpqPacket_a7b8f489a9cec36058eaee43f6566a999}{do\-Get\-Packet} (std\-::size\-\_\-t \&size) const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the packet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classIPQ_1_1IpqPacket}{\-Ipq\-Packet} $\ast$ \hyperlink{classIPQ_1_1IpqPacket_adf6099052730113814e9fe7312ec7b8c}{create\-Packet} (\hyperlink{classLibWheel_1_1auto__array}{\-Lib\-Wheel\-::auto\-\_\-array}$<$ boost\-::uint8\-\_\-t $>$ buf, std\-::size\-\_\-t buflen)
+\begin{DoxyCompactList}\small\item\em \-Create an \hyperlink{classIPQ_1_1IpqPacket}{\-Ipq\-Packet} or one of its subclasses from a libipq packet message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLibWheel_1_1auto__array}{\-Lib\-Wheel\-::auto\-\_\-array}\*
+$<$ boost\-::uint8\-\_\-t $>$ \hyperlink{classIPQ_1_1IpqPacket_a2bdf247f13a3e9f86e9e3846e6a9cb45}{packet}
+\begin{DoxyCompactList}\small\item\em \-The packet message received from kernelspace. \end{DoxyCompactList}\item 
+std\-::size\-\_\-t \hyperlink{classIPQ_1_1IpqPacket_a9b448a070c5ae499e32d2af5a190b86d}{packet\-Len}
+\begin{DoxyCompactList}\small\item\em the length of the packet message in \hyperlink{classIPQ_1_1IpqPacket_a2bdf247f13a3e9f86e9e3846e6a9cb45}{\-Ipq\-Packet\-::packet}, in bytes. \end{DoxyCompactList}\item 
+bool \hyperlink{classIPQ_1_1IpqPacket_a00acebf51531043a8536f20bb9412d61}{dirty}
+\begin{DoxyCompactList}\small\item\em {\bfseries true} if the packet has been modified but checksums have not been updated; {\bfseries false} otherwise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classIPQ_1_1IpqPacket}{\-Ipq\-Packet} $\ast$ \hyperlink{classIPQ_1_1IpqIpPacket_af2019ef9442b13f8da0f53a082a9b308}{\-Ipq\-Packet\-::create\-Packet} (\hyperlink{classLibWheel_1_1auto__array}{\-Lib\-Wheel\-::auto\-\_\-array}$<$ boost\-::uint8\-\_\-t $>$, std\-::size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em \-Allow \-Ipq\-Socket\-::create\-Packet() to access the contstructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A complete \-I\-Pv4 packet received via \hyperlink{classIPQ_1_1IpqSocket}{\-Ipq\-Socket}. 
+
+\-Contains \-I\-P header fields and the \-I\-P payload. \begin{DoxyNote}{\-Note}
+\-This class does not reassemble \-I\-P fragments. 
+\end{DoxyNote}
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classIPQ_1_1IpqIpPacket_a13e93bcb4fa2dc3fdc4ec122c1666574}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!$\sim$\-Ipq\-Ip\-Packet@{$\sim$\-Ipq\-Ip\-Packet}}
+\index{$\sim$\-Ipq\-Ip\-Packet@{$\sim$\-Ipq\-Ip\-Packet}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{$\sim$\-Ipq\-Ip\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}\-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::$\sim$\-Ipq\-Ip\-Packet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classIPQ_1_1IpqIpPacket_a13e93bcb4fa2dc3fdc4ec122c1666574}
+
+
+\-Destructor for \hyperlink{classIPQ_1_1IpqIpPacket}{\-Ipq\-Ip\-Packet}. 
+
+
+
+\-Definition at line 910 of file \-I\-P\-Q.\-cpp.
+
+\hypertarget{classIPQ_1_1IpqIpPacket_a1517b15b34742a3c2469ba7c5ed5ed01}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!\-Ipq\-Ip\-Packet@{\-Ipq\-Ip\-Packet}}
+\index{\-Ipq\-Ip\-Packet@{\-Ipq\-Ip\-Packet}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{\-Ipq\-Ip\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}\-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::\-Ipq\-Ip\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Lib\-Wheel\-::auto\-\_\-array}$<$ boost\-::uint8\-\_\-t $>$}]{buf, }
+\item[{std\-::size\-\_\-t}]{buflen}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classIPQ_1_1IpqIpPacket_a1517b15b34742a3c2469ba7c5ed5ed01}
+
+
+\-Constructor for \hyperlink{classIPQ_1_1IpqIpPacket}{\-Ipq\-Ip\-Packet}. 
+
+\-Initializes an \hyperlink{classIPQ_1_1IpqIpPacket}{\-Ipq\-Ip\-Packet} from a libipq packet message. 
+
+\-Definition at line 918 of file \-I\-P\-Q.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classIPQ_1_1IpqPacket_adf6099052730113814e9fe7312ec7b8c}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!create\-Packet@{create\-Packet}}
+\index{create\-Packet@{create\-Packet}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{create\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Ipq\-Packet} $\ast$ \-I\-P\-Q\-::\-Ipq\-Packet\-::create\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Lib\-Wheel\-::auto\-\_\-array}$<$ boost\-::uint8\-\_\-t $>$}]{buf, }
+\item[{std\-::size\-\_\-t}]{buflen}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected, inherited\mbox{]}}}}
+\label{classIPQ_1_1IpqPacket_adf6099052730113814e9fe7312ec7b8c}
+
+
+\-Create an \hyperlink{classIPQ_1_1IpqPacket}{\-Ipq\-Packet} or one of its subclasses from a libipq packet message. 
+
+\-A packet will be deemed to be an \-I\-Pv4 packet if it has a full \-I\-Pv4 header and the data length indicated by the header matches the packet's length. \-A packet will be deemed to be a \-T\-C\-P or \-U\-D\-P packet if it is an \-I\-Pv4 packet and it has a full \-T\-C\-P or \-U\-D\-P header. \begin{DoxyReturn}{\-Returns}
+\-A pointer to a dynamically-\/allocated \hyperlink{classIPQ_1_1IpqPacket}{\-Ipq\-Packet}, or one of its subclasses. \-This pointer must be freed using {\bfseries delete}, and a verdict should be set on it using \hyperlink{classIPQ_1_1IpqSocket_a53e0f4e45363cbcd919a2d96ee7cf0a8}{\-Ipq\-Socket\-::send\-Response()}. 
+\end{DoxyReturn}
+
+
+\-Definition at line 731 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References \-Lib\-Wheel\-::auto\-\_\-array\-::get(), and \-I\-P\-Q\-::\-Ipq\-Packet\-::\-Ipq\-Packet().
+
+
+
+\-Referenced by \-I\-P\-Q\-::\-Ipq\-Socket\-::recv\-Packet().
+
+\hypertarget{classIPQ_1_1IpqIpPacket_a6be0afa1f616cbe7722ef817a65e24dc}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!do\-Get\-Ip\-Header@{do\-Get\-Ip\-Header}}
+\index{do\-Get\-Ip\-Header@{do\-Get\-Ip\-Header}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{do\-Get\-Ip\-Header}]{\setlength{\rightskip}{0pt plus 5cm}struct iphdr \& \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::do\-Get\-Ip\-Header (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}read, protected\mbox{]}}}}
+\label{classIPQ_1_1IpqIpPacket_a6be0afa1f616cbe7722ef817a65e24dc}
+
+
+\-Retrieve the complete \-I\-P header of a packet. 
+
+\-A reference to the packet's \-I\-P header. 
+
+\-Definition at line 928 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References \-I\-P\-Q\-::\-Ipq\-Packet\-::packet, and \-Lib\-Wheel\-::auto\-\_\-array\-::get().
+
+
+
+\-Referenced by get\-Ip\-Header().
+
+\hypertarget{classIPQ_1_1IpqIpPacket_ab78709e0712a1912d19114f815407303}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!do\-Get\-Ip\-Payload@{do\-Get\-Ip\-Payload}}
+\index{do\-Get\-Ip\-Payload@{do\-Get\-Ip\-Payload}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{do\-Get\-Ip\-Payload}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::uint8\-\_\-t $\ast$ \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::do\-Get\-Ip\-Payload (
+\begin{DoxyParamCaption}
+\item[{std\-::size\-\_\-t \&}]{size}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classIPQ_1_1IpqIpPacket_ab78709e0712a1912d19114f815407303}
+
+
+\-Retrive the \-I\-P payload of a packet. 
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em size} & \-A reference to a location to store the packet's \-I\-P payload size, in bytes.. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-A const pointer to the packet's \-I\-P payload. 
+\end{DoxyReturn}
+
+
+\-Definition at line 941 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References \-I\-P\-Q\-::\-Ipq\-Packet\-::packet, and \-Lib\-Wheel\-::auto\-\_\-array\-::get().
+
+
+
+\-Referenced by get\-Ip\-Payload().
+
+\hypertarget{classIPQ_1_1IpqPacket_a7b8f489a9cec36058eaee43f6566a999}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!do\-Get\-Packet@{do\-Get\-Packet}}
+\index{do\-Get\-Packet@{do\-Get\-Packet}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{do\-Get\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::uint8\-\_\-t $\ast$ \-I\-P\-Q\-::\-Ipq\-Packet\-::do\-Get\-Packet (
+\begin{DoxyParamCaption}
+\item[{std\-::size\-\_\-t \&}]{size}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}protected, inherited\mbox{]}}}}
+\label{classIPQ_1_1IpqPacket_a7b8f489a9cec36058eaee43f6566a999}
+
+
+\-Retrieve the packet. 
+
+\-It will only be available if the copy mode on the libipq handle used to receive it was \hyperlink{classIPQ_1_1IpqSocket_afee6d75480079906ecf6544f8467e0ccafc1e90369658a807b2c970d3e15b01d4}{\-Ipq\-Socket\-::\-P\-A\-C\-K\-E\-T} and the copy range was greater than zero. 
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em size} & \-A reference to a location to write the length of the payload, in bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-A pointer to the packet. 
+\end{DoxyReturn}
+
+
+\-Definition at line 703 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References \-I\-P\-Q\-::\-Ipq\-Packet\-::packet, and \-Lib\-Wheel\-::auto\-\_\-array\-::get().
+
+
+
+\-Referenced by \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Packet().
+
+\hypertarget{classIPQ_1_1IpqIpPacket_a97e6e13ede2c6c6f028ee0eb1130600b}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-Frag\-Offset@{get\-Frag\-Offset}}
+\index{get\-Frag\-Offset@{get\-Frag\-Offset}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-Frag\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::uint16\-\_\-t \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::get\-Frag\-Offset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classIPQ_1_1IpqIpPacket_a97e6e13ede2c6c6f028ee0eb1130600b}
+
+
+\-Retrieve the fragment offset of a packet, in bytes. 
+
+\-If not zero, then this is a non-\/leading fragment. \begin{DoxyReturn}{\-Returns}
+\-The packet's fragment offset. 
+\end{DoxyReturn}
+
+
+\-Definition at line 817 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References get\-Ip\-Header().
+
+
+
+\-Referenced by print(), and \-N\-E\-R\-D\-::\-Connection\-Server\-::handle\-Packet().
+
+\hypertarget{classIPQ_1_1IpqPacket_ae150e294f043f4c699231a85d3b1ae0f}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-Hw\-Protocol@{get\-Hw\-Protocol}}
+\index{get\-Hw\-Protocol@{get\-Hw\-Protocol}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-Hw\-Protocol}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Hw\-Protocol (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{classIPQ_1_1IpqPacket_ae150e294f043f4c699231a85d3b1ae0f}
+
+
+\-Retrieve the hardware protocol number of the packet. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The packet's hardware protocol number. 
+\end{DoxyReturn}
+
+
+\-Definition at line 585 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References \-I\-P\-Q\-::\-Ipq\-Packet\-::packet, and \-Lib\-Wheel\-::auto\-\_\-array\-::get().
+
+
+
+\-Referenced by \-I\-P\-Q\-::\-Ipq\-Packet\-::print().
+
+\hypertarget{classIPQ_1_1IpqPacket_a8582ae732d6b66ca1f5201994159a84a}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-Hw\-Source@{get\-Hw\-Source}}
+\index{get\-Hw\-Source@{get\-Hw\-Source}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-Hw\-Source}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char(\& \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Hw\-Source (
+\begin{DoxyParamCaption}
+\item[{unsigned short \&}]{addrlen}
+\end{DoxyParamCaption}
+))\mbox{[}8\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{classIPQ_1_1IpqPacket_a8582ae732d6b66ca1f5201994159a84a}
+
+
+\-Retrieve the source hardware address of the packet. 
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em addrlen} & \-A reference to a location to write the actual length of the address, in bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-A reference to the packet's source hardware address. 
+\end{DoxyReturn}
+
+
+\-Definition at line 608 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-Referenced by \-I\-P\-Q\-::\-Ipq\-Packet\-::print().
+
+\hypertarget{classIPQ_1_1IpqPacket_ab6b76b146111c7ad11b96e87efe6634c}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-Hw\-Type@{get\-Hw\-Type}}
+\index{get\-Hw\-Type@{get\-Hw\-Type}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-Hw\-Type}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Hw\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{classIPQ_1_1IpqPacket_ab6b76b146111c7ad11b96e87efe6634c}
+
+
+\-Retrieve the hardware type on which the packet arrived. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The packet's arrival hardware type. 
+\end{DoxyReturn}
+
+
+\-Definition at line 596 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References \-I\-P\-Q\-::\-Ipq\-Packet\-::packet, and \-Lib\-Wheel\-::auto\-\_\-array\-::get().
+
+
+
+\-Referenced by \-I\-P\-Q\-::\-Ipq\-Packet\-::print().
+
+\hypertarget{classIPQ_1_1IpqIpPacket_a937be4034dafdce171b7e90ae14f09d4}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-Id@{get\-Id}}
+\index{get\-Id@{get\-Id}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-Id}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::uint16\-\_\-t \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::get\-Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classIPQ_1_1IpqIpPacket_a937be4034dafdce171b7e90ae14f09d4}
+
+
+\-Retrieve the \-I\-P \-I\-D of a packet. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The packet's \-I\-P\-I\-D. 
+\end{DoxyReturn}
+
+
+\-Definition at line 805 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References get\-Ip\-Header().
+
+
+
+\-Referenced by print().
+
+\hypertarget{classIPQ_1_1IpqPacket_a4cf04ca5da28410f27d87edefd679532}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-Indev\-Name@{get\-Indev\-Name}}
+\index{get\-Indev\-Name@{get\-Indev\-Name}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-Indev\-Name}]{\setlength{\rightskip}{0pt plus 5cm}const char(\& \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Indev\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+))\mbox{[}\-I\-F\-N\-A\-M\-S\-I\-Z\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{classIPQ_1_1IpqPacket_a4cf04ca5da28410f27d87edefd679532}
+
+
+\-Retrieve the name of the interface on which the packet arrived, if available. 
+
+\begin{DoxyReturn}{\-Returns}
+\-A reference to the packet's arrival interface name. 
+\end{DoxyReturn}
+
+
+\-Definition at line 563 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-Referenced by \-I\-P\-Q\-::\-Ipq\-Packet\-::print().
+
+\hypertarget{classIPQ_1_1IpqIpPacket_a056bedcbf7998452d147f2d2ef68b611}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-Ip\-Dest@{get\-Ip\-Dest}}
+\index{get\-Ip\-Dest@{get\-Ip\-Dest}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-Ip\-Dest}]{\setlength{\rightskip}{0pt plus 5cm}in\-\_\-addr\-\_\-t \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::get\-Ip\-Dest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classIPQ_1_1IpqIpPacket_a056bedcbf7998452d147f2d2ef68b611}
+
+
+\-Retrieve the destination \-I\-P address of a packet. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The packet's destination \-I\-P address. 
+\end{DoxyReturn}
+
+
+\-Definition at line 783 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References get\-Ip\-Header().
+
+
+
+\-Referenced by \-I\-P\-Q\-::\-Ipq\-Socket\-::send\-Response(), print(), \-N\-E\-R\-D\-::\-Connection\-Server\-::handle\-Packet(), and \-N\-E\-R\-D\-::\-Connection\-Server\-::create\-Connection().
+
+\hypertarget{classIPQ_1_1IpqIpPacket_abf46954191d96b4e2fe136f79ba6c8ac}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-Ip\-Header@{get\-Ip\-Header}}
+\index{get\-Ip\-Header@{get\-Ip\-Header}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-Ip\-Header}]{\setlength{\rightskip}{0pt plus 5cm}struct iphdr \& \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::get\-Ip\-Header (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}
+\label{classIPQ_1_1IpqIpPacket_abf46954191d96b4e2fe136f79ba6c8ac}
+
+
+\-Retrieve the complete \-I\-P header of a packet. 
+
+\-A const reference to the packet's \-I\-P header. 
+
+\-Definition at line 840 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References do\-Get\-Ip\-Header().
+
+
+
+\-Referenced by get\-Ip\-Source(), get\-Ip\-Dest(), get\-Protocol(), get\-Id(), get\-Frag\-Offset(), get\-More\-Frags(), update\-Checksums(), \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet\-::update\-Checksums(), \-I\-P\-Q\-::\-Ipq\-Udp\-Packet\-::update\-Checksums(), and \-N\-E\-R\-D\-::\-Connection\-Server\-::handle\-Packet().
+
+\hypertarget{classIPQ_1_1IpqIpPacket_aa6e89b7927e748d00b9562e85192b492}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-Ip\-Header@{get\-Ip\-Header}}
+\index{get\-Ip\-Header@{get\-Ip\-Header}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-Ip\-Header}]{\setlength{\rightskip}{0pt plus 5cm}struct iphdr \& \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::get\-Ip\-Header (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}
+\label{classIPQ_1_1IpqIpPacket_aa6e89b7927e748d00b9562e85192b492}
+
+
+\-Retrieve the complete \-I\-P header of a packet. 
+
+\-A reference to the packet's \-I\-P header. \begin{DoxyNote}{\-Note}
+\-This method sets the packet's dirty flag, requiring that the packet's checksums be recomputed before a verdict is set. 
+\end{DoxyNote}
+
+
+\-Definition at line 853 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References \-I\-P\-Q\-::\-Ipq\-Packet\-::dirty, and do\-Get\-Ip\-Header().
+
+\hypertarget{classIPQ_1_1IpqIpPacket_adc020ff0aceeba0577e4bb90dcc6f86f}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-Ip\-Payload@{get\-Ip\-Payload}}
+\index{get\-Ip\-Payload@{get\-Ip\-Payload}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-Ip\-Payload}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::uint8\-\_\-t $\ast$ \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::get\-Ip\-Payload (
+\begin{DoxyParamCaption}
+\item[{std\-::size\-\_\-t \&}]{size}
+\end{DoxyParamCaption}
+) const}}
+\label{classIPQ_1_1IpqIpPacket_adc020ff0aceeba0577e4bb90dcc6f86f}
+
+
+\-Retrive the \-I\-P payload of a packet. 
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em size} & \-A reference to a location to store the packet's \-I\-P payload size, in bytes.. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-A const pointer to the packet's \-I\-P payload. 
+\end{DoxyReturn}
+
+
+\-Definition at line 867 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References do\-Get\-Ip\-Payload().
+
+\hypertarget{classIPQ_1_1IpqIpPacket_a47343dd1a4fc52c8fda6de4aa313a688}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-Ip\-Payload@{get\-Ip\-Payload}}
+\index{get\-Ip\-Payload@{get\-Ip\-Payload}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-Ip\-Payload}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::uint8\-\_\-t $\ast$ \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::get\-Ip\-Payload (
+\begin{DoxyParamCaption}
+\item[{std\-::size\-\_\-t \&}]{size}
+\end{DoxyParamCaption}
+)}}
+\label{classIPQ_1_1IpqIpPacket_a47343dd1a4fc52c8fda6de4aa313a688}
+
+
+\-Retrive the \-I\-P payload of a packet. 
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em size} & \-A reference to a location to store the packet's \-I\-P payload size, in bytes.. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-A pointer to the packet's \-I\-P payload. 
+\end{DoxyReturn}
+\begin{DoxyNote}{\-Note}
+\-This method sets the packet's dirty flag, requiring that the packet's checksums be recomputed before a verdict is set. 
+\end{DoxyNote}
+
+
+\-Definition at line 882 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References \-I\-P\-Q\-::\-Ipq\-Packet\-::dirty, and do\-Get\-Ip\-Payload().
+
+\hypertarget{classIPQ_1_1IpqIpPacket_a4708c5a987eb9796566e2b3bdd072589}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-Ip\-Source@{get\-Ip\-Source}}
+\index{get\-Ip\-Source@{get\-Ip\-Source}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-Ip\-Source}]{\setlength{\rightskip}{0pt plus 5cm}in\-\_\-addr\-\_\-t \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::get\-Ip\-Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classIPQ_1_1IpqIpPacket_a4708c5a987eb9796566e2b3bdd072589}
+
+
+\-Retrieve the source \-I\-P address of a packet. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The packet's source \-I\-P address. 
+\end{DoxyReturn}
+
+
+\-Definition at line 772 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References get\-Ip\-Header().
+
+
+
+\-Referenced by print(), and \-N\-E\-R\-D\-::\-Connection\-Server\-::handle\-Packet().
+
+\hypertarget{classIPQ_1_1IpqIpPacket_a76e0d09916fc816df3dab46cb29d479f}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-More\-Frags@{get\-More\-Frags}}
+\index{get\-More\-Frags@{get\-More\-Frags}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-More\-Frags}]{\setlength{\rightskip}{0pt plus 5cm}bool \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::get\-More\-Frags (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classIPQ_1_1IpqIpPacket_a76e0d09916fc816df3dab46cb29d479f}
+
+
+\-Retrieve the \char`\"{}more fragments to follow\char`\"{} flag of a packet. 
+
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if the packet's \char`\"{}more fragments\char`\"{} flag is set; {\bfseries false} otherwise. 
+\end{DoxyReturn}
+
+
+\-Definition at line 829 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References get\-Ip\-Header().
+
+
+
+\-Referenced by print(), and \-N\-E\-R\-D\-::\-Connection\-Server\-::handle\-Packet().
+
+\hypertarget{classIPQ_1_1IpqPacket_ae13884fedce165702f4b71e0e4d93c0b}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-Nf\-Hook@{get\-Nf\-Hook}}
+\index{get\-Nf\-Hook@{get\-Nf\-Hook}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-Nf\-Hook}]{\setlength{\rightskip}{0pt plus 5cm}unsigned \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Nf\-Hook (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{classIPQ_1_1IpqPacket_ae13884fedce165702f4b71e0e4d93c0b}
+
+
+\-Retrieve the number of the \-Netfilter hook on which the packet arrived. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The number of the \-Netfilter hook on which the packet arrived. 
+\end{DoxyReturn}
+
+
+\-Definition at line 553 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References \-I\-P\-Q\-::\-Ipq\-Packet\-::packet, and \-Lib\-Wheel\-::auto\-\_\-array\-::get().
+
+
+
+\-Referenced by \-I\-P\-Q\-::\-Ipq\-Packet\-::print().
+
+\hypertarget{classIPQ_1_1IpqPacket_ac3cbbe2b61e12730ffe231fa19c96e5a}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-Nf\-Id@{get\-Nf\-Id}}
+\index{get\-Nf\-Id@{get\-Nf\-Id}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-Nf\-Id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Nf\-Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{classIPQ_1_1IpqPacket_ac3cbbe2b61e12730ffe231fa19c96e5a}
+
+
+\-Retrieve the \-Netfilter \-I\-D of a packet. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The packet's \-Netfilter \-I\-D. 
+\end{DoxyReturn}
+
+
+\-Definition at line 519 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References \-I\-P\-Q\-::\-Ipq\-Packet\-::packet, and \-Lib\-Wheel\-::auto\-\_\-array\-::get().
+
+
+
+\-Referenced by \-I\-P\-Q\-::\-Ipq\-Socket\-::recv\-Packet(), and \-I\-P\-Q\-::\-Ipq\-Packet\-::print().
+
+\hypertarget{classIPQ_1_1IpqPacket_ab97f0a4348e53cb69ed1da74e422dc78}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-Nf\-Mark@{get\-Nf\-Mark}}
+\index{get\-Nf\-Mark@{get\-Nf\-Mark}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-Nf\-Mark}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Nf\-Mark (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{classIPQ_1_1IpqPacket_ab97f0a4348e53cb69ed1da74e422dc78}
+
+
+\-Retrieve the \-Netfilter mark value of a packet. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The packet's \-Netfilter mark value. 
+\end{DoxyReturn}
+
+
+\-Definition at line 530 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References \-I\-P\-Q\-::\-Ipq\-Packet\-::packet, and \-Lib\-Wheel\-::auto\-\_\-array\-::get().
+
+
+
+\-Referenced by \-I\-P\-Q\-::\-Ipq\-Packet\-::print().
+
+\hypertarget{classIPQ_1_1IpqPacket_a46dced8057de3bba7abfaaa63d7afcd4}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-Outdev\-Name@{get\-Outdev\-Name}}
+\index{get\-Outdev\-Name@{get\-Outdev\-Name}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-Outdev\-Name}]{\setlength{\rightskip}{0pt plus 5cm}const char(\& \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Outdev\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+))\mbox{[}\-I\-F\-N\-A\-M\-S\-I\-Z\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{classIPQ_1_1IpqPacket_a46dced8057de3bba7abfaaa63d7afcd4}
+
+
+\-Retrieve the name of the interface on which the packet will leave, if available. 
+
+\begin{DoxyReturn}{\-Returns}
+\-A reference to the packet's outbound interface name. 
+\end{DoxyReturn}
+
+
+\-Definition at line 574 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-Referenced by \-I\-P\-Q\-::\-Ipq\-Packet\-::print().
+
+\hypertarget{classIPQ_1_1IpqPacket_a6dd7baeec66082658d882bff8862eb6c}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-Packet@{get\-Packet}}
+\index{get\-Packet@{get\-Packet}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::uint8\-\_\-t $\ast$ \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Packet (
+\begin{DoxyParamCaption}
+\item[{std\-::size\-\_\-t \&}]{size}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{classIPQ_1_1IpqPacket_a6dd7baeec66082658d882bff8862eb6c}
+
+
+\-Retrieve the packet. 
+
+\-It will only be available if the copy mode on the libipq handle used to receive it was \hyperlink{classIPQ_1_1IpqSocket_afee6d75480079906ecf6544f8467e0ccafc1e90369658a807b2c970d3e15b01d4}{\-Ipq\-Socket\-::\-P\-A\-C\-K\-E\-T} and the copy range was greater than zero. 
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em size} & \-A reference to a location to write the length of the payload, in bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-A const pointer to the packet. 
+\end{DoxyReturn}
+
+
+\-Definition at line 624 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References \-I\-P\-Q\-::\-Ipq\-Packet\-::do\-Get\-Packet().
+
+
+
+\-Referenced by \-I\-P\-Q\-::\-Ipq\-Socket\-::recv\-Packet().
+
+\hypertarget{classIPQ_1_1IpqPacket_a0bf3344a9eed5e2f6bc20890ffffe26e}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-Packet@{get\-Packet}}
+\index{get\-Packet@{get\-Packet}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::uint8\-\_\-t $\ast$ \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Packet (
+\begin{DoxyParamCaption}
+\item[{std\-::size\-\_\-t \&}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{classIPQ_1_1IpqPacket_a0bf3344a9eed5e2f6bc20890ffffe26e}
+
+
+\-Retrieve the packet. 
+
+\-It will only be available if the copy mode on the libipq handle used to receive it was \hyperlink{classIPQ_1_1IpqSocket_afee6d75480079906ecf6544f8467e0ccafc1e90369658a807b2c970d3e15b01d4}{\-Ipq\-Socket\-::\-P\-A\-C\-K\-E\-T} and the copy range was greater than zero. 
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em size} & \-A reference to a location to write the length of the payload, in bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-A pointer to the packet. 
+\end{DoxyReturn}
+\begin{DoxyNote}{\-Note}
+\-This method sets the packet's dirty flag, requiring that the packet's checksums be recomputed before a verdict is set. 
+\end{DoxyNote}
+
+
+\-Definition at line 641 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References \-I\-P\-Q\-::\-Ipq\-Packet\-::dirty, and \-I\-P\-Q\-::\-Ipq\-Packet\-::do\-Get\-Packet().
+
+\hypertarget{classIPQ_1_1IpqIpPacket_aefa78bb7a89a337bb0c1d88c02d6d5cd}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-Protocol@{get\-Protocol}}
+\index{get\-Protocol@{get\-Protocol}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-Protocol}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::uint8\-\_\-t \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::get\-Protocol (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classIPQ_1_1IpqIpPacket_aefa78bb7a89a337bb0c1d88c02d6d5cd}
+
+
+\-Retrieve the encapsulated protocol number of a packet. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The packet's encapsulated protocol number. 
+\end{DoxyReturn}
+
+
+\-Definition at line 794 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References get\-Ip\-Header().
+
+
+
+\-Referenced by print(), and \-N\-E\-R\-D\-::\-Connection\-Server\-::handle\-Packet().
+
+\hypertarget{classIPQ_1_1IpqPacket_a430ce4f89e651724efdf56c9c1b1647e}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!get\-Timestamp@{get\-Timestamp}}
+\index{get\-Timestamp@{get\-Timestamp}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{get\-Timestamp}]{\setlength{\rightskip}{0pt plus 5cm}void \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Timestamp (
+\begin{DoxyParamCaption}
+\item[{struct timeval \&}]{time}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{classIPQ_1_1IpqPacket_a430ce4f89e651724efdf56c9c1b1647e}
+
+
+\-Retrieve the arrival time of a packet. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The packet's arrival time. 
+\end{DoxyReturn}
+
+
+\-Definition at line 541 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References \-I\-P\-Q\-::\-Ipq\-Packet\-::packet, and \-Lib\-Wheel\-::auto\-\_\-array\-::get().
+
+
+
+\-Referenced by \-I\-P\-Q\-::\-Ipq\-Packet\-::print().
+
+\hypertarget{classIPQ_1_1IpqIpPacket_a5ddc175ec8c4bc8c7bab3baee12909f0}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!print@{print}}
+\index{print@{print}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::print (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classIPQ_1_1IpqIpPacket_a5ddc175ec8c4bc8c7bab3baee12909f0}
+
+
+\-Print an \-I\-P packet to stdout in an easy-\/to-\/read format. 
+
+
+
+\-Reimplemented from \hyperlink{classIPQ_1_1IpqPacket_a5fed4f899ba91b52d1734a083e67b3cf}{\-I\-P\-Q\-::\-Ipq\-Packet}.
+
+
+
+\-Reimplemented in \hyperlink{classIPQ_1_1IpqUdpPacket_ad64646eb338bad97b6c593ad5225d36d}{\-I\-P\-Q\-::\-Ipq\-Udp\-Packet}, and \hyperlink{classIPQ_1_1IpqTcpPacket_a751f98aa2aafbe6796bf3a82d7273bec}{\-I\-P\-Q\-::\-Ipq\-Tcp\-Packet}.
+
+
+
+\-Definition at line 893 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References \-Lib\-Wheel\-::ipv4\-\_\-to\-\_\-string(), get\-Ip\-Source(), get\-Ip\-Dest(), get\-Protocol(), get\-Id(), get\-Frag\-Offset(), and get\-More\-Frags().
+
+\hypertarget{classIPQ_1_1IpqIpPacket_a4c2c0ccd36ef921f6632b26ebd524b90}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!update\-Checksums@{update\-Checksums}}
+\index{update\-Checksums@{update\-Checksums}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{update\-Checksums}]{\setlength{\rightskip}{0pt plus 5cm}void \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::update\-Checksums (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classIPQ_1_1IpqIpPacket_a4c2c0ccd36ef921f6632b26ebd524b90}
+
+
+\-Update the checksums on an \-I\-P packet. 
+
+\begin{DoxyNote}{\-Note}
+\-If \-N\-O\-\_\-\-N\-F\-\_\-\-S\-T\-O\-P is defined, then the {\ttfamily modified} flag is set if the old checksum value is different than the new one. 
+\end{DoxyNote}
+
+
+\-Reimplemented from \hyperlink{classIPQ_1_1IpqPacket_a6e9ce8b7a24f8e82a82a7bc3859e9d45}{\-I\-P\-Q\-::\-Ipq\-Packet}.
+
+
+
+\-Reimplemented in \hyperlink{classIPQ_1_1IpqUdpPacket_abc390e2f22ffbd3d6d9a2df228cb71d6}{\-I\-P\-Q\-::\-Ipq\-Udp\-Packet}, and \hyperlink{classIPQ_1_1IpqTcpPacket_aa3c42606d262b29f2b4bef459f34dd90}{\-I\-P\-Q\-::\-Ipq\-Tcp\-Packet}.
+
+
+
+\-Definition at line 960 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-References get\-Ip\-Header(), and \-I\-P\-Q\-::ip\-\_\-checksum().
+
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{classIPQ_1_1IpqIpPacket_af2019ef9442b13f8da0f53a082a9b308}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!\-Ipq\-Packet\-::create\-Packet@{\-Ipq\-Packet\-::create\-Packet}}
+\index{\-Ipq\-Packet\-::create\-Packet@{\-Ipq\-Packet\-::create\-Packet}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{\-Ipq\-Packet\-::create\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Ipq\-Packet}$\ast$ \-Ipq\-Packet\-::create\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Lib\-Wheel\-::auto\-\_\-array}$<$ boost\-::uint8\-\_\-t $>$}]{, }
+\item[{std\-::size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{classIPQ_1_1IpqIpPacket_af2019ef9442b13f8da0f53a082a9b308}
+
+
+\-Allow \-Ipq\-Socket\-::create\-Packet() to access the contstructor. 
+
+
+
+\-Reimplemented in \hyperlink{classIPQ_1_1IpqUdpPacket_af2019ef9442b13f8da0f53a082a9b308}{\-I\-P\-Q\-::\-Ipq\-Udp\-Packet}, and \hyperlink{classIPQ_1_1IpqTcpPacket_af2019ef9442b13f8da0f53a082a9b308}{\-I\-P\-Q\-::\-Ipq\-Tcp\-Packet}.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classIPQ_1_1IpqPacket_a00acebf51531043a8536f20bb9412d61}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!dirty@{dirty}}
+\index{dirty@{dirty}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{dirty}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-I\-P\-Q\-::\-Ipq\-Packet\-::dirty}\hspace{0.3cm}{\ttfamily  \mbox{[}protected, inherited\mbox{]}}}}
+\label{classIPQ_1_1IpqPacket_a00acebf51531043a8536f20bb9412d61}
+
+
+{\bfseries true} if the packet has been modified but checksums have not been updated; {\bfseries false} otherwise. 
+
+
+
+\-Definition at line 171 of file \-I\-P\-Q.\-hpp.
+
+
+
+\-Referenced by \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Packet(), \-I\-P\-Q\-::\-Ipq\-Packet\-::update\-Checksums(), get\-Ip\-Header(), get\-Ip\-Payload(), \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet\-::get\-Tcp\-Header(), \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet\-::get\-Tcp\-Payload(), \-I\-P\-Q\-::\-Ipq\-Udp\-Packet\-::get\-Udp\-Header(), and \-I\-P\-Q\-::\-Ipq\-Udp\-Packet\-::get\-Udp\-Payload().
+
+\hypertarget{classIPQ_1_1IpqPacket_a2bdf247f13a3e9f86e9e3846e6a9cb45}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!packet@{packet}}
+\index{packet@{packet}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{packet}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Lib\-Wheel\-::auto\-\_\-array}$<$boost\-::uint8\-\_\-t$>$ {\bf \-I\-P\-Q\-::\-Ipq\-Packet\-::packet}\hspace{0.3cm}{\ttfamily  \mbox{[}protected, inherited\mbox{]}}}}
+\label{classIPQ_1_1IpqPacket_a2bdf247f13a3e9f86e9e3846e6a9cb45}
+
+
+\-The packet message received from kernelspace. 
+
+
+
+\-Definition at line 169 of file \-I\-P\-Q.\-hpp.
+
+
+
+\-Referenced by \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Nf\-Id(), \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Nf\-Mark(), \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Timestamp(), \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Nf\-Hook(), \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Hw\-Protocol(), \-I\-P\-Q\-::\-Ipq\-Packet\-::get\-Hw\-Type(), \-I\-P\-Q\-::\-Ipq\-Packet\-::print(), \-I\-P\-Q\-::\-Ipq\-Packet\-::do\-Get\-Packet(), do\-Get\-Ip\-Header(), do\-Get\-Ip\-Payload(), \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet\-::do\-Get\-Tcp\-Header(), \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet\-::do\-Get\-Tcp\-Payload(), \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet\-::update\-Checksums(), \-I\-P\-Q\-::\-Ipq\-Udp\-Packet\-::do\-Get\-Udp\-Header(), \-I\-P\-Q\-::\-Ipq\-Udp\-Packet\-::do\-Get\-Udp\-Payload(), and \-I\-P\-Q\-::\-Ipq\-Udp\-Packet\-::update\-Checksums().
+
+\hypertarget{classIPQ_1_1IpqPacket_a9b448a070c5ae499e32d2af5a190b86d}{
+\index{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}!packet\-Len@{packet\-Len}}
+\index{packet\-Len@{packet\-Len}!IPQ::IpqIpPacket@{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}}
+\subsubsection[{packet\-Len}]{\setlength{\rightskip}{0pt plus 5cm}std\-::size\-\_\-t {\bf \-I\-P\-Q\-::\-Ipq\-Packet\-::packet\-Len}\hspace{0.3cm}{\ttfamily  \mbox{[}protected, inherited\mbox{]}}}}
+\label{classIPQ_1_1IpqPacket_a9b448a070c5ae499e32d2af5a190b86d}
+
+
+the length of the packet message in \hyperlink{classIPQ_1_1IpqPacket_a2bdf247f13a3e9f86e9e3846e6a9cb45}{\-Ipq\-Packet\-::packet}, in bytes. 
+
+
+
+\-Definition at line 170 of file \-I\-P\-Q.\-hpp.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{IPQ_8hpp}{\-I\-P\-Q.\-hpp}\item 
+\hyperlink{IPQ_8cpp}{\-I\-P\-Q.\-cpp}\end{DoxyCompactItemize}

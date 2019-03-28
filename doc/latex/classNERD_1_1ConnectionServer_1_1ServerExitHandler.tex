@@ -1,0 +1,210 @@
+\hypertarget{classNERD_1_1ConnectionServer_1_1ServerExitHandler}{
+\section{\-N\-E\-R\-D\-:\-:\-Connection\-Server\-:\-:\-Server\-Exit\-Handler \-Class \-Reference}
+\label{classNERD_1_1ConnectionServer_1_1ServerExitHandler}\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler}}
+}
+
+
+\-Functor to handle \-S\-I\-G\-C\-H\-L\-D signals received through \hyperlink{classLibWheel_1_1SignalQueue}{\-Lib\-Wheel\-::\-Signal\-Queue}.  
+
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNERD_1_1ConnectionServer_1_1ServerExitHandler_a0a3634beb4eac3315afb6671205c399a}{\-Server\-Exit\-Handler} (\hyperlink{classNERD_1_1ConnectionServer_ac838d247f33cef856ae722343a8cb7ff}{\-Pending\-Connection\-List} \&pcl, \hyperlink{classNERD_1_1ConnectionServer_a1f7b6abdda0f0a7a027a5f2e24727cee}{\-Redirection\-Table} \&rt, \hyperlink{classNERD_1_1ConnectionServer_a0cd661f2a6755c501ac198229675ad4d}{\-Server\-Table} \&st, \hyperlink{classNERD_1_1ConnectionServer_a63d211040487b4566f2f696026723932}{\-Timeout\-List} \&tl, bool v)
+\begin{DoxyCompactList}\small\item\em \-Constructor for \hyperlink{classNERD_1_1ConnectionServer_1_1ServerExitHandler}{\-Server\-Exit\-Handler}. \end{DoxyCompactList}\item 
+void \hyperlink{classNERD_1_1ConnectionServer_1_1ServerExitHandler_a9ca943b524de0b1f1907cecaab2943e1}{operator()} ()
+\begin{DoxyCompactList}\small\item\em \-Call operator for \hyperlink{classNERD_1_1ConnectionServer_1_1ServerExitHandler}{\-Server\-Exit\-Handler}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLibWheel_1_1WaitList_a197f2582847b549a89b833d2eb153b1c}{\-Pending\-Connection\-List\-::iterator} \hyperlink{classNERD_1_1ConnectionServer_1_1ServerExitHandler_ac380cd94aeac14ce16c7d957d999941c}{find\-Pending\-Connection} (pid\-\_\-t pid)
+\begin{DoxyCompactList}\small\item\em \-Look up a pending connection given the \-P\-I\-D of its server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNERD_1_1ConnectionServer_ac838d247f33cef856ae722343a8cb7ff}{\-Pending\-Connection\-List} \& \hyperlink{classNERD_1_1ConnectionServer_1_1ServerExitHandler_a0953476221ba91597772e457b7357eae}{pending\-Connections}
+\begin{DoxyCompactList}\small\item\em \-A reference to the containing \-Connection\-Server's list of pending connections. \end{DoxyCompactList}\item 
+\hyperlink{classNERD_1_1ConnectionServer_a1f7b6abdda0f0a7a027a5f2e24727cee}{\-Redirection\-Table} \& \hyperlink{classNERD_1_1ConnectionServer_1_1ServerExitHandler_af4572dea480ca71da58a92ce88b8153e}{redirections}
+\begin{DoxyCompactList}\small\item\em \-A reference to the containing \-Connection\-Server's table of redirection rules. \end{DoxyCompactList}\item 
+\hyperlink{classNERD_1_1ConnectionServer_a0cd661f2a6755c501ac198229675ad4d}{\-Server\-Table} \& \hyperlink{classNERD_1_1ConnectionServer_1_1ServerExitHandler_a9155fa7acc10d3e954d5998624c80bd7}{servers}
+\begin{DoxyCompactList}\small\item\em \-A reference to the containing \-Connection\-Server's look-\/up table of active servers. \end{DoxyCompactList}\item 
+\hyperlink{classNERD_1_1ConnectionServer_a63d211040487b4566f2f696026723932}{\-Timeout\-List} \& \hyperlink{classNERD_1_1ConnectionServer_1_1ServerExitHandler_ac95b8019ae4312f278e28808e92b77a1}{timeout\-List}
+\begin{DoxyCompactList}\small\item\em \-A reference to the containing \-Connection\-Server's list of redirection rules awaiting removal. \end{DoxyCompactList}\item 
+bool \hyperlink{classNERD_1_1ConnectionServer_1_1ServerExitHandler_ac25e75d9b69963b6c0624099b8d6ec15}{verbose}
+\begin{DoxyCompactList}\small\item\em {\bfseries true} to log extra messages; {\bfseries false} otherwise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Functor to handle \-S\-I\-G\-C\-H\-L\-D signals received through \hyperlink{classLibWheel_1_1SignalQueue}{\-Lib\-Wheel\-::\-Signal\-Queue}. 
+
+\-Performs appropriate actions when a child process exits; see \hyperlink{classNERD_1_1ConnectionServer_1_1ServerExitHandler_a9ca943b524de0b1f1907cecaab2943e1}{operator()()} for details. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classNERD_1_1ConnectionServer_1_1ServerExitHandler_a0a3634beb4eac3315afb6671205c399a}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler}!\-Server\-Exit\-Handler@{\-Server\-Exit\-Handler}}
+\index{\-Server\-Exit\-Handler@{\-Server\-Exit\-Handler}!NERD::ConnectionServer::ServerExitHandler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler}}
+\subsubsection[{\-Server\-Exit\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler\-::\-Server\-Exit\-Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Pending\-Connection\-List} \&}]{pcl, }
+\item[{{\bf \-Redirection\-Table} \&}]{rt, }
+\item[{{\bf \-Server\-Table} \&}]{st, }
+\item[{{\bf \-Timeout\-List} \&}]{tl, }
+\item[{bool}]{v}
+\end{DoxyParamCaption}
+)}}
+\label{classNERD_1_1ConnectionServer_1_1ServerExitHandler_a0a3634beb4eac3315afb6671205c399a}
+
+
+\-Constructor for \hyperlink{classNERD_1_1ConnectionServer_1_1ServerExitHandler}{\-Server\-Exit\-Handler}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pcl} & \-A reference to the containing \-Connection\-Server's list of pending connections. \\
+\hline
+{\em rt} & \-A reference to the containing \-Connection\-Server's look-\/up table of redirection rules. \\
+\hline
+{\em st} & \-A reference to the containing \-Connection\-Server's look-\/up table of active servers. \\
+\hline
+{\em tl} & \-A reference to the containing \-Connection\-Server's list of connections to drop. \\
+\hline
+{\em v} & {\bfseries true} to enable verbose logging; {\bfseries false} otherwise. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 701 of file nerd.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classNERD_1_1ConnectionServer_1_1ServerExitHandler_ac380cd94aeac14ce16c7d957d999941c}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler}!find\-Pending\-Connection@{find\-Pending\-Connection}}
+\index{find\-Pending\-Connection@{find\-Pending\-Connection}!NERD::ConnectionServer::ServerExitHandler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler}}
+\subsubsection[{find\-Pending\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Connection\-Server\-::\-Pending\-Connection\-List\-::iterator} \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler\-::find\-Pending\-Connection (
+\begin{DoxyParamCaption}
+\item[{pid\-\_\-t}]{pid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_1_1ServerExitHandler_ac380cd94aeac14ce16c7d957d999941c}
+
+
+\-Look up a pending connection given the \-P\-I\-D of its server. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pid} & \-The process \-I\-D of a server. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-An iterator into the pending connections list if a patching element is found, or to just past the end of the list if none is found. 
+\end{DoxyReturn}
+\begin{DoxyNote}{\-Note}
+\-This is an \-O(n) operation in the number of pending connections. 
+\end{DoxyNote}
+
+
+\-Definition at line 791 of file nerd.\-cpp.
+
+
+
+\-References \-N\-E\-R\-D\-::\-Connection\-Server\-::pending\-Connections, \-Lib\-Wheel\-::\-Wait\-List\-::begin(), and \-Lib\-Wheel\-::\-Wait\-List\-::end().
+
+\hypertarget{classNERD_1_1ConnectionServer_1_1ServerExitHandler_a9ca943b524de0b1f1907cecaab2943e1}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler}!operator()@{operator()}}
+\index{operator()@{operator()}!NERD::ConnectionServer::ServerExitHandler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}void \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler\-::operator() (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classNERD_1_1ConnectionServer_1_1ServerExitHandler_a9ca943b524de0b1f1907cecaab2943e1}
+
+
+\-Call operator for \hyperlink{classNERD_1_1ConnectionServer_1_1ServerExitHandler}{\-Server\-Exit\-Handler}. 
+
+\-For each child process that has exited, retrieve the \-P\-I\-D and exit status. \-If the child was associated with an active connection, remove its associated redirection rules, and remove it from the active connections table. \-Otherwise, if the child was associated with a pending connection, remove it from the pending connections list.
+
+\-Redirection rules for servers that have exited are added to {\ttfamily timeout\-List}; they will be deleted {\ttfamily \-N\-E\-R\-D\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-O\-N\-\_\-\-T\-I\-M\-E\-O\-U\-T} seconds after their server exited. \begin{DoxyParagraph}{\-Side \-Effects\-:}
+\-May write messages to \hyperlink{namespaceLibWheel_af4ca70f4f65b2948701218436516a679}{\-Lib\-Wheel\-::logmsg}. 
+\end{DoxyParagraph}
+
+
+\-Definition at line 719 of file nerd.\-cpp.
+
+
+
+\-References \-Lib\-Wheel\-::logmsg, logmsg\-\_\-err, \-N\-E\-R\-D\-::\-Connection\-Server\-::servers, \-N\-E\-R\-D\-::\-Connection\-Server\-::pending\-Connections, \-Lib\-Wheel\-::\-Wait\-List\-::end(), logmsg\-\_\-warning, \-Lib\-Wheel\-::\-Wait\-List\-::erase(), \-N\-E\-R\-D\-::\-Connection\-Server\-::verbose, logmsg\-\_\-notice, \-N\-E\-R\-D\-::\-Connection\-Server\-::redirections, \-N\-E\-R\-D\-::\-Connection\-Server\-::timeout\-List, and \-Lib\-Wheel\-::\-Wait\-List\-::add().
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classNERD_1_1ConnectionServer_1_1ServerExitHandler_a0953476221ba91597772e457b7357eae}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler}!pending\-Connections@{pending\-Connections}}
+\index{pending\-Connections@{pending\-Connections}!NERD::ConnectionServer::ServerExitHandler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler}}
+\subsubsection[{pending\-Connections}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Pending\-Connection\-List}\& {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler\-::pending\-Connections}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_1_1ServerExitHandler_a0953476221ba91597772e457b7357eae}
+
+
+\-A reference to the containing \-Connection\-Server's list of pending connections. 
+
+
+
+\-Definition at line 244 of file nerd.\-cpp.
+
+\hypertarget{classNERD_1_1ConnectionServer_1_1ServerExitHandler_af4572dea480ca71da58a92ce88b8153e}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler}!redirections@{redirections}}
+\index{redirections@{redirections}!NERD::ConnectionServer::ServerExitHandler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler}}
+\subsubsection[{redirections}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Redirection\-Table}\& {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler\-::redirections}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_1_1ServerExitHandler_af4572dea480ca71da58a92ce88b8153e}
+
+
+\-A reference to the containing \-Connection\-Server's table of redirection rules. 
+
+
+
+\-Definition at line 245 of file nerd.\-cpp.
+
+\hypertarget{classNERD_1_1ConnectionServer_1_1ServerExitHandler_a9155fa7acc10d3e954d5998624c80bd7}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler}!servers@{servers}}
+\index{servers@{servers}!NERD::ConnectionServer::ServerExitHandler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler}}
+\subsubsection[{servers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Server\-Table}\& {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler\-::servers}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_1_1ServerExitHandler_a9155fa7acc10d3e954d5998624c80bd7}
+
+
+\-A reference to the containing \-Connection\-Server's look-\/up table of active servers. 
+
+
+
+\-Definition at line 246 of file nerd.\-cpp.
+
+\hypertarget{classNERD_1_1ConnectionServer_1_1ServerExitHandler_ac95b8019ae4312f278e28808e92b77a1}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler}!timeout\-List@{timeout\-List}}
+\index{timeout\-List@{timeout\-List}!NERD::ConnectionServer::ServerExitHandler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler}}
+\subsubsection[{timeout\-List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Timeout\-List}\& {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler\-::timeout\-List}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_1_1ServerExitHandler_ac95b8019ae4312f278e28808e92b77a1}
+
+
+\-A reference to the containing \-Connection\-Server's list of redirection rules awaiting removal. 
+
+
+
+\-Definition at line 247 of file nerd.\-cpp.
+
+\hypertarget{classNERD_1_1ConnectionServer_1_1ServerExitHandler_ac25e75d9b69963b6c0624099b8d6ec15}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler}!verbose@{verbose}}
+\index{verbose@{verbose}!NERD::ConnectionServer::ServerExitHandler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler}}
+\subsubsection[{verbose}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler\-::verbose}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_1_1ServerExitHandler_ac25e75d9b69963b6c0624099b8d6ec15}
+
+
+{\bfseries true} to log extra messages; {\bfseries false} otherwise. 
+
+
+
+\-Definition at line 248 of file nerd.\-cpp.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{nerd_8cpp}{nerd.\-cpp}\end{DoxyCompactItemize}

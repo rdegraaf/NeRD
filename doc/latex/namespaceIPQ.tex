@@ -1,0 +1,67 @@
+\hypertarget{namespaceIPQ}{
+\section{\-I\-P\-Q \-Namespace \-Reference}
+\label{namespaceIPQ}\index{\-I\-P\-Q@{\-I\-P\-Q}}
+}
+
+
+\-A \-C++ interface to libipq, the old iptables userspace-\/queueing system.  
+
+
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classIPQ_1_1IpqException}{\-Ipq\-Exception}
+\begin{DoxyCompactList}\small\item\em \-Base class for exceptions thrown by \hyperlink{namespaceIPQ}{\-I\-P\-Q} methods. \end{DoxyCompactList}\item 
+class \hyperlink{classIPQ_1_1IpqSocket}{\-Ipq\-Socket}
+\begin{DoxyCompactList}\small\item\em \-A program's link to libipq. \end{DoxyCompactList}\item 
+class \hyperlink{classIPQ_1_1IpqPacket}{\-Ipq\-Packet}
+\begin{DoxyCompactList}\small\item\em \-Base class for packets received via \hyperlink{classIPQ_1_1IpqSocket}{\-Ipq\-Socket}. \end{DoxyCompactList}\item 
+class \hyperlink{classIPQ_1_1IpqIpPacket}{\-Ipq\-Ip\-Packet}
+\begin{DoxyCompactList}\small\item\em \-A complete \-I\-Pv4 packet received via \hyperlink{classIPQ_1_1IpqSocket}{\-Ipq\-Socket}. \end{DoxyCompactList}\item 
+class \hyperlink{classIPQ_1_1IpqTcpPacket}{\-Ipq\-Tcp\-Packet}
+\begin{DoxyCompactList}\small\item\em \-An complete \-I\-Pv4/\-T\-C\-P packet that was received via \hyperlink{classIPQ_1_1IpqSocket}{\-Ipq\-Socket}. \end{DoxyCompactList}\item 
+class \hyperlink{classIPQ_1_1IpqUdpPacket}{\-Ipq\-Udp\-Packet}
+\begin{DoxyCompactList}\small\item\em \-An complete \-I\-Pv4/\-U\-D\-P packet that was received via \hyperlink{classIPQ_1_1IpqSocket}{\-Ipq\-Socket}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+boost\-::uint16\-\_\-t \hyperlink{namespaceIPQ_a12139e4f65e5d66469b83c70ba461880}{ip\-\_\-checksum} (boost\-::uint32\-\_\-t init, boost\-::uint8\-\_\-t $\ast$buf, std\-::size\-\_\-t len)
+\begin{DoxyCompactList}\small\item\em \-Compute an \-I\-P checksum (as described in \-R\-F\-C 791). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A \-C++ interface to libipq, the old iptables userspace-\/queueing system. 
+
+\subsection{\-Function \-Documentation}
+\hypertarget{namespaceIPQ_a12139e4f65e5d66469b83c70ba461880}{
+\index{\-I\-P\-Q@{\-I\-P\-Q}!ip\-\_\-checksum@{ip\-\_\-checksum}}
+\index{ip\-\_\-checksum@{ip\-\_\-checksum}!IPQ@{\-I\-P\-Q}}
+\subsubsection[{ip\-\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::uint16\-\_\-t \-I\-P\-Q\-::ip\-\_\-checksum (
+\begin{DoxyParamCaption}
+\item[{boost\-::uint32\-\_\-t}]{init, }
+\item[{boost\-::uint8\-\_\-t $\ast$}]{buf, }
+\item[{std\-::size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceIPQ_a12139e4f65e5d66469b83c70ba461880}
+
+
+\-Compute an \-I\-P checksum (as described in \-R\-F\-C 791). 
+
+\-This implementation was adapted from \-R\-F\-C 1071. 
+\begin{DoxyParams}{\-Parameters}
+{\em init} & \-The sum of previously-\/summed data. \-Use this for computing \-T\-C\-P checksums; normally, this can be set to 0. \\
+\hline
+{\em buf} & \-The buffer to check. \\
+\hline
+{\em len} & \-The size of {\itshape buffer\/}, in bytes. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 58 of file \-I\-P\-Q.\-cpp.
+
+
+
+\-Referenced by \-I\-P\-Q\-::\-Ipq\-Ip\-Packet\-::update\-Checksums(), \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet\-::update\-Checksums(), and \-I\-P\-Q\-::\-Ipq\-Udp\-Packet\-::update\-Checksums().
+

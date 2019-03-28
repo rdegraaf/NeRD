@@ -1,0 +1,361 @@
+\hypertarget{logmsg_8h}{
+\section{logmsg.h \-File \-Reference}
+\label{logmsg_8h}\index{logmsg.\-h@{logmsg.\-h}}
+}
+{\ttfamily \#include $<$errno.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$stdarg.\-h$>$}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{logmsg_8h_aa953bb02a5df1dea45e2f7645e84f275}{\-L\-O\-G\-M\-S\-G\-\_\-\-S\-T\-R\-E\-R\-R\-O\-R}~strerror
+\item 
+\#define \hyperlink{logmsg_8h_a983a3476b5883be79b18e82c618c37a0}{\-L\-O\-G\-M\-S\-G\-\_\-\-V\-A\-\_\-\-L\-I\-S\-T}~va\-\_\-list
+\item 
+\#define \hyperlink{logmsg_8h_a579192f2f6621b416ee1656a36f1f94d}{\-L\-O\-G\-M\-S\-G\-\_\-\-P\-I\-D}~1
+\begin{DoxyCompactList}\small\item\em logmsg option\-: include the \-P\-I\-D in logged messages. \end{DoxyCompactList}\item 
+\#define \hyperlink{logmsg_8h_acdae7cc9e72571b1711f356ece72afcb}{\-L\-O\-G\-M\-S\-G\-\_\-\-L\-I\-B}(\-F\-U\-N\-C)~logmsg(logmsg\-\_\-err, \char`\"{}\%s\-: \%s (\%s\-:\%i)\char`\"{}, \#\-F\-U\-N\-C, \-L\-O\-G\-M\-S\-G\-\_\-\-S\-T\-R\-E\-R\-R\-O\-R(errno), \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-)
+\begin{DoxyCompactList}\small\item\em \-Shortcut to log standard library function errors. \end{DoxyCompactList}\item 
+\#define \hyperlink{logmsg_8h_a7514a4befe8530e601a35f2bc2fda617}{\-L\-O\-G\-M\-S\-G\-\_\-\-F\-A\-T\-A\-L\-\_\-\-E\-X\-I\-T}()~logmsg(logmsg\-\_\-notice, \char`\"{}\-Exiting due to fatal error\char`\"{})
+\begin{DoxyCompactList}\small\item\em \-Shortcut to log a fatal exit message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{logmsg_8h_a79de13cee8c9b70b7851d97b86d4bbe5}{logmsg\-\_\-target\-\_\-t} \{ \hyperlink{logmsg_8h_a79de13cee8c9b70b7851d97b86d4bbe5a8fc9520816e928c66eac877147cce18d}{logmsg\-\_\-stderr}, 
+\hyperlink{logmsg_8h_a79de13cee8c9b70b7851d97b86d4bbe5a66dd83d42dd5283492505ee225cddc23}{logmsg\-\_\-stdout}, 
+\hyperlink{logmsg_8h_a79de13cee8c9b70b7851d97b86d4bbe5aa718e2f4ad9d3dcabfff1835271fe59e}{logmsg\-\_\-syslog}, 
+\hyperlink{logmsg_8h_a79de13cee8c9b70b7851d97b86d4bbe5a7f19164c0c8aa9beb348e5e35e4a7b8a}{logmsg\-\_\-file}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Available logging targets. \end{DoxyCompactList}\item 
+enum \hyperlink{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6}{logmsg\-\_\-priority\-\_\-t} \{ \*
+\hyperlink{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6aa1fd286b7e5787bb4e554f4708471aa0}{logmsg\-\_\-emerg}, 
+\hyperlink{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6a66e3b043c2e11bf988e4f734f9578c4f}{logmsg\-\_\-alert}, 
+\hyperlink{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6a34c890f87e77e66940cd4959dcccaac1}{logmsg\-\_\-crit}, 
+\hyperlink{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6a759559a69b6b4023ed122cf92d2ebcee}{logmsg\-\_\-err}, 
+\*
+\hyperlink{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6ac733d04ddc45cea012eb285d47ef4d10}{logmsg\-\_\-warning}, 
+\hyperlink{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6a961460bd2878518cfe12504b1ab9de53}{logmsg\-\_\-notice}, 
+\hyperlink{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6a44407e7d68dfe524a440c50a8f8c54b0}{logmsg\-\_\-info}, 
+\hyperlink{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6a72bdf8db64100b7d9db6ea0e6ba4c1fd}{logmsg\-\_\-debug}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Valid logging priorities, from highest to lowest. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{logmsg_8h_a660f642146b247588b15451bdfe18e15}{logmsg\-\_\-open} (\hyperlink{logmsg_8h_a79de13cee8c9b70b7851d97b86d4bbe5}{logmsg\-\_\-target\-\_\-t} target, unsigned options, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em \-Initializes the logmsg facility. \end{DoxyCompactList}\item 
+int \hyperlink{logmsg_8h_aedc0dbf7bfccad6d2b92526a5d03af2e}{logmsg} (\hyperlink{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6}{logmsg\-\_\-priority\-\_\-t} priority, const char $\ast$format,...)
+\begin{DoxyCompactList}\small\item\em \-Prints a message to the current target. \end{DoxyCompactList}\item 
+int \hyperlink{logmsg_8h_ae17b5faf4c5f2c82cc9f99d748dfec4a}{vlogmsg} (\hyperlink{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6}{logmsg\-\_\-priority\-\_\-t} priority, const char $\ast$format, \-L\-O\-G\-M\-S\-G\-\_\-\-V\-A\-\_\-\-L\-I\-S\-T args)
+\item 
+int \hyperlink{logmsg_8h_af255aaa9d72e9a217892ed4ed6a7efbc}{logmsg\-\_\-close} ()
+\begin{DoxyCompactList}\small\item\em \-Shuts down the logmsg facility. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\begin{DoxyAuthor}{\-Author}
+\-Rennie de\-Graaf 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+2007/05/29
+\end{DoxyDate}
+\-Declarations for the \-C interface to logmsg -\/ a generic framework for logging error or status messages to various targets. 
+
+\-Definition in file \hyperlink{logmsg_8h_source}{logmsg.\-h}.
+
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{logmsg_8h_a7514a4befe8530e601a35f2bc2fda617}{
+\index{logmsg.\-h@{logmsg.\-h}!\-L\-O\-G\-M\-S\-G\-\_\-\-F\-A\-T\-A\-L\-\_\-\-E\-X\-I\-T@{\-L\-O\-G\-M\-S\-G\-\_\-\-F\-A\-T\-A\-L\-\_\-\-E\-X\-I\-T}}
+\index{\-L\-O\-G\-M\-S\-G\-\_\-\-F\-A\-T\-A\-L\-\_\-\-E\-X\-I\-T@{\-L\-O\-G\-M\-S\-G\-\_\-\-F\-A\-T\-A\-L\-\_\-\-E\-X\-I\-T}!logmsg.h@{logmsg.\-h}}
+\subsubsection[{\-L\-O\-G\-M\-S\-G\-\_\-\-F\-A\-T\-A\-L\-\_\-\-E\-X\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-L\-O\-G\-M\-S\-G\-\_\-\-F\-A\-T\-A\-L\-\_\-\-E\-X\-I\-T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~logmsg(logmsg\-\_\-notice, \char`\"{}\-Exiting due to fatal error\char`\"{})}}
+\label{logmsg_8h_a7514a4befe8530e601a35f2bc2fda617}
+
+
+\-Shortcut to log a fatal exit message. 
+
+
+
+\-Definition at line 100 of file logmsg.\-h.
+
+
+
+\-Referenced by drop\-\_\-priv(), spc\-\_\-sanitize\-\_\-environment(), and spc\-\_\-sanitize\-\_\-files().
+
+\hypertarget{logmsg_8h_acdae7cc9e72571b1711f356ece72afcb}{
+\index{logmsg.\-h@{logmsg.\-h}!\-L\-O\-G\-M\-S\-G\-\_\-\-L\-I\-B@{\-L\-O\-G\-M\-S\-G\-\_\-\-L\-I\-B}}
+\index{\-L\-O\-G\-M\-S\-G\-\_\-\-L\-I\-B@{\-L\-O\-G\-M\-S\-G\-\_\-\-L\-I\-B}!logmsg.h@{logmsg.\-h}}
+\subsubsection[{\-L\-O\-G\-M\-S\-G\-\_\-\-L\-I\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-L\-O\-G\-M\-S\-G\-\_\-\-L\-I\-B(
+\begin{DoxyParamCaption}
+\item[{}]{\-F\-U\-N\-C}
+\end{DoxyParamCaption}
+)~logmsg(logmsg\-\_\-err, \char`\"{}\%s\-: \%s (\%s\-:\%i)\char`\"{}, \#\-F\-U\-N\-C, \-L\-O\-G\-M\-S\-G\-\_\-\-S\-T\-R\-E\-R\-R\-O\-R(errno), \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-)}}
+\label{logmsg_8h_acdae7cc9e72571b1711f356ece72afcb}
+
+
+\-Shortcut to log standard library function errors. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-F\-U\-N\-C} & \-The name of the library function that experienced the error \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 97 of file logmsg.\-h.
+
+
+
+\-Referenced by drop\-\_\-priv(), and spc\-\_\-sanitize\-\_\-environment().
+
+\hypertarget{logmsg_8h_a579192f2f6621b416ee1656a36f1f94d}{
+\index{logmsg.\-h@{logmsg.\-h}!\-L\-O\-G\-M\-S\-G\-\_\-\-P\-I\-D@{\-L\-O\-G\-M\-S\-G\-\_\-\-P\-I\-D}}
+\index{\-L\-O\-G\-M\-S\-G\-\_\-\-P\-I\-D@{\-L\-O\-G\-M\-S\-G\-\_\-\-P\-I\-D}!logmsg.h@{logmsg.\-h}}
+\subsubsection[{\-L\-O\-G\-M\-S\-G\-\_\-\-P\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-L\-O\-G\-M\-S\-G\-\_\-\-P\-I\-D~1}}
+\label{logmsg_8h_a579192f2f6621b416ee1656a36f1f94d}
+
+
+logmsg option\-: include the \-P\-I\-D in logged messages. 
+
+
+
+\-Definition at line 80 of file logmsg.\-h.
+
+
+
+\-Referenced by logmsg\-\_\-open(), and vlogmsg().
+
+\hypertarget{logmsg_8h_aa953bb02a5df1dea45e2f7645e84f275}{
+\index{logmsg.\-h@{logmsg.\-h}!\-L\-O\-G\-M\-S\-G\-\_\-\-S\-T\-R\-E\-R\-R\-O\-R@{\-L\-O\-G\-M\-S\-G\-\_\-\-S\-T\-R\-E\-R\-R\-O\-R}}
+\index{\-L\-O\-G\-M\-S\-G\-\_\-\-S\-T\-R\-E\-R\-R\-O\-R@{\-L\-O\-G\-M\-S\-G\-\_\-\-S\-T\-R\-E\-R\-R\-O\-R}!logmsg.h@{logmsg.\-h}}
+\subsubsection[{\-L\-O\-G\-M\-S\-G\-\_\-\-S\-T\-R\-E\-R\-R\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-L\-O\-G\-M\-S\-G\-\_\-\-S\-T\-R\-E\-R\-R\-O\-R~strerror}}
+\label{logmsg_8h_aa953bb02a5df1dea45e2f7645e84f275}
+
+
+\-Definition at line 47 of file logmsg.\-h.
+
+\hypertarget{logmsg_8h_a983a3476b5883be79b18e82c618c37a0}{
+\index{logmsg.\-h@{logmsg.\-h}!\-L\-O\-G\-M\-S\-G\-\_\-\-V\-A\-\_\-\-L\-I\-S\-T@{\-L\-O\-G\-M\-S\-G\-\_\-\-V\-A\-\_\-\-L\-I\-S\-T}}
+\index{\-L\-O\-G\-M\-S\-G\-\_\-\-V\-A\-\_\-\-L\-I\-S\-T@{\-L\-O\-G\-M\-S\-G\-\_\-\-V\-A\-\_\-\-L\-I\-S\-T}!logmsg.h@{logmsg.\-h}}
+\subsubsection[{\-L\-O\-G\-M\-S\-G\-\_\-\-V\-A\-\_\-\-L\-I\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-L\-O\-G\-M\-S\-G\-\_\-\-V\-A\-\_\-\-L\-I\-S\-T~va\-\_\-list}}
+\label{logmsg_8h_a983a3476b5883be79b18e82c618c37a0}
+
+
+\-Definition at line 48 of file logmsg.\-h.
+
+
+
+\subsection{\-Enumeration \-Type \-Documentation}
+\hypertarget{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6}{
+\index{logmsg.\-h@{logmsg.\-h}!logmsg\-\_\-priority\-\_\-t@{logmsg\-\_\-priority\-\_\-t}}
+\index{logmsg\-\_\-priority\-\_\-t@{logmsg\-\_\-priority\-\_\-t}!logmsg.h@{logmsg.\-h}}
+\subsubsection[{logmsg\-\_\-priority\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf logmsg\-\_\-priority\-\_\-t}}}
+\label{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6}
+
+
+\-Valid logging priorities, from highest to lowest. 
+
+\-Based on syslog priorities. \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{logmsg\-\_\-emerg@{logmsg\-\_\-emerg}!logmsg.\-h@{logmsg.\-h}}\index{logmsg.\-h@{logmsg.\-h}!logmsg\-\_\-emerg@{logmsg\-\_\-emerg}}\item[{\em 
+\hypertarget{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6aa1fd286b7e5787bb4e554f4708471aa0}{
+logmsg\-\_\-emerg}
+\label{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6aa1fd286b7e5787bb4e554f4708471aa0}
+}]\-The system is unusable. \index{logmsg\-\_\-alert@{logmsg\-\_\-alert}!logmsg.\-h@{logmsg.\-h}}\index{logmsg.\-h@{logmsg.\-h}!logmsg\-\_\-alert@{logmsg\-\_\-alert}}\item[{\em 
+\hypertarget{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6a66e3b043c2e11bf988e4f734f9578c4f}{
+logmsg\-\_\-alert}
+\label{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6a66e3b043c2e11bf988e4f734f9578c4f}
+}]\-Action must be taken immediately. \index{logmsg\-\_\-crit@{logmsg\-\_\-crit}!logmsg.\-h@{logmsg.\-h}}\index{logmsg.\-h@{logmsg.\-h}!logmsg\-\_\-crit@{logmsg\-\_\-crit}}\item[{\em 
+\hypertarget{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6a34c890f87e77e66940cd4959dcccaac1}{
+logmsg\-\_\-crit}
+\label{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6a34c890f87e77e66940cd4959dcccaac1}
+}]\-Critical error condition. \index{logmsg\-\_\-err@{logmsg\-\_\-err}!logmsg.\-h@{logmsg.\-h}}\index{logmsg.\-h@{logmsg.\-h}!logmsg\-\_\-err@{logmsg\-\_\-err}}\item[{\em 
+\hypertarget{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6a759559a69b6b4023ed122cf92d2ebcee}{
+logmsg\-\_\-err}
+\label{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6a759559a69b6b4023ed122cf92d2ebcee}
+}]\-Error condtion. \index{logmsg\-\_\-warning@{logmsg\-\_\-warning}!logmsg.\-h@{logmsg.\-h}}\index{logmsg.\-h@{logmsg.\-h}!logmsg\-\_\-warning@{logmsg\-\_\-warning}}\item[{\em 
+\hypertarget{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6ac733d04ddc45cea012eb285d47ef4d10}{
+logmsg\-\_\-warning}
+\label{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6ac733d04ddc45cea012eb285d47ef4d10}
+}]\-Warning condition. \index{logmsg\-\_\-notice@{logmsg\-\_\-notice}!logmsg.\-h@{logmsg.\-h}}\index{logmsg.\-h@{logmsg.\-h}!logmsg\-\_\-notice@{logmsg\-\_\-notice}}\item[{\em 
+\hypertarget{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6a961460bd2878518cfe12504b1ab9de53}{
+logmsg\-\_\-notice}
+\label{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6a961460bd2878518cfe12504b1ab9de53}
+}]\-Normal, but significant, condition. \index{logmsg\-\_\-info@{logmsg\-\_\-info}!logmsg.\-h@{logmsg.\-h}}\index{logmsg.\-h@{logmsg.\-h}!logmsg\-\_\-info@{logmsg\-\_\-info}}\item[{\em 
+\hypertarget{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6a44407e7d68dfe524a440c50a8f8c54b0}{
+logmsg\-\_\-info}
+\label{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6a44407e7d68dfe524a440c50a8f8c54b0}
+}]\-Informational message. \index{logmsg\-\_\-debug@{logmsg\-\_\-debug}!logmsg.\-h@{logmsg.\-h}}\index{logmsg.\-h@{logmsg.\-h}!logmsg\-\_\-debug@{logmsg\-\_\-debug}}\item[{\em 
+\hypertarget{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6a72bdf8db64100b7d9db6ea0e6ba4c1fd}{
+logmsg\-\_\-debug}
+\label{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6a72bdf8db64100b7d9db6ea0e6ba4c1fd}
+}]\-Debug message. \end{description}
+\end{Desc}
+
+
+
+\-Definition at line 67 of file logmsg.\-h.
+
+\hypertarget{logmsg_8h_a79de13cee8c9b70b7851d97b86d4bbe5}{
+\index{logmsg.\-h@{logmsg.\-h}!logmsg\-\_\-target\-\_\-t@{logmsg\-\_\-target\-\_\-t}}
+\index{logmsg\-\_\-target\-\_\-t@{logmsg\-\_\-target\-\_\-t}!logmsg.h@{logmsg.\-h}}
+\subsubsection[{logmsg\-\_\-target\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf logmsg\-\_\-target\-\_\-t}}}
+\label{logmsg_8h_a79de13cee8c9b70b7851d97b86d4bbe5}
+
+
+\-Available logging targets. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{logmsg\-\_\-stderr@{logmsg\-\_\-stderr}!logmsg.\-h@{logmsg.\-h}}\index{logmsg.\-h@{logmsg.\-h}!logmsg\-\_\-stderr@{logmsg\-\_\-stderr}}\item[{\em 
+\hypertarget{logmsg_8h_a79de13cee8c9b70b7851d97b86d4bbe5a8fc9520816e928c66eac877147cce18d}{
+logmsg\-\_\-stderr}
+\label{logmsg_8h_a79de13cee8c9b70b7851d97b86d4bbe5a8fc9520816e928c66eac877147cce18d}
+}]\-Write messages to stderr (default). \index{logmsg\-\_\-stdout@{logmsg\-\_\-stdout}!logmsg.\-h@{logmsg.\-h}}\index{logmsg.\-h@{logmsg.\-h}!logmsg\-\_\-stdout@{logmsg\-\_\-stdout}}\item[{\em 
+\hypertarget{logmsg_8h_a79de13cee8c9b70b7851d97b86d4bbe5a66dd83d42dd5283492505ee225cddc23}{
+logmsg\-\_\-stdout}
+\label{logmsg_8h_a79de13cee8c9b70b7851d97b86d4bbe5a66dd83d42dd5283492505ee225cddc23}
+}]\-Write messages to stdout. \index{logmsg\-\_\-syslog@{logmsg\-\_\-syslog}!logmsg.\-h@{logmsg.\-h}}\index{logmsg.\-h@{logmsg.\-h}!logmsg\-\_\-syslog@{logmsg\-\_\-syslog}}\item[{\em 
+\hypertarget{logmsg_8h_a79de13cee8c9b70b7851d97b86d4bbe5aa718e2f4ad9d3dcabfff1835271fe59e}{
+logmsg\-\_\-syslog}
+\label{logmsg_8h_a79de13cee8c9b70b7851d97b86d4bbe5aa718e2f4ad9d3dcabfff1835271fe59e}
+}]\-Send message to syslog. \index{logmsg\-\_\-file@{logmsg\-\_\-file}!logmsg.\-h@{logmsg.\-h}}\index{logmsg.\-h@{logmsg.\-h}!logmsg\-\_\-file@{logmsg\-\_\-file}}\item[{\em 
+\hypertarget{logmsg_8h_a79de13cee8c9b70b7851d97b86d4bbe5a7f19164c0c8aa9beb348e5e35e4a7b8a}{
+logmsg\-\_\-file}
+\label{logmsg_8h_a79de13cee8c9b70b7851d97b86d4bbe5a7f19164c0c8aa9beb348e5e35e4a7b8a}
+}]\-Append messages to a file. \end{description}
+\end{Desc}
+
+
+
+\-Definition at line 57 of file logmsg.\-h.
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{logmsg_8h_aedc0dbf7bfccad6d2b92526a5d03af2e}{
+\index{logmsg.\-h@{logmsg.\-h}!logmsg@{logmsg}}
+\index{logmsg@{logmsg}!logmsg.h@{logmsg.\-h}}
+\subsubsection[{logmsg}]{\setlength{\rightskip}{0pt plus 5cm}int logmsg (
+\begin{DoxyParamCaption}
+\item[{{\bf logmsg\-\_\-priority\-\_\-t}}]{priority, }
+\item[{const char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}
+\label{logmsg_8h_aedc0dbf7bfccad6d2b92526a5d03af2e}
+
+
+\-Prints a message to the current target. 
+
+\-The message is formatted according to syslog() conventions. 
+\begin{DoxyParams}{\-Parameters}
+{\em priority} & \-The message priority. \-How this is interpreted depends on the target\-:
+\begin{DoxyItemize}
+\item {\ttfamily logmsg\-\_\-syslog\-:} \-Use the equivalent syslog priority.
+\item {\ttfamily logmsg\-\_\-file}, {\ttfamily logmsg\-\_\-stdout}, {\ttfamily logmsg\-\_\-stderr\-:} \-Prepend a string to the message indicating the priority 
+\end{DoxyItemize}\\
+\hline
+{\em format} & \-A printf()-\/style format string, followed by arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0 on success, or -\/1 on failure 
+\end{DoxyReturn}
+
+
+\-Definition at line 153 of file logmsg.\-c.
+
+
+
+\-References vlogmsg().
+
+\hypertarget{logmsg_8h_af255aaa9d72e9a217892ed4ed6a7efbc}{
+\index{logmsg.\-h@{logmsg.\-h}!logmsg\-\_\-close@{logmsg\-\_\-close}}
+\index{logmsg\-\_\-close@{logmsg\-\_\-close}!logmsg.h@{logmsg.\-h}}
+\subsubsection[{logmsg\-\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}int logmsg\-\_\-close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{logmsg_8h_af255aaa9d72e9a217892ed4ed6a7efbc}
+
+
+\-Shuts down the logmsg facility. 
+
+\-Closes the target appropriately. \begin{DoxyReturn}{\-Returns}
+0 on success, or \-E\-O\-F on failure, with errno set appropriately. 
+\end{DoxyReturn}
+
+
+\-Definition at line 244 of file logmsg.\-c.
+
+
+
+\-References logmsg\-\_\-t\-::target, logmsg\-\_\-stdout, logmsg\-\_\-stderr, logmsg\-\_\-syslog, logmsg\-\_\-file, and logmsg\-\_\-t\-::file.
+
+
+
+\-Referenced by \-Lib\-Wheel\-::\-Logmsg\-::open(), and \-Lib\-Wheel\-::\-Logmsg\-::close().
+
+\hypertarget{logmsg_8h_a660f642146b247588b15451bdfe18e15}{
+\index{logmsg.\-h@{logmsg.\-h}!logmsg\-\_\-open@{logmsg\-\_\-open}}
+\index{logmsg\-\_\-open@{logmsg\-\_\-open}!logmsg.h@{logmsg.\-h}}
+\subsubsection[{logmsg\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}int logmsg\-\_\-open (
+\begin{DoxyParamCaption}
+\item[{{\bf logmsg\-\_\-target\-\_\-t}}]{target, }
+\item[{unsigned}]{options, }
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}
+\label{logmsg_8h_a660f642146b247588b15451bdfe18e15}
+
+
+\-Initializes the logmsg facility. 
+
+\-Opens and initializes a target, and sets logmsg options. 
+\begin{DoxyParams}{\-Parameters}
+{\em target} & \-The type of target to use. \\
+\hline
+{\em options} & \-A bitfield of option flags. \\
+\hline
+{\em name} & \-A string whose purpose is determined by the value of {\itshape target\-:\/} 
+\begin{DoxyItemize}
+\item {\ttfamily logmsg\-\_\-file\-:} \-The name of the file to use.
+\item {\ttfamily logmsg\-\_\-syslog}, {\ttfamily logmsg\-\_\-stdout}, {\ttfamily logmsg\-\_\-stderr\-:} \-A string to prepend to each log message. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0 on success or -\/1 on failure, with errno set appropriately. 
+\end{DoxyReturn}
+
+
+\-Definition at line 110 of file logmsg.\-c.
+
+
+
+\-References logmsg\-\_\-t\-::target, logmsg\-\_\-t\-::options, logmsg\-\_\-t\-::name, logmsg\-\_\-t\-::file, logmsg\-\_\-stdout, logmsg\-\_\-stderr, logmsg\-\_\-syslog, \-L\-O\-G\-M\-S\-G\-\_\-\-P\-I\-D, and logmsg\-\_\-file.
+
+
+
+\-Referenced by \-Lib\-Wheel\-::\-Logmsg\-::open().
+
+\hypertarget{logmsg_8h_ae17b5faf4c5f2c82cc9f99d748dfec4a}{
+\index{logmsg.\-h@{logmsg.\-h}!vlogmsg@{vlogmsg}}
+\index{vlogmsg@{vlogmsg}!logmsg.h@{logmsg.\-h}}
+\subsubsection[{vlogmsg}]{\setlength{\rightskip}{0pt plus 5cm}int vlogmsg (
+\begin{DoxyParamCaption}
+\item[{{\bf logmsg\-\_\-priority\-\_\-t}}]{priority, }
+\item[{const char $\ast$}]{format, }
+\item[{\-L\-O\-G\-M\-S\-G\-\_\-\-V\-A\-\_\-\-L\-I\-S\-T}]{args}
+\end{DoxyParamCaption}
+)}}
+\label{logmsg_8h_ae17b5faf4c5f2c82cc9f99d748dfec4a}

@@ -1,0 +1,102 @@
+\hypertarget{libwheel_8h}{
+\section{libwheel.h \-File \-Reference}
+\label{libwheel_8h}\index{libwheel.\-h@{libwheel.\-h}}
+}
+\subsection*{\-Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespaceLibWheel}{\-Lib\-Wheel}
+\begin{DoxyCompactList}\small\item\em \-A set of reusuable software components written in various languages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{libwheel_8h_a27264efd631c4f584ddcb2f5888ae6ed}{\-T\-H\-R\-O\-W}(x)~throw x
+\begin{DoxyCompactList}\small\item\em \-Allows a program to check exceptions in debug builds while skipping the checks in release builds. \end{DoxyCompactList}\item 
+\#define \hyperlink{libwheel_8h_a8acd87e96db9c77a5c5c5efff88c4547}{\-X\-Q\-U\-O\-T\-E}(x)~\#x
+\begin{DoxyCompactList}\small\item\em \-Used internally by \hyperlink{libwheel_8h_a2117b58e19182dff91ad3558e650541d}{\-Q\-U\-O\-T\-E(x)} due to work around precedence rules. \end{DoxyCompactList}\item 
+\#define \hyperlink{libwheel_8h_a2117b58e19182dff91ad3558e650541d}{\-Q\-U\-O\-T\-E}(x)~\-X\-Q\-U\-O\-T\-E(x)
+\begin{DoxyCompactList}\small\item\em \-Quote a macro argument. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\begin{DoxyAuthor}{\-Author}
+\-Rennie de\-Graaf 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+2007/05/30
+\end{DoxyDate}
+\-Miscellaneous definitions and useful macros for \hyperlink{namespaceLibWheel}{\-Lib\-Wheel}. 
+
+\-Definition in file \hyperlink{libwheel_8h_source}{libwheel.\-h}.
+
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{libwheel_8h_a2117b58e19182dff91ad3558e650541d}{
+\index{libwheel.\-h@{libwheel.\-h}!\-Q\-U\-O\-T\-E@{\-Q\-U\-O\-T\-E}}
+\index{\-Q\-U\-O\-T\-E@{\-Q\-U\-O\-T\-E}!libwheel.h@{libwheel.\-h}}
+\subsubsection[{\-Q\-U\-O\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Q\-U\-O\-T\-E(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~\-X\-Q\-U\-O\-T\-E(x)}}
+\label{libwheel_8h_a2117b58e19182dff91ad3558e650541d}
+
+
+\-Quote a macro argument. 
+
+
+
+\-Definition at line 44 of file libwheel.\-h.
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection\-Server().
+
+\hypertarget{libwheel_8h_a27264efd631c4f584ddcb2f5888ae6ed}{
+\index{libwheel.\-h@{libwheel.\-h}!\-T\-H\-R\-O\-W@{\-T\-H\-R\-O\-W}}
+\index{\-T\-H\-R\-O\-W@{\-T\-H\-R\-O\-W}!libwheel.h@{libwheel.\-h}}
+\subsubsection[{\-T\-H\-R\-O\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-T\-H\-R\-O\-W(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~throw x}}
+\label{libwheel_8h_a27264efd631c4f584ddcb2f5888ae6ed}
+
+
+\-Allows a program to check exceptions in debug builds while skipping the checks in release builds. 
+
+\-C++ checks that any exceptions thown match {\ttfamily throw()} specifiers at run-\/time, rather than at compile-\/time, so there's often little point in leaving {\ttfamily throw()} specifiers in release builds.
+
+\-To define a function that throws exceptions \-Except\-A and \-Except\-B, define it as follows (note the double brackets)\-: 
+\begin{DoxyCode}
+     int foo() THROW((ExceptA, ExceptB));
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em x} & \-A bracketed list of exceptions that may be thrown. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 34 of file libwheel.\-h.
+
+\hypertarget{libwheel_8h_a8acd87e96db9c77a5c5c5efff88c4547}{
+\index{libwheel.\-h@{libwheel.\-h}!\-X\-Q\-U\-O\-T\-E@{\-X\-Q\-U\-O\-T\-E}}
+\index{\-X\-Q\-U\-O\-T\-E@{\-X\-Q\-U\-O\-T\-E}!libwheel.h@{libwheel.\-h}}
+\subsubsection[{\-X\-Q\-U\-O\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-X\-Q\-U\-O\-T\-E(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~\#x}}
+\label{libwheel_8h_a8acd87e96db9c77a5c5c5efff88c4547}
+
+
+\-Used internally by \hyperlink{libwheel_8h_a2117b58e19182dff91ad3558e650541d}{\-Q\-U\-O\-T\-E(x)} due to work around precedence rules. 
+
+\-Don't use directly. 
+
+\-Definition at line 41 of file libwheel.\-h.
+

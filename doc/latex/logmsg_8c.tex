@@ -1,0 +1,319 @@
+\hypertarget{logmsg_8c}{
+\section{logmsg.c \-File \-Reference}
+\label{logmsg_8c}\index{logmsg.\-c@{logmsg.\-c}}
+}
+{\ttfamily \#include $<$syslog.\-h$>$}\*
+{\ttfamily \#include $<$stdarg.\-h$>$}\*
+{\ttfamily \#include $<$stdbool.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$unistd.\-h$>$}\*
+{\ttfamily \#include $<$time.\-h$>$}\*
+{\ttfamily \#include \char`\"{}logmsg.\-h\char`\"{}}\*
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structlogmsg__t}{logmsg\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Internal logmsg configuration object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{logmsg_8c_ac3d144aa01e765a1fae62ab5491c7cc1}{\-\_\-\-P\-O\-S\-I\-X\-\_\-\-S\-O\-U\-R\-C\-E}
+\item 
+\#define \hyperlink{logmsg_8c_ad3d8a3bd0c0b677acef144f2c2ef6d73}{\-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E}
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{logmsg_8c_a660f642146b247588b15451bdfe18e15}{logmsg\-\_\-open} (\hyperlink{logmsg_8h_a79de13cee8c9b70b7851d97b86d4bbe5}{logmsg\-\_\-target\-\_\-t} target, unsigned options, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em \-Initializes the logmsg facility. \end{DoxyCompactList}\item 
+int \hyperlink{logmsg_8c_aedc0dbf7bfccad6d2b92526a5d03af2e}{logmsg} (\hyperlink{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6}{logmsg\-\_\-priority\-\_\-t} priority, const char $\ast$format,...)
+\begin{DoxyCompactList}\small\item\em \-Prints a message to the current target. \end{DoxyCompactList}\item 
+int \hyperlink{logmsg_8c_ab19f08941f6dd6dacd74c5654d6b3125}{vlogmsg} (\hyperlink{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6}{logmsg\-\_\-priority\-\_\-t} priority, const char $\ast$format, va\-\_\-list args)
+\begin{DoxyCompactList}\small\item\em \-Prints a message to the current target. \end{DoxyCompactList}\item 
+int \hyperlink{logmsg_8c_af255aaa9d72e9a217892ed4ed6a7efbc}{logmsg\-\_\-close} ()
+\begin{DoxyCompactList}\small\item\em \-Shuts down the logmsg facility. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ \hyperlink{logmsg_8c_ad241a92dd677dd2348984ea04c696b0f}{\-\_\-priority\-\_\-tag} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em \-String table for logmsg priorities (. \end{DoxyCompactList}\item 
+static const int \hyperlink{logmsg_8c_a95b4ee28a9b26bb6fe30e43185d0a13d}{\-\_\-priority\-\_\-id} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em syslog macros corresponding to values of logmsg\-\_\-priority\-\_\-t \end{DoxyCompactList}\item 
+static \hyperlink{structlogmsg__t}{logmsg\-\_\-t} \hyperlink{logmsg_8c_a3ae8c1e790924cffba68008146e2e80d}{\-\_\-log\-\_\-config} = \{logmsg\-\_\-stderr, 0, \char`\"{}\char`\"{}, \-N\-U\-L\-L\}
+\begin{DoxyCompactList}\small\item\em \-Global logmsg configuration object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\begin{DoxyAuthor}{\-Author}
+\-Rennie de\-Graaf 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+2007/05/29
+\end{DoxyDate}
+\-Implementation of logmsg -\/ a generic framework for logging error or status messages to various targets. \-Currently, valid targets are stdout, stderr, syslog, or any file. \-The default target is stderr. \-Messages are formatted along syslog conventions.
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[\hyperlink{todo__todo000002}{\-Todo}]\-Verify thread safety. 
+
+\-Extend logmsg to allow multiple separate loggers to be used simultaneously, along the lines of \-Java's \char`\"{}\-Logger\char`\"{} class. \end{DoxyRefDesc}
+
+
+\-Definition in file \hyperlink{logmsg_8c_source}{logmsg.\-c}.
+
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{logmsg_8c_ad3d8a3bd0c0b677acef144f2c2ef6d73}{
+\index{logmsg.\-c@{logmsg.\-c}!\-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E@{\-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E}}
+\index{\-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E@{\-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E}!logmsg.c@{logmsg.\-c}}
+\subsubsection[{\-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E}}
+\label{logmsg_8c_ad3d8a3bd0c0b677acef144f2c2ef6d73}
+
+
+\-Definition at line 49 of file logmsg.\-c.
+
+\hypertarget{logmsg_8c_ac3d144aa01e765a1fae62ab5491c7cc1}{
+\index{logmsg.\-c@{logmsg.\-c}!\-\_\-\-P\-O\-S\-I\-X\-\_\-\-S\-O\-U\-R\-C\-E@{\-\_\-\-P\-O\-S\-I\-X\-\_\-\-S\-O\-U\-R\-C\-E}}
+\index{\-\_\-\-P\-O\-S\-I\-X\-\_\-\-S\-O\-U\-R\-C\-E@{\-\_\-\-P\-O\-S\-I\-X\-\_\-\-S\-O\-U\-R\-C\-E}!logmsg.c@{logmsg.\-c}}
+\subsubsection[{\-\_\-\-P\-O\-S\-I\-X\-\_\-\-S\-O\-U\-R\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-P\-O\-S\-I\-X\-\_\-\-S\-O\-U\-R\-C\-E}}
+\label{logmsg_8c_ac3d144aa01e765a1fae62ab5491c7cc1}
+
+
+\-Definition at line 48 of file logmsg.\-c.
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{logmsg_8c_aedc0dbf7bfccad6d2b92526a5d03af2e}{
+\index{logmsg.\-c@{logmsg.\-c}!logmsg@{logmsg}}
+\index{logmsg@{logmsg}!logmsg.c@{logmsg.\-c}}
+\subsubsection[{logmsg}]{\setlength{\rightskip}{0pt plus 5cm}int logmsg (
+\begin{DoxyParamCaption}
+\item[{{\bf logmsg\-\_\-priority\-\_\-t}}]{priority, }
+\item[{const char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}
+\label{logmsg_8c_aedc0dbf7bfccad6d2b92526a5d03af2e}
+
+
+\-Prints a message to the current target. 
+
+\-The message is formatted according to syslog() conventions. 
+\begin{DoxyParams}{\-Parameters}
+{\em priority} & \-The message priority. \-How this is interpreted depends on the target\-:
+\begin{DoxyItemize}
+\item {\ttfamily logmsg\-\_\-syslog\-:} \-Use the equivalent syslog priority.
+\item {\ttfamily logmsg\-\_\-file}, {\ttfamily logmsg\-\_\-stdout}, {\ttfamily logmsg\-\_\-stderr\-:} \-Prepend a string to the message indicating the priority 
+\end{DoxyItemize}\\
+\hline
+{\em format} & \-A printf()-\/style format string, followed by arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0 on success, or -\/1 on failure 
+\end{DoxyReturn}
+
+
+\-Definition at line 153 of file logmsg.\-c.
+
+
+
+\-References vlogmsg().
+
+\hypertarget{logmsg_8c_af255aaa9d72e9a217892ed4ed6a7efbc}{
+\index{logmsg.\-c@{logmsg.\-c}!logmsg\-\_\-close@{logmsg\-\_\-close}}
+\index{logmsg\-\_\-close@{logmsg\-\_\-close}!logmsg.c@{logmsg.\-c}}
+\subsubsection[{logmsg\-\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}int logmsg\-\_\-close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{logmsg_8c_af255aaa9d72e9a217892ed4ed6a7efbc}
+
+
+\-Shuts down the logmsg facility. 
+
+\-Closes the target appropriately. \begin{DoxyReturn}{\-Returns}
+0 on success, or \-E\-O\-F on failure, with errno set appropriately. 
+\end{DoxyReturn}
+
+
+\-Definition at line 244 of file logmsg.\-c.
+
+
+
+\-References logmsg\-\_\-t\-::target, logmsg\-\_\-stdout, logmsg\-\_\-stderr, logmsg\-\_\-syslog, logmsg\-\_\-file, and logmsg\-\_\-t\-::file.
+
+
+
+\-Referenced by \-Lib\-Wheel\-::\-Logmsg\-::open(), and \-Lib\-Wheel\-::\-Logmsg\-::close().
+
+\hypertarget{logmsg_8c_a660f642146b247588b15451bdfe18e15}{
+\index{logmsg.\-c@{logmsg.\-c}!logmsg\-\_\-open@{logmsg\-\_\-open}}
+\index{logmsg\-\_\-open@{logmsg\-\_\-open}!logmsg.c@{logmsg.\-c}}
+\subsubsection[{logmsg\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}int logmsg\-\_\-open (
+\begin{DoxyParamCaption}
+\item[{{\bf logmsg\-\_\-target\-\_\-t}}]{target, }
+\item[{unsigned}]{options, }
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}
+\label{logmsg_8c_a660f642146b247588b15451bdfe18e15}
+
+
+\-Initializes the logmsg facility. 
+
+\-Opens and initializes a target, and sets logmsg options. 
+\begin{DoxyParams}{\-Parameters}
+{\em target} & \-The type of target to use. \\
+\hline
+{\em options} & \-A bitfield of option flags. \\
+\hline
+{\em name} & \-A string whose purpose is determined by the value of {\itshape target\-:\/} 
+\begin{DoxyItemize}
+\item {\ttfamily logmsg\-\_\-file\-:} \-The name of the file to use.
+\item {\ttfamily logmsg\-\_\-syslog}, {\ttfamily logmsg\-\_\-stdout}, {\ttfamily logmsg\-\_\-stderr\-:} \-A string to prepend to each log message. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0 on success or -\/1 on failure, with errno set appropriately. 
+\end{DoxyReturn}
+
+
+\-Definition at line 110 of file logmsg.\-c.
+
+
+
+\-References logmsg\-\_\-t\-::target, logmsg\-\_\-t\-::options, logmsg\-\_\-t\-::name, logmsg\-\_\-t\-::file, logmsg\-\_\-stdout, logmsg\-\_\-stderr, logmsg\-\_\-syslog, \-L\-O\-G\-M\-S\-G\-\_\-\-P\-I\-D, and logmsg\-\_\-file.
+
+
+
+\-Referenced by \-Lib\-Wheel\-::\-Logmsg\-::open().
+
+\hypertarget{logmsg_8c_ab19f08941f6dd6dacd74c5654d6b3125}{
+\index{logmsg.\-c@{logmsg.\-c}!vlogmsg@{vlogmsg}}
+\index{vlogmsg@{vlogmsg}!logmsg.c@{logmsg.\-c}}
+\subsubsection[{vlogmsg}]{\setlength{\rightskip}{0pt plus 5cm}int vlogmsg (
+\begin{DoxyParamCaption}
+\item[{{\bf logmsg\-\_\-priority\-\_\-t}}]{priority, }
+\item[{const char $\ast$}]{format, }
+\item[{va\-\_\-list}]{args}
+\end{DoxyParamCaption}
+)}}
+\label{logmsg_8c_ab19f08941f6dd6dacd74c5654d6b3125}
+
+
+\-Prints a message to the current target. 
+
+\-The message is formatted according to syslog() conventions. 
+\begin{DoxyParams}{\-Parameters}
+{\em priority} & \-The message priority. \-How this is interpreted depends on the target\-:
+\begin{DoxyItemize}
+\item {\ttfamily logmsg\-\_\-syslog\-:} \-Use the equivalent syslog priority.
+\item {\ttfamily logmsg\-\_\-file}, {\ttfamily logmsg\-\_\-stdout}, {\ttfamily logmsg\-\_\-stderr\-:} \-Prepend a string to the message indicating the priority 
+\end{DoxyItemize}\\
+\hline
+{\em format} & \-A printf()-\/style format string. \\
+\hline
+{\em args} & \-Arguments to {\itshape format\/}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0 on success, or -\/1 on failure 
+\end{DoxyReturn}
+
+
+\-Definition at line 178 of file logmsg.\-c.
+
+
+
+\-References logmsg\-\_\-t\-::file, logmsg\-\_\-t\-::target, logmsg\-\_\-stdout, logmsg\-\_\-stderr, logmsg\-\_\-file, logmsg\-\_\-t\-::name, logmsg\-\_\-t\-::options, \-L\-O\-G\-M\-S\-G\-\_\-\-P\-I\-D, \-\_\-priority\-\_\-tag, logmsg\-\_\-syslog, and \-\_\-priority\-\_\-id.
+
+
+
+\-Referenced by logmsg(), and \-Lib\-Wheel\-::\-Logmsg\-::operator()().
+
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{logmsg_8c_a3ae8c1e790924cffba68008146e2e80d}{
+\index{logmsg.\-c@{logmsg.\-c}!\-\_\-log\-\_\-config@{\-\_\-log\-\_\-config}}
+\index{\-\_\-log\-\_\-config@{\-\_\-log\-\_\-config}!logmsg.c@{logmsg.\-c}}
+\subsubsection[{\-\_\-log\-\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}{\bf logmsg\-\_\-t} {\bf \-\_\-log\-\_\-config} = \{logmsg\-\_\-stderr, 0, \char`\"{}\char`\"{}, \-N\-U\-L\-L\}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{logmsg_8c_a3ae8c1e790924cffba68008146e2e80d}
+
+
+\-Global logmsg configuration object. 
+
+
+
+\-Definition at line 96 of file logmsg.\-c.
+
+\hypertarget{logmsg_8c_a95b4ee28a9b26bb6fe30e43185d0a13d}{
+\index{logmsg.\-c@{logmsg.\-c}!\-\_\-priority\-\_\-id@{\-\_\-priority\-\_\-id}}
+\index{\-\_\-priority\-\_\-id@{\-\_\-priority\-\_\-id}!logmsg.c@{logmsg.\-c}}
+\subsubsection[{\-\_\-priority\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf \-\_\-priority\-\_\-id}\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{logmsg_8c_a95b4ee28a9b26bb6fe30e43185d0a13d}
+{\bfseries \-Initial value\-:}
+\begin{DoxyCode}
+ 
+{
+    LOG_EMERG,
+    LOG_ALERT,
+    LOG_CRIT,
+    LOG_ERR,
+    LOG_WARNING,
+    LOG_NOTICE,
+    LOG_INFO,
+    LOG_DEBUG
+}
+\end{DoxyCode}
+
+
+syslog macros corresponding to values of logmsg\-\_\-priority\-\_\-t 
+
+
+
+\-Definition at line 83 of file logmsg.\-c.
+
+
+
+\-Referenced by vlogmsg().
+
+\hypertarget{logmsg_8c_ad241a92dd677dd2348984ea04c696b0f}{
+\index{logmsg.\-c@{logmsg.\-c}!\-\_\-priority\-\_\-tag@{\-\_\-priority\-\_\-tag}}
+\index{\-\_\-priority\-\_\-tag@{\-\_\-priority\-\_\-tag}!logmsg.c@{logmsg.\-c}}
+\subsubsection[{\-\_\-priority\-\_\-tag}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf \-\_\-priority\-\_\-tag}\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{logmsg_8c_ad241a92dd677dd2348984ea04c696b0f}
+{\bfseries \-Initial value\-:}
+\begin{DoxyCode}
+ 
+{
+    "Emergency:",
+    "Alert:",
+    "Critical:",
+    "Error:",
+    "Warning:",
+    "Notice:",
+    "Info:",
+    "Debug:"
+}
+\end{DoxyCode}
+
+
+\-String table for logmsg priorities (. 
+
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{logmsg_8h_a0b3d82d29e7bdec3d6961f3475f4f7f6}{logmsg\-\_\-priority\-\_\-t}). 
+\end{DoxySeeAlso}
+
+
+\-Definition at line 70 of file logmsg.\-c.
+
+
+
+\-Referenced by vlogmsg().
+

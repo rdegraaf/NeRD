@@ -1,0 +1,424 @@
+\hypertarget{classLibWheel_1_1WaitList}{
+\section{\-Lib\-Wheel\-:\-:\-Wait\-List \-Class \-Reference}
+\label{classLibWheel_1_1WaitList}\index{\-Lib\-Wheel\-::\-Wait\-List@{\-Lib\-Wheel\-::\-Wait\-List}}
+}
+
+
+\-A list from which items will be removed after a timeout.  
+
+
+
+
+{\ttfamily \#include $<$\-Wait\-List.\-hpp$>$}
+
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classLibWheel_1_1WaitList_1_1WaitGC}{\-Wait\-G\-C}
+\begin{DoxyCompactList}\small\item\em \-Timer interrupt handler for \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}. \end{DoxyCompactList}\item 
+class \hyperlink{classLibWheel_1_1WaitList_1_1WaitWrapper}{\-Wait\-Wrapper}
+\begin{DoxyCompactList}\small\item\em \-Wrapper that attaches a timestamp to objects stored in a \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \-V \hyperlink{classLibWheel_1_1WaitList_a1ff6e1745f202171e2d3a17a114c58af}{value\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \-The type of object stored in this \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}. \end{DoxyCompactList}\item 
+typedef std\-::list$<$ \hyperlink{classLibWheel_1_1WaitList_1_1WaitWrapper}{\-Wait\-Wrapper} $>$\*
+\-::\hyperlink{classLibWheel_1_1WaitList_a197f2582847b549a89b833d2eb153b1c}{iterator} \hyperlink{classLibWheel_1_1WaitList_a197f2582847b549a89b833d2eb153b1c}{iterator}
+\begin{DoxyCompactList}\small\item\em \-A type describing a bidirectional iterator for the list. \end{DoxyCompactList}\item 
+typedef std\-::list$<$ \hyperlink{classLibWheel_1_1WaitList_1_1WaitWrapper}{\-Wait\-Wrapper} $>$\*
+\-::\hyperlink{classLibWheel_1_1WaitList_a016ac87f7ff3d47c628a091581baa840}{const\-\_\-iterator} \hyperlink{classLibWheel_1_1WaitList_a016ac87f7ff3d47c628a091581baa840}{const\-\_\-iterator}
+\begin{DoxyCompactList}\small\item\em \-A type describing a constant bidirectional iterator for the list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLibWheel_1_1WaitList_af1f5333add29ca138c385c15581ea57e}{\-Wait\-List} (unsigned short time)
+\begin{DoxyCompactList}\small\item\em \-Constructor for \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1WaitList_ad1d70367da51da742eed56e1a978cc25}{$\sim$\-Wait\-List} ()
+\begin{DoxyCompactList}\small\item\em \-Destructor for \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1WaitList_a197f2582847b549a89b833d2eb153b1c}{iterator} \hyperlink{classLibWheel_1_1WaitList_ae258ef53fb5bd852f91176247627ecea}{begin} ()
+\begin{DoxyCompactList}\small\item\em \-Retrieves a bidirectional iterator to the beginning of the list. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1WaitList_a197f2582847b549a89b833d2eb153b1c}{iterator} \hyperlink{classLibWheel_1_1WaitList_a82a5b14fc1a9978a18dd6aa7fd62792d}{end} ()
+\begin{DoxyCompactList}\small\item\em \-Retrieves a bidirectional iterator to just past the end of the list. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1WaitList_a016ac87f7ff3d47c628a091581baa840}{const\-\_\-iterator} \hyperlink{classLibWheel_1_1WaitList_a375db0c5e7badccefac1f1cf61128343}{begin} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieves a constant bidirectional iterator to the beginning of the list. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1WaitList_a016ac87f7ff3d47c628a091581baa840}{const\-\_\-iterator} \hyperlink{classLibWheel_1_1WaitList_ac4e21e5c74dbe0483fe065364ee28d58}{end} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieves a constant bidirectional iterator to just past the end of the list. \end{DoxyCompactList}\item 
+void \hyperlink{classLibWheel_1_1WaitList_ac2f908037eee4e5c5d6553c217647c1b}{add} (const \hyperlink{classLibWheel_1_1WaitList_a1ff6e1745f202171e2d3a17a114c58af}{value\-\_\-type} \&rev)
+\begin{DoxyCompactList}\small\item\em \-Adds an object to the back of the list. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1WaitList_a197f2582847b549a89b833d2eb153b1c}{iterator} \hyperlink{classLibWheel_1_1WaitList_a975195ad3a9b2c38453291a1633cf78b}{erase} (\hyperlink{classLibWheel_1_1WaitList_a197f2582847b549a89b833d2eb153b1c}{iterator} \&i)
+\begin{DoxyCompactList}\small\item\em \-Removes an object from the list. \end{DoxyCompactList}\item 
+std\-::size\-\_\-t \hyperlink{classLibWheel_1_1WaitList_a21cf29a4959829a276799c989995c98c}{size} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieves the number of elements in the list. \end{DoxyCompactList}\item 
+bool \hyperlink{classLibWheel_1_1WaitList_abaf7e9847f95400ae461f6d76f68e531}{empty} () const 
+\begin{DoxyCompactList}\small\item\em \-Checks if the list is empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::list$<$ \hyperlink{classLibWheel_1_1WaitList_1_1WaitWrapper}{\-Wait\-Wrapper} $>$ \hyperlink{classLibWheel_1_1WaitList_a33add3411131d6588693cb4d382f678e}{objs}
+\begin{DoxyCompactList}\small\item\em \-The list of objects contained by this \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1WaitList_1_1WaitGC}{\-Wait\-G\-C} \hyperlink{classLibWheel_1_1WaitList_a0c5c6a51b01bb3b575fcd367c8d16f14}{gc}
+\begin{DoxyCompactList}\small\item\em \-The timer interrupt handler for this \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}. \end{DoxyCompactList}\item 
+unsigned short \hyperlink{classLibWheel_1_1WaitList_a53c2d486c7c8a16a7c25176a974b9759}{timeout}
+\begin{DoxyCompactList}\small\item\em \-The lifetime of objects stored in this \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}, in seconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A list from which items will be removed after a timeout. 
+
+\-When an item is inserted, a timer interrupt is scheduled using \hyperlink{classLibWheel_1_1Timer}{\-Timer}. \-When the interrupt is handled (by calling \hyperlink{classLibWheel_1_1SignalQueue_a991ba21066232f0db7be5f21e39edc41}{\-Signal\-Queue\-::handle\-Next()} or \hyperlink{classLibWheel_1_1SignalQueue_ad308bc4818a9d864bc0eb7b4dd1490ae}{\-Signal\-Queue\-::handle\-All()}), the item will be removed. \-Additional operations can be performed at this time by specializing \hyperlink{classLibWheel_1_1WaitList_1_1WaitGC_afb5c536ce88b8c365753e2e491135f55}{\-Wait\-List\-::\-Wait\-G\-C\-::operator()()} for value\-\_\-type.
+
+\-The underlying container is std\-::list.
+
+\begin{DoxyRefDesc}{\-Bug}
+\item[\hyperlink{bug__bug000006}{\-Bug}]\-The timer interrupt handler (\hyperlink{classLibWheel_1_1WaitList_1_1WaitGC}{\-Wait\-List\-::\-Wait\-G\-C}) assumes that the list is sorted in chronological order. \-However, since list iterators are provided, this is not necessarily true. \-Consequently, objects that are out of chronological order will not be removed until after all objects before them in list order have timed out and been removed.\end{DoxyRefDesc}
+
+
+\begin{DoxyWarning}{\-Warning}
+\-The constructor to \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List} sets a signal handler for \-S\-I\-G\-A\-L\-R\-M through \hyperlink{classLibWheel_1_1SignalQueue}{\-Signal\-Queue}. \-Don't use this class if you have a handler for \-S\-I\-G\-A\-L\-R\-M outside of \hyperlink{classLibWheel_1_1SignalQueue}{\-Signal\-Queue} or if you're using a library function that uses \-S\-I\-G\-A\-L\-R\-M. 
+\end{DoxyWarning}
+
+
+\subsection{\-Member \-Typedef \-Documentation}
+\hypertarget{classLibWheel_1_1WaitList_a016ac87f7ff3d47c628a091581baa840}{
+\index{\-Lib\-Wheel\-::\-Wait\-List@{\-Lib\-Wheel\-::\-Wait\-List}!const\-\_\-iterator@{const\-\_\-iterator}}
+\index{const\-\_\-iterator@{const\-\_\-iterator}!LibWheel::WaitList@{\-Lib\-Wheel\-::\-Wait\-List}}
+\subsubsection[{const\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::list$<${\bf \-Wait\-Wrapper}$>$\-::{\bf const\-\_\-iterator} {\bf \-Lib\-Wheel\-::\-Wait\-List\-::const\-\_\-iterator}}}
+\label{classLibWheel_1_1WaitList_a016ac87f7ff3d47c628a091581baa840}
+
+
+\-A type describing a constant bidirectional iterator for the list. 
+
+
+
+\-Definition at line 66 of file \-Wait\-List.\-hpp.
+
+\hypertarget{classLibWheel_1_1WaitList_a197f2582847b549a89b833d2eb153b1c}{
+\index{\-Lib\-Wheel\-::\-Wait\-List@{\-Lib\-Wheel\-::\-Wait\-List}!iterator@{iterator}}
+\index{iterator@{iterator}!LibWheel::WaitList@{\-Lib\-Wheel\-::\-Wait\-List}}
+\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::list$<${\bf \-Wait\-Wrapper}$>$\-::{\bf iterator} {\bf \-Lib\-Wheel\-::\-Wait\-List\-::iterator}}}
+\label{classLibWheel_1_1WaitList_a197f2582847b549a89b833d2eb153b1c}
+
+
+\-A type describing a bidirectional iterator for the list. 
+
+
+
+\-Definition at line 65 of file \-Wait\-List.\-hpp.
+
+\hypertarget{classLibWheel_1_1WaitList_a1ff6e1745f202171e2d3a17a114c58af}{
+\index{\-Lib\-Wheel\-::\-Wait\-List@{\-Lib\-Wheel\-::\-Wait\-List}!value\-\_\-type@{value\-\_\-type}}
+\index{value\-\_\-type@{value\-\_\-type}!LibWheel::WaitList@{\-Lib\-Wheel\-::\-Wait\-List}}
+\subsubsection[{value\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef \-V {\bf \-Lib\-Wheel\-::\-Wait\-List\-::value\-\_\-type}}}
+\label{classLibWheel_1_1WaitList_a1ff6e1745f202171e2d3a17a114c58af}
+
+
+\-The type of object stored in this \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}. 
+
+
+
+\-Definition at line 64 of file \-Wait\-List.\-hpp.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classLibWheel_1_1WaitList_af1f5333add29ca138c385c15581ea57e}{
+\index{\-Lib\-Wheel\-::\-Wait\-List@{\-Lib\-Wheel\-::\-Wait\-List}!\-Wait\-List@{\-Wait\-List}}
+\index{\-Wait\-List@{\-Wait\-List}!LibWheel::WaitList@{\-Lib\-Wheel\-::\-Wait\-List}}
+\subsubsection[{\-Wait\-List}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-List (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{time}
+\end{DoxyParamCaption}
+)}}
+\label{classLibWheel_1_1WaitList_af1f5333add29ca138c385c15581ea57e}
+
+
+\-Constructor for \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em time} & \-The lifetime of objects stored in this \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{\-Side \-Effects\-:}
+\-Sets the signal handler for \-S\-I\-G\-A\-L\-R\-M. 
+\end{DoxyParagraph}
+
+
+\-Definition at line 40 of file \-Wait\-List\-\_\-impl.\-cpp.
+
+
+
+\-References \-Lib\-Wheel\-::\-Signal\-Queue\-::set\-Handler(), \-Lib\-Wheel\-::\-Signal\-Queue\-::\-H\-A\-N\-D\-L\-E, \-Lib\-Wheel\-::\-Signal\-Queue\-::add\-Handler(), and gc.
+
+\hypertarget{classLibWheel_1_1WaitList_ad1d70367da51da742eed56e1a978cc25}{
+\index{\-Lib\-Wheel\-::\-Wait\-List@{\-Lib\-Wheel\-::\-Wait\-List}!$\sim$\-Wait\-List@{$\sim$\-Wait\-List}}
+\index{$\sim$\-Wait\-List@{$\sim$\-Wait\-List}!LibWheel::WaitList@{\-Lib\-Wheel\-::\-Wait\-List}}
+\subsubsection[{$\sim$\-Wait\-List}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::\-Wait\-List\-::$\sim$\-Wait\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classLibWheel_1_1WaitList_ad1d70367da51da742eed56e1a978cc25}
+
+
+\-Destructor for \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}. 
+
+
+
+\-Definition at line 52 of file \-Wait\-List\-\_\-impl.\-cpp.
+
+
+
+\-References \-Lib\-Wheel\-::\-Signal\-Queue\-::delete\-Handler().
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classLibWheel_1_1WaitList_ac2f908037eee4e5c5d6553c217647c1b}{
+\index{\-Lib\-Wheel\-::\-Wait\-List@{\-Lib\-Wheel\-::\-Wait\-List}!add@{add}}
+\index{add@{add}!LibWheel::WaitList@{\-Lib\-Wheel\-::\-Wait\-List}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void \-Lib\-Wheel\-::\-Wait\-List\-::add (
+\begin{DoxyParamCaption}
+\item[{const {\bf value\-\_\-type} \&}]{rec}
+\end{DoxyParamCaption}
+)}}
+\label{classLibWheel_1_1WaitList_ac2f908037eee4e5c5d6553c217647c1b}
+
+
+\-Adds an object to the back of the list. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em rec} & \-The object to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{\-Side \-Effects\-:}
+\-Schedules a timer interrupt through \hyperlink{classLibWheel_1_1Timer}{\-Timer}. 
+\end{DoxyParagraph}
+
+
+\-Definition at line 115 of file \-Wait\-List\-\_\-impl.\-cpp.
+
+
+
+\-References \-Lib\-Wheel\-::\-Timer\-::get\-Timer(), and \-Lib\-Wheel\-::\-Timer\-::schedule().
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler\-::operator()(), and \-N\-E\-R\-D\-::\-Connection\-Server\-::create\-Connection().
+
+\hypertarget{classLibWheel_1_1WaitList_ae258ef53fb5bd852f91176247627ecea}{
+\index{\-Lib\-Wheel\-::\-Wait\-List@{\-Lib\-Wheel\-::\-Wait\-List}!begin@{begin}}
+\index{begin@{begin}!LibWheel::WaitList@{\-Lib\-Wheel\-::\-Wait\-List}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Wait\-List}$<$ \-V $>$\-::{\bf iterator} \-Lib\-Wheel\-::\-Wait\-List\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classLibWheel_1_1WaitList_ae258ef53fb5bd852f91176247627ecea}
+
+
+\-Retrieves a bidirectional iterator to the beginning of the list. 
+
+\begin{DoxyReturn}{\-Returns}
+\-An iterator to the first item of the list, or just past the end of the list if it is empty. 
+\end{DoxyReturn}
+
+
+\-Definition at line 65 of file \-Wait\-List\-\_\-impl.\-cpp.
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler\-::find\-Pending\-Connection(), and \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler\-::operator()().
+
+\hypertarget{classLibWheel_1_1WaitList_a375db0c5e7badccefac1f1cf61128343}{
+\index{\-Lib\-Wheel\-::\-Wait\-List@{\-Lib\-Wheel\-::\-Wait\-List}!begin@{begin}}
+\index{begin@{begin}!LibWheel::WaitList@{\-Lib\-Wheel\-::\-Wait\-List}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Wait\-List}$<$ \-V $>$\-::{\bf const\-\_\-iterator} \-Lib\-Wheel\-::\-Wait\-List\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classLibWheel_1_1WaitList_a375db0c5e7badccefac1f1cf61128343}
+
+
+\-Retrieves a constant bidirectional iterator to the beginning of the list. 
+
+\begin{DoxyReturn}{\-Returns}
+\-A const\-\_\-iterator to the first item of the list, or just past the end of the list if it is empty. 
+\end{DoxyReturn}
+
+
+\-Definition at line 78 of file \-Wait\-List\-\_\-impl.\-cpp.
+
+\hypertarget{classLibWheel_1_1WaitList_abaf7e9847f95400ae461f6d76f68e531}{
+\index{\-Lib\-Wheel\-::\-Wait\-List@{\-Lib\-Wheel\-::\-Wait\-List}!empty@{empty}}
+\index{empty@{empty}!LibWheel::WaitList@{\-Lib\-Wheel\-::\-Wait\-List}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}bool \-Lib\-Wheel\-::\-Wait\-List\-::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classLibWheel_1_1WaitList_abaf7e9847f95400ae461f6d76f68e531}
+
+
+\-Checks if the list is empty. 
+
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if the list is empty; {\bfseries false} otherwise. 
+\end{DoxyReturn}
+
+
+\-Definition at line 152 of file \-Wait\-List\-\_\-impl.\-cpp.
+
+\hypertarget{classLibWheel_1_1WaitList_a82a5b14fc1a9978a18dd6aa7fd62792d}{
+\index{\-Lib\-Wheel\-::\-Wait\-List@{\-Lib\-Wheel\-::\-Wait\-List}!end@{end}}
+\index{end@{end}!LibWheel::WaitList@{\-Lib\-Wheel\-::\-Wait\-List}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Wait\-List}$<$ \-V $>$\-::{\bf iterator} \-Lib\-Wheel\-::\-Wait\-List\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classLibWheel_1_1WaitList_a82a5b14fc1a9978a18dd6aa7fd62792d}
+
+
+\-Retrieves a bidirectional iterator to just past the end of the list. 
+
+\begin{DoxyReturn}{\-Returns}
+\-An iterator pointing just past the end of the list 
+\end{DoxyReturn}
+
+
+\-Definition at line 90 of file \-Wait\-List\-\_\-impl.\-cpp.
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler\-::operator()(), \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler\-::find\-Pending\-Connection(), and \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler\-::operator()().
+
+\hypertarget{classLibWheel_1_1WaitList_ac4e21e5c74dbe0483fe065364ee28d58}{
+\index{\-Lib\-Wheel\-::\-Wait\-List@{\-Lib\-Wheel\-::\-Wait\-List}!end@{end}}
+\index{end@{end}!LibWheel::WaitList@{\-Lib\-Wheel\-::\-Wait\-List}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Wait\-List}$<$ \-V $>$\-::{\bf const\-\_\-iterator} \-Lib\-Wheel\-::\-Wait\-List\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classLibWheel_1_1WaitList_ac4e21e5c74dbe0483fe065364ee28d58}
+
+
+\-Retrieves a constant bidirectional iterator to just past the end of the list. 
+
+\begin{DoxyReturn}{\-Returns}
+\-A const\-\_\-iterator pointing just past the end of the list 
+\end{DoxyReturn}
+
+
+\-Definition at line 102 of file \-Wait\-List\-\_\-impl.\-cpp.
+
+\hypertarget{classLibWheel_1_1WaitList_a975195ad3a9b2c38453291a1633cf78b}{
+\index{\-Lib\-Wheel\-::\-Wait\-List@{\-Lib\-Wheel\-::\-Wait\-List}!erase@{erase}}
+\index{erase@{erase}!LibWheel::WaitList@{\-Lib\-Wheel\-::\-Wait\-List}}
+\subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Wait\-List}$<$ \-V $>$\-::{\bf iterator} \-Lib\-Wheel\-::\-Wait\-List\-::erase (
+\begin{DoxyParamCaption}
+\item[{{\bf iterator} \&}]{i}
+\end{DoxyParamCaption}
+)}}
+\label{classLibWheel_1_1WaitList_a975195ad3a9b2c38453291a1633cf78b}
+
+
+\-Removes an object from the list. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em i} & \-An iterator pointing to the object to remove. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 128 of file \-Wait\-List\-\_\-impl.\-cpp.
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler\-::operator()(), and \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler\-::operator()().
+
+\hypertarget{classLibWheel_1_1WaitList_a21cf29a4959829a276799c989995c98c}{
+\index{\-Lib\-Wheel\-::\-Wait\-List@{\-Lib\-Wheel\-::\-Wait\-List}!size@{size}}
+\index{size@{size}!LibWheel::WaitList@{\-Lib\-Wheel\-::\-Wait\-List}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}std\-::size\-\_\-t \-Lib\-Wheel\-::\-Wait\-List\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classLibWheel_1_1WaitList_a21cf29a4959829a276799c989995c98c}
+
+
+\-Retrieves the number of elements in the list. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The number of elements in the list. 
+\end{DoxyReturn}
+
+
+\-Definition at line 140 of file \-Wait\-List\-\_\-impl.\-cpp.
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::print\-Stats().
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classLibWheel_1_1WaitList_a0c5c6a51b01bb3b575fcd367c8d16f14}{
+\index{\-Lib\-Wheel\-::\-Wait\-List@{\-Lib\-Wheel\-::\-Wait\-List}!gc@{gc}}
+\index{gc@{gc}!LibWheel::WaitList@{\-Lib\-Wheel\-::\-Wait\-List}}
+\subsubsection[{gc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Wait\-G\-C} {\bf \-Lib\-Wheel\-::\-Wait\-List\-::gc}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classLibWheel_1_1WaitList_a0c5c6a51b01bb3b575fcd367c8d16f14}
+
+
+\-The timer interrupt handler for this \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}. 
+
+
+
+\-Definition at line 94 of file \-Wait\-List.\-hpp.
+
+
+
+\-Referenced by \-Wait\-List().
+
+\hypertarget{classLibWheel_1_1WaitList_a33add3411131d6588693cb4d382f678e}{
+\index{\-Lib\-Wheel\-::\-Wait\-List@{\-Lib\-Wheel\-::\-Wait\-List}!objs@{objs}}
+\index{objs@{objs}!LibWheel::WaitList@{\-Lib\-Wheel\-::\-Wait\-List}}
+\subsubsection[{objs}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<${\bf \-Wait\-Wrapper}$>$ {\bf \-Lib\-Wheel\-::\-Wait\-List\-::objs}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classLibWheel_1_1WaitList_a33add3411131d6588693cb4d382f678e}
+
+
+\-The list of objects contained by this \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}. 
+
+
+
+\-Definition at line 93 of file \-Wait\-List.\-hpp.
+
+
+
+\-Referenced by \-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-G\-C\-::operator()().
+
+\hypertarget{classLibWheel_1_1WaitList_a53c2d486c7c8a16a7c25176a974b9759}{
+\index{\-Lib\-Wheel\-::\-Wait\-List@{\-Lib\-Wheel\-::\-Wait\-List}!timeout@{timeout}}
+\index{timeout@{timeout}!LibWheel::WaitList@{\-Lib\-Wheel\-::\-Wait\-List}}
+\subsubsection[{timeout}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short {\bf \-Lib\-Wheel\-::\-Wait\-List\-::timeout}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classLibWheel_1_1WaitList_a53c2d486c7c8a16a7c25176a974b9759}
+
+
+\-The lifetime of objects stored in this \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}, in seconds. 
+
+
+
+\-Definition at line 95 of file \-Wait\-List.\-hpp.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{WaitList_8hpp}{\-Wait\-List.\-hpp}\item 
+\hyperlink{WaitList__impl_8cpp}{\-Wait\-List\-\_\-impl.\-cpp}\end{DoxyCompactItemize}

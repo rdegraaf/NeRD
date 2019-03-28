@@ -1,0 +1,182 @@
+\hypertarget{classNERD_1_1ConnectionServer_1_1Connection}{
+\section{\-N\-E\-R\-D\-:\-:\-Connection\-Server\-:\-:\-Connection \-Class \-Reference}
+\label{classNERD_1_1ConnectionServer_1_1Connection}\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection}}
+}
+
+
+\-A description of a connection managed by a server program.  
+
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNERD_1_1ConnectionServer_1_1Connection_a84d83200cead40def8a0eb1c4480f6e2}{\-Connection} (const \hyperlink{classIPQ_1_1IpqTcpPacket}{\-I\-P\-Q\-::\-Ipq\-Tcp\-Packet} $\ast$pkt, boost\-::uint32\-\_\-t rsaddr, boost\-::uint32\-\_\-t rdaddr, boost\-::uint16\-\_\-t rsport, boost\-::uint16\-\_\-t rdport, const std\-::string \&name)
+\begin{DoxyCompactList}\small\item\em \-Constructor for \hyperlink{classNERD_1_1ConnectionServer_1_1Connection}{\-Connection}. \end{DoxyCompactList}\item 
+const \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair} \& \hyperlink{classNERD_1_1ConnectionServer_1_1Connection_af076490d2f7f9b23ed91ba3ff6452f9d}{get\-Forward\-Addr} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the addresses of packets sent from a client to a server for a \hyperlink{classNERD_1_1ConnectionServer_1_1Connection}{\-Connection}. \end{DoxyCompactList}\item 
+const \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair} \& \hyperlink{classNERD_1_1ConnectionServer_1_1Connection_a4998c37ce0f55a17904ded653e5ea95b}{get\-Reverse\-Addr} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the addresses of packets sent from a server to a client for a \hyperlink{classNERD_1_1ConnectionServer_1_1Connection}{\-Connection}. \end{DoxyCompactList}\item 
+const std\-::string \& \hyperlink{classNERD_1_1ConnectionServer_1_1Connection_a1554fbce9d1ff09e21507fb372fd7077}{get\-Name} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the name of the server program handling a connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair} \hyperlink{classNERD_1_1ConnectionServer_1_1Connection_a1e0a150fe344d8ac0173ff34985f275f}{forward\-Addr}
+\begin{DoxyCompactList}\small\item\em \-The addresses of packets sent by a client to a server. \end{DoxyCompactList}\item 
+const \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair} \hyperlink{classNERD_1_1ConnectionServer_1_1Connection_add4fb710d6212e0f8501bb2bb29b523d}{reverse\-Addr}
+\begin{DoxyCompactList}\small\item\em \-The addresses of packets sent by a server to a client. \end{DoxyCompactList}\item 
+const std\-::string \hyperlink{classNERD_1_1ConnectionServer_1_1Connection_ac2d5abf39fc698fd831419e20bbc0eba}{server\-Name}
+\begin{DoxyCompactList}\small\item\em \-The name of the server program handling a connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A description of a connection managed by a server program. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classNERD_1_1ConnectionServer_1_1Connection_a84d83200cead40def8a0eb1c4480f6e2}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection}!\-Connection@{\-Connection}}
+\index{\-Connection@{\-Connection}!NERD::ConnectionServer::Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection}}
+\subsubsection[{\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection\-::\-Connection (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet} $\ast$}]{pkt, }
+\item[{boost\-::uint32\-\_\-t}]{rsaddr, }
+\item[{boost\-::uint32\-\_\-t}]{rdaddr, }
+\item[{boost\-::uint16\-\_\-t}]{rsport, }
+\item[{boost\-::uint16\-\_\-t}]{rdport, }
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+)}}
+\label{classNERD_1_1ConnectionServer_1_1Connection_a84d83200cead40def8a0eb1c4480f6e2}
+
+
+\-Constructor for \hyperlink{classNERD_1_1ConnectionServer_1_1Connection}{\-Connection}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pkt} & \-A \-T\-C\-P packet from which to take the addresses of packets sent from a client to a server. \\
+\hline
+{\em rsaddr} & \-The source \-I\-P address of packets sent from a server to a client. \\
+\hline
+{\em rdaddr} & \-The destination \-I\-P address of packets sent from a server to a client. \\
+\hline
+{\em rsport} & \-The source port number of packets sent from a server to a client. \\
+\hline
+{\em rdport} & \-The source port number of packets sent from a server to a client. \\
+\hline
+{\em name} & \-The name of the server program handling this connection. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 628 of file nerd.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classNERD_1_1ConnectionServer_1_1Connection_af076490d2f7f9b23ed91ba3ff6452f9d}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection}!get\-Forward\-Addr@{get\-Forward\-Addr}}
+\index{get\-Forward\-Addr@{get\-Forward\-Addr}!NERD::ConnectionServer::Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection}}
+\subsubsection[{get\-Forward\-Addr}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Connection\-Server\-::\-Address\-Pair} \& \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection\-::get\-Forward\-Addr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classNERD_1_1ConnectionServer_1_1Connection_af076490d2f7f9b23ed91ba3ff6452f9d}
+
+
+\-Retrieve the addresses of packets sent from a client to a server for a \hyperlink{classNERD_1_1ConnectionServer_1_1Connection}{\-Connection}. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The addresses of packet sent from a client to a server on this \hyperlink{classNERD_1_1ConnectionServer_1_1Connection}{\-Connection}. 
+\end{DoxyReturn}
+
+
+\-Definition at line 640 of file nerd.\-cpp.
+
+\hypertarget{classNERD_1_1ConnectionServer_1_1Connection_a1554fbce9d1ff09e21507fb372fd7077}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection}!get\-Name@{get\-Name}}
+\index{get\-Name@{get\-Name}!NERD::ConnectionServer::Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection}}
+\subsubsection[{get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string \& \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection\-::get\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classNERD_1_1ConnectionServer_1_1Connection_a1554fbce9d1ff09e21507fb372fd7077}
+
+
+\-Retrieve the name of the server program handling a connection. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The name of the server program handling this connection. 
+\end{DoxyReturn}
+
+
+\-Definition at line 664 of file nerd.\-cpp.
+
+\hypertarget{classNERD_1_1ConnectionServer_1_1Connection_a4998c37ce0f55a17904ded653e5ea95b}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection}!get\-Reverse\-Addr@{get\-Reverse\-Addr}}
+\index{get\-Reverse\-Addr@{get\-Reverse\-Addr}!NERD::ConnectionServer::Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection}}
+\subsubsection[{get\-Reverse\-Addr}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Connection\-Server\-::\-Address\-Pair} \& \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection\-::get\-Reverse\-Addr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classNERD_1_1ConnectionServer_1_1Connection_a4998c37ce0f55a17904ded653e5ea95b}
+
+
+\-Retrieve the addresses of packets sent from a server to a client for a \hyperlink{classNERD_1_1ConnectionServer_1_1Connection}{\-Connection}. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The addresses of packet sent from a server to a client on this \hyperlink{classNERD_1_1ConnectionServer_1_1Connection}{\-Connection}. 
+\end{DoxyReturn}
+
+
+\-Definition at line 653 of file nerd.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classNERD_1_1ConnectionServer_1_1Connection_a1e0a150fe344d8ac0173ff34985f275f}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection}!forward\-Addr@{forward\-Addr}}
+\index{forward\-Addr@{forward\-Addr}!NERD::ConnectionServer::Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection}}
+\subsubsection[{forward\-Addr}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Address\-Pair} {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection\-::forward\-Addr}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_1_1Connection_a1e0a150fe344d8ac0173ff34985f275f}
+
+
+\-The addresses of packets sent by a client to a server. 
+
+
+
+\-Definition at line 177 of file nerd.\-cpp.
+
+\hypertarget{classNERD_1_1ConnectionServer_1_1Connection_add4fb710d6212e0f8501bb2bb29b523d}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection}!reverse\-Addr@{reverse\-Addr}}
+\index{reverse\-Addr@{reverse\-Addr}!NERD::ConnectionServer::Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection}}
+\subsubsection[{reverse\-Addr}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Address\-Pair} {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection\-::reverse\-Addr}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_1_1Connection_add4fb710d6212e0f8501bb2bb29b523d}
+
+
+\-The addresses of packets sent by a server to a client. 
+
+
+
+\-Definition at line 178 of file nerd.\-cpp.
+
+\hypertarget{classNERD_1_1ConnectionServer_1_1Connection_ac2d5abf39fc698fd831419e20bbc0eba}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection}!server\-Name@{server\-Name}}
+\index{server\-Name@{server\-Name}!NERD::ConnectionServer::Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection}}
+\subsubsection[{server\-Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection\-::server\-Name}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_1_1Connection_ac2d5abf39fc698fd831419e20bbc0eba}
+
+
+\-The name of the server program handling a connection. 
+
+
+
+\-Definition at line 179 of file nerd.\-cpp.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{nerd_8cpp}{nerd.\-cpp}\end{DoxyCompactItemize}

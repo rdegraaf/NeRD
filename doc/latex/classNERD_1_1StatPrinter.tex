@@ -1,0 +1,96 @@
+\hypertarget{classNERD_1_1StatPrinter}{
+\section{\-N\-E\-R\-D\-:\-:\-Stat\-Printer \-Class \-Reference}
+\label{classNERD_1_1StatPrinter}\index{\-N\-E\-R\-D\-::\-Stat\-Printer@{\-N\-E\-R\-D\-::\-Stat\-Printer}}
+}
+
+
+\-Functor to print current server statistics.  
+
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNERD_1_1StatPrinter_a9e15d664037ee9b034a20e4a2c758e37}{\-Stat\-Printer} (const \hyperlink{classNERD_1_1ConnectionServer}{\-Connection\-Server} \&cs)
+\begin{DoxyCompactList}\small\item\em \-Initialize a \hyperlink{classNERD_1_1StatPrinter}{\-Stat\-Printer}. \end{DoxyCompactList}\item 
+void \hyperlink{classNERD_1_1StatPrinter_a276b7e4358a2cd8ec5a3972f86452d2c}{operator()} () const 
+\begin{DoxyCompactList}\small\item\em \-Print the current statistics for a \hyperlink{classNERD_1_1ConnectionServer}{\-Connection\-Server}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classNERD_1_1ConnectionServer}{\-Connection\-Server} \& \hyperlink{classNERD_1_1StatPrinter_a6040df27f017b5ce2ac0ed1d9f68d50b}{connection\-Server}
+\begin{DoxyCompactList}\small\item\em \-A reference to a server object whose statistica are to be printed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Functor to print current server statistics. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classNERD_1_1StatPrinter_a9e15d664037ee9b034a20e4a2c758e37}{
+\index{\-N\-E\-R\-D\-::\-Stat\-Printer@{\-N\-E\-R\-D\-::\-Stat\-Printer}!\-Stat\-Printer@{\-Stat\-Printer}}
+\index{\-Stat\-Printer@{\-Stat\-Printer}!NERD::StatPrinter@{\-N\-E\-R\-D\-::\-Stat\-Printer}}
+\subsubsection[{\-Stat\-Printer}]{\setlength{\rightskip}{0pt plus 5cm}\-N\-E\-R\-D\-::\-Stat\-Printer\-::\-Stat\-Printer (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Connection\-Server} \&}]{cs}
+\end{DoxyParamCaption}
+)}}
+\label{classNERD_1_1StatPrinter_a9e15d664037ee9b034a20e4a2c758e37}
+
+
+\-Initialize a \hyperlink{classNERD_1_1StatPrinter}{\-Stat\-Printer}. 
+
+
+
+\-Definition at line 1377 of file nerd.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classNERD_1_1StatPrinter_a276b7e4358a2cd8ec5a3972f86452d2c}{
+\index{\-N\-E\-R\-D\-::\-Stat\-Printer@{\-N\-E\-R\-D\-::\-Stat\-Printer}!operator()@{operator()}}
+\index{operator()@{operator()}!NERD::StatPrinter@{\-N\-E\-R\-D\-::\-Stat\-Printer}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}void \-N\-E\-R\-D\-::\-Stat\-Printer\-::operator() (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classNERD_1_1StatPrinter_a276b7e4358a2cd8ec5a3972f86452d2c}
+
+
+\-Print the current statistics for a \hyperlink{classNERD_1_1ConnectionServer}{\-Connection\-Server}. 
+
+\begin{DoxyParagraph}{\-Side \-Effects\-:}
+\-Writes messages to \hyperlink{namespaceLibWheel_af4ca70f4f65b2948701218436516a679}{\-Lib\-Wheel\-::logmsg}. 
+\end{DoxyParagraph}
+
+
+\-Definition at line 1387 of file nerd.\-cpp.
+
+
+
+\-References connection\-Server, and \-N\-E\-R\-D\-::\-Connection\-Server\-::print\-Stats().
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classNERD_1_1StatPrinter_a6040df27f017b5ce2ac0ed1d9f68d50b}{
+\index{\-N\-E\-R\-D\-::\-Stat\-Printer@{\-N\-E\-R\-D\-::\-Stat\-Printer}!connection\-Server@{connection\-Server}}
+\index{connection\-Server@{connection\-Server}!NERD::StatPrinter@{\-N\-E\-R\-D\-::\-Stat\-Printer}}
+\subsubsection[{connection\-Server}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Connection\-Server}\& {\bf \-N\-E\-R\-D\-::\-Stat\-Printer\-::connection\-Server}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1StatPrinter_a6040df27f017b5ce2ac0ed1d9f68d50b}
+
+
+\-A reference to a server object whose statistica are to be printed. 
+
+
+
+\-Definition at line 302 of file nerd.\-cpp.
+
+
+
+\-Referenced by operator()().
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{nerd_8cpp}{nerd.\-cpp}\end{DoxyCompactItemize}

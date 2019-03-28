@@ -1,0 +1,336 @@
+\hypertarget{classNERD_1_1DnsServerRecord}{
+\section{\-N\-E\-R\-D\-:\-:\-Dns\-Server\-Record \-Class \-Reference}
+\label{classNERD_1_1DnsServerRecord}\index{\-N\-E\-R\-D\-::\-Dns\-Server\-Record@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}}
+}
+
+
+\-Holds a \-D\-N\-S \-T\-X\-T server record.  
+
+
+
+
+{\ttfamily \#include $<$\-Dns\-Server\-Record.\-hpp$>$}
+
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::string \hyperlink{classNERD_1_1DnsServerRecord_ae4822fbc6f9564c337a67c40358e2810}{key\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \-The type of keys in a \-D\-N\-S server record. \end{DoxyCompactList}\item 
+typedef std\-::string \hyperlink{classNERD_1_1DnsServerRecord_aec809b0a9732f03885f5df5dd56f5f52}{value\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \-The type of values in a \-D\-N\-S server record. \end{DoxyCompactList}\item 
+typedef std\-::size\-\_\-t \hyperlink{classNERD_1_1DnsServerRecord_a51602195a3768bfdac0b69fb76358167}{size\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \-An appropriate type for the number of entries in a \-D\-N\-S server record. \end{DoxyCompactList}\item 
+typedef table\-\_\-type\-::const\-\_\-iterator \hyperlink{classNERD_1_1DnsServerRecord_a870208456774471b644a9715f88d4ea6}{const\-\_\-iterator}
+\begin{DoxyCompactList}\small\item\em \-A type describing a constant bidirectional iterator for a \-D\-N\-S server record. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNERD_1_1DnsServerRecord_a9e64bf4fc8f8f0dc2615809f9ce487bd}{\-Dns\-Server\-Record} (const std\-::string \&s)  throw (\-Lib\-Wheel\-::\-Parse\-Error)
+\begin{DoxyCompactList}\small\item\em \-Constructor for \hyperlink{classNERD_1_1DnsServerRecord}{\-Dns\-Server\-Record}. \end{DoxyCompactList}\item 
+\hyperlink{classNERD_1_1DnsServerRecord_a870208456774471b644a9715f88d4ea6}{const\-\_\-iterator} \hyperlink{classNERD_1_1DnsServerRecord_a870088e0f9b25fa8638518dc61efbd6a}{get\-Value} (const std\-::string \&key) const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the value for a given key in a \-D\-N\-S server record. \end{DoxyCompactList}\item 
+\hyperlink{classNERD_1_1DnsServerRecord_a870208456774471b644a9715f88d4ea6}{const\-\_\-iterator} \hyperlink{classNERD_1_1DnsServerRecord_a1aba903a80201ef9f31feebd15d3de58}{begin} () const 
+\item 
+\hyperlink{classNERD_1_1DnsServerRecord_a870208456774471b644a9715f88d4ea6}{const\-\_\-iterator} \hyperlink{classNERD_1_1DnsServerRecord_ac66bbdc0eb78b35c61e95a5736390e64}{end} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieves a constant bidirectional iterator to just past the last entry in the record. \end{DoxyCompactList}\item 
+\hyperlink{classNERD_1_1DnsServerRecord_a51602195a3768bfdac0b69fb76358167}{size\-\_\-type} \hyperlink{classNERD_1_1DnsServerRecord_abf8b92d7742f01b17b9f6593236c7ac5}{size} () const 
+\begin{DoxyCompactList}\small\item\em \-Retrieves the number of key-\/value entries in a record. \end{DoxyCompactList}\item 
+bool \hyperlink{classNERD_1_1DnsServerRecord_a061b022eb838ab65d051cf10eec01e8c}{empty} () const 
+\begin{DoxyCompactList}\small\item\em \-Checks if a record is empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::map$<$ \hyperlink{classNERD_1_1DnsServerRecord_ae4822fbc6f9564c337a67c40358e2810}{key\-\_\-type}, \*
+\hyperlink{classNERD_1_1DnsServerRecord_aec809b0a9732f03885f5df5dd56f5f52}{value\-\_\-type} $>$ \hyperlink{classNERD_1_1DnsServerRecord_aeef40180a6b643af13b33122a73e8b0d}{table\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \-The type of a \-D\-N\-S server record lookup table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classNERD_1_1DnsServerRecord_a081a710f9819704a3da449c7bee3f583}{parse\-Record} (const std\-::string \&s)  throw (\-Lib\-Wheel\-::\-Parse\-Error)
+\begin{DoxyCompactList}\small\item\em \-Parses a \-D\-N\-S \-T\-X\-T record into a lookup table of key-\/value pairs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNERD_1_1DnsServerRecord_aeef40180a6b643af13b33122a73e8b0d}{table\-\_\-type} \hyperlink{classNERD_1_1DnsServerRecord_ae061df21d0b8072df5a38a88dbcb405e}{record}
+\begin{DoxyCompactList}\small\item\em \-The parsed key-\/value pairs from the \-D\-N\-S \-T\-X\-T record. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Holds a \-D\-N\-S \-T\-X\-T server record. 
+
+\subsection{\-Member \-Typedef \-Documentation}
+\hypertarget{classNERD_1_1DnsServerRecord_a870208456774471b644a9715f88d4ea6}{
+\index{\-N\-E\-R\-D\-::\-Dns\-Server\-Record@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}!const\-\_\-iterator@{const\-\_\-iterator}}
+\index{const\-\_\-iterator@{const\-\_\-iterator}!NERD::DnsServerRecord@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}}
+\subsubsection[{const\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}typedef table\-\_\-type\-::const\-\_\-iterator {\bf \-N\-E\-R\-D\-::\-Dns\-Server\-Record\-::const\-\_\-iterator}}}
+\label{classNERD_1_1DnsServerRecord_a870208456774471b644a9715f88d4ea6}
+
+
+\-A type describing a constant bidirectional iterator for a \-D\-N\-S server record. 
+
+
+
+\-Definition at line 37 of file \-Dns\-Server\-Record.\-hpp.
+
+\hypertarget{classNERD_1_1DnsServerRecord_ae4822fbc6f9564c337a67c40358e2810}{
+\index{\-N\-E\-R\-D\-::\-Dns\-Server\-Record@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}!key\-\_\-type@{key\-\_\-type}}
+\index{key\-\_\-type@{key\-\_\-type}!NERD::DnsServerRecord@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}}
+\subsubsection[{key\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::string {\bf \-N\-E\-R\-D\-::\-Dns\-Server\-Record\-::key\-\_\-type}}}
+\label{classNERD_1_1DnsServerRecord_ae4822fbc6f9564c337a67c40358e2810}
+
+
+\-The type of keys in a \-D\-N\-S server record. 
+
+
+
+\-Definition at line 31 of file \-Dns\-Server\-Record.\-hpp.
+
+\hypertarget{classNERD_1_1DnsServerRecord_a51602195a3768bfdac0b69fb76358167}{
+\index{\-N\-E\-R\-D\-::\-Dns\-Server\-Record@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}!size\-\_\-type@{size\-\_\-type}}
+\index{size\-\_\-type@{size\-\_\-type}!NERD::DnsServerRecord@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}}
+\subsubsection[{size\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::size\-\_\-t {\bf \-N\-E\-R\-D\-::\-Dns\-Server\-Record\-::size\-\_\-type}}}
+\label{classNERD_1_1DnsServerRecord_a51602195a3768bfdac0b69fb76358167}
+
+
+\-An appropriate type for the number of entries in a \-D\-N\-S server record. 
+
+
+
+\-Definition at line 33 of file \-Dns\-Server\-Record.\-hpp.
+
+\hypertarget{classNERD_1_1DnsServerRecord_aeef40180a6b643af13b33122a73e8b0d}{
+\index{\-N\-E\-R\-D\-::\-Dns\-Server\-Record@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}!table\-\_\-type@{table\-\_\-type}}
+\index{table\-\_\-type@{table\-\_\-type}!NERD::DnsServerRecord@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}}
+\subsubsection[{table\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::map$<${\bf key\-\_\-type}, {\bf value\-\_\-type}$>$ {\bf \-N\-E\-R\-D\-::\-Dns\-Server\-Record\-::table\-\_\-type}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1DnsServerRecord_aeef40180a6b643af13b33122a73e8b0d}
+
+
+\-The type of a \-D\-N\-S server record lookup table. 
+
+
+
+\-Definition at line 35 of file \-Dns\-Server\-Record.\-hpp.
+
+\hypertarget{classNERD_1_1DnsServerRecord_aec809b0a9732f03885f5df5dd56f5f52}{
+\index{\-N\-E\-R\-D\-::\-Dns\-Server\-Record@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}!value\-\_\-type@{value\-\_\-type}}
+\index{value\-\_\-type@{value\-\_\-type}!NERD::DnsServerRecord@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}}
+\subsubsection[{value\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::string {\bf \-N\-E\-R\-D\-::\-Dns\-Server\-Record\-::value\-\_\-type}}}
+\label{classNERD_1_1DnsServerRecord_aec809b0a9732f03885f5df5dd56f5f52}
+
+
+\-The type of values in a \-D\-N\-S server record. 
+
+
+
+\-Definition at line 32 of file \-Dns\-Server\-Record.\-hpp.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classNERD_1_1DnsServerRecord_a9e64bf4fc8f8f0dc2615809f9ce487bd}{
+\index{\-N\-E\-R\-D\-::\-Dns\-Server\-Record@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}!\-Dns\-Server\-Record@{\-Dns\-Server\-Record}}
+\index{\-Dns\-Server\-Record@{\-Dns\-Server\-Record}!NERD::DnsServerRecord@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}}
+\subsubsection[{\-Dns\-Server\-Record}]{\setlength{\rightskip}{0pt plus 5cm}\-N\-E\-R\-D\-::\-Dns\-Server\-Record\-::\-Dns\-Server\-Record (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{s}
+\end{DoxyParamCaption}
+)  throw ({\bf \-Lib\-Wheel\-::\-Parse\-Error})}}
+\label{classNERD_1_1DnsServerRecord_a9e64bf4fc8f8f0dc2615809f9ce487bd}
+
+
+\-Constructor for \hyperlink{classNERD_1_1DnsServerRecord}{\-Dns\-Server\-Record}. 
+
+\-Parses a \-D\-N\-S \-T\-X\-T record into a lookup table of key-\/value pairs. 
+\begin{DoxyParams}{\-Parameters}
+{\em s} & \-A \-D\-N\-S \-T\-X\-T record, consisting of a semicolon-\/separated list of key=value pairs. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{\-Exceptions}
+{\em \hyperlink{classLibWheel_1_1ParseError}{\-Lib\-Wheel\-::\-Parse\-Error}} & \-If {\itshape s\/} is improperly formatted or otherwise cannot be parsed. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{classNERD_1_1DnsServerRecord_a081a710f9819704a3da449c7bee3f583}{\-Dns\-Server\-Record\-::parse\-Record()} 
+\end{DoxySeeAlso}
+
+
+\-Definition at line 35 of file \-Dns\-Server\-Record.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classNERD_1_1DnsServerRecord_a1aba903a80201ef9f31feebd15d3de58}{
+\index{\-N\-E\-R\-D\-::\-Dns\-Server\-Record@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}!begin@{begin}}
+\index{begin@{begin}!NERD::DnsServerRecord@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Dns\-Server\-Record\-::const\-\_\-iterator} \-N\-E\-R\-D\-::\-Dns\-Server\-Record\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classNERD_1_1DnsServerRecord_a1aba903a80201ef9f31feebd15d3de58}
+
+
+\-Definition at line 97 of file \-Dns\-Server\-Record.\-cpp.
+
+
+
+\-References record.
+
+\hypertarget{classNERD_1_1DnsServerRecord_a061b022eb838ab65d051cf10eec01e8c}{
+\index{\-N\-E\-R\-D\-::\-Dns\-Server\-Record@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}!empty@{empty}}
+\index{empty@{empty}!NERD::DnsServerRecord@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}bool \-N\-E\-R\-D\-::\-Dns\-Server\-Record\-::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classNERD_1_1DnsServerRecord_a061b022eb838ab65d051cf10eec01e8c}
+
+
+\-Checks if a record is empty. 
+
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if the record is empty; {\bfseries false} otherwise. 
+\end{DoxyReturn}
+
+
+\-Definition at line 131 of file \-Dns\-Server\-Record.\-cpp.
+
+
+
+\-References record.
+
+\hypertarget{classNERD_1_1DnsServerRecord_ac66bbdc0eb78b35c61e95a5736390e64}{
+\index{\-N\-E\-R\-D\-::\-Dns\-Server\-Record@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}!end@{end}}
+\index{end@{end}!NERD::DnsServerRecord@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Dns\-Server\-Record\-::const\-\_\-iterator} \-N\-E\-R\-D\-::\-Dns\-Server\-Record\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classNERD_1_1DnsServerRecord_ac66bbdc0eb78b35c61e95a5736390e64}
+
+
+\-Retrieves a constant bidirectional iterator to just past the last entry in the record. 
+
+\begin{DoxyReturn}{\-Returns}
+\-A const\-\_\-iterator pointing just past the last entry in the record. 
+\end{DoxyReturn}
+
+
+\-Definition at line 109 of file \-Dns\-Server\-Record.\-cpp.
+
+
+
+\-References record.
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::find\-Server().
+
+\hypertarget{classNERD_1_1DnsServerRecord_a870088e0f9b25fa8638518dc61efbd6a}{
+\index{\-N\-E\-R\-D\-::\-Dns\-Server\-Record@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}!get\-Value@{get\-Value}}
+\index{get\-Value@{get\-Value}!NERD::DnsServerRecord@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}}
+\subsubsection[{get\-Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Dns\-Server\-Record\-::const\-\_\-iterator} \-N\-E\-R\-D\-::\-Dns\-Server\-Record\-::get\-Value (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{key}
+\end{DoxyParamCaption}
+) const}}
+\label{classNERD_1_1DnsServerRecord_a870088e0f9b25fa8638518dc61efbd6a}
+
+
+\-Retrieve the value for a given key in a \-D\-N\-S server record. 
+
+\begin{DoxyReturn}{\-Returns}
+{\ttfamily \-An} iterator to an std\-::pair containing {\itshape key\/} and the associated value, or this-\/$>$\hyperlink{classNERD_1_1DnsServerRecord_ac66bbdc0eb78b35c61e95a5736390e64}{end()} if {\itshape key\/} is not found. 
+\end{DoxyReturn}
+
+
+\-Definition at line 84 of file \-Dns\-Server\-Record.\-cpp.
+
+
+
+\-References record.
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::find\-Server().
+
+\hypertarget{classNERD_1_1DnsServerRecord_a081a710f9819704a3da449c7bee3f583}{
+\index{\-N\-E\-R\-D\-::\-Dns\-Server\-Record@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}!parse\-Record@{parse\-Record}}
+\index{parse\-Record@{parse\-Record}!NERD::DnsServerRecord@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}}
+\subsubsection[{parse\-Record}]{\setlength{\rightskip}{0pt plus 5cm}void \-N\-E\-R\-D\-::\-Dns\-Server\-Record\-::parse\-Record (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{s}
+\end{DoxyParamCaption}
+)  throw ({\bf \-Lib\-Wheel\-::\-Parse\-Error})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1DnsServerRecord_a081a710f9819704a3da449c7bee3f583}
+
+
+\-Parses a \-D\-N\-S \-T\-X\-T record into a lookup table of key-\/value pairs. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em s} & \-A \-D\-N\-S \-T\-X\-T record, consisting of a semicolon-\/separated list of key=value pairs. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{\-Exceptions}
+{\em \hyperlink{classLibWheel_1_1ParseError}{\-Lib\-Wheel\-::\-Parse\-Error}} & \-If an entry is encountered with a null key, with no key deliminator, or with a null value. \\
+\hline
+\end{DoxyExceptions}
+
+
+\-Definition at line 50 of file \-Dns\-Server\-Record.\-cpp.
+
+\hypertarget{classNERD_1_1DnsServerRecord_abf8b92d7742f01b17b9f6593236c7ac5}{
+\index{\-N\-E\-R\-D\-::\-Dns\-Server\-Record@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}!size@{size}}
+\index{size@{size}!NERD::DnsServerRecord@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Dns\-Server\-Record\-::size\-\_\-type} \-N\-E\-R\-D\-::\-Dns\-Server\-Record\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classNERD_1_1DnsServerRecord_abf8b92d7742f01b17b9f6593236c7ac5}
+
+
+\-Retrieves the number of key-\/value entries in a record. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The number of key-\/value entries in the record. 
+\end{DoxyReturn}
+
+
+\-Definition at line 120 of file \-Dns\-Server\-Record.\-cpp.
+
+
+
+\-References record.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classNERD_1_1DnsServerRecord_ae061df21d0b8072df5a38a88dbcb405e}{
+\index{\-N\-E\-R\-D\-::\-Dns\-Server\-Record@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}!record@{record}}
+\index{record@{record}!NERD::DnsServerRecord@{\-N\-E\-R\-D\-::\-Dns\-Server\-Record}}
+\subsubsection[{record}]{\setlength{\rightskip}{0pt plus 5cm}{\bf table\-\_\-type} {\bf \-N\-E\-R\-D\-::\-Dns\-Server\-Record\-::record}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1DnsServerRecord_ae061df21d0b8072df5a38a88dbcb405e}
+
+
+\-The parsed key-\/value pairs from the \-D\-N\-S \-T\-X\-T record. 
+
+
+
+\-Definition at line 47 of file \-Dns\-Server\-Record.\-hpp.
+
+
+
+\-Referenced by get\-Value(), begin(), end(), size(), and empty().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{DnsServerRecord_8hpp}{\-Dns\-Server\-Record.\-hpp}\item 
+\hyperlink{DnsServerRecord_8cpp}{\-Dns\-Server\-Record.\-cpp}\end{DoxyCompactItemize}

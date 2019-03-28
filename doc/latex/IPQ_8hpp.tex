@@ -1,0 +1,59 @@
+\hypertarget{IPQ_8hpp}{
+\section{\-I\-P\-Q.hpp \-File \-Reference}
+\label{IPQ_8hpp}\index{\-I\-P\-Q.\-hpp@{\-I\-P\-Q.\-hpp}}
+}
+{\ttfamily \#include $<$exception$>$}\*
+{\ttfamily \#include $<$stdexcept$>$}\*
+{\ttfamily \#include $<$string$>$}\*
+{\ttfamily \#include $<$iostream$>$}\*
+{\ttfamily \#include $<$cstddef$>$}\*
+{\ttfamily \#include $<$boost/utility.\-hpp$>$}\*
+{\ttfamily \#include $<$boost/cstdint.\-hpp$>$}\*
+{\ttfamily \#include $<$boost/function.\-hpp$>$}\*
+{\ttfamily \#include $<$netinet/in.\-h$>$}\*
+{\ttfamily \#include $<$netinet/ip.\-h$>$}\*
+{\ttfamily \#include $<$netinet/tcp.\-h$>$}\*
+{\ttfamily \#include $<$netinet/udp.\-h$>$}\*
+{\ttfamily \#include $<$sys/time.\-h$>$}\*
+{\ttfamily \#include \char`\"{}auto\-\_\-array.\-hpp\char`\"{}}\*
+{\ttfamily \#include \char`\"{}libwheel.\-h\char`\"{}}\*
+{\ttfamily \#include $<$libipq.\-h$>$}\*
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classIPQ_1_1IpqException}{\-I\-P\-Q\-::\-Ipq\-Exception}
+\begin{DoxyCompactList}\small\item\em \-Base class for exceptions thrown by \hyperlink{namespaceIPQ}{\-I\-P\-Q} methods. \end{DoxyCompactList}\item 
+class \hyperlink{classIPQ_1_1IpqSocket}{\-I\-P\-Q\-::\-Ipq\-Socket}
+\begin{DoxyCompactList}\small\item\em \-A program's link to libipq. \end{DoxyCompactList}\item 
+class \hyperlink{classIPQ_1_1IpqPacket}{\-I\-P\-Q\-::\-Ipq\-Packet}
+\begin{DoxyCompactList}\small\item\em \-Base class for packets received via \hyperlink{classIPQ_1_1IpqSocket}{\-Ipq\-Socket}. \end{DoxyCompactList}\item 
+class \hyperlink{classIPQ_1_1IpqIpPacket}{\-I\-P\-Q\-::\-Ipq\-Ip\-Packet}
+\begin{DoxyCompactList}\small\item\em \-A complete \-I\-Pv4 packet received via \hyperlink{classIPQ_1_1IpqSocket}{\-Ipq\-Socket}. \end{DoxyCompactList}\item 
+class \hyperlink{classIPQ_1_1IpqTcpPacket}{\-I\-P\-Q\-::\-Ipq\-Tcp\-Packet}
+\begin{DoxyCompactList}\small\item\em \-An complete \-I\-Pv4/\-T\-C\-P packet that was received via \hyperlink{classIPQ_1_1IpqSocket}{\-Ipq\-Socket}. \end{DoxyCompactList}\item 
+class \hyperlink{classIPQ_1_1IpqUdpPacket}{\-I\-P\-Q\-::\-Ipq\-Udp\-Packet}
+\begin{DoxyCompactList}\small\item\em \-An complete \-I\-Pv4/\-U\-D\-P packet that was received via \hyperlink{classIPQ_1_1IpqSocket}{\-Ipq\-Socket}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespaceIPQ}{\-I\-P\-Q}
+\begin{DoxyCompactList}\small\item\em \-A \-C++ interface to libipq, the old iptables userspace-\/queueing system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\begin{DoxyAuthor}{\-Author}
+\-Rennie de\-Graaf 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+2007/06/06
+\end{DoxyDate}
+\-A \-C++ interface to libipq.
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[\hyperlink{todo__todo000001}{\-Todo}]\-Clean up namespace pollution from \-C header files. 
+
+\-Use different exceptions for different types of errors. \end{DoxyRefDesc}
+
+
+\-Definition in file \hyperlink{IPQ_8hpp_source}{\-I\-P\-Q.\-hpp}.
+

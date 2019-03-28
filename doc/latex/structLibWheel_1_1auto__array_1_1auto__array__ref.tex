@@ -1,0 +1,76 @@
+\hypertarget{structLibWheel_1_1auto__array_1_1auto__array__ref}{
+\section{\-Lib\-Wheel\-:\-:auto\-\_\-array\-:\-:auto\-\_\-array\-\_\-ref \-Struct \-Reference}
+\label{structLibWheel_1_1auto__array_1_1auto__array__ref}\index{\-Lib\-Wheel\-::auto\-\_\-array\-::auto\-\_\-array\-\_\-ref@{\-Lib\-Wheel\-::auto\-\_\-array\-::auto\-\_\-array\-\_\-ref}}
+}
+
+
+\-A wrapper class to provide \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} with reference semantics.  
+
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structLibWheel_1_1auto__array_1_1auto__array__ref_adbadef8dd16ee7e44e07c4f8cc705c31}{auto\-\_\-array\-\_\-ref} (\-T $\ast$p)
+\begin{DoxyCompactList}\small\item\em \-Constructs an \hyperlink{structLibWheel_1_1auto__array_1_1auto__array__ref}{auto\-\_\-array\-\_\-ref} from a dynamically-\/allocated array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\-T $\ast$ \hyperlink{structLibWheel_1_1auto__array_1_1auto__array__ref_aa1b85aa832adb49bc9981635fee6047e}{ptr}
+\begin{DoxyCompactList}\small\item\em \-A pointer to a dynamically-\/allocated array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A wrapper class to provide \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} with reference semantics. 
+
+\-This allows an \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} to be assigned or constructed from the result of a function that returns an \hyperlink{classLibWheel_1_1auto__array}{auto\-\_\-array} by value. \-This allows constructs such as 
+\begin{DoxyCode}
+   auto_array<Derived> func_returning_auto_ptr(....);
+   ...
+   auto_array<Base> ptr = func_returning_auto_ptr(....);
+\end{DoxyCode}
+ 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{structLibWheel_1_1auto__array_1_1auto__array__ref_adbadef8dd16ee7e44e07c4f8cc705c31}{
+\index{\-Lib\-Wheel\-::auto\-\_\-array\-::auto\-\_\-array\-\_\-ref@{\-Lib\-Wheel\-::auto\-\_\-array\-::auto\-\_\-array\-\_\-ref}!auto\-\_\-array\-\_\-ref@{auto\-\_\-array\-\_\-ref}}
+\index{auto\-\_\-array\-\_\-ref@{auto\-\_\-array\-\_\-ref}!LibWheel::auto_array::auto_array_ref@{\-Lib\-Wheel\-::auto\-\_\-array\-::auto\-\_\-array\-\_\-ref}}
+\subsubsection[{auto\-\_\-array\-\_\-ref}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::auto\-\_\-array\-::auto\-\_\-array\-\_\-ref\-::auto\-\_\-array\-\_\-ref (
+\begin{DoxyParamCaption}
+\item[{\-T $\ast$}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}explicit\mbox{]}}}}
+\label{structLibWheel_1_1auto__array_1_1auto__array__ref_adbadef8dd16ee7e44e07c4f8cc705c31}
+
+
+\-Constructs an \hyperlink{structLibWheel_1_1auto__array_1_1auto__array__ref}{auto\-\_\-array\-\_\-ref} from a dynamically-\/allocated array. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em p} & \-A dynamically-\/allocated array. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 242 of file auto\-\_\-array.\-hpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{structLibWheel_1_1auto__array_1_1auto__array__ref_aa1b85aa832adb49bc9981635fee6047e}{
+\index{\-Lib\-Wheel\-::auto\-\_\-array\-::auto\-\_\-array\-\_\-ref@{\-Lib\-Wheel\-::auto\-\_\-array\-::auto\-\_\-array\-\_\-ref}!ptr@{ptr}}
+\index{ptr@{ptr}!LibWheel::auto_array::auto_array_ref@{\-Lib\-Wheel\-::auto\-\_\-array\-::auto\-\_\-array\-\_\-ref}}
+\subsubsection[{ptr}]{\setlength{\rightskip}{0pt plus 5cm}\-T$\ast$ {\bf \-Lib\-Wheel\-::auto\-\_\-array\-::auto\-\_\-array\-\_\-ref\-::ptr}}}
+\label{structLibWheel_1_1auto__array_1_1auto__array__ref_aa1b85aa832adb49bc9981635fee6047e}
+
+
+\-A pointer to a dynamically-\/allocated array. 
+
+
+
+\-Definition at line 53 of file auto\-\_\-array.\-hpp.
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{auto__array_8hpp}{auto\-\_\-array.\-hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,118 @@
+\hypertarget{namespaceNERD}{
+\section{\-N\-E\-R\-D \-Namespace \-Reference}
+\label{namespaceNERD}\index{\-N\-E\-R\-D@{\-N\-E\-R\-D}}
+}
+
+
+\-Functions and classes specific to the \-Network \-Rerouter \-Daemon (nerd).  
+
+
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classNERD_1_1DnsServerRecord}{\-Dns\-Server\-Record}
+\begin{DoxyCompactList}\small\item\em \-Holds a \-D\-N\-S \-T\-X\-T server record. \end{DoxyCompactList}\item 
+class \hyperlink{classNERD_1_1ConnectionServer}{\-Connection\-Server}
+\begin{DoxyCompactList}\small\item\em \-The main class for the \-Network \-Rerouter \-Daemon (nerd). \end{DoxyCompactList}\item 
+class \hyperlink{classNERD_1_1StatPrinter}{\-Stat\-Printer}
+\begin{DoxyCompactList}\small\item\em \-Functor to print current server statistics. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{namespaceNERD_a71e1a6782f9ca0dad5c6215030cb69dd}{print\-\_\-version} ()
+\begin{DoxyCompactList}\small\item\em \-Print version info to stderr. \end{DoxyCompactList}\item 
+static void \hyperlink{namespaceNERD_a55373ab13cf2b623be6d20f03be57f93}{print\-\_\-help} (const char $\ast$progname)
+\begin{DoxyCompactList}\small\item\em \-Print a help message to stderr. \end{DoxyCompactList}\item 
+static void \hyperlink{namespaceNERD_aa16f179fc762db5db0912611f1a82d57}{parse\-\_\-args} (int argc, char $\ast$$\ast$argv, bool \&daemon, bool \&verbose)
+\begin{DoxyCompactList}\small\item\em \-Parse command-\/line arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Functions and classes specific to the \-Network \-Rerouter \-Daemon (nerd). 
+
+\subsection{\-Function \-Documentation}
+\hypertarget{namespaceNERD_aa16f179fc762db5db0912611f1a82d57}{
+\index{\-N\-E\-R\-D@{\-N\-E\-R\-D}!parse\-\_\-args@{parse\-\_\-args}}
+\index{parse\-\_\-args@{parse\-\_\-args}!NERD@{\-N\-E\-R\-D}}
+\subsubsection[{parse\-\_\-args}]{\setlength{\rightskip}{0pt plus 5cm}static void \-N\-E\-R\-D\-::parse\-\_\-args (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{bool \&}]{daemon, }
+\item[{bool \&}]{verbose}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{namespaceNERD_aa16f179fc762db5db0912611f1a82d57}
+
+
+\-Parse command-\/line arguments. 
+
+\-See the documentation for \hyperlink{echod_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()} for details. 
+\begin{DoxyParams}[1]{\-Parameters}
+ & {\em argc} & \-The number of command-\/line arguments. \\
+\hline
+ & {\em argv} & \-A null-\/terminated array of command-\/line arguments \\
+\hline
+\mbox{\tt out}  & {\em daemon} & \-Set to true on return to run in daemon mode, or false to run in console mode. \\
+\hline
+\mbox{\tt out}  & {\em verbose} & \-Set to true on return to enable verbose logging; false for normal logging. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 1433 of file nerd.\-cpp.
+
+
+
+\-References print\-\_\-version(), and print\-\_\-help().
+
+
+
+\-Referenced by main().
+
+\hypertarget{namespaceNERD_a55373ab13cf2b623be6d20f03be57f93}{
+\index{\-N\-E\-R\-D@{\-N\-E\-R\-D}!print\-\_\-help@{print\-\_\-help}}
+\index{print\-\_\-help@{print\-\_\-help}!NERD@{\-N\-E\-R\-D}}
+\subsubsection[{print\-\_\-help}]{\setlength{\rightskip}{0pt plus 5cm}static void \-N\-E\-R\-D\-::print\-\_\-help (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{progname}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{namespaceNERD_a55373ab13cf2b623be6d20f03be57f93}
+
+
+\-Print a help message to stderr. 
+
+
+
+\-Definition at line 1412 of file nerd.\-cpp.
+
+
+
+\-Referenced by parse\-\_\-args().
+
+\hypertarget{namespaceNERD_a71e1a6782f9ca0dad5c6215030cb69dd}{
+\index{\-N\-E\-R\-D@{\-N\-E\-R\-D}!print\-\_\-version@{print\-\_\-version}}
+\index{print\-\_\-version@{print\-\_\-version}!NERD@{\-N\-E\-R\-D}}
+\subsubsection[{print\-\_\-version}]{\setlength{\rightskip}{0pt plus 5cm}static void \-N\-E\-R\-D\-::print\-\_\-version (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{namespaceNERD_a71e1a6782f9ca0dad5c6215030cb69dd}
+
+
+\-Print version info to stderr. 
+
+
+
+\-Definition at line 1397 of file nerd.\-cpp.
+
+
+
+\-References \-N\-E\-R\-D\-\_\-\-V\-E\-R\-S\-I\-O\-N.
+
+
+
+\-Referenced by parse\-\_\-args().
+

@@ -1,0 +1,82 @@
+\hypertarget{echod_8c}{
+\section{echod.c \-File \-Reference}
+\label{echod_8c}\index{echod.\-c@{echod.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$errno.\-h$>$}\*
+{\ttfamily \#include $<$unistd.\-h$>$}\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\*
+{\ttfamily \#include $<$sys/socket.\-h$>$}\*
+{\ttfamily \#include $<$netinet/in.\-h$>$}\*
+{\ttfamily \#include $<$arpa/inet.\-h$>$}\*
+{\ttfamily \#include \char`\"{}nerd.\-h\char`\"{}}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{echod_8c_ad974fe981249f5e84fbf1683b012c9f8}{\-B\-U\-F\-L\-E\-N}~1024
+\begin{DoxyCompactList}\small\item\em \-Read buffer size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{echod_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em \-An echo server for nerd. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\begin{DoxyAuthor}{\-Author}
+\-Rennie de\-Graaf 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+2007/12/13
+\end{DoxyDate}
+\-An echo server, written as an example server program for nerd. 
+
+\-Definition in file \hyperlink{echod_8c_source}{echod.\-c}.
+
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{echod_8c_ad974fe981249f5e84fbf1683b012c9f8}{
+\index{echod.\-c@{echod.\-c}!\-B\-U\-F\-L\-E\-N@{\-B\-U\-F\-L\-E\-N}}
+\index{\-B\-U\-F\-L\-E\-N@{\-B\-U\-F\-L\-E\-N}!echod.c@{echod.\-c}}
+\subsubsection[{\-B\-U\-F\-L\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-B\-U\-F\-L\-E\-N~1024}}
+\label{echod_8c_ad974fe981249f5e84fbf1683b012c9f8}
+
+
+\-Read buffer size. 
+
+
+
+\-Definition at line 25 of file echod.\-c.
+
+
+
+\-Referenced by main().
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{echod_8c_a3c04138a5bfe5d72780bb7e82a18e627}{
+\index{echod.\-c@{echod.\-c}!main@{main}}
+\index{main@{main}!echod.c@{echod.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}
+\label{echod_8c_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+\-An echo server for nerd. 
+
+\-It opens and binds a socket, writes the local port number to the nerd server via file descriptor 3, accepts a single connection, echoes anything that the client sends, and exits when the client breaks the connection. 
+
+\-Definition at line 33 of file echod.\-c.
+
+
+
+\-References \-B\-U\-F\-L\-E\-N, and \-N\-E\-R\-D\-\_\-\-P\-I\-P\-E\-\_\-\-F\-D.
+

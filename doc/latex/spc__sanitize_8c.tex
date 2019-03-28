@@ -1,0 +1,274 @@
+\hypertarget{spc__sanitize_8c}{
+\section{spc\-\_\-sanitize.c \-File \-Reference}
+\label{spc__sanitize_8c}\index{spc\-\_\-sanitize.\-c@{spc\-\_\-sanitize.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$paths.\-h$>$}\*
+{\ttfamily \#include $<$limits.\-h$>$}\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\*
+{\ttfamily \#include $<$unistd.\-h$>$}\*
+{\ttfamily \#include $<$errno.\-h$>$}\*
+{\ttfamily \#include \char`\"{}logmsg.\-h\char`\"{}}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{spc__sanitize_8c_ac3d144aa01e765a1fae62ab5491c7cc1}{\-\_\-\-P\-O\-S\-I\-X\-\_\-\-S\-O\-U\-R\-C\-E}
+\item 
+\#define \hyperlink{spc__sanitize_8c_ad3d8a3bd0c0b677acef144f2c2ef6d73}{\-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E}
+\item 
+\#define \hyperlink{spc__sanitize_8c_acfa3af56d5e0045c1d7a5682fd1d2853}{\-S\-I\-Z\-E\-\_\-\-T\-\_\-\-M\-A\-X}~(sizeof(size\-\_\-t))
+\item 
+\#define \hyperlink{spc__sanitize_8c_a35969138e24f6cf13b0763f713c6d53b}{\-O\-P\-E\-N\-\_\-\-M\-A\-X}~256
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{spc__sanitize_8c_a18dab71b05a119176ff814914a4c590a}{spc\-\_\-sanitize\-\_\-environment} (int preservec, const char $\ast$$\ast$preservev)
+\begin{DoxyCompactList}\small\item\em \-Sanitizes the system environment. \end{DoxyCompactList}\item 
+static int \hyperlink{spc__sanitize_8c_af10117818d3eb25e40540fcd732e8b77}{open\-\_\-devnull} (int fd)
+\begin{DoxyCompactList}\small\item\em \-Attempts to open /dev/null as stdin, stdout, or stderr. \end{DoxyCompactList}\item 
+void \hyperlink{spc__sanitize_8c_a48b9352fb99aad561f6d6edd492084b4}{spc\-\_\-sanitize\-\_\-files} (int maxfd)
+\begin{DoxyCompactList}\small\item\em \-Closes all file descriptors above a limit, and ensures that stdin, stdout, and stderr are open. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$$\ast$ \hyperlink{spc__sanitize_8c_aa006daaf11f1e2e45a6ababaf463212b}{environ}
+\begin{DoxyCompactList}\small\item\em \-Pointer to the global environment table. \end{DoxyCompactList}\item 
+static const char $\ast$ \hyperlink{spc__sanitize_8c_a72de59f78b421bc7f25c884dcc90f3f2}{spc\-\_\-restricted\-\_\-environ} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em \-Default environment configuration. \end{DoxyCompactList}\item 
+static const char $\ast$ \hyperlink{spc__sanitize_8c_a29d08788cef59c5cdb9fbb795943bd03}{spc\-\_\-preserve\-\_\-environ} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em \-Environment variables to preserve if present. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\begin{DoxyAuthor}{\-Author}
+\-Rennie de\-Graaf 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+2007/05/27
+\end{DoxyDate}
+\-Functions to sanitize the system environment. 
+
+\-Definition in file \hyperlink{spc__sanitize_8c_source}{spc\-\_\-sanitize.\-c}.
+
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{spc__sanitize_8c_ad3d8a3bd0c0b677acef144f2c2ef6d73}{
+\index{spc\-\_\-sanitize.\-c@{spc\-\_\-sanitize.\-c}!\-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E@{\-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E}}
+\index{\-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E@{\-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E}!spc_sanitize.c@{spc\-\_\-sanitize.\-c}}
+\subsubsection[{\-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-B\-S\-D\-\_\-\-S\-O\-U\-R\-C\-E}}
+\label{spc__sanitize_8c_ad3d8a3bd0c0b677acef144f2c2ef6d73}
+
+
+\-Definition at line 53 of file spc\-\_\-sanitize.\-c.
+
+\hypertarget{spc__sanitize_8c_ac3d144aa01e765a1fae62ab5491c7cc1}{
+\index{spc\-\_\-sanitize.\-c@{spc\-\_\-sanitize.\-c}!\-\_\-\-P\-O\-S\-I\-X\-\_\-\-S\-O\-U\-R\-C\-E@{\-\_\-\-P\-O\-S\-I\-X\-\_\-\-S\-O\-U\-R\-C\-E}}
+\index{\-\_\-\-P\-O\-S\-I\-X\-\_\-\-S\-O\-U\-R\-C\-E@{\-\_\-\-P\-O\-S\-I\-X\-\_\-\-S\-O\-U\-R\-C\-E}!spc_sanitize.c@{spc\-\_\-sanitize.\-c}}
+\subsubsection[{\-\_\-\-P\-O\-S\-I\-X\-\_\-\-S\-O\-U\-R\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-P\-O\-S\-I\-X\-\_\-\-S\-O\-U\-R\-C\-E}}
+\label{spc__sanitize_8c_ac3d144aa01e765a1fae62ab5491c7cc1}
+
+
+\-Definition at line 52 of file spc\-\_\-sanitize.\-c.
+
+\hypertarget{spc__sanitize_8c_a35969138e24f6cf13b0763f713c6d53b}{
+\index{spc\-\_\-sanitize.\-c@{spc\-\_\-sanitize.\-c}!\-O\-P\-E\-N\-\_\-\-M\-A\-X@{\-O\-P\-E\-N\-\_\-\-M\-A\-X}}
+\index{\-O\-P\-E\-N\-\_\-\-M\-A\-X@{\-O\-P\-E\-N\-\_\-\-M\-A\-X}!spc_sanitize.c@{spc\-\_\-sanitize.\-c}}
+\subsubsection[{\-O\-P\-E\-N\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-P\-E\-N\-\_\-\-M\-A\-X~256}}
+\label{spc__sanitize_8c_a35969138e24f6cf13b0763f713c6d53b}
+
+
+\-Definition at line 71 of file spc\-\_\-sanitize.\-c.
+
+
+
+\-Referenced by spc\-\_\-sanitize\-\_\-files().
+
+\hypertarget{spc__sanitize_8c_acfa3af56d5e0045c1d7a5682fd1d2853}{
+\index{spc\-\_\-sanitize.\-c@{spc\-\_\-sanitize.\-c}!\-S\-I\-Z\-E\-\_\-\-T\-\_\-\-M\-A\-X@{\-S\-I\-Z\-E\-\_\-\-T\-\_\-\-M\-A\-X}}
+\index{\-S\-I\-Z\-E\-\_\-\-T\-\_\-\-M\-A\-X@{\-S\-I\-Z\-E\-\_\-\-T\-\_\-\-M\-A\-X}!spc_sanitize.c@{spc\-\_\-sanitize.\-c}}
+\subsubsection[{\-S\-I\-Z\-E\-\_\-\-T\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-I\-Z\-E\-\_\-\-T\-\_\-\-M\-A\-X~(sizeof(size\-\_\-t))}}
+\label{spc__sanitize_8c_acfa3af56d5e0045c1d7a5682fd1d2853}
+
+
+\-Definition at line 67 of file spc\-\_\-sanitize.\-c.
+
+
+
+\-Referenced by spc\-\_\-sanitize\-\_\-environment().
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{spc__sanitize_8c_af10117818d3eb25e40540fcd732e8b77}{
+\index{spc\-\_\-sanitize.\-c@{spc\-\_\-sanitize.\-c}!open\-\_\-devnull@{open\-\_\-devnull}}
+\index{open\-\_\-devnull@{open\-\_\-devnull}!spc_sanitize.c@{spc\-\_\-sanitize.\-c}}
+\subsubsection[{open\-\_\-devnull}]{\setlength{\rightskip}{0pt plus 5cm}static int open\-\_\-devnull (
+\begin{DoxyParamCaption}
+\item[{int}]{fd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{spc__sanitize_8c_af10117818d3eb25e40540fcd732e8b77}
+
+
+\-Attempts to open /dev/null as stdin, stdout, or stderr. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em fd} & \-The stream to open. \-Must be 0 for stdin, 1 for stdout, or 2 for stderr. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Non-\/zero on success, or zero on failure. 
+\end{DoxyReturn}
+
+
+\-Definition at line 217 of file spc\-\_\-sanitize.\-c.
+
+
+
+\-Referenced by spc\-\_\-sanitize\-\_\-files().
+
+\hypertarget{spc__sanitize_8c_a18dab71b05a119176ff814914a4c590a}{
+\index{spc\-\_\-sanitize.\-c@{spc\-\_\-sanitize.\-c}!spc\-\_\-sanitize\-\_\-environment@{spc\-\_\-sanitize\-\_\-environment}}
+\index{spc\-\_\-sanitize\-\_\-environment@{spc\-\_\-sanitize\-\_\-environment}!spc_sanitize.c@{spc\-\_\-sanitize.\-c}}
+\subsubsection[{spc\-\_\-sanitize\-\_\-environment}]{\setlength{\rightskip}{0pt plus 5cm}void spc\-\_\-sanitize\-\_\-environment (
+\begin{DoxyParamCaption}
+\item[{int}]{preservec, }
+\item[{const char $\ast$$\ast$}]{preservev}
+\end{DoxyParamCaption}
+)}}
+\label{spc__sanitize_8c_a18dab71b05a119176ff814914a4c590a}
+
+
+\-Sanitizes the system environment. 
+
+\-Sets all variables in {\itshape spc\-\_\-restricted\-\_\-environ\/} to default values and deletes all other variables not listed either in {\itshape preservev\/} or {\itshape spc\-\_\-preserve\-\_\-environ\/}. 
+\begin{DoxyParams}{\-Parameters}
+{\em preservec} & \-The number of variables in {\itshape preservev\/}. \\
+\hline
+{\em preservev} & \-A list of environemnt variable names to preserve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+\-Logs an error message to the logmsg facility and calls {\ttfamily abort()} on integer overflow or memory allocation failure.  \-Changes the value of the global variable environ. 
+\end{DoxyNote}
+\begin{DoxyWarning}{\-Warning}
+\-This function will leak memory if called more than once. 
+\end{DoxyWarning}
+
+
+\-Definition at line 111 of file spc\-\_\-sanitize.\-c.
+
+
+
+\-References spc\-\_\-restricted\-\_\-environ, \-S\-I\-Z\-E\-\_\-\-T\-\_\-\-M\-A\-X, \-Lib\-Wheel\-::logmsg, logmsg\-\_\-err, \-L\-O\-G\-M\-S\-G\-\_\-\-F\-A\-T\-A\-L\-\_\-\-E\-X\-I\-T, spc\-\_\-preserve\-\_\-environ, \-L\-O\-G\-M\-S\-G\-\_\-\-L\-I\-B, and environ.
+
+
+
+\-Referenced by main().
+
+\hypertarget{spc__sanitize_8c_a48b9352fb99aad561f6d6edd492084b4}{
+\index{spc\-\_\-sanitize.\-c@{spc\-\_\-sanitize.\-c}!spc\-\_\-sanitize\-\_\-files@{spc\-\_\-sanitize\-\_\-files}}
+\index{spc\-\_\-sanitize\-\_\-files@{spc\-\_\-sanitize\-\_\-files}!spc_sanitize.c@{spc\-\_\-sanitize.\-c}}
+\subsubsection[{spc\-\_\-sanitize\-\_\-files}]{\setlength{\rightskip}{0pt plus 5cm}void spc\-\_\-sanitize\-\_\-files (
+\begin{DoxyParamCaption}
+\item[{int}]{maxfd}
+\end{DoxyParamCaption}
+)}}
+\label{spc__sanitize_8c_a48b9352fb99aad561f6d6edd492084b4}
+
+
+\-Closes all file descriptors above a limit, and ensures that stdin, stdout, and stderr are open. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em maxfd} & \-The highest-\/numbered file descriptor to preserve. \-Set to 2 or less to close all files except for stdin, stdout, and stderr. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+\-If stdin, stdout, or stderr is closed and cannot be opened, attempts to log a message through the logmsg facility and calls {\ttfamily abort()}. 
+\end{DoxyNote}
+
+
+\-Definition at line 235 of file spc\-\_\-sanitize.\-c.
+
+
+
+\-References \-O\-P\-E\-N\-\_\-\-M\-A\-X, open\-\_\-devnull(), \-Lib\-Wheel\-::logmsg, logmsg\-\_\-err, and \-L\-O\-G\-M\-S\-G\-\_\-\-F\-A\-T\-A\-L\-\_\-\-E\-X\-I\-T.
+
+
+
+\-Referenced by main().
+
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{spc__sanitize_8c_aa006daaf11f1e2e45a6ababaf463212b}{
+\index{spc\-\_\-sanitize.\-c@{spc\-\_\-sanitize.\-c}!environ@{environ}}
+\index{environ@{environ}!spc_sanitize.c@{spc\-\_\-sanitize.\-c}}
+\subsubsection[{environ}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ {\bf environ}}}
+\label{spc__sanitize_8c_aa006daaf11f1e2e45a6ababaf463212b}
+
+
+\-Pointer to the global environment table. 
+
+
+
+\-Referenced by spc\-\_\-sanitize\-\_\-environment().
+
+\hypertarget{spc__sanitize_8c_a29d08788cef59c5cdb9fbb795943bd03}{
+\index{spc\-\_\-sanitize.\-c@{spc\-\_\-sanitize.\-c}!spc\-\_\-preserve\-\_\-environ@{spc\-\_\-preserve\-\_\-environ}}
+\index{spc\-\_\-preserve\-\_\-environ@{spc\-\_\-preserve\-\_\-environ}!spc_sanitize.c@{spc\-\_\-sanitize.\-c}}
+\subsubsection[{spc\-\_\-preserve\-\_\-environ}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf spc\-\_\-preserve\-\_\-environ}\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{spc__sanitize_8c_a29d08788cef59c5cdb9fbb795943bd03}
+{\bfseries \-Initial value\-:}
+\begin{DoxyCode}
+ 
+{
+    "TZ",
+    NULL
+}
+\end{DoxyCode}
+
+
+\-Environment variables to preserve if present. 
+
+
+
+\-Definition at line 93 of file spc\-\_\-sanitize.\-c.
+
+
+
+\-Referenced by spc\-\_\-sanitize\-\_\-environment().
+
+\hypertarget{spc__sanitize_8c_a72de59f78b421bc7f25c884dcc90f3f2}{
+\index{spc\-\_\-sanitize.\-c@{spc\-\_\-sanitize.\-c}!spc\-\_\-restricted\-\_\-environ@{spc\-\_\-restricted\-\_\-environ}}
+\index{spc\-\_\-restricted\-\_\-environ@{spc\-\_\-restricted\-\_\-environ}!spc_sanitize.c@{spc\-\_\-sanitize.\-c}}
+\subsubsection[{spc\-\_\-restricted\-\_\-environ}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf spc\-\_\-restricted\-\_\-environ}\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{spc__sanitize_8c_a72de59f78b421bc7f25c884dcc90f3f2}
+{\bfseries \-Initial value\-:}
+\begin{DoxyCode}
+ 
+{
+    "IFS= \t\n",
+    "PATH=" _PATH_STDPATH,
+    NULL
+}
+\end{DoxyCode}
+
+
+\-Default environment configuration. 
+
+
+
+\-Definition at line 83 of file spc\-\_\-sanitize.\-c.
+
+
+
+\-Referenced by spc\-\_\-sanitize\-\_\-environment().
+

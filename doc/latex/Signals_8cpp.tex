@@ -1,0 +1,75 @@
+\hypertarget{Signals_8cpp}{
+\section{\-Signals.cpp \-File \-Reference}
+\label{Signals_8cpp}\index{\-Signals.\-cpp@{\-Signals.\-cpp}}
+}
+{\ttfamily \#include $<$list$>$}\*
+{\ttfamily \#include $<$stdexcept$>$}\*
+{\ttfamily \#include $<$algorithm$>$}\*
+{\ttfamily \#include $<$cerrno$>$}\*
+{\ttfamily \#include $<$cstring$>$}\*
+{\ttfamily \#include $<$csignal$>$}\*
+{\ttfamily \#include $<$boost/function.\-hpp$>$}\*
+{\ttfamily \#include $<$boost/function\-\_\-equal.\-hpp$>$}\*
+{\ttfamily \#include $<$boost/utility.\-hpp$>$}\*
+{\ttfamily \#include $<$unistd.\-h$>$}\*
+{\ttfamily \#include $<$fcntl.\-h$>$}\*
+{\ttfamily \#include $<$sys/time.\-h$>$}\*
+{\ttfamily \#include $<$sys/select.\-h$>$}\*
+{\ttfamily \#include \char`\"{}\-Signals.\-hpp\char`\"{}}\*
+\subsection*{\-Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespaceLibWheel}{\-Lib\-Wheel}
+\begin{DoxyCompactList}\small\item\em \-A set of reusuable software components written in various languages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{namespaceLibWheel_a6941e854dd6b671e040bcffd561c22e5}{\-Lib\-Wheel\-::uninterruptible\-\_\-close} (int fd)
+\begin{DoxyCompactList}\small\item\em \-Close a file descriptor. \end{DoxyCompactList}\item 
+ssize\-\_\-t \hyperlink{namespaceLibWheel_a5103fe133e672ffe84edc3977969c244}{\-Lib\-Wheel\-::uninterruptible\-\_\-read} (int fd, unsigned char $\ast$buf, size\-\_\-t count)
+\begin{DoxyCompactList}\small\item\em \-Read data from a file descriptor. \end{DoxyCompactList}\item 
+void \hyperlink{Signals_8cpp_a18f1798cd03059687605ac517f1cc1de}{\-Signal\-Queue\-\_\-signal\-Handler} (int signum, siginfo\-\_\-t $\ast$, void $\ast$)
+\begin{DoxyCompactList}\small\item\em \-Low-\/level signal handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\begin{DoxyAuthor}{\-Author}
+\-Rennie de\-Graaf 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+2007/11/20
+\end{DoxyDate}
+\-Functions and classes for working with \-Unix signals in \-C++. 
+
+\-Definition in file \hyperlink{Signals_8cpp_source}{\-Signals.\-cpp}.
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{Signals_8cpp_a18f1798cd03059687605ac517f1cc1de}{
+\index{\-Signals.\-cpp@{\-Signals.\-cpp}!\-Signal\-Queue\-\_\-signal\-Handler@{\-Signal\-Queue\-\_\-signal\-Handler}}
+\index{\-Signal\-Queue\-\_\-signal\-Handler@{\-Signal\-Queue\-\_\-signal\-Handler}!Signals.cpp@{\-Signals.\-cpp}}
+\subsubsection[{\-Signal\-Queue\-\_\-signal\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}void \-Signal\-Queue\-\_\-signal\-Handler (
+\begin{DoxyParamCaption}
+\item[{int}]{signum, }
+\item[{siginfo\-\_\-t $\ast$}]{, }
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}}
+\label{Signals_8cpp_a18f1798cd03059687605ac517f1cc1de}
+
+
+\-Low-\/level signal handler. 
+
+\-Writes the signal number to the signal pipe as a single byte and returns. \-C++ signal handler conventions require that this be a function with \-C linkage in the global namespace. \-Don't call it directly. 
+
+\-Definition at line 564 of file \-Signals.\-cpp.
+
+
+
+\-References \-Lib\-Wheel\-::\-Signal\-Queue\-::get\-Signal\-Pipe().
+
+
+
+\-Referenced by \-Lib\-Wheel\-::\-Signal\-Queue\-::set\-Handler().
+

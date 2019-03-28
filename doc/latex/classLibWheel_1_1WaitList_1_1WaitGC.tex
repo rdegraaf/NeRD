@@ -1,0 +1,101 @@
+\hypertarget{classLibWheel_1_1WaitList_1_1WaitGC}{
+\section{\-Lib\-Wheel\-:\-:\-Wait\-List\-:\-:\-Wait\-G\-C \-Class \-Reference}
+\label{classLibWheel_1_1WaitList_1_1WaitGC}\index{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-G\-C@{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-G\-C}}
+}
+
+
+\-Timer interrupt handler for \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}.  
+
+
+
+
+{\ttfamily \#include $<$\-Wait\-List.\-hpp$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLibWheel_1_1WaitList_1_1WaitGC_aaf69f8d97ba51509c95a559f6a62831e}{\-Wait\-G\-C} (std\-::list$<$ \hyperlink{classLibWheel_1_1WaitList_1_1WaitWrapper}{\-Wait\-Wrapper} $>$ \&l)
+\begin{DoxyCompactList}\small\item\em \-Constructor for \hyperlink{classLibWheel_1_1WaitList_1_1WaitGC}{\-Wait\-List\-::\-Wait\-G\-C}. \end{DoxyCompactList}\item 
+void \hyperlink{classLibWheel_1_1WaitList_1_1WaitGC_afb5c536ce88b8c365753e2e491135f55}{operator()} ()
+\begin{DoxyCompactList}\small\item\em \-Call operator for \hyperlink{classLibWheel_1_1WaitList_1_1WaitGC}{\-Wait\-List\-::\-Wait\-G\-C}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::list$<$ \hyperlink{classLibWheel_1_1WaitList_1_1WaitWrapper}{\-Wait\-Wrapper} $>$ \& \hyperlink{classLibWheel_1_1WaitList_1_1WaitGC_a38657b9343752161a6380f8d6204e986}{objs}
+\begin{DoxyCompactList}\small\item\em \-A reference to the object list of the parent \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Timer interrupt handler for \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}. 
+
+\-Functors of this type are called from \hyperlink{classLibWheel_1_1SignalQueue_a991ba21066232f0db7be5f21e39edc41}{\-Signal\-Queue\-::handle\-Next()} or \hyperlink{classLibWheel_1_1SignalQueue_ad308bc4818a9d864bc0eb7b4dd1490ae}{\-Signal\-Queue\-::handle\-All()} to remove expired objects from a \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classLibWheel_1_1WaitList_1_1WaitGC_aaf69f8d97ba51509c95a559f6a62831e}{
+\index{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-G\-C@{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-G\-C}!\-Wait\-G\-C@{\-Wait\-G\-C}}
+\index{\-Wait\-G\-C@{\-Wait\-G\-C}!LibWheel::WaitList::WaitGC@{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-G\-C}}
+\subsubsection[{\-Wait\-G\-C}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-G\-C\-::\-Wait\-G\-C (
+\begin{DoxyParamCaption}
+\item[{std\-::list$<$ {\bf \-Wait\-Wrapper} $>$ \&}]{l}
+\end{DoxyParamCaption}
+)}}
+\label{classLibWheel_1_1WaitList_1_1WaitGC_aaf69f8d97ba51509c95a559f6a62831e}
+
+
+\-Constructor for \hyperlink{classLibWheel_1_1WaitList_1_1WaitGC}{\-Wait\-List\-::\-Wait\-G\-C}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em l} & \-A reference to the list of objects contained by the parent \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 163 of file \-Wait\-List\-\_\-impl.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classLibWheel_1_1WaitList_1_1WaitGC_afb5c536ce88b8c365753e2e491135f55}{
+\index{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-G\-C@{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-G\-C}!operator()@{operator()}}
+\index{operator()@{operator()}!LibWheel::WaitList::WaitGC@{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-G\-C}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}void \-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-G\-C\-::operator() (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classLibWheel_1_1WaitList_1_1WaitGC_afb5c536ce88b8c365753e2e491135f55}
+
+
+\-Call operator for \hyperlink{classLibWheel_1_1WaitList_1_1WaitGC}{\-Wait\-List\-::\-Wait\-G\-C}. 
+
+\-Removes objects from the front of {\itshape objs\/} that have expired. 
+
+\-Definition at line 174 of file \-Wait\-List\-\_\-impl.\-cpp.
+
+
+
+\-References \-Lib\-Wheel\-::\-Wait\-List\-::objs.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classLibWheel_1_1WaitList_1_1WaitGC_a38657b9343752161a6380f8d6204e986}{
+\index{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-G\-C@{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-G\-C}!objs@{objs}}
+\index{objs@{objs}!LibWheel::WaitList::WaitGC@{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-G\-C}}
+\subsubsection[{objs}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<${\bf \-Wait\-Wrapper}$>$\& {\bf \-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-G\-C\-::objs}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classLibWheel_1_1WaitList_1_1WaitGC_a38657b9343752161a6380f8d6204e986}
+
+
+\-A reference to the object list of the parent \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}. 
+
+
+
+\-Definition at line 90 of file \-Wait\-List.\-hpp.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{WaitList_8hpp}{\-Wait\-List.\-hpp}\item 
+\hyperlink{WaitList__impl_8cpp}{\-Wait\-List\-\_\-impl.\-cpp}\end{DoxyCompactItemize}

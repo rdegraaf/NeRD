@@ -1,0 +1,156 @@
+\hypertarget{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler}{
+\section{\-N\-E\-R\-D\-:\-:\-Connection\-Server\-:\-:\-Server\-Writeback\-Handler \-Class \-Reference}
+\label{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler}\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler}}
+}
+
+
+\-Functor to handle \-S\-I\-G\-I\-O signals received through \hyperlink{classLibWheel_1_1SignalQueue}{\-Lib\-Wheel\-::\-Signal\-Queue}.  
+
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler_ab92b47891071f80818d7bde25cae902c}{\-Server\-Writeback\-Handler} (\hyperlink{classNERD_1_1ConnectionServer_ac838d247f33cef856ae722343a8cb7ff}{\-Pending\-Connection\-List} \&pcl, \hyperlink{classNERD_1_1ConnectionServer_a1f7b6abdda0f0a7a027a5f2e24727cee}{\-Redirection\-Table} \&rt, \hyperlink{classNERD_1_1ConnectionServer_a0cd661f2a6755c501ac198229675ad4d}{\-Server\-Table} \&st, \hyperlink{classIPQ_1_1IpqSocket}{\-I\-P\-Q\-::\-Ipq\-Socket} \&s)
+\begin{DoxyCompactList}\small\item\em \-Constructor for \hyperlink{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler}{\-Server\-Writeback\-Handler}. \end{DoxyCompactList}\item 
+void \hyperlink{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler_addc9ae778c4e9375c4499dab4eef2074}{operator()} ()
+\begin{DoxyCompactList}\small\item\em \-Call operator for \hyperlink{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler}{\-Server\-Writeback\-Handler}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNERD_1_1ConnectionServer_ac838d247f33cef856ae722343a8cb7ff}{\-Pending\-Connection\-List} \& \hyperlink{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler_ab13916995c4c8ed9debb0ebac0cca091}{pending\-Connections}
+\begin{DoxyCompactList}\small\item\em \-A reference to the containing \-Connection\-Server's list of pending connections. \end{DoxyCompactList}\item 
+\hyperlink{classNERD_1_1ConnectionServer_a1f7b6abdda0f0a7a027a5f2e24727cee}{\-Redirection\-Table} \& \hyperlink{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler_a436b00e74f3cab280212aea4c4068838}{redirections}
+\begin{DoxyCompactList}\small\item\em \-A reference to the containing \-Connection\-Server's table of redirection rules. \end{DoxyCompactList}\item 
+\hyperlink{classNERD_1_1ConnectionServer_a0cd661f2a6755c501ac198229675ad4d}{\-Server\-Table} \& \hyperlink{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler_aa08d6aaad29ae5ece57c9f0623803e06}{servers}
+\begin{DoxyCompactList}\small\item\em \-A reference to the containing \-Connection\-Server's look-\/up table of active servers. \end{DoxyCompactList}\item 
+\hyperlink{classIPQ_1_1IpqSocket}{\-I\-P\-Q\-::\-Ipq\-Socket} \& \hyperlink{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler_a452352f53ba0bf33d1a4be562bd1f490}{sock}
+\begin{DoxyCompactList}\small\item\em \-A handle to libipq. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Functor to handle \-S\-I\-G\-I\-O signals received through \hyperlink{classLibWheel_1_1SignalQueue}{\-Lib\-Wheel\-::\-Signal\-Queue}. 
+
+\-When a server process writes its listen port number to its stdout, that triggers a \-S\-I\-G\-I\-O; this functor determines which servers have called back and finishes setting up connections to them. \-See \hyperlink{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler_addc9ae778c4e9375c4499dab4eef2074}{operator()()} for details. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler_ab92b47891071f80818d7bde25cae902c}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler}!\-Server\-Writeback\-Handler@{\-Server\-Writeback\-Handler}}
+\index{\-Server\-Writeback\-Handler@{\-Server\-Writeback\-Handler}!NERD::ConnectionServer::ServerWritebackHandler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler}}
+\subsubsection[{\-Server\-Writeback\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler\-::\-Server\-Writeback\-Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Pending\-Connection\-List} \&}]{pcl, }
+\item[{{\bf \-Redirection\-Table} \&}]{rt, }
+\item[{{\bf \-Server\-Table} \&}]{st, }
+\item[{{\bf \-I\-P\-Q\-::\-Ipq\-Socket} \&}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler_ab92b47891071f80818d7bde25cae902c}
+
+
+\-Constructor for \hyperlink{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler}{\-Server\-Writeback\-Handler}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pcl} & \-A reference to the containing \-Connection\-Server's list of pending connections. \\
+\hline
+{\em rt} & \-A reference to the containing \-Connection\-Server's look-\/up table of redirection rules. \\
+\hline
+{\em st} & \-A reference to the containing \-Connection\-Server's look-\/up table of active servers. \\
+\hline
+{\em s} & \-A handle to libipq. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 809 of file nerd.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler_addc9ae778c4e9375c4499dab4eef2074}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler}!operator()@{operator()}}
+\index{operator()@{operator()}!NERD::ConnectionServer::ServerWritebackHandler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}void \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler\-::operator() (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler_addc9ae778c4e9375c4499dab4eef2074}
+
+
+\-Call operator for \hyperlink{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler}{\-Server\-Writeback\-Handler}. 
+
+\-For all pending servers that have written data to stdout (the write ends of pipes whose read ends are held in the list of pending connections), read a port number, establish redirection rules for packet travelling to and from the server, add the server to the active servers table and remove it from the pending connections list, and forward the inital packet to the server. \begin{DoxyNote}{\-Note}
+\-This is an \-O(n) operation in the number of pending connections. 
+\end{DoxyNote}
+\begin{DoxyParagraph}{\-Side \-Effects\-:}
+\-May write messages to \hyperlink{namespaceLibWheel_af4ca70f4f65b2948701218436516a679}{\-Lib\-Wheel\-::logmsg}. 
+\end{DoxyParagraph}
+
+
+\-Definition at line 825 of file nerd.\-cpp.
+
+
+
+\-References \-N\-E\-R\-D\-::\-Connection\-Server\-::pending\-Connections, \-Lib\-Wheel\-::\-Wait\-List\-::begin(), \-Lib\-Wheel\-::\-Wait\-List\-::end(), \-Lib\-Wheel\-::uninterruptible\-\_\-read(), \-Lib\-Wheel\-::logmsg, logmsg\-\_\-err, \-Lib\-Wheel\-::\-Wait\-List\-::erase(), logmsg\-\_\-info, \-Lib\-Wheel\-::ipv4\-\_\-to\-\_\-string(), \-L\-O\-C\-A\-L\-H\-O\-S\-T\-\_\-\-I\-P, \-M\-A\-G\-I\-C\-\_\-\-P\-O\-R\-T, \-N\-E\-R\-D\-::\-Connection\-Server\-::servers, \-N\-E\-R\-D\-::\-Connection\-Server\-::redirections, \-N\-E\-R\-D\-::\-Connection\-Server\-::sock, and \-I\-P\-Q\-::\-Ipq\-Socket\-::send\-Response().
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler_ab13916995c4c8ed9debb0ebac0cca091}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler}!pending\-Connections@{pending\-Connections}}
+\index{pending\-Connections@{pending\-Connections}!NERD::ConnectionServer::ServerWritebackHandler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler}}
+\subsubsection[{pending\-Connections}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Pending\-Connection\-List}\& {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler\-::pending\-Connections}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler_ab13916995c4c8ed9debb0ebac0cca091}
+
+
+\-A reference to the containing \-Connection\-Server's list of pending connections. 
+
+
+
+\-Definition at line 263 of file nerd.\-cpp.
+
+\hypertarget{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler_a436b00e74f3cab280212aea4c4068838}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler}!redirections@{redirections}}
+\index{redirections@{redirections}!NERD::ConnectionServer::ServerWritebackHandler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler}}
+\subsubsection[{redirections}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Redirection\-Table}\& {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler\-::redirections}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler_a436b00e74f3cab280212aea4c4068838}
+
+
+\-A reference to the containing \-Connection\-Server's table of redirection rules. 
+
+
+
+\-Definition at line 264 of file nerd.\-cpp.
+
+\hypertarget{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler_aa08d6aaad29ae5ece57c9f0623803e06}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler}!servers@{servers}}
+\index{servers@{servers}!NERD::ConnectionServer::ServerWritebackHandler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler}}
+\subsubsection[{servers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Server\-Table}\& {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler\-::servers}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler_aa08d6aaad29ae5ece57c9f0623803e06}
+
+
+\-A reference to the containing \-Connection\-Server's look-\/up table of active servers. 
+
+
+
+\-Definition at line 265 of file nerd.\-cpp.
+
+\hypertarget{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler_a452352f53ba0bf33d1a4be562bd1f490}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler}!sock@{sock}}
+\index{sock@{sock}!NERD::ConnectionServer::ServerWritebackHandler@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler}}
+\subsubsection[{sock}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-I\-P\-Q\-::\-Ipq\-Socket}\& {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler\-::sock}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler_a452352f53ba0bf33d1a4be562bd1f490}
+
+
+\-A handle to libipq. 
+
+
+
+\-Definition at line 266 of file nerd.\-cpp.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{nerd_8cpp}{nerd.\-cpp}\end{DoxyCompactItemize}

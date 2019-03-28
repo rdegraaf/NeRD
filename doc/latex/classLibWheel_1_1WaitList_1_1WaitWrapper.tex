@@ -1,0 +1,111 @@
+\hypertarget{classLibWheel_1_1WaitList_1_1WaitWrapper}{
+\section{\-Lib\-Wheel\-:\-:\-Wait\-List\-:\-:\-Wait\-Wrapper \-Class \-Reference}
+\label{classLibWheel_1_1WaitList_1_1WaitWrapper}\index{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-Wrapper@{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-Wrapper}}
+}
+
+
+\-Wrapper that attaches a timestamp to objects stored in a \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}.  
+
+
+
+
+{\ttfamily \#include $<$\-Wait\-List.\-hpp$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLibWheel_1_1WaitList_1_1WaitWrapper_ae19fba6c4c852f12ae8c94537d55c1fe}{\-Wait\-Wrapper} (const \-V \&v, unsigned short \hyperlink{classLibWheel_1_1WaitList_1_1WaitWrapper_ab6e7098923788076c6041df2ec845925}{timeout})
+\begin{DoxyCompactList}\small\item\em \-Constructor for \hyperlink{classLibWheel_1_1WaitList_1_1WaitWrapper}{\-Wait\-List\-::\-Wait\-Wrapper}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\-V \hyperlink{classLibWheel_1_1WaitList_1_1WaitWrapper_a343d0e2af0e140f50a42fc3019483706}{value}
+\begin{DoxyCompactList}\small\item\em \-The object being stored. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::time\-\_\-t \hyperlink{classLibWheel_1_1WaitList_1_1WaitWrapper_ab6e7098923788076c6041df2ec845925}{timeout}
+\begin{DoxyCompactList}\small\item\em \-The time to remove the object, in seconds since the epoch. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classLibWheel_1_1WaitList_1_1WaitWrapper_a6cf50176114aacc0486e31cbafa94c3f}{\-Wait\-G\-C\-::operator()} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Wrapper that attaches a timestamp to objects stored in a \hyperlink{classLibWheel_1_1WaitList}{\-Wait\-List}. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classLibWheel_1_1WaitList_1_1WaitWrapper_ae19fba6c4c852f12ae8c94537d55c1fe}{
+\index{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-Wrapper@{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-Wrapper}!\-Wait\-Wrapper@{\-Wait\-Wrapper}}
+\index{\-Wait\-Wrapper@{\-Wait\-Wrapper}!LibWheel::WaitList::WaitWrapper@{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-Wrapper}}
+\subsubsection[{\-Wait\-Wrapper}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-Wrapper\-::\-Wait\-Wrapper (
+\begin{DoxyParamCaption}
+\item[{const \-V \&}]{v, }
+\item[{unsigned short}]{t}
+\end{DoxyParamCaption}
+)}}
+\label{classLibWheel_1_1WaitList_1_1WaitWrapper_ae19fba6c4c852f12ae8c94537d55c1fe}
+
+
+\-Constructor for \hyperlink{classLibWheel_1_1WaitList_1_1WaitWrapper}{\-Wait\-List\-::\-Wait\-Wrapper}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em v} & \-The object to store. \\
+\hline
+{\em t} & \-The lifetime of v, in seconds. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 29 of file \-Wait\-List\-\_\-impl.\-cpp.
+
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{classLibWheel_1_1WaitList_1_1WaitWrapper_a6cf50176114aacc0486e31cbafa94c3f}{
+\index{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-Wrapper@{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-Wrapper}!\-Wait\-G\-C\-::operator()@{\-Wait\-G\-C\-::operator()}}
+\index{\-Wait\-G\-C\-::operator()@{\-Wait\-G\-C\-::operator()}!LibWheel::WaitList::WaitWrapper@{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-Wrapper}}
+\subsubsection[{\-Wait\-G\-C\-::operator()}]{\setlength{\rightskip}{0pt plus 5cm}void \-Wait\-G\-C\-::operator() (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{classLibWheel_1_1WaitList_1_1WaitWrapper_a6cf50176114aacc0486e31cbafa94c3f}
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classLibWheel_1_1WaitList_1_1WaitWrapper_ab6e7098923788076c6041df2ec845925}{
+\index{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-Wrapper@{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-Wrapper}!timeout@{timeout}}
+\index{timeout@{timeout}!LibWheel::WaitList::WaitWrapper@{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-Wrapper}}
+\subsubsection[{timeout}]{\setlength{\rightskip}{0pt plus 5cm}std\-::time\-\_\-t {\bf \-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-Wrapper\-::timeout}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classLibWheel_1_1WaitList_1_1WaitWrapper_ab6e7098923788076c6041df2ec845925}
+
+
+\-The time to remove the object, in seconds since the epoch. 
+
+
+
+\-Definition at line 62 of file \-Wait\-List.\-hpp.
+
+\hypertarget{classLibWheel_1_1WaitList_1_1WaitWrapper_a343d0e2af0e140f50a42fc3019483706}{
+\index{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-Wrapper@{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-Wrapper}!value@{value}}
+\index{value@{value}!LibWheel::WaitList::WaitWrapper@{\-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-Wrapper}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}\-V {\bf \-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-Wrapper\-::value}}}
+\label{classLibWheel_1_1WaitList_1_1WaitWrapper_a343d0e2af0e140f50a42fc3019483706}
+
+
+\-The object being stored. 
+
+
+
+\-Definition at line 59 of file \-Wait\-List.\-hpp.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{WaitList_8hpp}{\-Wait\-List.\-hpp}\item 
+\hyperlink{WaitList__impl_8cpp}{\-Wait\-List\-\_\-impl.\-cpp}\end{DoxyCompactItemize}

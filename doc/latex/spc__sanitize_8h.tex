@@ -1,0 +1,70 @@
+\hypertarget{spc__sanitize_8h}{
+\section{spc\-\_\-sanitize.h \-File \-Reference}
+\label{spc__sanitize_8h}\index{spc\-\_\-sanitize.\-h@{spc\-\_\-sanitize.\-h}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{spc__sanitize_8h_a5ada29e94f80593775ab98d7bb2c0a6e}{spc\-\_\-sanitize\-\_\-environment} (int preservec, char $\ast$$\ast$preservev)
+\item 
+void \hyperlink{spc__sanitize_8h_a48b9352fb99aad561f6d6edd492084b4}{spc\-\_\-sanitize\-\_\-files} (int maxfd)
+\begin{DoxyCompactList}\small\item\em \-Closes all file descriptors above a limit, and ensures that stdin, stdout, and stderr are open. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\begin{DoxyAuthor}{\-Author}
+\-Rennie de\-Graaf 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+2007/05/27
+\end{DoxyDate}
+\-Declarations for functions to sanitize the system environment. \-See \hyperlink{spc__sanitize_8c}{spc\-\_\-sanitize.\-c} for further details. 
+
+\-Definition in file \hyperlink{spc__sanitize_8h_source}{spc\-\_\-sanitize.\-h}.
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{spc__sanitize_8h_a5ada29e94f80593775ab98d7bb2c0a6e}{
+\index{spc\-\_\-sanitize.\-h@{spc\-\_\-sanitize.\-h}!spc\-\_\-sanitize\-\_\-environment@{spc\-\_\-sanitize\-\_\-environment}}
+\index{spc\-\_\-sanitize\-\_\-environment@{spc\-\_\-sanitize\-\_\-environment}!spc_sanitize.h@{spc\-\_\-sanitize.\-h}}
+\subsubsection[{spc\-\_\-sanitize\-\_\-environment}]{\setlength{\rightskip}{0pt plus 5cm}void spc\-\_\-sanitize\-\_\-environment (
+\begin{DoxyParamCaption}
+\item[{int}]{preservec, }
+\item[{char $\ast$$\ast$}]{preservev}
+\end{DoxyParamCaption}
+)}}
+\label{spc__sanitize_8h_a5ada29e94f80593775ab98d7bb2c0a6e}
+\hypertarget{spc__sanitize_8h_a48b9352fb99aad561f6d6edd492084b4}{
+\index{spc\-\_\-sanitize.\-h@{spc\-\_\-sanitize.\-h}!spc\-\_\-sanitize\-\_\-files@{spc\-\_\-sanitize\-\_\-files}}
+\index{spc\-\_\-sanitize\-\_\-files@{spc\-\_\-sanitize\-\_\-files}!spc_sanitize.h@{spc\-\_\-sanitize.\-h}}
+\subsubsection[{spc\-\_\-sanitize\-\_\-files}]{\setlength{\rightskip}{0pt plus 5cm}void spc\-\_\-sanitize\-\_\-files (
+\begin{DoxyParamCaption}
+\item[{int}]{maxfd}
+\end{DoxyParamCaption}
+)}}
+\label{spc__sanitize_8h_a48b9352fb99aad561f6d6edd492084b4}
+
+
+\-Closes all file descriptors above a limit, and ensures that stdin, stdout, and stderr are open. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em maxfd} & \-The highest-\/numbered file descriptor to preserve. \-Set to 2 or less to close all files except for stdin, stdout, and stderr. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+\-If stdin, stdout, or stderr is closed and cannot be opened, attempts to log a message through the logmsg facility and calls {\ttfamily abort()}. 
+\end{DoxyNote}
+
+
+\-Definition at line 235 of file spc\-\_\-sanitize.\-c.
+
+
+
+\-References \-O\-P\-E\-N\-\_\-\-M\-A\-X, open\-\_\-devnull(), \-Lib\-Wheel\-::logmsg, logmsg\-\_\-err, and \-L\-O\-G\-M\-S\-G\-\_\-\-F\-A\-T\-A\-L\-\_\-\-E\-X\-I\-T.
+
+
+
+\-Referenced by main().
+

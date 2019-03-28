@@ -1,0 +1,281 @@
+\hypertarget{classLibWheel_1_1SignalException}{
+\section{\-Lib\-Wheel\-:\-:\-Signal\-Exception \-Class \-Reference}
+\label{classLibWheel_1_1SignalException}\index{\-Lib\-Wheel\-::\-Signal\-Exception@{\-Lib\-Wheel\-::\-Signal\-Exception}}
+}
+
+
+\-Base class for exceptions thrown by signal handlers.  
+
+
+
+
+{\ttfamily \#include $<$\-Signals.\-hpp$>$}
+
+\-Inheritance diagram for \-Lib\-Wheel\-:\-:\-Signal\-Exception\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLibWheel_1_1SignalException}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classLibWheel_1_1SignalException_ade84b65584b146e9402ab0692921d0b4}{$\sim$\-Signal\-Exception} ()  throw ()
+\begin{DoxyCompactList}\small\item\em \-Destructor for \hyperlink{classLibWheel_1_1SignalException}{\-Signal\-Exception}. \end{DoxyCompactList}\item 
+const siginfo\-\_\-t $\ast$ \hyperlink{classLibWheel_1_1SignalException_a470409aa1db7608623c601c9bda573f4}{get\-Info} () const   throw ()
+\begin{DoxyCompactList}\small\item\em \-Retrieve the details of a the signal represented by this \hyperlink{classLibWheel_1_1SignalException}{\-Signal\-Exception}. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classLibWheel_1_1SignalException_a65ea3c23ec24f6448fb02624f9b039c2}{what} () const   throw ()
+\begin{DoxyCompactList}\small\item\em \-Retrieve the description of the this exception. \end{DoxyCompactList}\item 
+int \hyperlink{classLibWheel_1_1SignalException_a966b7c3d4054dd0a6c5121ae6d17d8cb}{get\-Signal\-Number} () const   throw ()
+\begin{DoxyCompactList}\small\item\em \-Retrieve the signal number represented by this \hyperlink{classLibWheel_1_1SignalException}{\-Signal\-Exception}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLibWheel_1_1SignalException_a6dec8b8da98fa48504123e7224d50a97}{\-Signal\-Exception} (int signum)  throw ()
+\begin{DoxyCompactList}\small\item\em \-Constructor for \hyperlink{classLibWheel_1_1SignalException}{\-Signal\-Exception}. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1SignalException_ae6be47f1a5842eb753c4f3e6b2e08e38}{\-Signal\-Exception} (int signum, const char $\ast$desc)  throw ()
+\begin{DoxyCompactList}\small\item\em \-Constructor for \hyperlink{classLibWheel_1_1SignalException}{\-Signal\-Exception}. \end{DoxyCompactList}\item 
+\hyperlink{classLibWheel_1_1SignalException_ad0132d99a0decc74c6c59c782340713f}{\-Signal\-Exception} (int signum, const char $\ast$desc, const siginfo\-\_\-t $\ast$info)  throw ()
+\begin{DoxyCompactList}\small\item\em \-Constructor for \hyperlink{classLibWheel_1_1SignalException}{\-Signal\-Exception}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const std\-::string \hyperlink{classLibWheel_1_1SignalException_a859cd244b034ef6514d695d233463049}{description}
+\begin{DoxyCompactList}\small\item\em \-Description of the event triggering the exception. \end{DoxyCompactList}\item 
+const siginfo\-\_\-t $\ast$ \hyperlink{classLibWheel_1_1SignalException_a687eb8c7e9e577738968313c1be0cd5b}{siginfo}
+\begin{DoxyCompactList}\small\item\em \-Signal details, if available. \end{DoxyCompactList}\item 
+const int \hyperlink{classLibWheel_1_1SignalException_a252b673e5b01bd416b2edbe38eeaac28}{number}
+\begin{DoxyCompactList}\small\item\em \-Signal number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Base class for exceptions thrown by signal handlers. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classLibWheel_1_1SignalException_a6dec8b8da98fa48504123e7224d50a97}{
+\index{\-Lib\-Wheel\-::\-Signal\-Exception@{\-Lib\-Wheel\-::\-Signal\-Exception}!\-Signal\-Exception@{\-Signal\-Exception}}
+\index{\-Signal\-Exception@{\-Signal\-Exception}!LibWheel::SignalException@{\-Lib\-Wheel\-::\-Signal\-Exception}}
+\subsubsection[{\-Signal\-Exception}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::\-Signal\-Exception\-::\-Signal\-Exception (
+\begin{DoxyParamCaption}
+\item[{int}]{signum}
+\end{DoxyParamCaption}
+)  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classLibWheel_1_1SignalException_a6dec8b8da98fa48504123e7224d50a97}
+
+
+\-Constructor for \hyperlink{classLibWheel_1_1SignalException}{\-Signal\-Exception}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em signum} & \-The signal number represented by this \hyperlink{classLibWheel_1_1SignalException}{\-Signal\-Exception}. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 60 of file \-Signals.\-cpp.
+
+\hypertarget{classLibWheel_1_1SignalException_ae6be47f1a5842eb753c4f3e6b2e08e38}{
+\index{\-Lib\-Wheel\-::\-Signal\-Exception@{\-Lib\-Wheel\-::\-Signal\-Exception}!\-Signal\-Exception@{\-Signal\-Exception}}
+\index{\-Signal\-Exception@{\-Signal\-Exception}!LibWheel::SignalException@{\-Lib\-Wheel\-::\-Signal\-Exception}}
+\subsubsection[{\-Signal\-Exception}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::\-Signal\-Exception\-::\-Signal\-Exception (
+\begin{DoxyParamCaption}
+\item[{int}]{signum, }
+\item[{const char $\ast$}]{desc}
+\end{DoxyParamCaption}
+)  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classLibWheel_1_1SignalException_ae6be47f1a5842eb753c4f3e6b2e08e38}
+
+
+\-Constructor for \hyperlink{classLibWheel_1_1SignalException}{\-Signal\-Exception}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em signum} & \-The signal number represented by this \hyperlink{classLibWheel_1_1SignalException}{\-Signal\-Exception}. \\
+\hline
+{\em desc} & \-A description of the exception. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 51 of file \-Signals.\-cpp.
+
+\hypertarget{classLibWheel_1_1SignalException_ad0132d99a0decc74c6c59c782340713f}{
+\index{\-Lib\-Wheel\-::\-Signal\-Exception@{\-Lib\-Wheel\-::\-Signal\-Exception}!\-Signal\-Exception@{\-Signal\-Exception}}
+\index{\-Signal\-Exception@{\-Signal\-Exception}!LibWheel::SignalException@{\-Lib\-Wheel\-::\-Signal\-Exception}}
+\subsubsection[{\-Signal\-Exception}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::\-Signal\-Exception\-::\-Signal\-Exception (
+\begin{DoxyParamCaption}
+\item[{int}]{signum, }
+\item[{const char $\ast$}]{desc, }
+\item[{const siginfo\-\_\-t $\ast$}]{info}
+\end{DoxyParamCaption}
+)  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classLibWheel_1_1SignalException_ad0132d99a0decc74c6c59c782340713f}
+
+
+\-Constructor for \hyperlink{classLibWheel_1_1SignalException}{\-Signal\-Exception}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em signum} & \-The signal number represented by this \hyperlink{classLibWheel_1_1SignalException}{\-Signal\-Exception}. \\
+\hline
+{\em desc} & \-A description of the exception. \\
+\hline
+{\em info} & \-Signal details. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 41 of file \-Signals.\-cpp.
+
+\hypertarget{classLibWheel_1_1SignalException_ade84b65584b146e9402ab0692921d0b4}{
+\index{\-Lib\-Wheel\-::\-Signal\-Exception@{\-Lib\-Wheel\-::\-Signal\-Exception}!$\sim$\-Signal\-Exception@{$\sim$\-Signal\-Exception}}
+\index{$\sim$\-Signal\-Exception@{$\sim$\-Signal\-Exception}!LibWheel::SignalException@{\-Lib\-Wheel\-::\-Signal\-Exception}}
+\subsubsection[{$\sim$\-Signal\-Exception}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::\-Signal\-Exception\-::$\sim$\-Signal\-Exception (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classLibWheel_1_1SignalException_ade84b65584b146e9402ab0692921d0b4}
+
+
+\-Destructor for \hyperlink{classLibWheel_1_1SignalException}{\-Signal\-Exception}. 
+
+
+
+\-Definition at line 68 of file \-Signals.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classLibWheel_1_1SignalException_a470409aa1db7608623c601c9bda573f4}{
+\index{\-Lib\-Wheel\-::\-Signal\-Exception@{\-Lib\-Wheel\-::\-Signal\-Exception}!get\-Info@{get\-Info}}
+\index{get\-Info@{get\-Info}!LibWheel::SignalException@{\-Lib\-Wheel\-::\-Signal\-Exception}}
+\subsubsection[{get\-Info}]{\setlength{\rightskip}{0pt plus 5cm}const siginfo\-\_\-t $\ast$ \-Lib\-Wheel\-::\-Signal\-Exception\-::get\-Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const  throw ()}}
+\label{classLibWheel_1_1SignalException_a470409aa1db7608623c601c9bda573f4}
+
+
+\-Retrieve the details of a the signal represented by this \hyperlink{classLibWheel_1_1SignalException}{\-Signal\-Exception}. 
+
+\-See the man page for sigaction() for details on the contents of a {\ttfamily siginfo\-\_\-t}. \begin{DoxyReturn}{\-Returns}
+\-A pointer to the details, or \-N\-U\-L\-L if they're not available. 
+\end{DoxyReturn}
+
+
+\-Definition at line 79 of file \-Signals.\-cpp.
+
+
+
+\-References siginfo.
+
+\hypertarget{classLibWheel_1_1SignalException_a966b7c3d4054dd0a6c5121ae6d17d8cb}{
+\index{\-Lib\-Wheel\-::\-Signal\-Exception@{\-Lib\-Wheel\-::\-Signal\-Exception}!get\-Signal\-Number@{get\-Signal\-Number}}
+\index{get\-Signal\-Number@{get\-Signal\-Number}!LibWheel::SignalException@{\-Lib\-Wheel\-::\-Signal\-Exception}}
+\subsubsection[{get\-Signal\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int \-Lib\-Wheel\-::\-Signal\-Exception\-::get\-Signal\-Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const  throw ()}}
+\label{classLibWheel_1_1SignalException_a966b7c3d4054dd0a6c5121ae6d17d8cb}
+
+
+\-Retrieve the signal number represented by this \hyperlink{classLibWheel_1_1SignalException}{\-Signal\-Exception}. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The signal number. 
+\end{DoxyReturn}
+
+
+\-Definition at line 101 of file \-Signals.\-cpp.
+
+
+
+\-References number.
+
+\hypertarget{classLibWheel_1_1SignalException_a65ea3c23ec24f6448fb02624f9b039c2}{
+\index{\-Lib\-Wheel\-::\-Signal\-Exception@{\-Lib\-Wheel\-::\-Signal\-Exception}!what@{what}}
+\index{what@{what}!LibWheel::SignalException@{\-Lib\-Wheel\-::\-Signal\-Exception}}
+\subsubsection[{what}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ \-Lib\-Wheel\-::\-Signal\-Exception\-::what (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classLibWheel_1_1SignalException_a65ea3c23ec24f6448fb02624f9b039c2}
+
+
+\-Retrieve the description of the this exception. 
+
+\begin{DoxyReturn}{\-Returns}
+\-A pointer to the description, which may be an empty string. 
+\end{DoxyReturn}
+
+
+\-Definition at line 90 of file \-Signals.\-cpp.
+
+
+
+\-References description.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classLibWheel_1_1SignalException_a859cd244b034ef6514d695d233463049}{
+\index{\-Lib\-Wheel\-::\-Signal\-Exception@{\-Lib\-Wheel\-::\-Signal\-Exception}!description@{description}}
+\index{description@{description}!LibWheel::SignalException@{\-Lib\-Wheel\-::\-Signal\-Exception}}
+\subsubsection[{description}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf \-Lib\-Wheel\-::\-Signal\-Exception\-::description}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classLibWheel_1_1SignalException_a859cd244b034ef6514d695d233463049}
+
+
+\-Description of the event triggering the exception. 
+
+
+
+\-Definition at line 40 of file \-Signals.\-hpp.
+
+
+
+\-Referenced by what().
+
+\hypertarget{classLibWheel_1_1SignalException_a252b673e5b01bd416b2edbe38eeaac28}{
+\index{\-Lib\-Wheel\-::\-Signal\-Exception@{\-Lib\-Wheel\-::\-Signal\-Exception}!number@{number}}
+\index{number@{number}!LibWheel::SignalException@{\-Lib\-Wheel\-::\-Signal\-Exception}}
+\subsubsection[{number}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf \-Lib\-Wheel\-::\-Signal\-Exception\-::number}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classLibWheel_1_1SignalException_a252b673e5b01bd416b2edbe38eeaac28}
+
+
+\-Signal number. 
+
+
+
+\-Definition at line 42 of file \-Signals.\-hpp.
+
+
+
+\-Referenced by get\-Signal\-Number().
+
+\hypertarget{classLibWheel_1_1SignalException_a687eb8c7e9e577738968313c1be0cd5b}{
+\index{\-Lib\-Wheel\-::\-Signal\-Exception@{\-Lib\-Wheel\-::\-Signal\-Exception}!siginfo@{siginfo}}
+\index{siginfo@{siginfo}!LibWheel::SignalException@{\-Lib\-Wheel\-::\-Signal\-Exception}}
+\subsubsection[{siginfo}]{\setlength{\rightskip}{0pt plus 5cm}const siginfo\-\_\-t$\ast$ {\bf \-Lib\-Wheel\-::\-Signal\-Exception\-::siginfo}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classLibWheel_1_1SignalException_a687eb8c7e9e577738968313c1be0cd5b}
+
+
+\-Signal details, if available. 
+
+
+
+\-Definition at line 41 of file \-Signals.\-hpp.
+
+
+
+\-Referenced by get\-Info().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Signals_8hpp}{\-Signals.\-hpp}\item 
+\hyperlink{Signals_8cpp}{\-Signals.\-cpp}\end{DoxyCompactItemize}

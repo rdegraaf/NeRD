@@ -1,0 +1,123 @@
+\hypertarget{structNERD_1_1ConnectionServer_1_1PendingConnection}{
+\section{\-N\-E\-R\-D\-:\-:\-Connection\-Server\-:\-:\-Pending\-Connection \-Struct \-Reference}
+\label{structNERD_1_1ConnectionServer_1_1PendingConnection}\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection}}
+}
+
+
+\-Information pertaining to a server that is starting up to handle a connection.  
+
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structNERD_1_1ConnectionServer_1_1PendingConnection_a1380579c5d0abbc5faaf130e7f9ad1eb}{\-Pending\-Connection} (\hyperlink{classIPQ_1_1IpqTcpPacket}{\-I\-P\-Q\-::\-Ipq\-Tcp\-Packet} $\ast$pkt, int fd, const std\-::string \&name, pid\-\_\-t p)
+\begin{DoxyCompactList}\small\item\em \-Constructor for \hyperlink{structNERD_1_1ConnectionServer_1_1PendingConnection}{\-Pending\-Connection}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classIPQ_1_1IpqTcpPacket}{\-I\-P\-Q\-::\-Ipq\-Tcp\-Packet} $>$ \hyperlink{structNERD_1_1ConnectionServer_1_1PendingConnection_ad536775b738bdf1f819d7ad416214b71}{packet}
+\begin{DoxyCompactList}\small\item\em \-The packet that is initiating the connection to be handled by this server; to be redirected to the server once it is running. \end{DoxyCompactList}\item 
+const int \hyperlink{structNERD_1_1ConnectionServer_1_1PendingConnection_a227bb11370e616eab7eb9a67b4cdf4ca}{pipefd}
+\begin{DoxyCompactList}\small\item\em \-The read end of a pipe from which to read the port number that the server is using; the write end is the server's stdout. \end{DoxyCompactList}\item 
+const std\-::string \hyperlink{structNERD_1_1ConnectionServer_1_1PendingConnection_aa6bf63096cc00bffa641e31867cec98d}{server\-Name}
+\begin{DoxyCompactList}\small\item\em \-The name of the server program. \end{DoxyCompactList}\item 
+const pid\-\_\-t \hyperlink{structNERD_1_1ConnectionServer_1_1PendingConnection_a7a98b508720b6c7bc1f2028c3b2696d5}{pid}
+\begin{DoxyCompactList}\small\item\em \-The process \-I\-D of the server program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Information pertaining to a server that is starting up to handle a connection. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{structNERD_1_1ConnectionServer_1_1PendingConnection_a1380579c5d0abbc5faaf130e7f9ad1eb}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection}!\-Pending\-Connection@{\-Pending\-Connection}}
+\index{\-Pending\-Connection@{\-Pending\-Connection}!NERD::ConnectionServer::PendingConnection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection}}
+\subsubsection[{\-Pending\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection\-::\-Pending\-Connection (
+\begin{DoxyParamCaption}
+\item[{{\bf \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet} $\ast$}]{pkt, }
+\item[{int}]{fd, }
+\item[{const std\-::string \&}]{name, }
+\item[{pid\-\_\-t}]{p}
+\end{DoxyParamCaption}
+)}}
+\label{structNERD_1_1ConnectionServer_1_1PendingConnection_a1380579c5d0abbc5faaf130e7f9ad1eb}
+
+
+\-Constructor for \hyperlink{structNERD_1_1ConnectionServer_1_1PendingConnection}{\-Pending\-Connection}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pkt} & \-A packet that opens a connection. \\
+\hline
+{\em fd} & \-The read end if a pipe to the server program that is to handle the connection. \\
+\hline
+{\em name} & \-The name of the server program that is to handle the connection. \\
+\hline
+{\em p} & \-The process \-I\-D of the server that is to handle the connection. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 677 of file nerd.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{structNERD_1_1ConnectionServer_1_1PendingConnection_ad536775b738bdf1f819d7ad416214b71}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection}!packet@{packet}}
+\index{packet@{packet}!NERD::ConnectionServer::PendingConnection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection}}
+\subsubsection[{packet}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<${\bf \-I\-P\-Q\-::\-Ipq\-Tcp\-Packet}$>$ {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection\-::packet}}}
+\label{structNERD_1_1ConnectionServer_1_1PendingConnection_ad536775b738bdf1f819d7ad416214b71}
+
+
+\-The packet that is initiating the connection to be handled by this server; to be redirected to the server once it is running. 
+
+
+
+\-Definition at line 194 of file nerd.\-cpp.
+
+\hypertarget{structNERD_1_1ConnectionServer_1_1PendingConnection_a7a98b508720b6c7bc1f2028c3b2696d5}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection}!pid@{pid}}
+\index{pid@{pid}!NERD::ConnectionServer::PendingConnection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection}}
+\subsubsection[{pid}]{\setlength{\rightskip}{0pt plus 5cm}const pid\-\_\-t {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection\-::pid}}}
+\label{structNERD_1_1ConnectionServer_1_1PendingConnection_a7a98b508720b6c7bc1f2028c3b2696d5}
+
+
+\-The process \-I\-D of the server program. 
+
+
+
+\-Definition at line 197 of file nerd.\-cpp.
+
+\hypertarget{structNERD_1_1ConnectionServer_1_1PendingConnection_a227bb11370e616eab7eb9a67b4cdf4ca}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection}!pipefd@{pipefd}}
+\index{pipefd@{pipefd}!NERD::ConnectionServer::PendingConnection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection}}
+\subsubsection[{pipefd}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection\-::pipefd}}}
+\label{structNERD_1_1ConnectionServer_1_1PendingConnection_a227bb11370e616eab7eb9a67b4cdf4ca}
+
+
+\-The read end of a pipe from which to read the port number that the server is using; the write end is the server's stdout. 
+
+
+
+\-Definition at line 195 of file nerd.\-cpp.
+
+\hypertarget{structNERD_1_1ConnectionServer_1_1PendingConnection_aa6bf63096cc00bffa641e31867cec98d}{
+\index{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection}!server\-Name@{server\-Name}}
+\index{server\-Name@{server\-Name}!NERD::ConnectionServer::PendingConnection@{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection}}
+\subsubsection[{server\-Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection\-::server\-Name}}}
+\label{structNERD_1_1ConnectionServer_1_1PendingConnection_aa6bf63096cc00bffa641e31867cec98d}
+
+
+\-The name of the server program. 
+
+
+
+\-Definition at line 196 of file nerd.\-cpp.
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{nerd_8cpp}{nerd.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,191 @@
+\hypertarget{nerd_8cpp}{
+\section{nerd.cpp \-File \-Reference}
+\label{nerd_8cpp}\index{nerd.\-cpp@{nerd.\-cpp}}
+}
+{\ttfamily \#include $<$stdexcept$>$}\*
+{\ttfamily \#include $<$iostream$>$}\*
+{\ttfamily \#include $<$string$>$}\*
+{\ttfamily \#include $<$cstdlib$>$}\*
+{\ttfamily \#include $<$ctime$>$}\*
+{\ttfamily \#include $<$ext/hash\-\_\-map$>$}\*
+{\ttfamily \#include $<$boost/cstdint.\-hpp$>$}\*
+{\ttfamily \#include $<$boost/lexical\-\_\-cast.\-hpp$>$}\*
+{\ttfamily \#include $<$boost/shared\-\_\-ptr.\-hpp$>$}\*
+{\ttfamily \#include $<$unistd.\-h$>$}\*
+{\ttfamily \#include $<$fcntl.\-h$>$}\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\*
+{\ttfamily \#include $<$sys/wait.\-h$>$}\*
+{\ttfamily \#include $<$sys/time.\-h$>$}\*
+{\ttfamily \#include $<$sys/resource.\-h$>$}\*
+{\ttfamily \#include $<$getopt.\-h$>$}\*
+{\ttfamily \#include $<$arpa/inet.\-h$>$}\*
+{\ttfamily \#include $<$netinet/ip.\-h$>$}\*
+{\ttfamily \#include $<$netinet/tcp.\-h$>$}\*
+{\ttfamily \#include \char`\"{}\-Logmsg.\-hpp\char`\"{}}\*
+{\ttfamily \#include \char`\"{}\-Signals.\-hpp\char`\"{}}\*
+{\ttfamily \#include \char`\"{}\-I\-P\-Q.\-hpp\char`\"{}}\*
+{\ttfamily \#include \char`\"{}\-Wait\-List.\-hpp\char`\"{}}\*
+{\ttfamily \#include \char`\"{}util.\-hpp\char`\"{}}\*
+{\ttfamily \#include \char`\"{}spc\-\_\-sanitize.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}drop\-\_\-priv.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}dns.\-hpp\char`\"{}}\*
+{\ttfamily \#include \char`\"{}\-Dns\-Server\-Record.\-hpp\char`\"{}}\*
+{\ttfamily \#include \char`\"{}libwheel.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}nerd.\-h\char`\"{}}\*
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classNERD_1_1ConnectionServer}{\-N\-E\-R\-D\-::\-Connection\-Server}
+\begin{DoxyCompactList}\small\item\em \-The main class for the \-Network \-Rerouter \-Daemon (nerd). \end{DoxyCompactList}\item 
+class \hyperlink{classNERD_1_1ConnectionServer_1_1UnknownConnectionException}{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Unknown\-Connection\-Exception}
+\begin{DoxyCompactList}\small\item\em \-Exception thrown by \hyperlink{classNERD_1_1ConnectionServer_afd85b7ad69696355650a0177d01f0a06}{get\-Redirect\-Rule()} when a packet does not match any existing connection record. \end{DoxyCompactList}\item 
+class \hyperlink{classNERD_1_1ConnectionServer_1_1UnknownServerException}{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Unknown\-Server\-Exception}
+\begin{DoxyCompactList}\small\item\em \-Exception thrown by \hyperlink{classNERD_1_1ConnectionServer_a9d75b0d048d374095c4d7c96e4add7f8}{find\-Server()} when no server program can be found to handle a new connection. \end{DoxyCompactList}\item 
+struct \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair}
+\begin{DoxyCompactList}\small\item\em \-The source and destination addresses of \-I\-P packets travelling in one direction in a connection. \end{DoxyCompactList}\item 
+class \hyperlink{classNERD_1_1ConnectionServer_1_1AddressPairHash}{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Address\-Pair\-Hash}
+\begin{DoxyCompactList}\small\item\em \-A functor that computes a hash of an \hyperlink{structNERD_1_1ConnectionServer_1_1AddressPair}{\-Address\-Pair}, suitable for use with \-\_\-\-\_\-gnu\-\_\-cxx\-::hash\-\_\-map. \end{DoxyCompactList}\item 
+class \hyperlink{classNERD_1_1ConnectionServer_1_1Connection}{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection}
+\begin{DoxyCompactList}\small\item\em \-A description of a connection managed by a server program. \end{DoxyCompactList}\item 
+struct \hyperlink{structNERD_1_1ConnectionServer_1_1PendingConnection}{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Pending\-Connection}
+\begin{DoxyCompactList}\small\item\em \-Information pertaining to a server that is starting up to handle a connection. \end{DoxyCompactList}\item 
+struct \hyperlink{structNERD_1_1ConnectionServer_1_1ServerRecord}{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Record}
+\begin{DoxyCompactList}\small\item\em \-Information about a server program to be started. \end{DoxyCompactList}\item 
+class \hyperlink{classNERD_1_1ConnectionServer_1_1ServerExitHandler}{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Exit\-Handler}
+\begin{DoxyCompactList}\small\item\em \-Functor to handle \-S\-I\-G\-C\-H\-L\-D signals received through \hyperlink{classLibWheel_1_1SignalQueue}{\-Lib\-Wheel\-::\-Signal\-Queue}. \end{DoxyCompactList}\item 
+class \hyperlink{classNERD_1_1ConnectionServer_1_1ServerWritebackHandler}{\-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler}
+\begin{DoxyCompactList}\small\item\em \-Functor to handle \-S\-I\-G\-I\-O signals received through \hyperlink{classLibWheel_1_1SignalQueue}{\-Lib\-Wheel\-::\-Signal\-Queue}. \end{DoxyCompactList}\item 
+class \hyperlink{classNERD_1_1StatPrinter}{\-N\-E\-R\-D\-::\-Stat\-Printer}
+\begin{DoxyCompactList}\small\item\em \-Functor to print current server statistics. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespaceNERD}{\-N\-E\-R\-D}
+\begin{DoxyCompactList}\small\item\em \-Functions and classes specific to the \-Network \-Rerouter \-Daemon (nerd). \end{DoxyCompactList}\item 
+namespace \hyperlink{namespaceLibWheel}{\-Lib\-Wheel}
+\begin{DoxyCompactList}\small\item\em \-A set of reusuable software components written in various languages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{nerd_8cpp_a478277e1db3d0efd1a610e6254a7fe54}{\-L\-O\-C\-A\-L\-H\-O\-S\-T\-\_\-\-I\-P}~0x7f000001
+\begin{DoxyCompactList}\small\item\em 127.\-0.\-0.\-1, as an integer in \-H\-B\-O. \end{DoxyCompactList}\item 
+\#define \hyperlink{nerd_8cpp_a5a7162a4cf2bc5e6950e2bf63c1ca47d}{\-M\-A\-G\-I\-C\-\_\-\-P\-O\-R\-T}~1
+\begin{DoxyCompactList}\small\item\em \-To servers, client connections will appear to come from this port on localhost. \end{DoxyCompactList}\item 
+\#define \hyperlink{nerd_8cpp_af5fe208f8640c8c789a4d5d5b8ad47f5}{\-P\-I\-D\-F\-I\-L\-E}~\char`\"{}/var/run/nerd.\-pid\char`\"{}
+\begin{DoxyCompactList}\small\item\em \-When in daemon mode, write the \-P\-I\-D to this file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{namespaceNERD_a71e1a6782f9ca0dad5c6215030cb69dd}{\-N\-E\-R\-D\-::print\-\_\-version} ()
+\begin{DoxyCompactList}\small\item\em \-Print version info to stderr. \end{DoxyCompactList}\item 
+static void \hyperlink{namespaceNERD_a55373ab13cf2b623be6d20f03be57f93}{\-N\-E\-R\-D\-::print\-\_\-help} (const char $\ast$progname)
+\begin{DoxyCompactList}\small\item\em \-Print a help message to stderr. \end{DoxyCompactList}\item 
+static void \hyperlink{namespaceNERD_aa16f179fc762db5db0912611f1a82d57}{\-N\-E\-R\-D\-::parse\-\_\-args} (int argc, char $\ast$$\ast$argv, bool \&daemon, bool \&verbose)
+\begin{DoxyCompactList}\small\item\em \-Parse command-\/line arguments. \end{DoxyCompactList}\item 
+int \hyperlink{nerd_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em \-Entry point for the \-Network \-Rerouter \-Daemon (nerd). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\begin{DoxyAuthor}{\-Author}
+\-Rennie de\-Graaf 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+2007/12/13
+\end{DoxyDate}
+\-Main module for the \-Network \-Rerouter \-Daemon (nerd). 
+
+\-Definition in file \hyperlink{nerd_8cpp_source}{nerd.\-cpp}.
+
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{nerd_8cpp_a478277e1db3d0efd1a610e6254a7fe54}{
+\index{nerd.\-cpp@{nerd.\-cpp}!\-L\-O\-C\-A\-L\-H\-O\-S\-T\-\_\-\-I\-P@{\-L\-O\-C\-A\-L\-H\-O\-S\-T\-\_\-\-I\-P}}
+\index{\-L\-O\-C\-A\-L\-H\-O\-S\-T\-\_\-\-I\-P@{\-L\-O\-C\-A\-L\-H\-O\-S\-T\-\_\-\-I\-P}!nerd.cpp@{nerd.\-cpp}}
+\subsubsection[{\-L\-O\-C\-A\-L\-H\-O\-S\-T\-\_\-\-I\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-L\-O\-C\-A\-L\-H\-O\-S\-T\-\_\-\-I\-P~0x7f000001}}
+\label{nerd_8cpp_a478277e1db3d0efd1a610e6254a7fe54}
+
+
+127.\-0.\-0.\-1, as an integer in \-H\-B\-O. 
+
+
+
+\-Definition at line 48 of file nerd.\-cpp.
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection\-Server(), \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler\-::operator()(), and \-N\-E\-R\-D\-::\-Connection\-Server\-::handle\-Packet().
+
+\hypertarget{nerd_8cpp_a5a7162a4cf2bc5e6950e2bf63c1ca47d}{
+\index{nerd.\-cpp@{nerd.\-cpp}!\-M\-A\-G\-I\-C\-\_\-\-P\-O\-R\-T@{\-M\-A\-G\-I\-C\-\_\-\-P\-O\-R\-T}}
+\index{\-M\-A\-G\-I\-C\-\_\-\-P\-O\-R\-T@{\-M\-A\-G\-I\-C\-\_\-\-P\-O\-R\-T}!nerd.cpp@{nerd.\-cpp}}
+\subsubsection[{\-M\-A\-G\-I\-C\-\_\-\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-M\-A\-G\-I\-C\-\_\-\-P\-O\-R\-T~1}}
+\label{nerd_8cpp_a5a7162a4cf2bc5e6950e2bf63c1ca47d}
+
+
+\-To servers, client connections will appear to come from this port on localhost. 
+
+
+
+\-Definition at line 49 of file nerd.\-cpp.
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection\-Server(), and \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Server\-Writeback\-Handler\-::operator()().
+
+\hypertarget{nerd_8cpp_af5fe208f8640c8c789a4d5d5b8ad47f5}{
+\index{nerd.\-cpp@{nerd.\-cpp}!\-P\-I\-D\-F\-I\-L\-E@{\-P\-I\-D\-F\-I\-L\-E}}
+\index{\-P\-I\-D\-F\-I\-L\-E@{\-P\-I\-D\-F\-I\-L\-E}!nerd.cpp@{nerd.\-cpp}}
+\subsubsection[{\-P\-I\-D\-F\-I\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-I\-D\-F\-I\-L\-E~\char`\"{}/var/run/nerd.\-pid\char`\"{}}}
+\label{nerd_8cpp_af5fe208f8640c8c789a4d5d5b8ad47f5}
+
+
+\-When in daemon mode, write the \-P\-I\-D to this file. 
+
+
+
+\-Definition at line 50 of file nerd.\-cpp.
+
+
+
+\-Referenced by main().
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{nerd_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{
+\index{nerd.\-cpp@{nerd.\-cpp}!main@{main}}
+\index{main@{main}!nerd.cpp@{nerd.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}
+\label{nerd_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+\-Entry point for the \-Network \-Rerouter \-Daemon (nerd). 
+
+\-The following command-\/line arguments are accepted\-:
+\begin{DoxyItemize}
+\item -\/\-D (-\/-\/daemon) \-Detach from the console and run as a daemon.
+\item -\/\-V (-\/-\/verbose) \-Log extra status messages.
+\item -\/h (-\/-\/help) \-Print a help message and exit.
+\item -\/v (-\/-\/version) \-Print a version message and exit.
+\end{DoxyItemize}\-By default, status and error messages are logged to stderr; in daemon mode, they are sent to syslog. \-In debug builds (in which the macro {\ttfamily \-D\-E\-B\-U\-G} is defined), verbose logging is automatically enabled and daemon mode is disabled.
+
+\-The following signals can be sent to the program\-:
+\begin{DoxyItemize}
+\item \-S\-I\-G\-I\-N\-T ($^\wedge$\-C) \-Stop processing packets, clean up and exit normally.
+\item \-S\-I\-G\-U\-S\-R1 \-Print status information to the log device (stderr in console mode, or syslog in daemon mode).
+\end{DoxyItemize}\-This program needs root privileges to run. \-It will log an error message and exit if run as any other user. 
+
+\-Definition at line 1514 of file nerd.\-cpp.
+
+
+
+\-References \-Lib\-Wheel\-::logmsg, logmsg\-\_\-stderr, spc\-\_\-sanitize\-\_\-environment(), spc\-\_\-sanitize\-\_\-files(), \-N\-E\-R\-D\-::parse\-\_\-args(), \-Lib\-Wheel\-::\-Signal\-Queue\-::set\-Handler(), \-Lib\-Wheel\-::\-Signal\-Queue\-::\-H\-A\-N\-D\-L\-E, \-Lib\-Wheel\-::\-Signal\-Queue\-::add\-Handler(), \-N\-E\-R\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-R\-O\-O\-T, logmsg\-\_\-syslog, \-Lib\-Wheel\-::write\-\_\-pid(), \-P\-I\-D\-F\-I\-L\-E, and logmsg\-\_\-crit.
+

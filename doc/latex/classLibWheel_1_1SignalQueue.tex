@@ -1,0 +1,502 @@
+\hypertarget{classLibWheel_1_1SignalQueue}{
+\section{\-Lib\-Wheel\-:\-:\-Signal\-Queue \-Class \-Reference}
+\label{classLibWheel_1_1SignalQueue}\index{\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}}
+}
+
+
+\-A system for synchronously handling asynchronous signals in a uni-\/threaded process.  
+
+
+
+
+{\ttfamily \#include $<$\-Signals.\-hpp$>$}
+
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structLibWheel_1_1SignalQueue_1_1Pipe}{\-Pipe}
+\begin{DoxyCompactList}\small\item\em \-Convienience wrapper for a non-\/blocking \-Unix pipe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classLibWheel_1_1SignalQueue_a5a366bd8de3564c5e3001233464d20e3}{\-Action} \{ \hyperlink{classLibWheel_1_1SignalQueue_a5a366bd8de3564c5e3001233464d20e3a999854ec907bcd96c6948c5fab16337a}{\-D\-E\-F\-A\-U\-L\-T}, 
+\hyperlink{classLibWheel_1_1SignalQueue_a5a366bd8de3564c5e3001233464d20e3a57f9c96915e2cbabc7c7ea653a43bc83}{\-I\-G\-N\-O\-R\-E}, 
+\hyperlink{classLibWheel_1_1SignalQueue_a5a366bd8de3564c5e3001233464d20e3a4ee98693cfe0961ea7dcfac5f2053174}{\-H\-A\-N\-D\-L\-E}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Possible ways to handle a signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classLibWheel_1_1SignalQueue_ac0145e9276c339fccebe3c0b70cec914}{set\-Handler} (int sig, \hyperlink{classLibWheel_1_1SignalQueue_a5a366bd8de3564c5e3001233464d20e3}{\-Action} act)  throw (std\-::domain\-\_\-error, std\-::invalid\-\_\-argument)
+\begin{DoxyCompactList}\small\item\em \-Set the action to perform when a signal is received. \end{DoxyCompactList}\item 
+static void \hyperlink{classLibWheel_1_1SignalQueue_ada6b998cee9ced93ac7e046199187fa6}{add\-Handler} (int sig, boost\-::function$<$ void()$>$ act)  throw (std\-::invalid\-\_\-argument)
+\begin{DoxyCompactList}\small\item\em \-Add a handler function for a signal. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static void \hyperlink{classLibWheel_1_1SignalQueue_a16b57819e9a601533b9bff97ec08b5e5}{delete\-Handler} (int sig, const \-T \&act)  throw (std\-::invalid\-\_\-argument)
+\begin{DoxyCompactList}\small\item\em \-Unregister a handler for a signal. \end{DoxyCompactList}\item 
+static void \hyperlink{classLibWheel_1_1SignalQueue_afc29a5340fe52fd173e808f65f0ec3a7}{delete\-Handlers} (int sig)  throw (std\-::invalid\-\_\-argument)
+\begin{DoxyCompactList}\small\item\em \-Remove all handlers for a signal. \end{DoxyCompactList}\item 
+static void \hyperlink{classLibWheel_1_1SignalQueue_a991ba21066232f0db7be5f21e39edc41}{handle\-Next} ()
+\begin{DoxyCompactList}\small\item\em \-Call all handlers for the next signal in the signal pipe. \end{DoxyCompactList}\item 
+static void \hyperlink{classLibWheel_1_1SignalQueue_ad308bc4818a9d864bc0eb7b4dd1490ae}{handle\-All} ()
+\begin{DoxyCompactList}\small\item\em \-Call all handlers for all signals in the signal pipe. \end{DoxyCompactList}\item 
+static bool \hyperlink{classLibWheel_1_1SignalQueue_afd382f0a75d89bb0b6a22d9899c4435e}{pending} ()  throw (std\-::runtime\-\_\-error)
+\begin{DoxyCompactList}\small\item\em \-Check if any signals are pending in the signal queue. \end{DoxyCompactList}\item 
+static int \hyperlink{classLibWheel_1_1SignalQueue_a36582b3985b30c6620ed3476b97e8538}{get\-Read\-F\-D} ()
+\begin{DoxyCompactList}\small\item\em \-Retrieve the read file descriptor of the signal pipe. \end{DoxyCompactList}\item 
+static int \hyperlink{classLibWheel_1_1SignalQueue_a8ba3b23aab26d744bcc2bffcc6598921}{select} (int n, fd\-\_\-set $\ast$readfds, fd\-\_\-set $\ast$writefds, fd\-\_\-set $\ast$exceptfds, struct timeval $\ast$timeout)
+\begin{DoxyCompactList}\small\item\em \-Wait for an event to occur on a file descriptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::list\*
+$<$ boost\-::function$<$ void()$>$ $>$ \hyperlink{classLibWheel_1_1SignalQueue_a4bfc25c5e467e668c89ee0b0ceaa7591}{\-Handler\-List}
+\begin{DoxyCompactList}\small\item\em \-The type of a set of handlers for a particular signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+friend \hyperlink{classLibWheel_1_1SignalQueue_ab219a09c14ff06e916c70dbdabdbf28a}{void\-::\-Signal\-Queue\-\_\-signal\-Handler} (int, siginfo\-\_\-t $\ast$, void $\ast$)
+\begin{DoxyCompactList}\small\item\em \-This needs to call \hyperlink{classLibWheel_1_1SignalQueue_a522c461293731cec36208aa3bafe39c7}{get\-Signal\-Pipe()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{structLibWheel_1_1SignalQueue_1_1Pipe}{\-Pipe} \& \hyperlink{classLibWheel_1_1SignalQueue_a522c461293731cec36208aa3bafe39c7}{get\-Signal\-Pipe} ()
+\begin{DoxyCompactList}\small\item\em \-Retrieve the signal pipe used by \hyperlink{classLibWheel_1_1SignalQueue}{\-Signal\-Queue}. \end{DoxyCompactList}\item 
+static \hyperlink{classLibWheel_1_1SignalQueue_a4bfc25c5e467e668c89ee0b0ceaa7591}{\-Handler\-List} $\ast$ \hyperlink{classLibWheel_1_1SignalQueue_a0e04644ce369cc519197043735986f9c}{get\-Signal\-Table} ()
+\begin{DoxyCompactList}\small\item\em \-Retrieve the table of signal handlers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A system for synchronously handling asynchronous signals in a uni-\/threaded process. 
+
+\-Users can request that certain signals be handled, and can register any number of arbitrary functions to handle them. \-When a signal arrives, all that is done is that its number is written to a pipe. \-The user can then poll for pending signals from the pipe using \hyperlink{classLibWheel_1_1SignalQueue_afd382f0a75d89bb0b6a22d9899c4435e}{\-Signal\-Queue\-::pending()} or by calling {\ttfamily poll()} or {\ttfamily select}() on \hyperlink{classLibWheel_1_1SignalQueue_a36582b3985b30c6620ed3476b97e8538}{\-Signal\-Queue\-::get\-Read\-F\-D()}, and can execute all handlers for pending signals using \hyperlink{classLibWheel_1_1SignalQueue_a991ba21066232f0db7be5f21e39edc41}{\-Signal\-Queue\-::handle\-Next()} and \hyperlink{classLibWheel_1_1SignalQueue_ad308bc4818a9d864bc0eb7b4dd1490ae}{\-Signal\-Queue\-::handle\-All()}. \-Handlers are executed in the order that they were registered. \hyperlink{classLibWheel_1_1SignalQueue_a8ba3b23aab26d744bcc2bffcc6598921}{\-Signal\-Queue\-::select()} is provided as an version of {\ttfamily select}() that waits for file descriptors to change status, while handling any signals that arrive in the meantime.
+
+\-Signal handlers can be either functions or functors that take no parameters and return {\ttfamily void}. \-Since they are called synchronously from normal program flow, they can safely perform any action, including throw exceptions. (\hyperlink{classLibWheel_1_1SignalException}{\-Signal\-Exception} is provided for this purpose.)
+
+\-Since \hyperlink{classLibWheel_1_1SignalQueue}{\-Signal\-Queue} only has static methods, it could simply be a namespace (rather than a class). \-However, \-I couldn't get a non-\/template version of \hyperlink{classLibWheel_1_1SignalQueue_a16b57819e9a601533b9bff97ec08b5e5}{delete\-Handler()} to work properly, so its definition needs to be inline, and it needs to call \hyperlink{classLibWheel_1_1SignalQueue_a0e04644ce369cc519197043735986f9c}{get\-Signal\-Table()}, which should be private. \-If this was a namespace, \hyperlink{classLibWheel_1_1SignalQueue_a0e04644ce369cc519197043735986f9c}{get\-Signal\-Table()} and all the other private stuff could be static to \hyperlink{Signals_8cpp}{\-Signals.\-cpp}. 
+
+\subsection{\-Member \-Typedef \-Documentation}
+\hypertarget{classLibWheel_1_1SignalQueue_a4bfc25c5e467e668c89ee0b0ceaa7591}{
+\index{\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}!\-Handler\-List@{\-Handler\-List}}
+\index{\-Handler\-List@{\-Handler\-List}!LibWheel::SignalQueue@{\-Lib\-Wheel\-::\-Signal\-Queue}}
+\subsubsection[{\-Handler\-List}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::list$<$boost\-::function$<$void()$>$ $>$ {\bf \-Lib\-Wheel\-::\-Signal\-Queue\-::\-Handler\-List}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classLibWheel_1_1SignalQueue_a4bfc25c5e467e668c89ee0b0ceaa7591}
+
+
+\-The type of a set of handlers for a particular signal. 
+
+
+
+\-Definition at line 120 of file \-Signals.\-hpp.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{classLibWheel_1_1SignalQueue_a5a366bd8de3564c5e3001233464d20e3}{
+\index{\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}!\-Action@{\-Action}}
+\index{\-Action@{\-Action}!LibWheel::SignalQueue@{\-Lib\-Wheel\-::\-Signal\-Queue}}
+\subsubsection[{\-Action}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Lib\-Wheel\-::\-Signal\-Queue\-::\-Action}}}
+\label{classLibWheel_1_1SignalQueue_a5a366bd8de3564c5e3001233464d20e3}
+
+
+\-Possible ways to handle a signal. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-D\-E\-F\-A\-U\-L\-T@{\-D\-E\-F\-A\-U\-L\-T}!\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}}\index{\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}!\-D\-E\-F\-A\-U\-L\-T@{\-D\-E\-F\-A\-U\-L\-T}}\item[{\em 
+\hypertarget{classLibWheel_1_1SignalQueue_a5a366bd8de3564c5e3001233464d20e3a999854ec907bcd96c6948c5fab16337a}{
+\-D\-E\-F\-A\-U\-L\-T}
+\label{classLibWheel_1_1SignalQueue_a5a366bd8de3564c5e3001233464d20e3a999854ec907bcd96c6948c5fab16337a}
+}]\-Take the operating systems's default action for the signal. \index{\-I\-G\-N\-O\-R\-E@{\-I\-G\-N\-O\-R\-E}!\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}}\index{\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}!\-I\-G\-N\-O\-R\-E@{\-I\-G\-N\-O\-R\-E}}\item[{\em 
+\hypertarget{classLibWheel_1_1SignalQueue_a5a366bd8de3564c5e3001233464d20e3a57f9c96915e2cbabc7c7ea653a43bc83}{
+\-I\-G\-N\-O\-R\-E}
+\label{classLibWheel_1_1SignalQueue_a5a366bd8de3564c5e3001233464d20e3a57f9c96915e2cbabc7c7ea653a43bc83}
+}]\-Ignore the signal. \index{\-H\-A\-N\-D\-L\-E@{\-H\-A\-N\-D\-L\-E}!\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}}\index{\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}!\-H\-A\-N\-D\-L\-E@{\-H\-A\-N\-D\-L\-E}}\item[{\em 
+\hypertarget{classLibWheel_1_1SignalQueue_a5a366bd8de3564c5e3001233464d20e3a4ee98693cfe0961ea7dcfac5f2053174}{
+\-H\-A\-N\-D\-L\-E}
+\label{classLibWheel_1_1SignalQueue_a5a366bd8de3564c5e3001233464d20e3a4ee98693cfe0961ea7dcfac5f2053174}
+}]\-Call all registered signal handlers when a signal is received. \end{description}
+\end{Desc}
+
+
+
+\-Definition at line 129 of file \-Signals.\-hpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classLibWheel_1_1SignalQueue_ada6b998cee9ced93ac7e046199187fa6}{
+\index{\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}!add\-Handler@{add\-Handler}}
+\index{add\-Handler@{add\-Handler}!LibWheel::SignalQueue@{\-Lib\-Wheel\-::\-Signal\-Queue}}
+\subsubsection[{add\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}void \-Lib\-Wheel\-::\-Signal\-Queue\-::add\-Handler (
+\begin{DoxyParamCaption}
+\item[{int}]{sig, }
+\item[{boost\-::function$<$ void()$>$}]{act}
+\end{DoxyParamCaption}
+)  throw (std\-::invalid\-\_\-argument)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classLibWheel_1_1SignalQueue_ada6b998cee9ced93ac7e046199187fa6}
+
+
+\-Add a handler function for a signal. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em sig} & \-The signal for which the handler is to be added. \\
+\hline
+{\em act} & \-The handler to add. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{\-Exceptions}
+{\em std\-::invalid\-\_\-argument} & \-If {\itshape sig\/} is invalid. \\
+\hline
+\end{DoxyExceptions}
+
+
+\-Definition at line 234 of file \-Signals.\-cpp.
+
+
+
+\-References get\-Signal\-Table().
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection\-Server(), main(), \-Lib\-Wheel\-::\-Timer\-::\-Timer(), and \-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-List().
+
+\hypertarget{classLibWheel_1_1SignalQueue_a16b57819e9a601533b9bff97ec08b5e5}{
+\index{\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}!delete\-Handler@{delete\-Handler}}
+\index{delete\-Handler@{delete\-Handler}!LibWheel::SignalQueue@{\-Lib\-Wheel\-::\-Signal\-Queue}}
+\subsubsection[{delete\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void \-Lib\-Wheel\-::\-Signal\-Queue\-::delete\-Handler (
+\begin{DoxyParamCaption}
+\item[{int}]{sig, }
+\item[{const \-T \&}]{act}
+\end{DoxyParamCaption}
+)  throw (std\-::invalid\-\_\-argument)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classLibWheel_1_1SignalQueue_a16b57819e9a601533b9bff97ec08b5e5}
+
+
+\-Unregister a handler for a signal. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em sig} & \-A signal number. \\
+\hline
+{\em act} & \-A reference to the signal handler to unregister for {\itshape sig\/}. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{\-Exceptions}
+{\em std\-::invalid\-\_\-argument} & \-If {\itshape sig\/} is not a valid signal number. \\
+\hline
+\end{DoxyExceptions}
+
+
+\-Definition at line 156 of file \-Signals.\-hpp.
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::$\sim$\-Connection\-Server(), \-Lib\-Wheel\-::\-Timer\-::$\sim$\-Timer(), and \-Lib\-Wheel\-::\-Wait\-List\-::$\sim$\-Wait\-List().
+
+\hypertarget{classLibWheel_1_1SignalQueue_afc29a5340fe52fd173e808f65f0ec3a7}{
+\index{\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}!delete\-Handlers@{delete\-Handlers}}
+\index{delete\-Handlers@{delete\-Handlers}!LibWheel::SignalQueue@{\-Lib\-Wheel\-::\-Signal\-Queue}}
+\subsubsection[{delete\-Handlers}]{\setlength{\rightskip}{0pt plus 5cm}void \-Lib\-Wheel\-::\-Signal\-Queue\-::delete\-Handlers (
+\begin{DoxyParamCaption}
+\item[{int}]{sig}
+\end{DoxyParamCaption}
+)  throw (std\-::invalid\-\_\-argument)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classLibWheel_1_1SignalQueue_afc29a5340fe52fd173e808f65f0ec3a7}
+
+
+\-Remove all handlers for a signal. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em sig} & \-The signal whose handlers to remove. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{\-Exceptions}
+{\em std\-::invalid\-\_\-argument} & \-If {\itshape sig\/} is invalid. \\
+\hline
+\end{DoxyExceptions}
+
+
+\-Definition at line 249 of file \-Signals.\-cpp.
+
+
+
+\-References get\-Signal\-Table().
+
+\hypertarget{classLibWheel_1_1SignalQueue_a36582b3985b30c6620ed3476b97e8538}{
+\index{\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}!get\-Read\-F\-D@{get\-Read\-F\-D}}
+\index{get\-Read\-F\-D@{get\-Read\-F\-D}!LibWheel::SignalQueue@{\-Lib\-Wheel\-::\-Signal\-Queue}}
+\subsubsection[{get\-Read\-F\-D}]{\setlength{\rightskip}{0pt plus 5cm}int \-Lib\-Wheel\-::\-Signal\-Queue\-::get\-Read\-F\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classLibWheel_1_1SignalQueue_a36582b3985b30c6620ed3476b97e8538}
+
+
+\-Retrieve the read file descriptor of the signal pipe. 
+
+\-It may be used to poll for pending signals using {\ttfamily poll()} or {\ttfamily select}(); reading from it will cause signals to be lost. \begin{DoxyReturn}{\-Returns}
+\-The file descriptor of the signal pipe. 
+\end{DoxyReturn}
+
+
+\-Definition at line 334 of file \-Signals.\-cpp.
+
+
+
+\-References get\-Signal\-Pipe(), and \-Lib\-Wheel\-::\-Signal\-Queue\-::\-Pipe\-::fds.
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::operator()(), handle\-Next(), pending(), and select().
+
+\hypertarget{classLibWheel_1_1SignalQueue_a522c461293731cec36208aa3bafe39c7}{
+\index{\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}!get\-Signal\-Pipe@{get\-Signal\-Pipe}}
+\index{get\-Signal\-Pipe@{get\-Signal\-Pipe}!LibWheel::SignalQueue@{\-Lib\-Wheel\-::\-Signal\-Queue}}
+\subsubsection[{get\-Signal\-Pipe}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Signal\-Queue\-::\-Pipe} \& \-Lib\-Wheel\-::\-Signal\-Queue\-::get\-Signal\-Pipe (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classLibWheel_1_1SignalQueue_a522c461293731cec36208aa3bafe39c7}
+
+
+\-Retrieve the signal pipe used by \hyperlink{classLibWheel_1_1SignalQueue}{\-Signal\-Queue}. 
+
+\begin{DoxyReturn}{\-Returns}
+\-A reference to \-Signal\-Queue's signal pipe. 
+\end{DoxyReturn}
+
+
+\-Definition at line 165 of file \-Signals.\-cpp.
+
+
+
+\-Referenced by set\-Handler(), get\-Read\-F\-D(), and \-Signal\-Queue\-\_\-signal\-Handler().
+
+\hypertarget{classLibWheel_1_1SignalQueue_a0e04644ce369cc519197043735986f9c}{
+\index{\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}!get\-Signal\-Table@{get\-Signal\-Table}}
+\index{get\-Signal\-Table@{get\-Signal\-Table}!LibWheel::SignalQueue@{\-Lib\-Wheel\-::\-Signal\-Queue}}
+\subsubsection[{get\-Signal\-Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Signal\-Queue\-::\-Handler\-List} $\ast$ \-Lib\-Wheel\-::\-Signal\-Queue\-::get\-Signal\-Table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classLibWheel_1_1SignalQueue_a0e04644ce369cc519197043735986f9c}
+
+
+\-Retrieve the table of signal handlers. 
+
+\begin{DoxyReturn}{\-Returns}
+\-A pointer to the signal handler table (an array of \-\_\-\-N\-S\-I\-G elements). 
+\end{DoxyReturn}
+
+
+\-Definition at line 178 of file \-Signals.\-cpp.
+
+
+
+\-Referenced by add\-Handler(), delete\-Handlers(), and handle\-Next().
+
+\hypertarget{classLibWheel_1_1SignalQueue_ad308bc4818a9d864bc0eb7b4dd1490ae}{
+\index{\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}!handle\-All@{handle\-All}}
+\index{handle\-All@{handle\-All}!LibWheel::SignalQueue@{\-Lib\-Wheel\-::\-Signal\-Queue}}
+\subsubsection[{handle\-All}]{\setlength{\rightskip}{0pt plus 5cm}void \-Lib\-Wheel\-::\-Signal\-Queue\-::handle\-All (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classLibWheel_1_1SignalQueue_ad308bc4818a9d864bc0eb7b4dd1490ae}
+
+
+\-Call all handlers for all signals in the signal pipe. 
+
+
+\begin{DoxyExceptions}{\-Exceptions}
+{\em \-Anything} & that a registered signal handler throws. \\
+\hline
+\end{DoxyExceptions}
+
+
+\-Definition at line 293 of file \-Signals.\-cpp.
+
+
+
+\-References pending(), and handle\-Next().
+
+
+
+\-Referenced by select().
+
+\hypertarget{classLibWheel_1_1SignalQueue_a991ba21066232f0db7be5f21e39edc41}{
+\index{\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}!handle\-Next@{handle\-Next}}
+\index{handle\-Next@{handle\-Next}!LibWheel::SignalQueue@{\-Lib\-Wheel\-::\-Signal\-Queue}}
+\subsubsection[{handle\-Next}]{\setlength{\rightskip}{0pt plus 5cm}void \-Lib\-Wheel\-::\-Signal\-Queue\-::handle\-Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classLibWheel_1_1SignalQueue_a991ba21066232f0db7be5f21e39edc41}
+
+
+\-Call all handlers for the next signal in the signal pipe. 
+
+
+\begin{DoxyExceptions}{\-Exceptions}
+{\em \-Anything} & that a registered signal handler throws. \\
+\hline
+\end{DoxyExceptions}
+
+
+\-Definition at line 263 of file \-Signals.\-cpp.
+
+
+
+\-References get\-Read\-F\-D(), and get\-Signal\-Table().
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::operator()(), and handle\-All().
+
+\hypertarget{classLibWheel_1_1SignalQueue_afd382f0a75d89bb0b6a22d9899c4435e}{
+\index{\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}!pending@{pending}}
+\index{pending@{pending}!LibWheel::SignalQueue@{\-Lib\-Wheel\-::\-Signal\-Queue}}
+\subsubsection[{pending}]{\setlength{\rightskip}{0pt plus 5cm}bool \-Lib\-Wheel\-::\-Signal\-Queue\-::pending (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throw (std\-::runtime\-\_\-error)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classLibWheel_1_1SignalQueue_afd382f0a75d89bb0b6a22d9899c4435e}
+
+
+\-Check if any signals are pending in the signal queue. 
+
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if a signal is pending; {\bfseries false} otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{\-Exceptions}
+{\em std\-::runtime\-\_\-error} & \-If there is an error checking the signal queue. \\
+\hline
+\end{DoxyExceptions}
+
+
+\-Definition at line 306 of file \-Signals.\-cpp.
+
+
+
+\-References get\-Read\-F\-D(), and select().
+
+
+
+\-Referenced by handle\-All().
+
+\hypertarget{classLibWheel_1_1SignalQueue_a8ba3b23aab26d744bcc2bffcc6598921}{
+\index{\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}!select@{select}}
+\index{select@{select}!LibWheel::SignalQueue@{\-Lib\-Wheel\-::\-Signal\-Queue}}
+\subsubsection[{select}]{\setlength{\rightskip}{0pt plus 5cm}int \-Lib\-Wheel\-::\-Signal\-Queue\-::select (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{fd\-\_\-set $\ast$}]{readfds, }
+\item[{fd\-\_\-set $\ast$}]{writefds, }
+\item[{fd\-\_\-set $\ast$}]{exceptfds, }
+\item[{struct timeval $\ast$}]{timeout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classLibWheel_1_1SignalQueue_a8ba3b23aab26d744bcc2bffcc6598921}
+
+
+\-Wait for an event to occur on a file descriptor. 
+
+\-This works identically to select(), except that any signals that are delivered before an event occurs are handled. \-See the man page for select() for details. 
+\begin{DoxyParams}{\-Parameters}
+{\em n} & \-The highest-\/numbered file descriptor in {\itshape readfds\/}, {\itshape writefds\/} and {\itshape exceptfds\/}, plus 1. \\
+\hline
+{\em readfds} & \-A set of file descriptors to watch for avaiable data to read. \\
+\hline
+{\em writefds} & \-A set of file descriptors to watch for the possibility of writing data without blocking. \\
+\hline
+{\em exceptfds} & \-A set of file descriptors to watch for exceptional conditions. \\
+\hline
+{\em timeout} & \-An upper bound on the time to wait for events to occur. \-If it is zero, \hyperlink{classLibWheel_1_1SignalQueue_a8ba3b23aab26d744bcc2bffcc6598921}{select()} will return immediately. \-If it is null, \hyperlink{classLibWheel_1_1SignalQueue_a8ba3b23aab26d744bcc2bffcc6598921}{select()} will block indefinately. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 357 of file \-Signals.\-cpp.
+
+
+
+\-References get\-Read\-F\-D(), and handle\-All().
+
+
+
+\-Referenced by pending().
+
+\hypertarget{classLibWheel_1_1SignalQueue_ac0145e9276c339fccebe3c0b70cec914}{
+\index{\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}!set\-Handler@{set\-Handler}}
+\index{set\-Handler@{set\-Handler}!LibWheel::SignalQueue@{\-Lib\-Wheel\-::\-Signal\-Queue}}
+\subsubsection[{set\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}void \-Lib\-Wheel\-::\-Signal\-Queue\-::set\-Handler (
+\begin{DoxyParamCaption}
+\item[{int}]{sig, }
+\item[{{\bf \-Action}}]{act}
+\end{DoxyParamCaption}
+)  throw (std\-::domain\-\_\-error, std\-::invalid\-\_\-argument)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classLibWheel_1_1SignalQueue_ac0145e9276c339fccebe3c0b70cec914}
+
+
+\-Set the action to perform when a signal is received. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em sig} & \-The signal whose action to set. \\
+\hline
+{\em act} & \-The action to perform when {\itshape signal\/} is received. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{\-Exceptions}
+{\em std\-::domain\-\_\-error} & \-If {\itshape act\/} is invalid. \\
+\hline
+{\em std\-::invalid\-\_\-argument} & \-If {\itshape sig\/} is invalid. \\
+\hline
+\end{DoxyExceptions}
+
+
+\-Definition at line 193 of file \-Signals.\-cpp.
+
+
+
+\-References \-D\-E\-F\-A\-U\-L\-T, \-I\-G\-N\-O\-R\-E, \-H\-A\-N\-D\-L\-E, \-Signal\-Queue\-\_\-signal\-Handler(), and get\-Signal\-Pipe().
+
+
+
+\-Referenced by \-N\-E\-R\-D\-::\-Connection\-Server\-::\-Connection\-Server(), main(), \-Lib\-Wheel\-::\-Timer\-::\-Timer(), and \-Lib\-Wheel\-::\-Wait\-List\-::\-Wait\-List().
+
+\hypertarget{classLibWheel_1_1SignalQueue_ab219a09c14ff06e916c70dbdabdbf28a}{
+\index{\-Lib\-Wheel\-::\-Signal\-Queue@{\-Lib\-Wheel\-::\-Signal\-Queue}!void\-::\-Signal\-Queue\-\_\-signal\-Handler@{void\-::\-Signal\-Queue\-\_\-signal\-Handler}}
+\index{void\-::\-Signal\-Queue\-\_\-signal\-Handler@{void\-::\-Signal\-Queue\-\_\-signal\-Handler}!LibWheel::SignalQueue@{\-Lib\-Wheel\-::\-Signal\-Queue}}
+\subsubsection[{void\-::\-Signal\-Queue\-\_\-signal\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}\-Lib\-Wheel\-::\-Signal\-Queue\-::void\-::\-Signal\-Queue\-\_\-signal\-Handler (
+\begin{DoxyParamCaption}
+\item[{int}]{, }
+\item[{siginfo\-\_\-t $\ast$}]{, }
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classLibWheel_1_1SignalQueue_ab219a09c14ff06e916c70dbdabdbf28a}
+
+
+\-This needs to call \hyperlink{classLibWheel_1_1SignalQueue_a522c461293731cec36208aa3bafe39c7}{get\-Signal\-Pipe()}. 
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Signals_8hpp}{\-Signals.\-hpp}\item 
+\hyperlink{Signals_8cpp}{\-Signals.\-cpp}\end{DoxyCompactItemize}
